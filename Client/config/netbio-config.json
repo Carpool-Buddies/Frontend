@@ -1,0 +1,9 @@
+{
+  "development": {
+    "run_on_local_server": false
+  },
+  "api_urls": {
+    "production_api_url": "https://netbio.bgu.ac.il/proact-api",
+    "local_server_api": "http://127.0.0.1:5000"
+  }
+}

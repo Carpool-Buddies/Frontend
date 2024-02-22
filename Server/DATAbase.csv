@@ -1,0 +1,2045 @@
+﻿ID,DISEASE_NAME,Gene symbol,PS accession,PS name,Tissue,Manifestation,Pathogenicity,Ref
+616271,"3-@methylglutaconic Aciduria With Cataracts, Neurologic Involvement,and Neutropenia",CLPB,PS250950,3-Methylglutaconic aciduria,Bone marrow,2,2,1
+614739,"3-@methylglutaconic Aciduria With Deafness, Encephalopathy, And Leigh-likesyndrome",SERAC1,PS250950,3-Methylglutaconic aciduria,Bone marrow,1,1,2
+610198,"3-@methylglutaconic Aciduria, Type V",DNAJC19,PS250950,3-Methylglutaconic aciduria,Bone marrow,2,1,3
+246450,3-hydroxy-3-methylglutaryl-coa Lyase Deficiency,HMGCL,,,Bone marrow,1,1,4
+617248,"3-methylglutaconic Aciduria, Type Viii",HTRA2,PS250950,3-Methylglutaconic aciduria,Bone marrow,2,2,5
+172150,6-@phosphogluconolactonase Deficiency,,,,Bone marrow,0,0,6
+100050,Aarskog Syndrome,,,,Bone marrow,0,0,7
+618620,Abdominal Obesity-metabolic Syndrome 4,CELA2A,PS605552,Abdominal obesity-metabolic syndrome,Bone marrow,0,0,8
+200100,Abetalipoproteinemia,MTTP,,,Bone marrow,0,0,9
+604290,"Aceruloplasminemiahypoceruloplasminemia, Included",CP,,,Bone marrow,0,0,10
+200300,Acetophenetidin Sensitivity,,,,Bone marrow,0,0,11
+200900,"Achondroplasia, So-called, And Severe Combined Immunodeficiency",,,,Bone marrow,0,0,12
+200950,Acid Phosphatase Deficiency,ACP2,,,Bone marrow,0,0,13
+219080,Acth-independent Macronodular Adrenal Hyperplasia,GNAS,,,Bone marrow,0,0,14
+612376,Acute Promyelocytic Leukemia,NUMA1,,,Bone marrow,0,0,15
+612376,Acute Promyelocytic Leukemia,RARA,,,Bone marrow,0,0,16
+611126,"Acyl-coa Dehydrogenase Family, Member 9, Deficiency Of",ACAD9,PS252010,"Mitochondrial complex I deficiency, nuclear type",Bone marrow,1,1,17
+616028,Adams-oliver Syndrome 5,NOTCH1,PS100300,Adams-Oliver syndrome,Bone marrow,0,0,18
+600458,Adenomyosis,,,,Bone marrow,0,0,19
+102730,"Adenosine Deaminase, Elevated, Hemolytic Anemia Due To",,,,Bone marrow,0,0,20
+102800,"Adenosine Triphosphatase Deficiency, Anemia Due To",,,,Bone marrow,0,0,21
+102900,"Adenosine Triphosphate, Elevated, Of Erythrocytes",PKLR,,,Bone marrow,0,0,22
+612631,"Adenylate Kinase Deficiency, Hemolytic Anemia Due To",AK1,,,Bone marrow,0,0,23
+202400,"Afibrinogenemia, Congenitalhypofibrinogenemia, Congenital, Included",FGB,,,Bone marrow,0,0,24
+202400,"Afibrinogenemia, Congenitalhypofibrinogenemia, Congenital, Included",FGA,,,Bone marrow,0,0,25
+202400,"Afibrinogenemia, Congenitalhypofibrinogenemia, Congenital, Included",FGG,,,Bone marrow,0,0,26
+601495,"Agammaglobulinemia 1, Autosomal Recessive",IGHM,PS601495,Agammaglobulinemia,Bone marrow,0,0,27
+613501,"Agammaglobulinemia 3, Autosomal Recessive",CD79A,PS601495,Agammaglobulinemia,Bone marrow,2,2,28
+613502,"Agammaglobulinemia 4, Autosomal Recessive",BLNK,PS601495,Agammaglobulinemia,Bone marrow,2,2,29
+615214,"Agammaglobulinemia 7, Autosomal Recessive",PIK3R1,PS601495,Agammaglobulinemia,Bone marrow,2,2,30
+616941,"Agammaglobulinemia 8, Autosomal Dominant",TCF3,PS601495,Agammaglobulinemia,Bone marrow,2,2,31
+225750,Aicardi-goutieres Syndrome 1,TREX1,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,32
+610181,Aicardi-goutieres Syndrome 2,RNASEH2B,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,33
+610329,Aicardi-goutieres Syndrome 3,RNASEH2C,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,34
+610333,Aicardi-goutieres Syndrome 4,RNASEH2A,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,35
+612952,Aicardi-goutieres Syndrome 5,SAMHD1,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,36
+615010,Aicardi-goutieres Syndrome 6,ADAR,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,37
+615846,Aicardi-goutieres Syndrome 7,IFIH1,PS225750,Aicardi-Goutieres syndrome,Bone marrow,2,1,38
+604131,Alpha-thalassemia,HBA2,,,Bone marrow,2,2,39
+604131,Alpha-thalassemia,HBA1,,,Bone marrow,2,2,40
+300448,Alpha-thalassemia Myelodysplasia Syndrome,ATRX,,,Bone marrow,0,0,41
+141750,"Alpha-thalassemia/mental Retardation Syndrome, Deletion-type",HBHR,,,Bone marrow,0,0,42
+301040,"Alpha-thalassemia/mental Retardation Syndrome, Nondeletion Type, X-linked",ATRX,,,Bone marrow,2,2,43
+300194,Alport Syndrome - Intellectual Disability - Midface Hypoplasia - Elliptocytosis,AMMEC,,,Bone marrow,0,0,44
+301050,"Alport Syndrome, X-linked",COL4A5,PS301050,Alport syndrome,Bone marrow,0,0,45
+604498,"Amegakaryocytic Thrombocytopenia, Congenital",MPL,,,Bone marrow,2,2,46
+105150,Amyloidosis Vi,CST3,,,Bone marrow,0,0,47
+205700,"Anemia, Autoimmune Hemolytic",,,,Bone marrow,0,0,48
+224120,"Anemia, Congenital Dyserythropoietic, Type Ia",CDAN1,PS224120,"Anemia, congenital dyserythropoietic",Bone marrow,2,2,49
+615631,"Anemia, Congenital Dyserythropoietic, Type Ib",CDIN1,PS224120,"Anemia, congenital dyserythropoietic",Bone marrow,2,2,50
+205950,"Anemia, Congenital Sideroblastic, B6-nonresponsive",SLC25A38,PS300751,"Anemia, Sideroblastic",Bone marrow,2,2,51
+224100,"Anemia, Dyserythropoietic Congenital, Type Ii",SEC23B,PS224120,"Anemia, congenital dyserythropoietic",Bone marrow,2,2,52
+105600,"Anemia, Dyserythropoietic Congenital, Type Iii",CDAN3,PS224120,"Anemia, congenital dyserythropoietic",Bone marrow,0,0,53
+613673,"Anemia, Dyserythropoietic Congenital, Type Iv",KLF1,PS224120,"Anemia, congenital dyserythropoietic",Bone marrow,2,2,54
+206000,"Anemia, Familial Pyridoxine-responsive",,,,Bone marrow,0,0,55
+268150,"Anemia, Hemolytic, Rh-null, Regulator Type",RHAG,,,Bone marrow,2,2,56
+206100,"Anemia, Hypochromic Microcytic, With Iron Overload",SLC11A2,PS206100,"Anemia, hypochromic microcytic, with iron overload",Bone marrow,2,2,57
+615234,"Anemia, Hypochromic Microcytic, With Iron Overload 2",STEAP3,PS206100,"Anemia, hypochromic microcytic, with iron overload",Bone marrow,2,2,58
+206300,"Anemia, Nonspherocytic Hemolytic, Associated With Abnormality Of Redcell Membrane",,,,Bone marrow,0,0,59
+300908,"Anemia, Nonspherocytic Hemolytic, Due To G6pd Deficiency",G6PD,,,Bone marrow,2,2,60
+206400,"Anemia, Nonspherocytic Hemolytic, Possibly Due To Defect In Porphyrinmetabolism",,,,Bone marrow,0,0,61
+616860,"Anemia, Sideroblastic, 3, Pyridoxine-refractory",GLRX5,PS300751,"Anemia, Sideroblastic",Bone marrow,2,2,62
+301310,"Anemia, Sideroblastic, And Spinocerebellar Ataxia",ABCB7,,,Bone marrow,2,2,63
+182170,"Anemia, Sideroblastic, Autosomal Dominant",HSPA9,PS300751,"Anemia, Sideroblastic",Bone marrow,2,2,64
+300751,"Anemia, Sideroblastic, X-linked",ALAS2,PS300751,"Anemia, Sideroblastic",Bone marrow,2,2,65
+300835,"Anemia, X-linked, With Or Without Neutropenia And/or Platelet Abnormalities",GATA1,,,Bone marrow,2,2,66
+105800,"Aneurysm, Intracranial Berry, 1",ANIB1,PS105800,"Aneurysm, intracranial berry",Bone marrow,0,0,67
+608542,"Aneurysm, Intracranial Berry, 2",ANIB2,PS105800,"Aneurysm, intracranial berry",Bone marrow,0,0,68
+106070,"Angioma, Hereditary Neurocutaneousspinal Arterial Venous Malformations With Cutaneous Hemangiomas, Included",,,,Bone marrow,0,0,69
+611773,"Angiopathy, Hereditary, With Nephropathy, Aneurysms, And Muscle Cramps",COL4A1,,,Bone marrow,0,0,70
+107320,"Antiphospholipid Syndrome, Familial",ATPLS,,,Bone marrow,0,0,71
+613118,Antithrombin Iii Deficiency,SERPINC1,PS188050,Thrombophilia,Bone marrow,2,0,72
+207300,"Antithrombin, Familial Hemorrhagic Diathesis Due To",,,,Bone marrow,0,0,73
+207731,Aplasia Cutis Congenita With Intestinal Lymphangiectasia,,,,Bone marrow,0,0,74
+609135,Aplastic Anemia,SBDS,,,Bone marrow,2,1,75
+609135,Aplastic Anemia,NBN,,,Bone marrow,2,1,76
+609135,Aplastic Anemia,PRF1,,,Bone marrow,2,1,77
+609135,Aplastic Anemia,IFNG,,,Bone marrow,2,1,78
+208050,Arterial Tortuosity Syndrome,SLC2A10,,,Bone marrow,0,0,79
+208060,"Arteriosclerosis, Severe Juvenile",,,,Bone marrow,0,0,80
+618947,Arthrogryposis Multiplex Congenita 5,TOR1A,PS617468,Arthrogryposis multiplex congenita,Bone marrow,0,0,81
+208085,"Arthrogryposis, Renal Dysfunction, And Cholestasis",VPS33B,PS208085,"Arthrogryposis, renal dysfunction, and cholestasis",Bone marrow,0,0,82
+208400,Aspartylglucosaminuria,AGA,,,Bone marrow,2,2,83
+271400,"Asplenia, Isolated Congenital",RPSA,,,Bone marrow,2,2,84
+159550,Ataxia-pancytopenia Syndrome,SAMD9L,,,Bone marrow,2,2,85
+208900,Ataxia-telangiectasia,ATM,,,Bone marrow,2,2,86
+208910,Ataxia-telangiectasia With Generalized Skin Pigmentation And Earlydeath,,,,Bone marrow,0,0,87
+209050,"Athrombia, Essential",,,,Bone marrow,0,0,88
+209300,Atransferrinemia,TF,,,Bone marrow,2,0,89
+608583,"Atrial Fibrillation, Familial, 1",ATFB1,PS608583,"Atrial fibrillation, familial",Bone marrow,0,0,90
+607554,"Atrial Fibrillation, Familial, 3",KCNQ1,PS608583,"Atrial fibrillation, familial",Bone marrow,0,0,91
+615952,"Autoimmune Disease, Multisystem, Infantile-onset, 1",STAT3,PS615952,"Autoimmune disease, multisystem, infantile-onset",Bone marrow,2,1,92
+617006,"Autoimmune Disease, Multisystem, Infantile-onset, 2",ZAP70,PS615952,"Autoimmune disease, multisystem, infantile-onset",Bone marrow,2,2,93
+613385,"Autoimmune Disease, Multisystem, With Facial Dysmorphism",ITCH,,,Bone marrow,1,1,94
+616414,"Autoimmune Interstitial Lung, Joint, And Kidney Disease",COPA,,,Bone marrow,1,1,95
+601859,Autoimmune Lymphoproliferative Syndrome,FASLG,,,Bone marrow,2,2,96
+601859,Autoimmune Lymphoproliferative Syndrome,FAS,,,Bone marrow,2,2,97
+603909,"Autoimmune Lymphoproliferative Syndrome, Type Iia",CASP10,,,Bone marrow,0,0,98
+607271,"Autoimmune Lymphoproliferative Syndrome, Type Iib",CASP8,,,Bone marrow,2,2,99
+615559,"Autoimmune Lymphoproliferative Syndrome, Type Iii",PRKCD,,,Bone marrow,2,2,100
+616100,"Autoimmune Lymphoproliferative Syndrome, Type V",CTLA4,,,Bone marrow,2,2,101
+269200,"Autoimmune Polyendocrine Syndrome, Type Ii",,,,Bone marrow,0,0,102
+617388,Autoinflammation With Arthritis And Dyskeratosis,NLRP1,,,Bone marrow,0,0,103
+618852,Autoinflammation With Episodic Fever And Lymphadenopathy,RIPK1,,,Bone marrow,2,1,104
+616050,Autoinflammation With Infantile Enterocolitis,NLRC4,,,Bone marrow,0,0,105
+618999,"Autoinflammation, Immune Dysregulation, And Eosinophilia",JAK1,,,Bone marrow,2,1,106
+617099,"Autoinflammation, Panniculitis, And Dermatosis Syndrome",OTULIN,,,Bone marrow,0,0,107
+616744,"Autoinflammatory Syndrome, Familial, Behcet-like",TNFAIP3,,,Bone marrow,1,1,108
+151430,B-cell Cll/lymphoma 2,,,,Bone marrow,0,0,109
+616452,B-cell Expansion With Nfkb And T-cell Anergy,CARD11,,,Bone marrow,2,2,110
+109543,"B-cell Malignancy, Low-grade",CLLS2,,,Bone marrow,0,0,111
+210740,Bangstad Syndrome,,,,Bone marrow,0,0,112
+153480,Bannayan-riley-ruvalcaba Syndrome,,,,Bone marrow,0,0,113
+209920,"Bare Lymphocyte Syndrome, Type Ii",RFX5,,,Bone marrow,2,2,114
+209920,"Bare Lymphocyte Syndrome, Type Ii",RFXAP,,,Bone marrow,2,2,115
+209920,"Bare Lymphocyte Syndrome, Type Ii",CIITA,,,Bone marrow,2,2,116
+209920,"Bare Lymphocyte Syndrome, Type Ii",RFXANK,,,Bone marrow,2,2,117
+302060,Barth Syndrome,TAFAZZIN,PS250950,3-Methylglutaconic aciduria,Bone marrow,2,2,118
+241200,"Bartter Syndrome, Antenatal, Type 2",KCNJ1,PS601678,Bartter syndrome,Bone marrow,0,0,119
+209970,Beemer Lethal Malformation Syndrome,,,,Bone marrow,0,0,120
+109650,Behcet Syndrome,,,,Bone marrow,0,0,121
+231200,Bernard-soulier Syndrome,GP9,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,122
+231200,Bernard-soulier Syndrome,GP1BA,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,123
+231200,Bernard-soulier Syndrome,GP1BB,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,124
+153670,"Bernard-soulier Syndrome, Benign Autosomal Dominant",GP1BA,,,Bone marrow,0,0,125
+613985,Beta-thalassemia,HBB,,,Bone marrow,0,0,126
+613985,Beta-thalassemia,LCRB,,,Bone marrow,0,0,127
+210370,Bietti Crystalline Corneoretinal Dystrophy,CYP4V2,,,Bone marrow,2,2,128
+607765,"Bile Acid Synthesis Defect, Congenital, 1",HSD3B7,PS607765,"Bile acid synthesis defect, congenital",Bone marrow,2,0,129
+235555,"Bile Acid Synthesis Defect, Congenital, 2",AKR1D1,PS607765,"Bile acid synthesis defect, congenital",Bone marrow,2,0,130
+613812,"Bile Acid Synthesis Defect, Congenital, 3",CYP7B1,PS607765,"Bile acid synthesis defect, congenital",Bone marrow,2,0,131
+214950,"Bile Acid Synthesis Defect, Congenital, 4",AMACR,PS607765,"Bile acid synthesis defect, congenital",Bone marrow,2,0,132
+616278,"Bile Acid Synthesis Defect, Congenital, 5",ABCD3,PS607765,"Bile acid synthesis defect, congenital",Bone marrow,2,0,133
+609821,Bleeding Disorder Due To P2ry12 Defect,P2RY12,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,134
+614201,"Bleeding Disorder, Platelet-type, 11",GP6,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,135
+614009,"Bleeding Disorder, Platelet-type, 13, Susceptibility To",TBXA2R,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,136
+614158,"Bleeding Disorder, Platelet-type, 14",BDPLT14,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,137
+615193,"Bleeding Disorder, Platelet-type, 15",ACTN1,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,138
+187800,"Bleeding Disorder, Platelet-type, 16",ITGA2B,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,139
+187800,"Bleeding Disorder, Platelet-type, 16",ITGB3,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,140
+615888,"Bleeding Disorder, Platelet-type, 18",RASGRP2,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,141
+616176,"Bleeding Disorder, Platelet-type, 19",PRKACG,PS231200,"Bleeding disorder, platelet-type",Bone marrow,0,0,142
+616913,"Bleeding Disorder, Platelet-type, 20",SLFN14,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,143
+617443,"Bleeding Disorder, Platelet-type, 21",FLI1,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,144
+618462,"Bleeding Disorder, Platelet-type, 22",EPHB2,PS231200,"Bleeding disorder, platelet-type",Bone marrow,0,0,145
+614200,"Bleeding Disorder, Platelet-type, 9",BDPLT9,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,146
+210900,Bloom Syndrome,BLM,PS210900,"Microcephaly, growth restriction and increased sister chromatid exchange",Bone marrow,2,2,147
+112200,Blue Rubber Bleb Nevus,,,,Bone marrow,0,0,148
+612394,"Bone Fragility With Contractures, Arterial Rupture, And Deafness",PLOD3,,,Bone marrow,0,0,149
+615715,Bone Marrow Failure Syndrome 2,ERCC6L2,PS614675,Bone marrow failure syndrome,Bone marrow,2,2,150
+617052,Bone Marrow Failure Syndrome 3,DNAJC21,PS614675,Bone marrow failure syndrome,Bone marrow,2,2,151
+618116,Bone Marrow Failure Syndrome 4,MYSM1,PS614675,Bone marrow failure syndrome,Bone marrow,2,2,152
+618165,Bone Marrow Failure Syndrome 5,TP53,PS614675,Bone marrow failure syndrome,Bone marrow,2,2,153
+618849,Bone Marrow Failure Syndrome 6,MDM4,PS614675,Bone marrow failure syndrome,Bone marrow,2,2,154
+614675,"Bone Marrow Failure, Familial",SRP72,PS614675,Bone marrow failure syndrome,Bone marrow,2,2,155
+175780,Brain Small Vessel Disease 1 With Or Without Ocular Anomalies,COL4A1,PS175780,Brain small vessel disease,Bone marrow,0,0,156
+618360,Brain Small Vessel Disease 3,COLGALT1,PS175780,Brain small vessel disease,Bone marrow,0,0,157
+607578,Breath-holding Spells,,,,Bone marrow,0,0,158
+113970,Burkitt Lymphoma,MYC,,,Bone marrow,0,0,159
+131300,Camurati-engelmann Disease,TGFB1,,,Bone marrow,2,2,160
+212050,"Candidiasis, Familial, 2",CARD9,PS114580,Familial candidiasis,Bone marrow,2,1,161
+114620,Cantu Syndrome,,,,Bone marrow,0,0,162
+114650,Car Factor Deficiency,,,,Bone marrow,0,0,163
+212060,Carbimazole Sensitivity,,,,Bone marrow,0,0,164
+608836,"Carnitine Palmitoyltransferase Ii Deficiency, Lethal Neonatal",CPT2,,,Bone marrow,1,1,165
+250250,Cartilage-hair Hypoplasia,RMRP,,,Bone marrow,0,0,166
+212350,Cataract And Cardiomyopathy,AGK,PS603041,Mitochondrial DNA depletion syndrome,Bone marrow,2,1,167
+608957,"Cd8 Deficiency, Familial",CD8A,,,Bone marrow,2,2,168
+212750,Celiac Disease,HLA-DQA1,PS212750,Celiac disease,Bone marrow,1,1,169
+212750,Celiac Disease,HLA-DQB1,PS212750,Celiac disease,Bone marrow,1,1,170
+605714,"Cerebral Amyloid Angiopathy, App-related",APP,,,Bone marrow,0,0,171
+116860,Cerebral Cavernous Malformations,KRIT1,PS116860,Cerebral cavernous malformations,Bone marrow,0,0,172
+603284,Cerebral Cavernous Malformations 2,CCM2,PS116860,Cerebral cavernous malformations,Bone marrow,0,0,173
+603285,Cerebral Cavernous Malformations 3,PDCD10,PS116860,Cerebral cavernous malformations,Bone marrow,0,0,174
+612199,Cerebroretinal Microangiopathy With Calcifications And Cysts,CTC1,PS612199,Cerebroretinal microangiopathy with calcfications and cysts,Bone marrow,0,0,175
+617341,Cerebroretinal Microangiopathy With Calcifications And Cysts 2,STN1,PS612199,Cerebroretinal microangiopathy with calcfications and cysts,Bone marrow,0,0,176
+204200,"Ceroid Lipofuscinosis, Neuronal, 3",CLN3,PS256730,Ceroid lipofuscinoses,Bone marrow,2,2,177
+609055,"Ceroid Lipofuscinosis, Neuronal, 9",,PS256730,Ceroid lipofuscinoses,Bone marrow,0,0,178
+601389,"Cervical Ribs, Sprengel Anomaly, Anal Atresia, And Urethral Obstruction",,,,Bone marrow,0,0,179
+275630,Chanarin-dorfman Syndrome,ABHD5,,,Bone marrow,2,2,180
+214800,Charge Syndrome,SEMA3E,,,Bone marrow,0,0,181
+214800,Charge Syndrome,CHD7,,,Bone marrow,2,2,182
+214500,Chediak-higashi Syndrome,LYST,,,Bone marrow,2,2,183
+515000,Chloramphenicol Toxicity,,,,Bone marrow,0,0,184
+617049,"Cholestasis, Progressive Familial Intrahepatic, 5",NR1H4,PS211600,"Cholestasis, progressive familial intrahepatic",Bone marrow,0,0,185
+215250,"Chondroitin-6-sulfaturia, Defective Cellular Immunity, Nephrotic Syndrome",,,,Bone marrow,0,0,186
+200150,Choreoacanthocytosis,VPS13A,,,Bone marrow,2,1,187
+616604,"Chromosome 14q32 Duplication Syndrome, 700-kb",DUP14q32,,,Bone marrow,0,0,188
+614294,Chromosome 15q25 Deletion Syndrome,DEL15q25,,,Bone marrow,0,0,189
+153550,Chromosome 5q Deletion Syndrome,RPS14,,,Bone marrow,0,0,190
+618935,"Chronic Granulomatous Disease 5, Autosomal Recessive",CYBC1,PS306400,"Granulomatous disease, chronic",Bone marrow,0,0,191
+306400,"Chronic Granulomatous Disease, X-linked",CYBB,PS306400,"Granulomatous disease, chronic",Bone marrow,2,2,192
+607115,Cinca Syndrome,NLRP3,,,Bone marrow,1,1,193
+215550,Circumvallate Placenta Syndrome,,,,Bone marrow,0,0,194
+216340,"Cleidocranial Dysplasia With Micrognathia, Absent Thumbs, And Distal",FIG4,,,Bone marrow,2,2,195
+607426,"Coenzyme Q10 Deficiency, Primary, 1",COQ2,PS607426,"Coenzyme Q10 deficiency, primary",Bone marrow,2,1,196
+216550,Cohen Syndrome,VPS13B,,,Bone marrow,2,2,197
+612379,"Coloboma, Ocular, And Ichthyosis, Brain Malformations, And Endocrine",SRD5A3,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,2,1,198
+120440,Colonic Varices Without Portal Hypertension,,,,Bone marrow,0,0,199
+233650,Combined Cellular And Humoral Immune Defects With Granulomas,RAG1,,,Bone marrow,2,2,200
+233650,Combined Cellular And Humoral Immune Defects With Granulomas,RAG2,,,Bone marrow,2,2,201
+617780,Combined Immunodeficiency And Megaloblastic Anemia With Or Without Hyperhomocysteinemia,MTHFD1,,,Bone marrow,2,2,202
+312863,"Combined Immunodeficiency, X-linked",IL2RG,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,203
+619115,Combined Osteogenesis Imperfecta And Ehlers-danlos Syndrome 1,COL1A1,PS619115,Combined osteogenesis imperfecta and Ehlers-Danlos syndrome,Bone marrow,0,0,204
+619120,Combined Osteogenesis Imperfecta And Ehlers-danlos Syndrome 2,COL1A2,PS619115,Combined osteogenesis imperfecta and Ehlers-Danlos syndrome,Bone marrow,0,0,205
+614946,Combined Oxidative Phosphorylation Deficiency 14,FARS2,PS609060,Combined oxidative phosphorylation deficiency,Bone marrow,2,1,206
+615578,Combined Oxidative Phosphorylation Deficiency 18,SFXN4,PS609060,Combined oxidative phosphorylation deficiency,Bone marrow,0,0,207
+617872,Combined Oxidative Phosphorylation Deficiency 34,MRPS7,PS609060,Combined oxidative phosphorylation deficiency,Bone marrow,2,1,208
+618835,Combined Oxidative Phosphorylation Deficiency 40,QRSL1,PS609060,Combined oxidative phosphorylation deficiency,Bone marrow,2,1,209
+618838,Combined Oxidative Phosphorylation Deficiency 41,GATB,PS609060,Combined oxidative phosphorylation deficiency,Bone marrow,0,0,210
+618839,Combined Oxidative Phosphorylation Deficiency 42,GATC,PS609060,Combined oxidative phosphorylation deficiency,Bone marrow,2,1,211
+217000,Complement Component 2 Deficiency,C2,,,Bone marrow,0,0,212
+614380,Complement Component 4a Deficiency,C4A,,,Bone marrow,0,0,213
+226300,"Complement Hyperactivation, Angiopathic Thrombosis, And Protein-losing Enteropathy",CD55,,,Bone marrow,2,2,214
+226300,"Complement Hyperactivation, Angiopathic Thrombosis, And Protein-losing Enteropathy",CD55,,,Bone marrow,0,0,215
+618005,Congenital Disorder Of Glycosylation With Defective Fucosylation 1,FUT8,PS618005,Congenital disorder of glycosylation with defective fucosylation,Bone marrow,1,1,216
+212065,"Congenital Disorder Of Glycosylation, Type Ia",PMM2,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,2,1,217
+602579,"Congenital Disorder Of Glycosylation, Type Ib",MPI,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,218
+603147,"Congenital Disorder Of Glycosylation, Type Ic",ALG6,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,219
+608799,"Congenital Disorder Of Glycosylation, Type Ie",DPM1,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,220
+609180,"Congenital Disorder Of Glycosylation, Type If",MPDU1,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,221
+607143,"Congenital Disorder Of Glycosylation, Type Ig",ALG12,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,222
+608104,"Congenital Disorder Of Glycosylation, Type Ih",ALG8,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,2,1,223
+607906,"Congenital Disorder Of Glycosylation, Type Ii",ALG2,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,224
+212066,"Congenital Disorder Of Glycosylation, Type Iia",MGAT2,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,1,1,225
+266265,"Congenital Disorder Of Glycosylation, Type Iic",SLC35C1,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,2,2,226
+607091,"Congenital Disorder Of Glycosylation, Type Iid",B4GALT1,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,1,1,227
+603585,"Congenital Disorder Of Glycosylation, Type Iif",SLC35A1,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,2,2,228
+611209,"Congenital Disorder Of Glycosylation, Type Iig",COG1,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,1,1,229
+614727,"Congenital Disorder Of Glycosylation, Type Iik",TMEM165,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,2,1,230
+614576,"Congenital Disorder Of Glycosylation, Type Iil",COG6,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,2,2,231
+301045,"Congenital Disorder Of Glycosylation, Type Iir",ATP6AP2,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,2,1,232
+618885,"Congenital Disorder Of Glycosylation, Type Iit",GALNT2,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,0,0,233
+608093,"Congenital Disorder Of Glycosylation, Type Ij",DPAGT1,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,234
+612015,"Congenital Disorder Of Glycosylation, Type In",RFT1,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,235
+614921,"Congenital Disorder Of Glycosylation, Type It",PGM1,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,236
+615597,"Congenital Disorder Of Glycosylation, Type Ix",STT3B,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,2,1,237
+300934,"Congenital Disorder Of Glycosylation, Type Iy",SSR4,PS212065,"Congenital disorders of glycosylation, type I",Bone marrow,1,1,238
+616457,"Congenital Disorder Of Glycosylation, Type Iz",CAD,PS308350,Developmental and epileptic encephalopathy,Bone marrow,2,2,239
+613679,Congenital Prothrombin Deficiency,F2,,,Bone marrow,0,0,240
+121270,"Copper Deficiency, Familial Benign",,,,Bone marrow,0,0,241
+122470,Cornelia De Lange Syndrome 1,NIPBL,PS122470,Cornelia de Lange syndrome,Bone marrow,0,0,242
+122700,Coumarin Resistance,CYP2C9,,,Bone marrow,0,0,243
+122700,Coumarin Resistance,VKORC1,,,Bone marrow,0,0,244
+122700,Coumarin Resistance,CYP2A6,,,Bone marrow,0,0,245
+158350,Cowden Disease,PTEN,PS158350,Cowden disease,Bone marrow,2,2,246
+614378,Cranioectodermal Dysplasia 4,WDR19,PS218330,Cranioectodermal dysplasia,Bone marrow,0,0,247
+123550,"Cryoglobulinemia, Familial Mixed",,,,Bone marrow,0,0,248
+185020,Cryohydrocytosis,SLC4A1,,,Bone marrow,2,2,249
+248910,"Cutaneous Mastocytosis, Conductive Hearing Loss, And Microtia",,,,Bone marrow,0,0,250
+304150,"Cutis Laxa, X-linked",ATP7A,,,Bone marrow,0,0,251
+613977,"Cyanosis, Transient Neonatal",HBG2,,,Bone marrow,0,0,252
+162800,Cyclic Hematopoiesis,ELANE,,,Bone marrow,2,2,253
+219721,"Cystic Fibrosis With Helicobacter Pylori Gastritis, Megaloblasticanemia, And Mental Retardation",,,,Bone marrow,0,0,254
+124900,"Deafness, Autosomal Dominant Nonsyndromic Sensorineural 1",DIAPH1,PS124900,"Deafness, autosomal dominant",Bone marrow,0,0,255
+619004,Deeah Syndrome,MADD,,,Bone marrow,2,1,256
+616689,Dehydrated Hereditary Stomatocytosis 2,KCNN4,,,Bone marrow,2,2,257
+194380,Dehydrated Hereditary Stomatocytosis With Or Without Pseudohyperkalemiaand/or Perinatal Edema,PIEZO1,,,Bone marrow,0,0,258
+606176,"Diabetes Mellitus, Permanent Neonatal 1",GCK,PS606176,"Diabetes mellitus, permanent neonatal",Bone marrow,0,0,259
+618858,"Diabetes Mellitus, Permanent Neonatal 4",INS,PS606176,"Diabetes mellitus, permanent neonatal",Bone marrow,0,0,260
+610582,"Diabetes Mellitus, Transient Neonatal, 3",KCNJ11,,,Bone marrow,0,0,261
+105650,Diamond-blackfan Anemia 1,RPS19,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,262
+613309,Diamond-blackfan Anemia 10,RPS26,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,263
+614900,Diamond-blackfan Anemia 11,RPL26,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,264
+615550,Diamond-blackfan Anemia 12,RPL15,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,265
+615909,Diamond-blackfan Anemia 13,RPS29,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,266
+300946,Diamond-blackfan Anemia 14 With Mandibulofacial Dysostosis,TSR2,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,267
+606164,Diamond-blackfan Anemia 15 With Mandibulofacial Dysostosis,RPS28,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,268
+617408,Diamond-blackfan Anemia 16,RPL27,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,269
+617409,Diamond-blackfan Anemia 17,RPS27,PS105650,Diamond-Blackfan anemia,Bone marrow,0,0,270
+618310,Diamond-blackfan Anemia 18,RPL18,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,271
+618312,Diamond-blackfan Anemia 19,RPL35,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,272
+618313,Diamond-blackfan Anemia 20,RPS15A,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,273
+610629,Diamond-blackfan Anemia 3,RPS24,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,274
+612527,Diamond-blackfan Anemia 4,RPS17,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,275
+612528,Diamond-blackfan Anemia 5,RPL35A,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,276
+612561,Diamond-blackfan Anemia 6,RPL5,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,277
+612562,Diamond-blackfan Anemia 7,RPL11,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,278
+612563,Diamond-blackfan Anemia 8,RPS7,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,279
+613308,Diamond-blackfan Anemia 9,RPS10,PS105650,Diamond-Blackfan anemia,Bone marrow,2,2,280
+617911,Diamond-blackfan Anemia-like,EPO,,,Bone marrow,0,0,281
+112250,Diaphyseal Medullary Stenosis With Malignant Fibrous Histiocytoma,MTAP,,,Bone marrow,2,1,282
+618183,"Diarrhea 10, Protein-losing Enteropathy Type",PLVAP,PS214700,"Diarrhea, congenital",Bone marrow,0,0,283
+222800,Diphosphoglycerate Mutase Deficiency Of Erythrocyte,BPGM,,,Bone marrow,2,2,284
+223340,Dk Phocomelia Syndrome,,,,Bone marrow,0,0,285
+223350,Dohle Bodies And Leukemia,,,,Bone marrow,0,0,286
+190685,"Down Syndrometrisomy 21, Included",DCR,,,Bone marrow,0,0,287
+190685,"Down Syndrometrisomy 21, Included",GATA1,,,Bone marrow,0,0,288
+223370,Dubowitz Syndrome,,,,Bone marrow,0,0,289
+603529,"Dyserythropoiesis, Congenital, With Ultrastructurally Normal Erythroblastheterochromatin",,,,Bone marrow,0,0,290
+300367,"Dyserythropoietic Anemia With Thrombocytopeniamacrothrombocytopenia, X-linked, Included",GATA1,,,Bone marrow,2,2,291
+127550,"Dyskeratosis Congenita, Autosomal Dominant",TERC,PS127550,Dyskeratosis congenita,Bone marrow,0,0,292
+616553,"Dyskeratosis Congenita, Autosomal Dominant 6",ACD,PS127550,Dyskeratosis congenita,Bone marrow,2,2,293
+613989,"Dyskeratosis Congenita, Autosomal Dominant, 2",TERT,PS127550,Dyskeratosis congenita,Bone marrow,2,2,294
+613990,"Dyskeratosis Congenita, Autosomal Dominant, 3",TINF2,PS127550,Dyskeratosis congenita,Bone marrow,2,2,295
+615190,"Dyskeratosis Congenita, Autosomal Recessive 5",RTEL1,PS127550,Dyskeratosis congenita,Bone marrow,2,2,296
+224230,"Dyskeratosis Congenita, Autosomal Recessive, 1",NOP10,PS127550,Dyskeratosis congenita,Bone marrow,2,2,297
+613987,"Dyskeratosis Congenita, Autosomal Recessive, 2",NHP2,PS127550,Dyskeratosis congenita,Bone marrow,2,2,298
+613988,"Dyskeratosis Congenita, Autosomal Recessive, 3",WRAP53,PS127550,Dyskeratosis congenita,Bone marrow,2,2,299
+305000,"Dyskeratosis Congenita, X-linked",DKC1,PS127550,Dyskeratosis congenita,Bone marrow,2,2,300
+225310,Ehlers-danlos Syndrome With Platelet Dysfunction From Fibronectinabnormality,,,,Bone marrow,0,0,301
+614557,"Ehlers-danlos Syndrome With Progressive Kyphoscoliosis, Myopathy,and Hearing Loss",FKBP14,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,302
+617821,"Ehlers-danlos Syndrome, Arthrochalasia Type, 2",COL1A2,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,303
+225320,"Ehlers-danlos Syndrome, Autosomal Recessive, Cardiac Valvular Form",COL1A2,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,304
+130010,"Ehlers-danlos Syndrome, Classic Type, 2",COL5A2,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,305
+618000,"Ehlers-danlos Syndrome, Classic-like, 2",AEBP1,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,306
+601776,"Ehlers-danlos Syndrome, Musculocontractural Type",CHST14,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,307
+130080,"Ehlers-danlos Syndrome, Periodontal Type, 1",C1R,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,308
+617174,"Ehlers-danlos Syndrome, Periodontal Type, 2",C1S,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,309
+612350,"Ehlers-danlos Syndrome, Spondylodysplastic Type, 3",SLC39A13,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,310
+130000,"Ehlers-danlos Syndrome, Type I",COL5A1,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,311
+225400,"Ehlers-danlos Syndrome, Type Vi",PLOD1,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,312
+130060,"Ehlers-danlos Syndrome, Type Vii, Autosomal Dominant",COL1A1,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,313
+225410,"Ehlers-danlos Syndrome, Type Vii, Autosomal Recessive",ADAMTS2,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,314
+130050,"Ehlers-danlos Syndrome, Vascular Type",COL3A1,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,315
+606408,Ehlers-danlos-like Syndrome Due To Tenascin-x Deficiency,TNXB,PS130000,Ehlers-Danlos syndrome,Bone marrow,0,0,316
+611804,Elliptocytosis 1,EPB41,,,Bone marrow,0,0,317
+130600,Elliptocytosis 2,SPTA1,,,Bone marrow,0,0,318
+617948,Elliptocytosis-3,SPTB,,,Bone marrow,0,0,319
+614520,"Encephalomyopathy, Mitochondrial, Due To Voltage-dependent Anion Channeldeficiency",,,,Bone marrow,0,0,320
+602473,"Encephalopathy, Ethylmalonic",ETHE1,,,Bone marrow,0,0,321
+618321,"Encephalopathy, Progressive, Early-onset, With Brain Edema And/or Leukoencephalopathy, 2",NAXD,PS617186,"Encephalopathy, progressive, early-onset, with brain edema and/or leukoencephalopathy",Bone marrow,0,0,322
+226150,Enterocolitis,,,,Bone marrow,0,0,323
+600351,"Enteropathy, Familial, With Villous Edema And Immunoglobulin G2 Deficiency",,,,Bone marrow,0,0,324
+261500,Eosinophil Peroxidase Deficiency,EPX,,,Bone marrow,0,0,325
+131400,"Eosinophilia, Familial",EOS,,,Bone marrow,0,0,326
+131430,Eosinophilopenia,,,,Bone marrow,0,0,327
+618307,"Epidermodysplasia Verruciformis, Susceptibility To, 4",RHOH,PS226400,"Epidermodysplasia verruciformis, susceptibility to",Bone marrow,1,1,328
+618309,"Epidermodysplasia Verruciformis, Susceptibility To, 5",IL7,PS226400,"Epidermodysplasia verruciformis, susceptibility to",Bone marrow,0,0,329
+226600,"Epidermolysis Bullosa Dystrophica, Autosomal Recessive",COL7A1,,,Bone marrow,0,0,330
+226600,"Epidermolysis Bullosa Dystrophica, Autosomal Recessive",MMP1,,,Bone marrow,0,0,331
+226670,Epidermolysis Bullosa Simplex With Muscular Dystrophy,PLEC,,,Bone marrow,2,1,332
+131950,"Epidermolysis Bullosa Simplex, Ogna Type",PLEC,,,Bone marrow,0,0,333
+616577,"Epilepsy, Hearing Loss, And Mental Retardation Syndrome",SPATA5,,,Bone marrow,2,1,334
+254900,"Epilepsy, Progressive Myoclonic 4, With Or Without Renal Failure",SCARB2,PS254800,"Epilepsy, progressive myoclonic",Bone marrow,1,1,335
+618067,"Epileptic Encephalopathy, Early Infantile, 66",PACS2,PS308350,Developmental and epileptic encephalopathy,Bone marrow,1,1,336
+132500,"Epistaxis, Hereditary",,,,Bone marrow,0,0,337
+133100,"Erythrocytosis, Familial, 1",JAK2,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,338
+133100,"Erythrocytosis, Familial, 1",SH2B3,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,339
+133100,"Erythrocytosis, Familial, 1",EPOR,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,340
+263400,"Erythrocytosis, Familial, 2",VHL,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,341
+609820,"Erythrocytosis, Familial, 3",EGLN1,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,342
+611783,"Erythrocytosis, Familial, 4",EPAS1,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,343
+617907,"Erythrocytosis, Familial, 5",EPO,PS133100,"Erythrocytosis, familial",Bone marrow,2,2,344
+133180,"Erythroleukemia, Familial, Susceptibility To",ERBB3,,,Bone marrow,0,0,345
+610247,"Esophagitis, Eosinophilic, 1",EOE1,,,Bone marrow,0,0,346
+613412,"Esophagitis, Eosinophilic, 2",EOE2,,,Bone marrow,0,0,347
+612714,"Exocrine Pancreatic Insufficiency, Dyserythropoietic Anemia, And Calvarial",COX4I2,,,Bone marrow,0,0,348
+133780,Exudative Vitreoretinopathy 1,FZD4,PS133780,Exudative vitreoretinopathy,Bone marrow,0,0,349
+601813,Exudative Vitreoretinopathy 4,LRP5,PS133780,Exudative vitreoretinopathy,Bone marrow,0,0,350
+301500,Fabry Disease,GLA,,,Bone marrow,2,2,351
+134540,"Factor Ix And Factor Xi, Combined Deficiency Of",,,,Bone marrow,0,0,352
+613625,"Factor V And Factor Viii, Combined Deficiency Of",MCFD2,,,Bone marrow,0,0,353
+227300,"Factor V And Factor Viii, Combined Deficiency Of",LMAN1,,,Bone marrow,0,0,354
+227310,"Factor V And Factor Viii, Combined Deficiency Of, With Normal Proteinc And Protein C Inhibitor",,,,Bone marrow,0,0,355
+227400,Factor V Deficiency,F5,,,Bone marrow,0,0,356
+134400,Factor V Excess With Spontaneous Thrombosis,,,,Bone marrow,0,0,357
+134430,"Factor Vii And Factor Viii, Combined Deficiency Of",,,,Bone marrow,0,0,358
+227500,Factor Vii Deficiency,F7,,,Bone marrow,0,0,359
+134510,"Factor Viii And Factor Ix, Combined Deficiency Of",,,,Bone marrow,0,0,360
+134500,Factor Viii Deficiency,,,,Bone marrow,0,0,361
+227600,Factor X Deficiency,F10,,,Bone marrow,0,0,362
+612416,Factor Xi Deficiency,F11,,,Bone marrow,0,0,363
+234000,Factor Xii Deficiency,F12,,,Bone marrow,0,0,364
+613225,"Factor Xiii, A Subunit, Deficiency Of",F13A1,,,Bone marrow,0,0,365
+613235,"Factor Xiii, B Subunit, Deficiency Of",F13B,,,Bone marrow,0,0,366
+134520,"Factors Viii, Ix And Xi, Combined Deficiency Of",,,,Bone marrow,0,0,367
+611762,Familial Cold Autoinflammatory Syndrome 2,NLRP12,PS120100,Familial cold autoinflammatory syndrome,Bone marrow,0,0,368
+120100,Familial Cold Inflammatory Syndrome 1,NLRP3,PS120100,Familial cold autoinflammatory syndrome,Bone marrow,2,1,369
+249100,"Familial Mediterranean Fever, Ar",MEFV,,,Bone marrow,2,2,370
+227650,Fanconi Anemia,FANCA,PS227650,Fanconi anemia,Bone marrow,2,2,371
+300514,"Fanconi Anemia, Complementation Group B",FANCB,PS227650,Fanconi anemia,Bone marrow,0,0,372
+227645,"Fanconi Anemia, Complementation Group C",FANCC,PS227650,Fanconi anemia,Bone marrow,2,2,373
+605724,"Fanconi Anemia, Complementation Group D1",BRCA2,PS227650,Fanconi anemia,Bone marrow,2,2,374
+227646,"Fanconi Anemia, Complementation Group D2",FANCD2,PS227650,Fanconi anemia,Bone marrow,2,2,375
+600901,"Fanconi Anemia, Complementation Group E",FANCE,PS227650,Fanconi anemia,Bone marrow,2,2,376
+603467,"Fanconi Anemia, Complementation Group F",FANCF,PS227650,Fanconi anemia,Bone marrow,2,2,377
+614082,"Fanconi Anemia, Complementation Group G",FANCG,PS227650,Fanconi anemia,Bone marrow,2,2,378
+609053,"Fanconi Anemia, Complementation Group I",FANCI,PS227650,Fanconi anemia,Bone marrow,2,2,379
+609054,"Fanconi Anemia, Complementation Group J",BRIP1,PS227650,Fanconi anemia,Bone marrow,2,2,380
+614083,"Fanconi Anemia, Complementation Group L",FANCL,PS227650,Fanconi anemia,Bone marrow,2,2,381
+610832,"Fanconi Anemia, Complementation Group N",PALB2,PS227650,Fanconi anemia,Bone marrow,2,2,382
+613951,"Fanconi Anemia, Complementation Group P",SLX4,PS227650,Fanconi anemia,Bone marrow,2,2,383
+615272,"Fanconi Anemia, Complementation Group Q",ERCC4,PS227650,Fanconi anemia,Bone marrow,2,2,384
+617883,"Fanconi Anemia, Complementation Group S",BRCA1,PS227650,Fanconi anemia,Bone marrow,2,2,385
+616435,"Fanconi Anemia, Complementation Group T",UBE2T,PS227650,Fanconi anemia,Bone marrow,2,2,386
+617243,"Fanconi Anemia, Complementation Group V",MAD2L2,PS227650,Fanconi anemia,Bone marrow,2,2,387
+617784,"Fanconi Anemia, Complementation Group W",RFWD3,PS227650,Fanconi anemia,Bone marrow,2,2,388
+227850,Fanconi-like Syndrome,,,,Bone marrow,0,0,389
+228000,Farber Lipogranulomatosis,ASAH1,,,Bone marrow,2,2,390
+228100,Fatty Metamorphosis Of Viscera,,,,Bone marrow,0,0,391
+153640,Fechtner Syndrome,,,,Bone marrow,0,0,392
+134750,Felty Syndrome,,,,Bone marrow,0,0,393
+141749,Fetal Hemoglobin Quantitative Trait Locus 1,HBB,,,Bone marrow,0,0,394
+141749,Fetal Hemoglobin Quantitative Trait Locus 1,HBG1,,,Bone marrow,0,0,395
+141749,Fetal Hemoglobin Quantitative Trait Locus 1,HBG2,,,Bone marrow,0,0,396
+134900,Fibrinolytic Defect,,,,Bone marrow,0,0,397
+618278,"Fibrosis, Neurodegeneration, And Cerebral Angiomatosis",NHLRC2,,,Bone marrow,2,1,398
+228960,Flaujeac Factor Deficiency,KNG1,,,Bone marrow,0,0,399
+136150,Flood Factor Deficiency,,,,Bone marrow,0,0,400
+603278,Focal Segmental Glomerulosclerosis 1,ACTN4,PS603278,Focal segmental glomerulosclerosis,Bone marrow,2,0,401
+229050,"Folic Acid, Transport Defect Involving",SLC46A1,,,Bone marrow,0,0,402
+613024,"Follicular Lymphoma, Susceptibility To, 1",FL1,,,Bone marrow,0,0,403
+229100,Formiminotransferase Deficiency,FTCD,,,Bone marrow,0,0,404
+613606,Forsythe-wakeling Syndrome,FWS,,,Bone marrow,0,0,405
+229600,"Fructose Intolerance, Hereditary",ALDOB,,,Bone marrow,0,0,406
+230000,Fucosidosis,FUCA1,,,Bone marrow,2,2,407
+606812,Fumarase Deficiency,FH,,,Bone marrow,1,1,408
+264420,"Fundus Dystrophy, Pseudoinflammatory, Recessive Form",,,,Bone marrow,0,0,409
+230400,Galactosemia,GALT,PS230400,Galactosemia,Bone marrow,2,0,410
+230450,"Gamma-glutamylcysteine Synthetase Deficiency, Hemolytic Anemia Dueto",GCLC,,,Bone marrow,2,2,411
+137245,"Gastric Lymphoma, Primary",BCL10,,,Bone marrow,0,0,412
+243150,Gastrointestinal Defects And Immunodeficiency Syndrome,TTC7A,,,Bone marrow,2,1,413
+618372,"Gastrointestinal Ulceration, Recurrent, With Dysfunctional Platelets",PLA2G4A,,,Bone marrow,2,2,414
+610539,"Gaucher Disease, Atypical",PSAP,,,Bone marrow,2,2,415
+608013,"Gaucher Disease, Perinatal Lethal",GBA,,,Bone marrow,2,2,416
+230800,"Gaucher Disease, Type I",GBA,,,Bone marrow,2,2,417
+230900,"Gaucher Disease, Type Ii",GBA,,,Bone marrow,2,2,418
+231000,"Gaucher Disease, Type Iii",GBA,,,Bone marrow,2,2,419
+231005,"Gaucher Disease, Type Iiic",GBA,,,Bone marrow,2,2,420
+231095,Ghosal Hematodiaphyseal Dysplasia,TBXAS1,,,Bone marrow,2,2,421
+137500,Giant Neutrophil Leukocytes,,,,Bone marrow,0,0,422
+137560,Giant Platelet Syndrome With Thrombocytopenia,,,,Bone marrow,0,0,423
+273800,Glanzmann Thrombasthenia,ITGA2B,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,424
+273800,Glanzmann Thrombasthenia,ITGB3,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,425
+616568,Glioma Susceptibility 9,POT1,PS137800,Glioma,Bone marrow,0,0,426
+137900,Globulin Anomaly Involving Beta (2a)-globulin,,,,Bone marrow,0,0,427
+612126,Glut1 Deficiency Syndrome 2,SLC2A1,PS128100,Dystonia,Bone marrow,0,0,428
+612126,Glut1 Deficiency Syndrome 2,SLC2A1,PS606777,Glut1 deficiency syndrome,Bone marrow,0,0,429
+614164,Glutathione Peroxidase Deficiency,GPX1,,,Bone marrow,0,0,430
+266130,Glutathione Synthetase Deficiency,GSS,,,Bone marrow,2,2,431
+231900,"Glutathione Synthetase Deficiency Of Erythrocytes, Hemolytic Anemiadue To",GSS,,,Bone marrow,2,2,432
+232200,Glycogen Storage Disease Ia,G6PC1,,,Bone marrow,0,0,433
+232220,Glycogen Storage Disease Ib,SLC37A4,,,Bone marrow,2,2,434
+232800,Glycogen Storage Disease Vii,PFKM,,,Bone marrow,0,0,435
+611881,Glycogen Storage Disease Xii,ALDOA,,,Bone marrow,2,1,436
+610293,Glycosylphosphatidylinositol Deficiency,PIGM,,,Bone marrow,2,1,437
+230500,"Gm1-gangliosidosis, Type I",GLB1,,,Bone marrow,2,2,438
+230600,"Gm1-gangliosidosis, Type Ii",GLB1,,,Bone marrow,2,2,439
+230650,"Gm1-gangliosidosis, Type Iii",GLB1,,,Bone marrow,2,2,440
+233450,Goodpasture Syndrome,,,,Bone marrow,0,0,441
+608710,Granulomatosis With Polyangiitis,GPA,,,Bone marrow,0,0,442
+233670,Granulomatous Disease With Defect In Neutrophil Chemotaxis,,,,Bone marrow,0,0,443
+233690,"Granulomatous Disease, Chronic, Autosomal Recessive, Cytochrome B-negative",CYBA,PS306400,"Granulomatous disease, chronic",Bone marrow,2,2,444
+233700,"Granulomatous Disease, Chronic, Autosomal Recessive, Cytochrome B-positive, Type I",NCF1,PS306400,"Granulomatous disease, chronic",Bone marrow,2,2,445
+233710,"Granulomatous Disease, Chronic, Autosomal Recessive, Cytochrome B-positive, Type Ii",NCF2,PS306400,"Granulomatous disease, chronic",Bone marrow,2,2,446
+139090,Gray Platelet Syndrome,NBEAL2,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,447
+607624,"Griscelli Syndrome, Type 2",RAB27A,PS214450,Griscelli syndrome,Bone marrow,2,2,448
+234350,Halothane Hepatitis,,,,Bone marrow,0,0,449
+611174,Hamamy Syndrome,IRX5,,,Bone marrow,0,0,450
+618892,Harderoporphyria,CPOX,,,Bone marrow,2,2,451
+140700,Heinz Body Anemias,HBB,,,Bone marrow,2,2,452
+140700,Heinz Body Anemias,HBA2,,,Bone marrow,2,2,453
+140700,Heinz Body Anemias,HBA1,,,Bone marrow,2,2,454
+141000,Hemangioma-thrombocytopenia Syndrome,,,,Bone marrow,0,0,455
+614034,Heme Oxygenase-1 Deficiency,HMOX1,,,Bone marrow,2,2,456
+231100,"Hemochromatosis, Neonatal",,,,Bone marrow,0,0,457
+613313,"Hemochromatosis, Type 2b",HAMP,PS235200,Hemochromatosis,Bone marrow,0,0,458
+604250,"Hemochromatosis, Type 3",TFR2,PS235200,Hemochromatosis,Bone marrow,2,0,459
+606069,"Hemochromatosis, Type 4",SLC40A1,PS235200,Hemochromatosis,Bone marrow,2,0,460
+613978,Hemoglobin H Disease,HBA2,,,Bone marrow,2,2,461
+613978,Hemoglobin H Disease,HBA1,,,Bone marrow,2,2,462
+142000,Hemoglobin--delta Locus,,,,Bone marrow,0,0,463
+142309,Hemoglobin--variants For Which The Chain Carrying The Mutation Isunknown Or Uncertain,,,,Bone marrow,0,0,464
+618660,Hemolytic Anemia Due To Glutathione Reductase Deficiency,GSR,,,Bone marrow,2,2,465
+235370,Hemolytic Anemia With Thermal Sensitivity Of Red Cells,,,,Bone marrow,0,0,466
+612300,"Hemolytic Anemia, Cd59-mediated, With Or Without Immune-mediated Polyneuropathy",CD59,,,Bone marrow,2,2,467
+301015,"Hemolytic Anemia, Congenital, X-linked",ATP11C,,,Bone marrow,2,1,468
+600461,"Hemolytic Anemia, Lethal Congenital Nonspherocytic, With Genital And Other Abnormalities",,,,Bone marrow,0,0,469
+613470,"Hemolytic Anemia, Nonspherocytic, Due To Glucose Phosphate Isomerase",GPI,,,Bone marrow,2,2,470
+141700,Hemolytic Poikilocytic Anemia Due To Reduced Ankyrin Binding Sites,,,,Bone marrow,0,0,471
+235400,"Hemolytic Uremic Syndrome, Atypical",CFH,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,472
+235400,"Hemolytic Uremic Syndrome, Atypical",CFHR3,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,473
+235400,"Hemolytic Uremic Syndrome, Atypical",CFHR1,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,474
+612922,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 2",CD46,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,475
+612923,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 3",CFI,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,476
+612924,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 4",CFB,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,477
+612925,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 5",C3,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,478
+612926,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 6",THBD,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,479
+267700,"Hemophagocytic Lymphohistiocytosis, Familial, 1",FHL1,PS267700,"Hemophagocytic lymphohistiocytosis, familial",Bone marrow,0,0,480
+603553,"Hemophagocytic Lymphohistiocytosis, Familial, 2",PRF1,PS267700,"Hemophagocytic lymphohistiocytosis, familial",Bone marrow,2,2,481
+608898,"Hemophagocytic Lymphohistiocytosis, Familial, 3",UNC13D,PS267700,"Hemophagocytic lymphohistiocytosis, familial",Bone marrow,2,2,482
+603552,"Hemophagocytic Lymphohistiocytosis, Familial, 4",STX11,PS267700,"Hemophagocytic lymphohistiocytosis, familial",Bone marrow,2,2,483
+613101,"Hemophagocytic Lymphohistiocytosis, Familial, 5",STXBP2,PS267700,"Hemophagocytic lymphohistiocytosis, familial",Bone marrow,2,2,484
+306700,Hemophilia A,F8,,,Bone marrow,0,0,485
+306800,Hemophilia A With Vascular Abnormality,,,,Bone marrow,0,0,486
+306900,Hemophilia B,F9,,,Bone marrow,0,0,487
+306930,Hemopoietic Proliferation,,,,Bone marrow,0,0,488
+612356,Heparin Cofactor Ii Deficiency,SERPIND1,PS188050,Thrombophilia,Bone marrow,2,0,489
+618549,"Hepatitis, Fulminant Viral, Susceptibility To",IL18BP,,,Bone marrow,1,1,490
+203300,Hermansky-pudlak Syndrome,HPS1,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,491
+617050,Hermansky-pudlak Syndrome 10,AP3D1,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,492
+608233,Hermansky-pudlak Syndrome 2,AP3B1,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,493
+614072,Hermansky-pudlak Syndrome 3,HPS3,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,494
+614073,Hermansky-pudlak Syndrome 4,HPS4,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,495
+614074,Hermansky-pudlak Syndrome 5,HPS5,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,496
+614075,Hermansky-pudlak Syndrome 6,HPS6,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,497
+614076,Hermansky-pudlak Syndrome 7,DTNBP1,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,498
+614077,Hermansky-pudlak Syndrome 8,BLOC1S3,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,499
+614171,Hermansky-pudlak Syndrome 9,BLOC1S6,PS203300,Hermansky-Pudlak syndrome,Bone marrow,2,2,500
+300049,"Heterotopia, Periventricular, X-linked Dominant",FLNA,PS300049,Periventricular nodular heterotopia,Bone marrow,2,2,501
+235700,Hexokinase Deficiency Hemolytic Anemia,HK1,,,Bone marrow,2,2,502
+235900,"Histiocytosis, Familial Lipochrome",,,,Bone marrow,0,0,503
+142630,"Histiocytosis, Progressive Mucinous",,,,Bone marrow,0,0,504
+602782,Histiocytosis-lymphadenopathy Plus Syndrome,SLC29A3,,,Bone marrow,2,2,505
+236000,Hodgkin Lymphoma,KLHDC8B,,,Bone marrow,0,0,506
+253270,Holocarboxylase Synthetase Deficiency,HLCS,,,Bone marrow,1,1,507
+610680,"Holoprosencephaly, Recurrent Infections, And Monocytosis",,,,Bone marrow,0,0,508
+236200,Homocystinuria Due To Cystathionine Beta-synthase Deficiency,CBS,,,Bone marrow,0,0,509
+236270,"Homocystinuria-megaloblastic Anemia Due To Defect In Cobalamin Metabolism,cble Complementation Type",MTRR,,,Bone marrow,0,0,510
+250940,"Homocystinuria-megaloblastic Anemia, Cblg Complementation Type",MTR,,,Bone marrow,0,0,511
+236750,"Hydrops Fetalis, Idiopathic",,,,Bone marrow,0,0,512
+617300,"Hydrops Fetalis, Nonimmune, And/or Atrial Septal Defect, Susceptibility To",EPHB4,PS153100,Lymphatic malformation,Bone marrow,0,0,513
+617021,"Hydrops, Lactic Acidosis, And Sideroblastic Anemia",LARS2,,,Bone marrow,2,2,514
+215140,Hydrops-ectopic Calcification-moth-eaten Skeletal Dysplasia,LBR,,,Bone marrow,1,1,515
+260920,Hyper-igd Syndrome,MVK,,,Bone marrow,2,2,516
+147060,Hyper-ige Recurrent Infection Syndrome,STAT3,PS147060,Hyper-IgE recurrent infection syndrome,Bone marrow,2,1,517
+618282,"Hyper-ige Recurrent Infection Syndrome 3, Autosomal Recessive",ZNF341,PS147060,Hyper-IgE recurrent infection syndrome,Bone marrow,0,0,518
+618523,"Hyper-ige Recurrent Infection Syndrome 4, Autosomal Recessive",IL6ST,PS147060,Hyper-IgE recurrent infection syndrome,Bone marrow,2,2,519
+618944,"Hyper-ige Recurrent Infection Syndrome 5, Autosomal Recessive",IL6R,PS147060,Hyper-IgE recurrent infection syndrome,Bone marrow,2,2,520
+237800,"Hyperbilirubinemia, Shunt, Primary",,,,Bone marrow,0,0,521
+607685,"Hypereosinophilic Syndrome, Idiopathic",PDGFRA,,,Bone marrow,0,0,522
+144050,Hyperheparinemia,,,,Bone marrow,0,0,523
+243700,"Hyperimmunoglobulin E-recurrent Infection Syndrome, Autosomal Recessive",DOCK8,PS147060,Hyper-IgE recurrent infection syndrome,Bone marrow,2,2,524
+238700,Hyperlysinemia,AASS,,,Bone marrow,0,0,525
+613280,"Hypermanganesemia With Dystonia, Polycythemia, And Cirrhosis",SLC30A10,PS613280,Hypermanganesemia with dystonia,Bone marrow,0,0,526
+239200,"Hyperparathyroidism, Neonatal Severe",CASR,PS145000,Hyperparathyroidism,Bone marrow,0,0,527
+615555,Hyperprolactinemia,PRLR,,,Bone marrow,0,0,528
+613845,"Hyperuricemia, Pulmonary Hypertension, Renal Failure, And Alkalosis",SARS2,,,Bone marrow,2,0,529
+613092,"Hyperuricemic Nephropathy, Familial Juvenile, 2",REN,PS162000,Tubulointerstitial kidney disease,Bone marrow,0,0,530
+617056,"Hyperuricemic Nephropathy, Familial Juvenile, 4",SEC61A1,PS162000,Tubulointerstitial kidney disease,Bone marrow,2,1,531
+240150,"Hypervitaminosis A, Susceptibility To",,,,Bone marrow,0,0,532
+615558,"Hypobetalipoproteinemia, Familial, 1",APOB,,,Bone marrow,0,0,533
+241500,"Hypophosphatasia, Infantile",ALPL,,,Bone marrow,2,2,534
+607236,"Hypoprebetalipoproteinemia, Acanthocytosis, Retinitis Pigmentosa,and Pallidal Degeneration",PANK2,,,Bone marrow,2,2,535
+614450,"Hypothyroidism, Congenital, Nongoitrous, 6",THRA,PS275200,"Hypothyroidism, congenital, nongoitrous",Bone marrow,2,0,536
+308200,Ichthyosis And Male Hypogonadism,,,,Bone marrow,0,0,537
+604777,"Ichthyosis, Lamellar, 3",CYP4F22,PS242300,"Ichthyosis, congenital, autosomal recessive",Bone marrow,0,0,538
+607626,"Ichthyosis, Leukocyte Vacuoles, Alopecia, And Sclerosing Cholangitis",CLDN1,,,Bone marrow,2,2,539
+161950,"Iga Nephropathy, Susceptibility To, 1",IGAN1,PS161950,IgA nephropathy,Bone marrow,0,0,540
+618882,Imerslund-grasbeck Syndrome 2,AMN,PS261100,Imerslund-Grasbeck syndrome,Bone marrow,0,0,541
+242700,Immune Defect Due To Absence Of Thymus,,,,Bone marrow,0,0,542
+612783,Immunodeficiency 10,STIM1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,543
+617638,Immunodeficiency 11b With Atopic Dermatitis,CARD11,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,544
+615518,Immunodeficiency 13,UNC119,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,545
+615513,Immunodeficiency 14,PIK3CD,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,546
+615593,Immunodeficiency 16,TNFRSF4,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,547
+615607,Immunodeficiency 17,CD3G,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,548
+615615,Immunodeficiency 18,CD3E,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,549
+615617,Immunodeficiency 19,CD3D,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,550
+614172,Immunodeficiency 21,GATA2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,551
+615758,Immunodeficiency 22,LCK,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,552
+615816,Immunodeficiency 23,PGM3,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,553
+615897,Immunodeficiency 24,CTPS1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,554
+610163,Immunodeficiency 25,CD247,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,555
+209950,"Immunodeficiency 27a, Mycobacteriosis, Ar",IFNGR1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,556
+614162,Immunodeficiency 31c,STAT1,PS114580,Familial candidiasis,Bone marrow,2,2,557
+614162,Immunodeficiency 31c,STAT1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,558
+616005,Immunodeficiency 36,PIK3R1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,559
+616433,Immunodeficiency 40,DOCK2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,560
+606367,Immunodeficiency 41 With Lymphoproliferation And Autoimmunity,IL2RA,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,561
+616740,Immunodeficiency 46,TFRC,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,562
+300972,Immunodeficiency 47,ATP6AP1,PS212066,"Congenital disorders of glycosylation, type II",Bone marrow,2,2,563
+300972,Immunodeficiency 47,ATP6AP1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,564
+617237,Immunodeficiency 49,BCL11B,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,565
+300988,Immunodeficiency 50,MSN,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,566
+617514,Immunodeficiency 52,LAT,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,567
+617827,Immunodeficiency 55,GINS1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,568
+233600,Immunodeficiency 59 And Hypoglycemia,HYOU1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,569
+618394,Immunodeficiency 60,BACH2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,570
+618459,Immunodeficiency 62,ARHGEF1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,571
+618495,Immunodeficiency 63 With Lymphoproliferation And Autoimmunity,IL2RB,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,572
+618534,Immunodeficiency 64,RASGRP1,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,573
+607676,Immunodeficiency 67,IRAK4,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,574
+612260,Immunodeficiency 68,MYD88,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,575
+618963,"Immunodeficiency 69, Mycobacteriosis",IFNG,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,576
+618969,Immunodeficiency 70,IVNS1ABP,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,577
+618982,Immunodeficiency 72 With Autoinflammation,NCKAP1L,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,578
+608203,Immunodeficiency 73a With Defective Neutrophil Chemotaxix And Leukocytosis,RAC2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,579
+618986,Immunodeficiency 73b With Defective Neutrophil Chemotaxis And Lymphopenia,RAC2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,580
+618987,Immunodeficiency 73c With Defective Neutrophil Chemotaxis And Hypogammaglobulinemia,RAC2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,581
+619126,Immunodeficiency 75,TET2,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,582
+615401,Immunodeficiency 8,CORO1A,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,583
+610798,Immunodeficiency Due To Defect In Mapbp-interacting Protein,LAMTOR2,,,Bone marrow,2,2,584
+613179,Immunodeficiency Due To Purine Nucleoside Phosphorylase Deficiency,PNP,,,Bone marrow,2,2,585
+242840,"Immunodeficiency With Cleft Lip/palate, Cataract, Hypopigmentation,and Absent Corpus Callosum",EPG5,,,Bone marrow,0,0,586
+606843,"Immunodeficiency With Hyper-igm, Type 3",CD40,PS308230,Immunodeficiency with hyper-IgM,Bone marrow,2,2,587
+608184,"Immunodeficiency With Hyper-igm, Type 4",,PS308230,Immunodeficiency with hyper-IgM,Bone marrow,0,0,588
+607594,"Immunodeficiency, Common Variable, 1",ICOS,PS607594,"Immunodeficiency, common variable",Bone marrow,2,2,589
+616576,"Immunodeficiency, Common Variable, 12",NFKB1,PS607594,"Immunodeficiency, common variable",Bone marrow,2,2,590
+616873,"Immunodeficiency, Common Variable, 13",IKZF1,PS607594,"Immunodeficiency, common variable",Bone marrow,2,2,591
+240500,"Immunodeficiency, Common Variable, 2",TNFRSF13B,PS607594,"Immunodeficiency, common variable",Bone marrow,2,2,592
+613496,"Immunodeficiency, Common Variable, 6",CD81,PS607594,"Immunodeficiency, common variable",Bone marrow,2,2,593
+614700,"Immunodeficiency, Common Variable, 8, With Autoimmunity",LRBA,PS607594,"Immunodeficiency, common variable",Bone marrow,2,2,594
+611926,"Immunodeficiency, Gonadal Dysgenesis, And Pulmonary Fibrosis",,,,Bone marrow,0,0,595
+242870,"Immunodeficiency, Partial Combined, With Absence Of Hla Determinantsand Beta-2-microglobulin From Lymphocytes",,,,Bone marrow,0,0,596
+308230,"Immunodeficiency, X-linked, With Hyper-igm",CD40LG,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,597
+308230,"Immunodeficiency, X-linked, With Hyper-igm",CD40LG,PS308230,Immunodeficiency with hyper-IgM,Bone marrow,2,2,598
+300853,"Immunodeficiency, X-linked, With Magnesium Defect, Epstein-barr Virus Infection And Neoplasia",MAGT1,,,Bone marrow,2,1,599
+242860,Immunodeficiency-centromeric Instability-facial Anomalies Syndrome1,DNMT3B,PS242860,Immunodeficiency-centromeric instability-facial anomalies,Bone marrow,2,2,600
+304790,"Immunodysregulation, Polyendocrinopathy, And Enteropathy, X-linked",FOXP3,,,Bone marrow,0,0,601
+242880,Immunoerythromyeloid Hypoplasia,,,,Bone marrow,0,0,602
+609529,Immunoglobulin A Deficiency 2,TNFRSF13B,,,Bone marrow,2,2,603
+242900,"Immunoosseous Dysplasia, Schimke Type",SMARCAL1,,,Bone marrow,2,2,604
+617425,Immunoskeletal Dysplasia With Neurodevelopmental Abnormalities,EXTL3,,,Bone marrow,0,0,605
+308300,Incontinentia Pigmenti,IKBKG,,,Bone marrow,2,1,606
+615438,Infantile Liver Failure Syndrome 1,LARS1,PS615438,Infantile liver failure syndrome,Bone marrow,1,1,607
+616483,Infantile Liver Failure Syndrome 2,NBAS,PS615438,Infantile liver failure syndrome,Bone marrow,0,0,608
+618641,Infantile Liver Failure Syndrome 3,RINT1,PS615438,Infantile liver failure syndrome,Bone marrow,0,0,609
+269920,Infantile Sialic Acid Storage Disorder,SLC17A5,,,Bone marrow,2,2,610
+613759,"Infections, Recurrent, With Encephalopathy, Hepatic Dysfunction, And Cardiovascular Malformations",FADD,,,Bone marrow,2,1,611
+191390,Inflammatory Bowel Disease 11,IBD11,PS266600,Inflammatory bowel disease,Bone marrow,0,0,612
+613148,"Inflammatory Bowel Disease 28, Early Onset, Autosomal Recessive",IL10RA,PS266600,Inflammatory bowel disease,Bone marrow,2,2,613
+618213,"Inflammatory Bowel Disease, Immunodeficiency, And Encephalopathy",TGFB1,,,Bone marrow,1,1,614
+173470,"Integrin, Beta-3",,,,Bone marrow,0,0,615
+618092,"Intellectual Developmental Disorder With Speech Delay, Dysmorphic Facies, And T-cell Abnormalities",BCL11B,,,Bone marrow,1,1,616
+612852,Interleukin 1 Receptor Antagonist Deficiency,IL1RN,,,Bone marrow,1,1,617
+615486,Interstitial Lung And Liver Disease,MARS1,,,Bone marrow,0,0,618
+300048,"Intestinal Pseudoobstruction, Neuronal, Chronic Idiopathic, X-linked",FLNA,,,Bone marrow,2,1,619
+600546,Intrauterine Growth Retardation With Increased Mitomycin C Sensitivity,,,,Bone marrow,0,0,620
+618336,"Intrauterine Growth Retardation, Metaphyseal Dysplasia, Adrenal Hypoplasia Congenita, Genital Anomalies, And Immunodeficiency",POLE,,,Bone marrow,2,1,621
+243320,"Intrinsic Factor And R Binder, Combined Congenital Deficiency Of",,,,Bone marrow,0,0,622
+261000,Intrinsic Factor Deficiency,CBLIF,,,Bone marrow,0,0,623
+206200,Iron-refractory Iron Deficiency Anemia,TMPRSS6,,,Bone marrow,0,0,624
+611283,Isobutyryl-coa Dehydrogenase Deficiency,ACAD8,,,Bone marrow,1,1,625
+243500,Isovaleric Acidemia,IVD,,,Bone marrow,2,2,626
+147750,Ivic Syndrome,SALL4,,,Bone marrow,0,0,627
+147791,Jacobsen Syndrome,JBS,,,Bone marrow,0,0,628
+618795,Juvenile Arthritis,LACC1,,,Bone marrow,0,0,629
+607785,Juvenile Myelomonocytic Leukemia,ARHGAP26,,,Bone marrow,2,2,630
+607785,Juvenile Myelomonocytic Leukemia,CBL,,,Bone marrow,2,2,631
+607785,Juvenile Myelomonocytic Leukemia,PTPN11,,,Bone marrow,2,2,632
+607785,Juvenile Myelomonocytic Leukemia,NF1,,,Bone marrow,2,2,633
+174900,"Juvenile Polyposis Syndrome Juvenile Intestinal Polyposis Polyposis, Familial, Of Entire Gastrointestinal Tract Juvenile Polyposis Of Stomach, Included Juvenile Polyposis Coli, Included",BMPR1A,,,Bone marrow,0,0,634
+174900,"Juvenile Polyposis Syndrome Juvenile Intestinal Polyposis Polyposis, Familial, Of Entire Gastrointestinal Tract Juvenile Polyposis Of Stomach, Included Juvenile Polyposis Coli, Included",SMAD4,,,Bone marrow,2,0,635
+175050,Juvenile Polyposis/hereditary Hemorrhagic Telangiectasia Syndrome,SMAD4,,,Bone marrow,2,0,636
+147920,Kabuki Syndrome,KMT2D,PS147920,Kabuki syndrome,Bone marrow,0,0,637
+530000,Kearns-sayre Syndrome,,,,Bone marrow,0,0,638
+244460,"Kenny-caffey Syndrome, Type 1",TBCE,PS127000,Kenny-Caffey syndrome,Bone marrow,2,1,639
+127000,"Kenny-caffey Syndrome, Type 2",FAM111A,PS127000,Kenny-Caffey syndrome,Bone marrow,2,1,640
+149000,Klippel-trenaunay-weber Syndrome,KTWS,,,Bone marrow,0,0,641
+245200,Krabbe Disease,GALC,,,Bone marrow,0,0,642
+607330,Lathosterolosis,SC5D,,,Bone marrow,2,2,643
+245900,Lecithin:cholesterol Acyltransferase Deficiency,LCAT,,,Bone marrow,0,0,644
+300322,Lesch-nyhan Syndrome,HPRT1,,,Bone marrow,2,1,645
+615368,Lethal Congenital Contracture Syndrome 5,DNM2,PS253310,Lethal congenital contracture syndrome,Bone marrow,0,0,646
+246400,Letterer-siwe Disease,,,,Bone marrow,0,0,647
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",GNB1,,,Bone marrow,0,0,648
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",TAL1,,,Bone marrow,0,0,649
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",NBN,,,Bone marrow,2,2,650
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",TAL2,,,Bone marrow,0,0,651
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",NUP214,,,Bone marrow,0,0,652
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",ALL1,,,Bone marrow,0,0,653
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",FLT3,,,Bone marrow,0,0,654
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",BAX,,,Bone marrow,0,0,655
+613065,"Leukemia, Acute Lymphocytic, Susceptibility To, 1",BCR,,,Bone marrow,0,0,656
+151380,"Leukemia, Acute Monocytic",,,,Bone marrow,0,0,657
+246470,"Leukemia, Acute Myelocytic, With Polyposis Coli And Colon Cancer",,,,Bone marrow,0,0,658
+601626,"Leukemia, Acute Myeloid",DNMT3A,,,Bone marrow,2,2,659
+601626,"Leukemia, Acute Myeloid",GATA2,,,Bone marrow,2,2,660
+601626,"Leukemia, Acute Myeloid",LPP,,,Bone marrow,2,2,661
+601626,"Leukemia, Acute Myeloid",CHIC2,,,Bone marrow,2,2,662
+601626,"Leukemia, Acute Myeloid",KIT,,,Bone marrow,2,2,663
+601626,"Leukemia, Acute Myeloid",TERT,,,Bone marrow,2,2,664
+601626,"Leukemia, Acute Myeloid",NPM1,,,Bone marrow,2,2,665
+601626,"Leukemia, Acute Myeloid",JAK2,,,Bone marrow,2,2,666
+601626,"Leukemia, Acute Myeloid",NUP214,,,Bone marrow,2,2,667
+601626,"Leukemia, Acute Myeloid",MLLT10,,,Bone marrow,2,2,668
+601626,"Leukemia, Acute Myeloid",PICALM,,,Bone marrow,2,2,669
+601626,"Leukemia, Acute Myeloid",ETV6,,,Bone marrow,2,2,670
+601626,"Leukemia, Acute Myeloid",KRAS,,,Bone marrow,2,2,671
+601626,"Leukemia, Acute Myeloid",FLT3,,,Bone marrow,2,2,672
+601626,"Leukemia, Acute Myeloid",CBFB,,,Bone marrow,2,2,673
+601626,"Leukemia, Acute Myeloid",SH3GL1,,,Bone marrow,2,2,674
+601626,"Leukemia, Acute Myeloid",CEBPA,,,Bone marrow,2,2,675
+601626,"Leukemia, Acute Myeloid",RUNX1,,,Bone marrow,2,2,676
+308960,"Leukemia, Acute, ?x-linked",,,,Bone marrow,0,0,677
+151400,"Leukemia, Chronic Lymphocytic",,,,Bone marrow,0,0,678
+608232,"Leukemia, Chronic Myeloid",ABL1,,,Bone marrow,0,0,679
+608232,"Leukemia, Chronic Myeloid",BCR,,,Bone marrow,0,0,680
+116920,"Leukocyte Adhesion Deficiency, Type I",ITGB2,,,Bone marrow,2,2,681
+612840,"Leukocyte Adhesion Deficiency, Type Iii",FERMT3,,,Bone marrow,2,2,682
+151500,"Leukocyte Nuclear Appendages, Hereditary Prevalence Of",,,,Bone marrow,0,0,683
+608809,"Leukoencephalopathy, Arthritis, Colitis, And Hypogammaglobulinema",,,,Bone marrow,0,0,684
+151623,Li-fraumeni Syndrome 1,TP53,PS151623,Li-Fraumeni syndrome,Bone marrow,1,1,685
+246550,Lichtenstein Syndrome,,,,Bone marrow,0,0,686
+606593,Lig4 Syndrome,LIG4,,,Bone marrow,2,2,687
+613070,"Liver Failure, Acute Infantile",TRMU,,,Bone marrow,0,0,688
+615582,Loeys-dietz Syndrome 5,TGFB3,PS609192,Loeys-Dietz syndrome,Bone marrow,0,0,689
+613795,"Loeys-dietz Syndrome, Type 3",SMAD3,PS609192,Loeys-Dietz syndrome,Bone marrow,0,0,690
+614816,"Loeys-dietz Syndrome, Type 4",TGFB2,PS609192,Loeys-Dietz syndrome,Bone marrow,0,0,691
+617241,"Lung Disease, Immunodeficiency, And Chromosome Breakage Syndrome",NSMCE3,,,Bone marrow,0,0,692
+152800,"Lymphangiectasia, Intestinal",,,,Bone marrow,0,0,693
+616843,"Lymphedema, Hereditary, Iii",PIEZO1,PS153100,Lymphatic malformation,Bone marrow,0,0,694
+614038,"Lymphedema, Primary, With Myelodysplasia",GATA2,,,Bone marrow,2,2,695
+247640,"Lymphoblastic Leukemia, Acute, With Lymphomatous Features",LALL,,,Bone marrow,0,0,696
+247630,"Lymphoid System Deterioration, Progressive",,,,Bone marrow,0,0,697
+605027,"Lymphoma, Non-hodgkin, Familial",RAD54L,,,Bone marrow,0,0,698
+605027,"Lymphoma, Non-hodgkin, Familial",BCL10,,,Bone marrow,0,0,699
+605027,"Lymphoma, Non-hodgkin, Familial",CASP10,,,Bone marrow,0,0,700
+605027,"Lymphoma, Non-hodgkin, Familial",RAD54B,,,Bone marrow,0,0,701
+605027,"Lymphoma, Non-hodgkin, Familial",PRF1,,,Bone marrow,0,0,702
+247800,"Lymphopenic Hypergammaglobulinemia, Antibody Deficiency, Autoimmunehemolytic Anemia, And Glomerulonephritis",,,,Bone marrow,0,0,703
+613011,Lymphoproliferative Syndrome 1,ITK,PS308240,Lymphoproliferative syndrome,Bone marrow,2,2,704
+615122,Lymphoproliferative Syndrome 2,CD27,PS308240,Lymphoproliferative syndrome,Bone marrow,2,2,705
+618261,Lymphoproliferative Syndrome 3,CD70,PS308240,Lymphoproliferative syndrome,Bone marrow,0,0,706
+308240,"Lymphoproliferative Syndrome, X-linked, 1",SH2D1A,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,707
+308240,"Lymphoproliferative Syndrome, X-linked, 1",SH2D1A,PS308240,Lymphoproliferative syndrome,Bone marrow,2,2,708
+300635,"Lymphoproliferative Syndrome, X-linked, 2",XIAP,PS308240,Lymphoproliferative syndrome,Bone marrow,2,2,709
+222700,Lysinuric Protein Intolerance,SLC7A7,,,Bone marrow,2,2,710
+278000,Lysosomal Acid Lipase Deficiency,LIPA,,,Bone marrow,2,2,711
+613075,"Macrocephaly, Alopecia, Cutis Laxa, And Scoliosis",RIN2,,,Bone marrow,0,0,712
+602501,Macrocephaly-capillary Malformation,PIK3CA,,,Bone marrow,0,0,713
+605309,Macrocephaly/autism Syndrome,PTEN,,,Bone marrow,2,1,714
+600084,"Macrocytosis, Familial",,,,Bone marrow,0,0,715
+153600,"Macroglobulinemia, Waldenstrom, Somatic",MYD88,PS153600,"Macroglobulinemia, Waldenstrom",Bone marrow,0,0,716
+248100,Macrosomia Adiposa Congenita,,,,Bone marrow,0,0,717
+600208,Macrothrombocytopenia And Progressive Sensorineural Deafness,,,,Bone marrow,0,0,718
+613112,"Macrothrombocytopenia, Autosomal Dominant, Tubb1-related",TUBB1,,,Bone marrow,0,0,719
+603075,"Macular Degeneration, Age-related, 1",HMCN1,PS603075,"Macular degeneration, age-related",Bone marrow,0,0,720
+603075,"Macular Degeneration, Age-related, 1",CFHR3,PS603075,"Macular degeneration, age-related",Bone marrow,0,0,721
+603075,"Macular Degeneration, Age-related, 1",CFHR1,PS603075,"Macular degeneration, age-related",Bone marrow,0,0,722
+603075,"Macular Degeneration, Age-related, 1",APOE,PS603075,"Macular degeneration, age-related",Bone marrow,1,1,723
+609628,Majeed Syndrome,LPIN2,,,Bone marrow,2,1,724
+602248,Malignant Atrophic Papulosis,,,,Bone marrow,0,0,725
+145600,"Malignant Hyperthermia, Susceptibility To, 1",RYR1,PS145600,Malignant hyperthermia,Bone marrow,0,0,726
+619127,Mandibuloacral Dysplasia Progeroid Syndrome,MTX2,,,Bone marrow,0,0,727
+248500,"Mannosidosis, Alpha B, Lysosomal",MAN2B1,,,Bone marrow,2,2,728
+616914,Marfan Lipodystrophy Syndrome,FBN1,,,Bone marrow,0,0,729
+154800,Mast Cell Disease,KIT,,,Bone marrow,2,2,730
+155100,May-hegglin Anomaly,MYH9,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,731
+300842,Mcleod Syndrome,XK,,,Bone marrow,2,2,732
+174000,Medullary Cystic Kidney Disease 1,MUC1,PS162000,Tubulointerstitial kidney disease,Bone marrow,0,0,733
+261100,Megaloblastic Anemia 1,CUBN,PS261100,Imerslund-Grasbeck syndrome,Bone marrow,0,0,734
+613839,Megaloblastic Anemia Due To Dihydrofolate Reductase Deficiency,DHFR,,,Bone marrow,2,2,735
+309400,Menkes Disease,ATP7A,,,Bone marrow,0,0,736
+300519,"Mental Retardation, X-linked, Syndromic, Martin-probst Type",MRXSMP,PS309510,"Mental retardation, X-linked syndromic",Bone marrow,0,0,737
+309580,"Mental Retardation-hypotonic Facies Syndrome, X-linked, 1",ATRX,,,Bone marrow,2,2,738
+250700,Methemoglobin Reductase Deficiency,,,,Bone marrow,0,0,739
+250790,Methemoglobinemia And Ambiguous Genitalia,CYB5A,,,Bone marrow,0,0,740
+250800,Methemoglobinemia Due To Deficiency Of Methemoglobin Reductase,CYB5R3,,,Bone marrow,0,0,741
+277400,"Methylmalonic Aciduria And Homocystinuria, Cblc Type",MMACHC,,,Bone marrow,0,0,742
+277400,"Methylmalonic Aciduria And Homocystinuria, Cblc Type",PRDX1,,,Bone marrow,2,2,743
+277410,"Methylmalonic Aciduria And Homocystinuria, Cbld Type",MMADHC,,,Bone marrow,2,2,744
+277380,"Methylmalonic Aciduria And Homocystinuria, Cblf Type",LMBRD1,,,Bone marrow,2,2,745
+614857,"Methylmalonic Aciduria And Homocystinuria, Cblj Type",ABCD4,,,Bone marrow,2,2,746
+251000,Methylmalonic Aciduria Due To Methylmalonyl-coa Mutase Deficiency,MMUT,,,Bone marrow,0,0,747
+251100,"Methylmalonic Aciduria, Cbla Type",MMAA,,,Bone marrow,2,2,748
+251110,"Methylmalonic Aciduria, Cblb Type",MMAB,,,Bone marrow,0,0,749
+610377,Mevalonic Aciduria,MVK,,,Bone marrow,2,1,750
+251190,"Microcephalic Primordial Dwarfism, Toriello Type",,,,Bone marrow,0,0,751
+300990,"Midface Hypoplasia, Hearing Impairment, Elliptocytosis, And Nephrocalcinosis",AMMECR1,,,Bone marrow,0,0,752
+617053,Mirage Syndrome,SAMD9,,,Bone marrow,0,0,753
+276300,Mismatch Repair Cancer Syndrome,MLH1,PS276300,Mismatch repair cancer syndrome,Bone marrow,2,1,754
+619096,Mismatch Repair Cancer Syndrome 2,MSH2,PS276300,Mismatch repair cancer syndrome,Bone marrow,2,1,755
+619097,Mismatch Repair Cancer Syndrome 3,MSH6,PS276300,Mismatch repair cancer syndrome,Bone marrow,2,1,756
+619101,Mismatch Repair Cancer Syndrome 4,PMS2,PS276300,Mismatch repair cancer syndrome,Bone marrow,2,1,757
+124000,Mitochondrial Complex Iii Deficiency,BCS1L,PS124000,"Mitochondrial complex III deficiency, nuclear type",Bone marrow,0,0,758
+618775,"Mitochondrial Complex Iii Deficiency, Nuclear Type 10",UQCRFS1,PS124000,"Mitochondrial complex III deficiency, nuclear type",Bone marrow,2,1,759
+615838,"Mitochondrial Complex Iii Deficiency, Nuclear Type 8",LYRM7,PS124000,"Mitochondrial complex III deficiency, nuclear type",Bone marrow,0,0,760
+220110,Mitochondrial Complex Iv Deficiency,SURF1,PS220110,"Mitochondrial complex IV deficiency, nuclear-type",Bone marrow,0,0,761
+619055,"Mitochondrial Complex Iv Deficiency, Nuclear Type 12",PET100,PS220110,"Mitochondrial complex IV deficiency, nuclear-type",Bone marrow,0,0,762
+619046,"Mitochondrial Complex Iv Deficiency, Nuclear Type 3",COX10,PS220110,"Mitochondrial complex IV deficiency, nuclear-type",Bone marrow,1,1,763
+615471,Mitochondrial Dna Depletion Syndrome 13 (encephalomyopathic Type),FBXL4,PS603041,Mitochondrial DNA depletion syndrome,Bone marrow,2,1,764
+617156,Mitochondrial Dna Depletion Syndrome 15 (hepatocerebral Type),TFAM,PS603041,Mitochondrial DNA depletion syndrome,Bone marrow,0,0,765
+618811,Mitochondrial Dna Depletion Syndrome 18,SLC25A21,PS603041,Mitochondrial DNA depletion syndrome,Bone marrow,0,0,766
+618972,Mitochondrial Dna Depletion Syndrome 19,SLC25A10,PS603041,Mitochondrial DNA depletion syndrome,Bone marrow,2,0,767
+251880,"Mitochondrial Dna Depletion Syndrome, Hepatocerebral Form",DGUOK,PS603041,Mitochondrial DNA depletion syndrome,Bone marrow,2,1,768
+600462,Mitochondrial Myopathy And Sideroblastic Anemia,PUS1,PS600462,"Myopathy, lactic acidosis, and sideroblastic anemia",Bone marrow,2,2,769
+251900,"Mitochondrial Myopathy, Episodic, With Optic Atrophy And Reversible Leukoencephalopathy",FDX2,,,Bone marrow,0,0,770
+619041,Monosomy 7 Myelodysplasia And Leukemia Syndrome 2,SAMD9,PS252270,Monosomy 7 myelodysplasia and leukemia syndrome,Bone marrow,0,0,771
+257300,Mosaic Variegated Aneuploidy Syndrome 1,BUB1B,PS257300,Mosaic variegated aneuploidy syndrome,Bone marrow,2,2,772
+300845,"Moyamoya Disease 4 With Short Stature, Hypergonadotropic Hypogonadism,and Facial Dysmorphism",MYMY4,PS252350,Moyamoya disease,Bone marrow,0,0,773
+191900,Muckle-wells Syndrome,NLRP3,,,Bone marrow,2,1,774
+158310,"Mucoepithelial Dysplasia, Hereditary",SREBF1,,,Bone marrow,1,1,775
+617303,Mucopolysaccharidosis-plus Syndrome,VPS33A,,,Bone marrow,2,2,776
+254500,Multiple Myeloma,CCND1,,,Bone marrow,0,0,777
+254500,Multiple Myeloma,LIG4,,,Bone marrow,0,0,778
+253600,"Muscular Dystrophy, Limb-girdle, Type 2a",CAPN3,PS253600,"Muscular dystrophy, limb-girdle, autosomal recessive",Bone marrow,0,0,779
+254400,Mycosis Fungoides,,,,Bone marrow,0,0,780
+600080,"Myelocytic Leukemia-like Syndrome, Familial, Chronic",,,,Bone marrow,0,0,781
+252270,Myelodysplasia And Leukemia Syndrome With Monosomy 7,SAMD9L,PS252270,Monosomy 7 myelodysplasia and leukemia syndrome,Bone marrow,2,2,782
+601347,"Myelodysplasia, Immunodeficiency, Facial Dysmorphism, Short Stature,",,,,Bone marrow,0,0,783
+614286,Myelodysplastic Syndrome,GNB1,,,Bone marrow,0,0,784
+614286,Myelodysplastic Syndrome,SF3B1,,,Bone marrow,0,0,785
+614286,Myelodysplastic Syndrome,GATA2,,,Bone marrow,2,2,786
+614286,Myelodysplastic Syndrome,TET2,,,Bone marrow,0,0,787
+614286,Myelodysplastic Syndrome,ASXL1,,,Bone marrow,0,0,788
+254450,"Myelofibrosismyelofibrosis With Myeloid Metaplasia, Included",MPL,,,Bone marrow,0,0,789
+254450,"Myelofibrosismyelofibrosis With Myeloid Metaplasia, Included",JAK2,,,Bone marrow,0,0,790
+254450,"Myelofibrosismyelofibrosis With Myeloid Metaplasia, Included",SH2B3,,,Bone marrow,0,0,791
+254450,"Myelofibrosismyelofibrosis With Myeloid Metaplasia, Included",CALR,,,Bone marrow,0,0,792
+310350,Myelolymphatic Insufficiency,,,,Bone marrow,0,0,793
+254600,Myeloperoxidase Deficiency,MPO,,,Bone marrow,2,2,794
+254700,"Myeloproliferative Disease, Autosomal Recessive",,,,Bone marrow,0,0,795
+131440,"Myeloproliferative Disorder, Chronic, With Eosinophilia",PDGFRB,,,Bone marrow,0,0,796
+159595,"Myeloproliferative Syndrome, Transient",TAM,,,Bone marrow,0,0,797
+616871,"Myeloproliferative/lymphoproliferative Neoplasms, Familial (multiple Types), Susceptibility To",DDX41,,,Bone marrow,2,2,798
+255125,"Myopathy With Exercise Intolerance, Swedish Type",ISCU,,,Bone marrow,0,0,799
+613561,"Myopathy, Lactic Acidosis, And Sideroblastic Anemia 2",YARS2,PS600462,"Myopathy, lactic acidosis, and sideroblastic anemia",Bone marrow,2,2,800
+310465,N Syndrome,,,,Bone marrow,0,0,801
+609981,Natural Killer Cell And Glucocorticoid Deficiency With Dna Repairdefect,MCM4,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,802
+256100,Nephronophthisis 1,NPHP1,PS256100,Nephronophthisis,Bone marrow,0,0,803
+613550,Nephronophthisis 11,TMEM67,PS256100,Nephronophthisis,Bone marrow,0,0,804
+606966,Nephronophthisis 4,NPHP4,PS256100,Nephronophthisis,Bone marrow,0,0,805
+609057,Nephropathy With Pretibial Epidermolysis Bullosa And Deafness,CD151,,,Bone marrow,0,0,806
+256150,Nephrosialidosis,,,,Bone marrow,0,0,807
+617575,"Nephrotic Syndrome, Type 14",SGPL1,PS256300,Nephrotic syndrome,Bone marrow,1,1,808
+615008,"Nephrotic Syndrome, Type 7",DGKE,PS235400,Hemolytic uremic syndrome,Bone marrow,2,1,809
+615008,"Nephrotic Syndrome, Type 7",DGKE,PS256300,Nephrotic syndrome,Bone marrow,2,1,810
+256500,Netherton Syndrome,SPINK5,,,Bone marrow,0,0,811
+256550,Neuraminidase Deficiency,NEU1,,,Bone marrow,2,2,812
+256700,Neuroblastoma,KIF1B,,,Bone marrow,2,1,813
+234200,Neurodegeneration With Brain Iron Accumulation 1,PANK2,PS234200,Neurodegeneration with brain iron accumulation,Bone marrow,0,0,814
+618451,"Neurodegeneration, Early-onset, With Choreoathetoid Movements And Microcytic Anemia",IREB2,,,Bone marrow,2,1,815
+619005,"Neurodevelopmental Disorder With Dysmorphic Facies, Impaired Speech And Hypotonia",MADD,,,Bone marrow,0,0,816
+162700,"Neutropenia, Chronic Familial",,,,Bone marrow,0,0,817
+257100,"Neutropenia, Lethal Congenital, With Eosinophilia",,,,Bone marrow,0,0,818
+607847,"Neutropenia, Nonimmune Chronic Idiopathic, Of Adults",GFI1,,,Bone marrow,2,2,819
+613107,"Neutropenia, Severe Congenital, 2, Autosomal Dominant",GFI1,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,820
+612541,"Neutropenia, Severe Congenital, 4, Autosomal Recessive",G6PC3,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,821
+615285,"Neutropenia, Severe Congenital, 5, Autosomal Recessive",VPS45,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,822
+616022,"Neutropenia, Severe Congenital, 6, Autosomal Recessive",JAGN1,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,823
+617014,"Neutropenia, Severe Congenital, 7, Autosomal Recessive",CSF3R,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,824
+618752,"Neutropenia, Severe Congenital, 8, Autosomal Dominant",SRP54,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,825
+202700,"Neutropenia, Severe Congenital, Autosomal Dominant 1",ELANE,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,826
+610738,"Neutropenia, Severe Congenital, Autosomal Recessive 3",HAX1,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,827
+300299,"Neutropenia, Severe Congenital, X-linked",WAS,PS202700,"Neutropenia, severe congenital",Bone marrow,2,2,828
+162830,"Neutrophilia, Hereditary",,,,Bone marrow,0,0,829
+608068,"Neutrophilic Dermatosis, Acute Febrile",MEFV,,,Bone marrow,2,1,830
+614323,"Nevoid Hypermelanosis, Linear And Whorled",,,,Bone marrow,0,0,831
+257200,"Niemann-pick Disease, Type A",SMPD1,,,Bone marrow,2,2,832
+607616,"Niemann-pick Disease, Type B",SMPD1,,,Bone marrow,2,2,833
+257220,"Niemann-pick Disease, Type C1",NPC1,,,Bone marrow,2,2,834
+607625,"Niemann-pick Disease, Type C2",NPC2,,,Bone marrow,2,2,835
+251260,Nijmegen Breakage Syndrome,NBN,,,Bone marrow,2,1,836
+163950,Noonan Syndrome 1,PTPN11,PS163950,Noonan syndrome,Bone marrow,2,2,837
+618624,Noonan Syndrome 12,RRAS2,PS163950,Noonan syndrome,Bone marrow,2,2,838
+619087,Noonan Syndrome 13,MAPK1,PS163950,Noonan syndrome,Bone marrow,2,2,839
+605275,Noonan Syndrome 2,LZTR1,PS163950,Noonan syndrome,Bone marrow,2,2,840
+609942,Noonan Syndrome 3,KRAS,PS163950,Noonan syndrome,Bone marrow,2,2,841
+610733,Noonan Syndrome 4,SOS1,PS163950,Noonan syndrome,Bone marrow,0,0,842
+613224,Noonan Syndrome 6,NRAS,PS163950,Noonan syndrome,Bone marrow,2,2,843
+613563,Noonan Syndrome-like Disorder With Or Without Juvenile Myelomonocyticleukemia,CBL,,,Bone marrow,2,2,844
+257790,Oculocerebral Hypopigmentation Syndrome Of Preus,,,,Bone marrow,0,0,845
+613949,Okt4 Epitope Deficiency ,CD4,,,Bone marrow,1,1,846
+603554,Omenn Syndrome,DCLRE1C,,,Bone marrow,2,2,847
+603554,Omenn Syndrome,RAG1,,,Bone marrow,2,2,848
+603554,Omenn Syndrome,RAG2,,,Bone marrow,2,2,849
+258360,Onychotrichodysplasia And Neutropenia,,,,Bone marrow,0,0,850
+258900,Orotic Aciduria,UMPS,,,Bone marrow,2,2,851
+143850,"Orthostatic Hypotensive Disorder, Streeten Type",OHDS,,,Bone marrow,0,0,852
+165660,Oslam Syndrome,,,,Bone marrow,0,0,853
+600376,Osler-rendu-weber Syndrome 2,ACVRL1,PS187300,"Telangiectasia, hereditary hemorrhagic",Bone marrow,1,1,854
+166990,"Osteochondrodysplasia, Rhizomelic, With Callosal Agenesis, Thrombocytopenia,hydrocephalus, And Hypertension",,,,Bone marrow,0,0,855
+166200,"Osteogenesis Imperfecta, Type I",COL1A1,PS166200,Osteogenesis imperfecta,Bone marrow,0,0,856
+616507,"Osteogenesis Imperfecta, Type Xvii",SPARC,PS166200,Osteogenesis imperfecta,Bone marrow,0,0,857
+611490,"Osteopetrosis,  Autosomal Recessive 4",CLCN7,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,0,858
+166600,"Osteopetrosis, Autosomal Dominant 2",CLCN7,PS607634,"Osteopetrosis, autosomal dominant",Bone marrow,0,0,859
+618107,"Osteopetrosis, Autosomal Dominant 3",PLEKHM1,PS607634,"Osteopetrosis, autosomal dominant",Bone marrow,2,0,860
+259700,"Osteopetrosis, Autosomal Recessive 1",TCIRG1,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,0,861
+259710,"Osteopetrosis, Autosomal Recessive 2",TNFSF11,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,1,862
+259730,"Osteopetrosis, Autosomal Recessive 3",CA2,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,0,863
+259720,"Osteopetrosis, Autosomal Recessive 5",OSTM1,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,0,864
+612301,"Osteopetrosis, Autosomal Recessive 7",TNFRSF11A,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,0,865
+615085,"Osteopetrosis, Autosomal Recessive 8",SNX10,PS259700,"Osteopetrosis, autosomal recessive",Bone marrow,2,0,866
+166900,"Ovalocytosis, Hereditary Hemolytic",SLC4A1,,,Bone marrow,2,2,867
+166910,"Ovalocytosis, Hereditary Hemolytic, With Defective Erythropoiesis",,,,Bone marrow,0,0,868
+185000,Overhydrated Hereditary Stomatocytosis,RHAG,,,Bone marrow,2,2,869
+609069,Pancreatic And Cerebellar Agenesis,PTF1A,,,Bone marrow,0,0,870
+167800,"Pancreatitis, Hereditary",CTRC,,,Bone marrow,0,0,871
+167800,"Pancreatitis, Hereditary",SPINK1,,,Bone marrow,0,0,872
+167800,"Pancreatitis, Hereditary",CFTR,,,Bone marrow,0,0,873
+167800,"Pancreatitis, Hereditary",PRSS1,,,Bone marrow,0,0,874
+167800,"Pancreatitis, Hereditary",PRSS2,,,Bone marrow,0,0,875
+167850,Pancytopenia And Occlusive Vascular Disease,,,,Bone marrow,0,0,876
+615399,Paroxysmal Nocturnal Hemoglobinuria 2,PIGT,PS300818,Paroxysmal nocturnal hemoglobinuria,Bone marrow,2,1,877
+168830,Passovoy Factor,,,,Bone marrow,0,0,878
+557000,Pearson Marrow-pancreas Syndrome,,,,Bone marrow,0,0,879
+169200,Pechet Factor Deficiency,,,,Bone marrow,0,0,880
+169400,Pelger-huet Anomaly,LBR,,,Bone marrow,2,2,881
+260570,Pelger-huet-like Anomaly And Episodic Fever With Abdominal Pain,,,,Bone marrow,0,0,882
+260900,"Pericardial Effusion, Chronic",,,,Bone marrow,0,0,883
+142680,"Periodic Fever, Familial, Autosomal Dominant",TNFRSF1A,,,Bone marrow,2,1,884
+150550,"Periodic Fever, Immunodeficiency, And Thrombocytopenia Syndrome",WDR1,,,Bone marrow,2,2,885
+170900,Pernicious Anemia,,,,Bone marrow,0,0,886
+606445,Persistent Polyclonal B-cell Lymphocytosis,,,,Bone marrow,0,0,887
+175200,Peutz-jeghers Syndrome,STK11,,,Bone marrow,2,0,888
+171100,"Phagocytosis, Plasma-related Defect In",,,,Bone marrow,0,0,889
+171300,Pheochromocytoma,KIF1B,,,Bone marrow,1,0,890
+171300,Pheochromocytoma,SDHB,,,Bone marrow,1,0,891
+171300,Pheochromocytoma,TMEM127,,,Bone marrow,1,0,892
+171300,Pheochromocytoma,VHL,,,Bone marrow,1,0,893
+171300,Pheochromocytoma,GDNF,,,Bone marrow,1,0,894
+171300,Pheochromocytoma,RET,,,Bone marrow,1,0,895
+171300,Pheochromocytoma,SDHD,,,Bone marrow,1,0,896
+171300,Pheochromocytoma,MAX,,,Bone marrow,1,0,897
+171420,Pheochromocytoma--islet Cell Tumor Syndrome,,,,Bone marrow,0,0,898
+601815,Phosphoglycerate Dehydrogenase Deficiency,PHGDH,,,Bone marrow,0,0,899
+300653,Phosphoglycerate Kinase 1 Deficiency,PGK1,,,Bone marrow,2,1,900
+610489,"Pigmented Nodular Adrenocortical Disease, Primary, 1",PRKAR1A,PS610489,"Pigmented nodular adrenocortical disease, primary",Bone marrow,0,0,901
+610475,"Pigmented Nodular Adrenocortical Disease, Primary, 2",PDE11A,PS610489,"Pigmented nodular adrenocortical disease, primary",Bone marrow,0,0,902
+615830,"Pigmented Nodular Adrenocortical Disease, Primary, 4",PPNAD4,PS610489,"Pigmented nodular adrenocortical disease, primary",Bone marrow,0,0,903
+615830,"Pigmented Nodular Adrenocortical Disease, Primary, 4",PRKACA,PS610489,"Pigmented nodular adrenocortical disease, primary",Bone marrow,0,0,904
+219090,"Pituitary Adenoma, Acth-secreting",USP8,PS102200,Pituitary adenoma,Bone marrow,0,0,905
+262800,"Plasma Clot Retraction Factor, Deficiency Of",,,,Bone marrow,0,0,906
+262850,Plasmin Inhibitor Deficiency,SERPINF2,,,Bone marrow,0,0,907
+613329,Plasminogen Activator Inhibitor-1 Deficiency,SERPINE1,,,Bone marrow,0,0,908
+617718,Platelet Abnormalities With Eosinophilia And Immune-mediated Inflammatory Disease,ARPC1B,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,909
+173400,"Platelet Aggregation, Spontaneous",,,,Bone marrow,0,0,910
+601399,"Platelet Disorder, Familial, With Associated Myeloid Malignancy",RUNX1,,,Bone marrow,2,2,911
+173420,"Platelet Disorder, Undefined",,,,Bone marrow,0,0,912
+173450,Platelet Factor 3 Deficiency,,,,Bone marrow,0,0,913
+608404,Platelet Glycoprotein Iv Deficiency,CD36,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,914
+173580,"Platelet Responsiveness To Adrenaline, Depressed",,,,Bone marrow,0,0,915
+173590,Platelet Signal Processing Defect,,,,Bone marrow,0,0,916
+604173,Poikiloderma With Neutropenia,USB1,,,Bone marrow,0,0,917
+263300,Polycythemia Vera,JAK2,,,Bone marrow,0,0,918
+618343,Polymicrogyria With Or Without Vascular-type Ehlers-danlos Syndrome,COL3A1,,,Bone marrow,0,0,919
+175500,"Polyposis, Skin Pigmentation, Alopecia, And Fingernail Changes",,,,Bone marrow,0,0,920
+618428,Popov-chang Syndrome,,,,Bone marrow,0,0,921
+614483,Porencephaly 2,COL4A2,PS175780,Brain small vessel disease,Bone marrow,0,0,922
+612740,"Porphyria, Acute Hepatic",ALAD,,,Bone marrow,2,2,923
+263700,"Porphyria, Congenital Erythropoietic",UROS,,,Bone marrow,2,2,924
+189800,Preeclampsia/eclampsia 1,PEE1,PS189800,Preeclampsia/eclampsia,Bone marrow,0,0,925
+189800,Preeclampsia/eclampsia 1,NOS3,PS189800,Preeclampsia/eclampsia,Bone marrow,0,0,926
+612423,Prekallikrein Deficiency,KLKB1,,,Bone marrow,0,0,927
+601811,"Premature Aging Syndrome, Okamoto Type",,,,Bone marrow,0,0,928
+176630,Primary Release Disorder Of Platelets,,,,Bone marrow,0,0,929
+170100,Prolidase Deficiency,PEPD,,,Bone marrow,2,2,930
+606054,Propionic Acidemia,PCCB,,,Bone marrow,0,0,931
+606054,Propionic Acidemia,PCCA,,,Bone marrow,2,2,932
+605735,"Prostaglandin-endoperoxide Synthase 1 Deficiency, Platelet",,PS231200,"Bleeding disorder, platelet-type",Bone marrow,0,0,933
+256040,Proteasome-associated Autoinflammatory Syndrome 1 And Digenic Forms,PSMB8,PS256040,Proteosome-associated autoinflammatory syndrome,Bone marrow,2,1,934
+618048,Proteasome-associated Autoinflammatory Syndrome 2,POMP,PS256040,Proteosome-associated autoinflammatory syndrome,Bone marrow,2,1,935
+617591,Proteasome-associated Autoinflammatory Syndrome 3,PSMB4,PS256040,Proteosome-associated autoinflammatory syndrome,Bone marrow,2,1,936
+617591,Proteasome-associated Autoinflammatory Syndrome 3,PSMB9,PS256040,Proteosome-associated autoinflammatory syndrome,Bone marrow,2,1,937
+176920,"Proteus Syndrome, Somatic",AKT1,,,Bone marrow,0,0,938
+177000,"Protoporphyria, Erythropoietic, 1",FECH,PS177000,"Protoporphyria, erythropoietic",Bone marrow,2,2,939
+618015,"Protoporphyria, Erythropoietic, 2",CLPX,PS177000,"Protoporphyria, erythropoietic",Bone marrow,2,2,940
+300752,"Protoporphyria, Erythropoietic, X-linked",ALAS2,PS177000,"Protoporphyria, erythropoietic",Bone marrow,2,2,941
+251290,Pseudo-torch Syndrome,OCLN,PS251290,Pseudo-TORCH syndrome,Bone marrow,0,0,942
+617397,Pseudo-torch Syndrome 2,USP18,PS251290,Pseudo-TORCH syndrome,Bone marrow,2,2,943
+618886,Pseudo-torch Syndrome 3,STAT2,PS251290,Pseudo-TORCH syndrome,Bone marrow,2,1,944
+177820,Pseudo-von Willebrand Disease,GP1BA,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,945
+264800,Pseudoxanthoma Elasticum,ABCC6,,,Bone marrow,0,0,946
+264800,Pseudoxanthoma Elasticum,XYLT1,,,Bone marrow,0,0,947
+264800,Pseudoxanthoma Elasticum,XYLT2,,,Bone marrow,0,0,948
+177850,"Pseudoxanthoma Elasticum, Forme Frustepseudoxanthoma Elasticum, Heterozygous, Included",ABCC6,,,Bone marrow,0,0,949
+610842,Pseudoxanthoma Elasticum-like Disorder With Multiple Coagulation Factor Deficiency,GGCX,,,Bone marrow,0,0,950
+614204,"Psoriasis 14, Pustular",IL36RN,PS177900,Psoriasis,Bone marrow,0,0,951
+614742,"Pulmonary Fibrosis And/or Bone Marrow Failure, Telomere-related, 1",TERT,PS614742,"Pulmonary fibrosis and/or bone marrow failure, telomere-related",Bone marrow,0,0,952
+614743,"Pulmonary Fibrosis And/or Bone Marrow Failure, Telomere-related, 2",TERC,PS614742,"Pulmonary fibrosis and/or bone marrow failure, telomere-related",Bone marrow,0,0,953
+618674,"Pulmonary Fibrosis And/or Bone Marrow Failure, Telomere-related, 5",ZCCHC8,PS614742,"Pulmonary fibrosis and/or bone marrow failure, telomere-related",Bone marrow,2,2,954
+178550,Pulmonary Hemosiderosis,,,,Bone marrow,0,0,955
+178600,"Pulmonary Hypertension, Primary, 1",BMPR2,PS178600,"Pulmonary hypertension, primary",Bone marrow,0,0,956
+179000,Purpura Simplex,,,,Bone marrow,0,0,957
+604416,"Pyogenic Sterile Arthritis, Pyoderma Gangrenosum, And Acne",PSTPIP1,,,Bone marrow,2,1,958
+610090,Pyridoxamine 5-prime-phosphate Oxidase Deficiency,PNPO,,,Bone marrow,2,1,959
+266140,"Pyropoikilocytosis, Hereditary",SPTA1,,,Bone marrow,0,0,960
+266200,Pyruvate Kinase Deficiency Of Red Cells,PKLR,,,Bone marrow,0,0,961
+601709,Quebec Platelet Disorder,PLAU,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,962
+605432,Radioulnar Synostosis With Amegakaryocytic Thrombocytopenia,HOXA11,PS605432,Radioulnar synostosis with amegakaryocytic thrombocytopenia,Bone marrow,0,0,963
+616738,Radioulnar Synostosis With Amegakaryocytic Thrombocytopenia 2,MECOM,PS605432,Radioulnar synostosis with amegakaryocytic thrombocytopenia,Bone marrow,0,0,964
+613658,Rajab Interstitial Lung Disease With Brain Calcifications,FARSB,PS613658,Rajab interstitial lung disease with brain calcifications,Bone marrow,2,1,965
+619013,Rajab Interstitial Lung Disease With Brain Calcifications 2,FARSA,PS613658,Rajab interstitial lung disease with brain calcifications,Bone marrow,1,1,966
+614470,"Ras-associated Autoimmune Lymphoproliferative Syndrome Type Iv, Somatic",NRAS,,,Bone marrow,0,0,967
+614470,"Ras-associated Autoimmune Lymphoproliferative Syndrome Type Iv, Somatic",KRAS,,,Bone marrow,2,2,968
+179650,Red Cell Permeability Defect,,,,Bone marrow,0,0,969
+179700,Red Cell Phospholipid Defect With Hemolysis,,,,Bone marrow,0,0,970
+266510,"Refsum Disease, Infantile Form",PEX12,PS214100,Peroxisome biogenesis disorder,Bone marrow,0,0,971
+611590,"Renal Tubular Acidosis, Distal, With Hemolytic Anemia",SLC4A1,PS179800,Distal renal tubular acidosis,Bone marrow,2,1,972
+604278,"Renal Tubular Acidosis, Proximal, With Ocular Abnormalities And Mentalretardation",SLC4A4,,,Bone marrow,0,0,973
+267450,Respiratory Distress Syndrome In Premature Infants,,,,Bone marrow,0,0,974
+267500,Reticular Dysgenesia,AK2,,,Bone marrow,2,2,975
+312500,"Reticuloendotheliosis, X-linked",,,,Bone marrow,0,0,976
+180000,"Retinal Arteries, Tortuosity Of",COL4A1,,,Bone marrow,0,0,977
+221900,"Retinal Nonattachment, Nonsyndromic Congenital",ATOH7,PS221900,Persistent hyperplastic primary vitreous,Bone marrow,0,0,978
+180080,Retinal Venous Beading,,,,Bone marrow,0,0,979
+616959,Retinitis Pigmentosa And Erythrocytic Microcytosis,TRNT1,,,Bone marrow,2,2,980
+180200,Retinoblastoma,RB1,,,Bone marrow,2,1,981
+312700,"Retinoschisis 1, X-linked, Juvenile",RS1,,,Bone marrow,0,0,982
+268130,Revesz Syndrome,TINF2,PS127550,Dyskeratosis congenita,Bone marrow,2,2,983
+613471,Reynolds Syndrome,LBR,,,Bone marrow,1,1,984
+616651,Roifman Syndrome,RNU4ATAC,,,Bone marrow,0,0,985
+180849,Rubinstein-taybi Syndrome 1,CREBBP,PS180849,Rubinstein-Taybi syndrome,Bone marrow,0,0,986
+181000,"Sarcoidosis, Susceptibility To, 1",HLA-DRB1,,,Bone marrow,0,0,987
+618150,Saul-wilson Syndrome,COG4,,,Bone marrow,1,1,988
+600802,"Scid, Autosomal Recessive, T-negative/b-positive Type",JAK3,,,Bone marrow,2,2,989
+262890,Scott Syndrome,ANO6,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,990
+269600,Sea-blue Histiocyte Disease,APOE,,,Bone marrow,2,2,991
+605249,Sebastian Syndrome,,,,Bone marrow,0,0,992
+210600,Seckel Syndrome 1,ATR,PS210600,Seckel syndrome,Bone marrow,0,0,993
+617253,Seckel Syndrome 10,NSMCE2,PS210600,Seckel syndrome,Bone marrow,0,0,994
+266900,Senior-loken Syndrome 1,NPHP1,PS266900,Senior-Loken syndrome,Bone marrow,0,0,995
+606996,Senior-loken Syndrome 4,NPHP4,PS266900,Senior-Loken syndrome,Bone marrow,0,0,996
+102700,"Severe Combined Immunodeficiency, Autosomal Recessive, T Cell-negative,b Cell-negative, Nk Cell-negative, Due To Adenosine Deaminase Deficiency",ADA,,,Bone marrow,2,2,997
+601457,"Severe Combined Immunodeficiency, Autosomal Recessive, T Cell-negative,b Cell-negative, Nk Cell-positive",RAG1,,,Bone marrow,2,2,998
+601457,"Severe Combined Immunodeficiency, Autosomal Recessive, T Cell-negative,b Cell-negative, Nk Cell-positive",RAG2,,,Bone marrow,2,2,999
+608971,"Severe Combined Immunodeficiency, Autosomal Recessive, T Cell-negative,b Cell-positive, Nk Cell-positive",PTPRC,,,Bone marrow,2,2,1000
+608971,"Severe Combined Immunodeficiency, Autosomal Recessive, T Cell-negative,b Cell-positive, Nk Cell-positive",IL7R,,,Bone marrow,2,2,1001
+300400,"Severe Combined Immunodeficiency, X-linked",IL2RG,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,1002
+615789,Short Stature With Microcephaly And Distinctive Facies,CRIPT,,,Bone marrow,2,1,1003
+616541,"Short Stature, Microcephaly, And Endocrine Dysfunction",XRCC4,,,Bone marrow,1,1,1004
+266920,Short-rib Thoracic Dysplasia 9 With Or Without Polydactyly,IFT140,PS208500,Short-rib thoracic dysplasia,Bone marrow,0,0,1005
+260400,Shwachman-diamond Syndrome,SBDS,PS260400,Schwachman-Diamond syndrome,Bone marrow,2,2,1006
+617941,Shwachman-diamond Syndrome 2,EFL1,PS260400,Schwachman-Diamond syndrome,Bone marrow,0,0,1007
+604369,"Sialuria, Finnish Type",SLC17A5,,,Bone marrow,1,1,1008
+603903,Sickle Cell Anemia,HBB,,,Bone marrow,0,0,1009
+616084,"Sideroblastic Anemia With B-cell Immunodeficiency, Periodic Fevers, And Developmental Delay",TRNT1,,,Bone marrow,2,2,1010
+210250,Sitosterolemia 1,ABCG8,PS210250,Sitosterolemia,Bone marrow,0,0,1011
+616638,Smith-kingsmore Syndrome,MTOR,,,Bone marrow,2,1,1012
+109270,"Solute Carrier Family 4 (anion Exchanger), Member 1",,,,Bone marrow,0,0,1013
+601608,Spastic Paraplegia And Evans Syndrome,,,,Bone marrow,0,0,1014
+245480,Specific Granule Deficiency,CEBPE,PS245480,Specific granule deficiency,Bone marrow,2,2,1015
+617475,Specific Granule Deficiency 2,SMARCD2,PS245480,Specific granule deficiency,Bone marrow,2,2,1016
+270970,"Spherocytosis, Autosomal Recessive",SPTA1,,,Bone marrow,0,0,1017
+182900,"Spherocytosis, Hereditary",ANK1,,,Bone marrow,2,2,1018
+616649,"Spherocytosis, Type 2",SPTB,,,Bone marrow,0,0,1019
+612653,"Spherocytosis, Type 4",SLC4A1,,,Bone marrow,2,2,1020
+612690,"Spherocytosis, Type 5",EPB42,,,Bone marrow,0,0,1021
+616949,"Spinocerebellar Ataxia, Autosomal Recessive 23",TDP2,PS213200,"Spinocerebellar ataxia, autosomal recessive",Bone marrow,2,1,1022
+183350,Splenomegaly Syndrome With Splenic Germinal Center Hypoplasia Andreduced Circulating T-helper Cells,,,,Bone marrow,0,0,1023
+614979,"Splenomegaly, Cytopenia, And Vision Loss",ALPK1,,,Bone marrow,0,0,1024
+607944,Spondyloenchondrodysplasia With Immune Dysregulation,ACP5,PS184255,Spondylometaphyseal dysplasia,Bone marrow,0,0,1025
+618162,"Spondyloepimetaphyseal Dysplasia, Krakow Type",SIK3,,,Bone marrow,0,0,1026
+271510,"Spondyloepimetaphyseal Dysplasia, Sponastrime Type",TONSL,,,Bone marrow,0,0,1027
+184850,Stiff-person Syndrome,,,,Bone marrow,0,0,1028
+615934,"Sting-associated Vasculopathy, Infantile-onset",STING1,,,Bone marrow,0,0,1029
+608885,Stomatin-deficient Cryohydrocytosis With Neurologic Defects,SLC2A1,,,Bone marrow,0,0,1030
+185050,Storage Pool Platelet Disease,,,,Bone marrow,0,0,1031
+185070,Stormorken Syndrome,STIM1,,,Bone marrow,2,2,1032
+185460,"Sulfhemoglobinemia, Congenital",,,,Bone marrow,0,0,1033
+152700,Systemic Lupus Erythematosus,PTPN22,,,Bone marrow,2,2,1034
+152700,Systemic Lupus Erythematosus,FCGR2A,,,Bone marrow,2,2,1035
+152700,Systemic Lupus Erythematosus,FCGR2B,,,Bone marrow,2,2,1036
+152700,Systemic Lupus Erythematosus,CTLA4,,,Bone marrow,2,2,1037
+152700,Systemic Lupus Erythematosus,TREX1,,,Bone marrow,2,2,1038
+152700,Systemic Lupus Erythematosus,DNASE1,,,Bone marrow,2,2,1039
+601705,"T-cell Immunodeficiency, Congenital Alopecia, And Nail Dystrophy",FOXN1,,,Bone marrow,0,0,1040
+614868,"T-cell Immunodeficiency, Recurrent Infections, And Autoimmunity Withor Without Cardiac Malformations",STK4,,,Bone marrow,2,2,1041
+618398,"T-cell Lymphoma, Subcutaneous Panniculitis-like",HAVCR2,,,Bone marrow,0,0,1042
+618806,"T-cell Lymphopenia, Infantile, With Or Without Nail Dystrophy, Autosomal Dominant",FOXN1,,,Bone marrow,0,0,1043
+615387,T-cell Receptor-alpha/beta Deficiency,TRAC,PS300755,Immunodeficiency (Select Examples),Bone marrow,0,0,1044
+616737,Takenouchi-kosaki Syndrome,CDC42,,,Bone marrow,0,0,1045
+272650,Tatsumi Factor Deficiency,,,,Bone marrow,0,0,1046
+187300,"Telangiectasia, Hereditary Hemorrhagic, Type 1",ENG,PS187300,"Telangiectasia, hereditary hemorrhagic",Bone marrow,2,2,1047
+610655,"Telangiectasia, Hereditary Hemorrhagic, Type 4",HHT4,PS187300,"Telangiectasia, hereditary hemorrhagic",Bone marrow,0,0,1048
+615506,"Telangiectasia, Hereditary Hemorrhagic, Type 5",GDF2,PS187300,"Telangiectasia, hereditary hemorrhagic",Bone marrow,0,0,1049
+187550,"Thalassemia, Beta+, Silent Allele",,,,Bone marrow,0,0,1050
+273680,"Thanatophoric Dysplasia, Glasgow Variant",,,,Bone marrow,0,0,1051
+249270,Thiamine-responsive Megaloblastic Anemia Syndrome,SLC19A2,PS249270,Thiamine-responsive dysfunction syndrome,Bone marrow,0,0,1052
+610460,Thiopurine S-methyltransferase Deficiency,TPMT,PS610460,"Thiopurines, poor metabolism of",Bone marrow,0,0,1053
+187900,"Thrombasthenia-thrombocytopenia, Hereditary",GFI1B,PS231200,"Bleeding disorder, platelet-type",Bone marrow,2,2,1054
+187950,Thrombocythemia 1,THPO,PS187950,Thrombocythemia,Bone marrow,2,2,1055
+187950,Thrombocythemia 1,SH2B3,PS187950,Thrombocythemia,Bone marrow,2,2,1056
+187950,Thrombocythemia 1,CALR,PS187950,Thrombocythemia,Bone marrow,2,2,1057
+601977,Thrombocythemia 2,MPL,PS187950,Thrombocythemia,Bone marrow,2,2,1058
+614521,Thrombocythemia 3,JAK2,PS187950,Thrombocythemia,Bone marrow,2,2,1059
+313900,Thrombocytopenia 1,WAS,PS313900,Thrombocytopenia,Bone marrow,2,2,1060
+188000,Thrombocytopenia 2,ANKRD26,PS313900,Thrombocytopenia,Bone marrow,2,2,1061
+273900,Thrombocytopenia 3,FYB1,PS313900,Thrombocytopenia,Bone marrow,2,2,1062
+612004,Thrombocytopenia 4,CYCS,PS313900,Thrombocytopenia,Bone marrow,2,2,1063
+616216,Thrombocytopenia 5,ETV6,PS313900,Thrombocytopenia,Bone marrow,2,2,1064
+616937,Thrombocytopenia 6,SRC,PS313900,Thrombocytopenia,Bone marrow,0,0,1065
+314050,"Thrombocytopenia With Beta-thalassemia, X-linked",GATA1,,,Bone marrow,2,2,1066
+314000,Thrombocytopenia With Elevated Serum Iga And Renal Disease,,,,Bone marrow,0,0,1067
+617441,"Thrombocytopenia, Anemia, And Myelofibrosis",MPIG6B,,,Bone marrow,0,0,1068
+619130,"Thrombocytopenia, Autosomal Dominant, 7",IKZF5,PS313900,Thrombocytopenia,Bone marrow,2,2,1069
+188020,"Thrombocytopenia, Cyclic",,,,Bone marrow,0,0,1070
+188025,"Thrombocytopenia, Paris-trousseau Type",TCPT,,,Bone marrow,0,0,1071
+274000,Thrombocytopenia-absent Radius Syndrome,RBM8A,,,Bone marrow,2,2,1072
+188030,"Thrombocytopenic Purpura, Autoimmune",,,,Bone marrow,0,0,1073
+612348,Thrombophilia Due To Decreased Release Of Tissue Plasminogen,PLAT,PS188050,Thrombophilia,Bone marrow,0,0,1074
+188055,Thrombophilia Due To Deficiency Of Activated Protein C Cofactor,F5,PS188050,Thrombophilia,Bone marrow,2,0,1075
+613116,Thrombophilia Due To Histidine-rich Glycoprotein Deficiency,HRG,PS188050,Thrombophilia,Bone marrow,0,0,1076
+614514,"Thrombophilia Due To Protein S Deficiency, Autosomal Recessive",PROS1,PS188050,Thrombophilia,Bone marrow,2,0,1077
+614486,Thrombophilia Due To Thrombomodulin Defect,THBD,PS188050,Thrombophilia,Bone marrow,1,1,1078
+612304,"Thrombophilia, Hereditary, Due To Protein C Deficiency, Autosomal",PROC,PS188050,Thrombophilia,Bone marrow,2,0,1079
+176860,"Thrombophilia, Hereditary, Due To Protein C Deficiency, Autosomaldominant",PROC,PS188050,Thrombophilia,Bone marrow,2,0,1080
+612336,"Thrombophilia, Hereditary, Due To Protein S Deficiency, Autosomal",PROS1,PS188050,Thrombophilia,Bone marrow,2,0,1081
+300807,"Thrombophilia, X-linked, Due To Factor Ix Defect",F9,PS188050,Thrombophilia,Bone marrow,2,0,1082
+188050,"Thrombophiliavenous Thromboembolism, Included",MTHFR,PS188050,Thrombophilia,Bone marrow,2,1,1083
+188050,"Thrombophiliavenous Thromboembolism, Included",F13A1,PS188050,Thrombophilia,Bone marrow,2,1,1084
+188050,"Thrombophiliavenous Thromboembolism, Included",HABP2,PS188050,Thrombophilia,Bone marrow,2,1,1085
+188050,"Thrombophiliavenous Thromboembolism, Included",F2,PS188050,Thrombophilia,Bone marrow,2,1,1086
+274150,"Thrombotic Thrombocytopenic Purpura, Congenital",ADAMTS13,,,Bone marrow,0,0,1087
+274240,Thyrocerebroretinal Syndrome,,,,Bone marrow,0,0,1088
+300622,Tn Polyagglutination Syndrome,C1GALT1C1,,,Bone marrow,0,0,1089
+606003,Transaldolase Deficiency,TALDO1,,,Bone marrow,2,2,1090
+275350,Transcobalamin Ii Deficiency,TCN2,,,Bone marrow,2,2,1091
+227050,Transient Erythroblastopenia Of Childhood,TEC,,,Bone marrow,0,0,1092
+222470,Trichohepatoenteric Syndrome 1,TTC37,PS222470,Trichohepatoenteric syndrome,Bone marrow,2,2,1093
+602079,Trimethylaminuria,FMO3,,,Bone marrow,0,0,1094
+618805,Triokinase And Fmn Cyclase Deficiency Syndrome,TKFC,,,Bone marrow,0,0,1095
+615512,Triosephosphate Isomerase Deficiency,TPI1,,,Bone marrow,2,2,1096
+607665,Tubulointerstitial Nephritis With Uveitis,,,,Bone marrow,0,0,1097
+276700,"Tyrosinemia, Type I",FAH,PS276700,Tyrosinemia,Bone marrow,0,0,1098
+191500,Undritz Anomaly,,,,Bone marrow,0,0,1099
+266120,"Uridine 5-prime Monophosphate Hydrolase Deficiency, Hemolytic Anemiadue To",NT5C3A,,,Bone marrow,2,2,1100
+277175,Vascular Hyalinosis,,,,Bone marrow,0,0,1101
+606893,"Vascular Malformation, Primary Intraosseous",ELMO2,,,Bone marrow,1,1,1102
+615688,"Vasculitis, Autoinflammation, Immunodeficiency, And Hematologic Defects Syndrome",ADA2,,,Bone marrow,0,0,1103
+192315,"Vasculopathy, Retinal, With Cerebral Leukodystrophy",TREX1,,,Bone marrow,0,0,1104
+600195,"Venous Malformations, Multiple Cutaneous And Mucosal",TEK,,,Bone marrow,0,0,1105
+618223,Vertebral Anomalies And Variable Endocrine And T-cell Dysfunction,TBX2,,,Bone marrow,0,0,1106
+301054,"Vexas Syndrome, Somatic",UBA1,,,Bone marrow,0,0,1107
+277450,"Vitamin K-dependent Clotting Factors, Combined Deficiency Of, 1",GGCX,PS277450,"Vitamin K-dependent clotting factors, combined deficiency of",Bone marrow,0,0,1108
+607473,"Vitamin K-dependent Clotting Factors, Combined Deficiency Of, 2",VKORC1,PS277450,"Vitamin K-dependent clotting factors, combined deficiency of",Bone marrow,0,0,1109
+193220,Vitreoretinochoroidopathy,BEST1,,,Bone marrow,0,0,1110
+193235,"Vitreoretinopathy, Neovascular Inflammatory",CAPN5,,,Bone marrow,0,0,1111
+193300,Von Hippel-lindau Syndrome,VHL,,,Bone marrow,2,0,1112
+193300,Von Hippel-lindau Syndrome,CCND1,,,Bone marrow,2,0,1113
+193400,Von Willebrand Disease,VWF,,,Bone marrow,0,0,1114
+277480,"Von Willebrand Disease, Recessive Form",VWF,,,Bone marrow,0,0,1115
+613554,"Von Willebrand Disease, Type 2",VWF,,,Bone marrow,0,0,1116
+314560,"Von Willebrand Disease, X-linked Form",,,,Bone marrow,0,0,1117
+193670,Whim Syndrome,CXCR4,,,Bone marrow,2,2,1118
+277900,Wilson Disease,ATP7B,,,Bone marrow,0,0,1119
+301000,Wiskott-aldrich Syndrome,WAS,PS300755,Immunodeficiency (Select Examples),Bone marrow,2,2,1120
+614493,Wiskott-aldrich Syndrome 2,WIPF1,,,Bone marrow,2,2,1121
+600903,"Wiskott-aldrich Syndrome, Autosomal Dominant Form",,,,Bone marrow,0,0,1122
+222300,Wolfram Syndrome 1,WFS1,,,Bone marrow,0,0,1123
+604928,Wolfram Syndrome 2,CISD2,,,Bone marrow,2,2,1124
+598500,"Wolfram Syndrome, Mitochondrial Form",,,,Bone marrow,0,0,1125
+278100,Wolman Disease With Hypolipoproteinemia And Acanthocytosis,,,,Bone marrow,0,0,1126
+194320,Woronets Trait,,,,Bone marrow,0,0,1127
+194350,Wt Limb-blood Syndrome,,,,Bone marrow,0,0,1128
+280000,Zunich Neuroectodermal Syndrome,PIGL,,,Bone marrow,0,0,1129
+257920,3mc Syndrome 1,MASP1,PS257920,3MC syndrome,Kidney,0,0,1130
+248340,3mc Syndrome 3,COLEC10,PS257920,3MC syndrome,Kidney,0,0,1131
+611812,"46,xx Sex Reversal With Dysgenesis Of Kidneys, Adrenals, And Lungs",WNT4,,,Kidney,2,1,1132
+260005,5-oxoprolinase Deficiency,OPLAH,,,Kidney,1,0,1133
+100100,"Abdominal Muscles, Absence Of, With Urinary Tract Abnormality Andcryptorchidism",CHRM3,,,Kidney,0,0,1134
+200995,Acrocephalopolydactylous Dysplasia,,,,Kidney,0,0,1135
+101800,"Acrodysostosis 1, With Or Without Hormone Resistance",PRKAR1A,PS101800,Acrodysostosis,Kidney,0,0,1136
+154400,"Acrofacial Dysostosis 1, Nager Type",SF3B4,,,Kidney,2,1,1137
+102500,Acroosteolysis With Osteoporosis And Changes In Skull And Mandible,NOTCH2,,,Kidney,2,1,1138
+102520,Acrorenal Syndrome,,,,Kidney,0,0,1139
+201310,"Acrorenal Syndrome, Autosomal Recessive",,,,Kidney,0,0,1140
+200980,Acrorenal-mandibular Syndrome,,,,Kidney,0,0,1141
+174770,"Actinic Prurigopolymorphic Light Eruption, Hereditary",,,,Kidney,0,0,1142
+616589,Adams-oliver Syndrome 6,DLL4,PS100300,Adams-Oliver syndrome,Kidney,2,1,1143
+614723,Adenine Phosphoribosyltransferase Deficiency,APRT,,,Kidney,2,0,1144
+600908,"Agonadism, Xy, With Mental Retardation, Short Stature, Retarded Bone Age, And Multiple Extragenital Malformations",,,,Kidney,0,0,1145
+615846,Aicardi-goutieres Syndrome 7,IFIH1,PS225750,Aicardi-Goutieres syndrome,Kidney,1,1,1146
+118450,Alagille Syndrome 1,JAG1,PS118450,Alagille syndrome,Kidney,2,2,1147
+610205,Alagille Syndrome 2,NOTCH2,PS118450,Alagille syndrome,Kidney,2,1,1148
+301040,"Alpha-thalassemia/mental Retardation Syndrome, Nondeletion Type, X-linked",ATRX,,,Kidney,2,1,1149
+104200,"Alport Syndrome, Autosomal Dominant",COL4A3,PS301050,Alport syndrome,Kidney,2,2,1150
+203780,"Alport Syndrome, Autosomal Recessive",COL4A4,PS301050,Alport syndrome,Kidney,2,2,1151
+203780,"Alport Syndrome, Autosomal Recessive",COL4A3,PS301050,Alport syndrome,Kidney,2,2,1152
+301050,"Alport Syndrome, X-linked",COL4A5,PS301050,Alport syndrome,Kidney,2,2,1153
+203800,Alstrom Syndrome,ALMS1,,,Kidney,0,0,1154
+265380,Alveolar Capillary Dysplasia With Misalignment Of Pulmonary Veins,FOXF1,,,Kidney,0,0,1155
+104350,"Amastia, Bilateral, With Ureteral Triplication And Dysmorphism",,,,Kidney,0,0,1156
+105120,Amyloidosis V,GSN,,,Kidney,2,1,1157
+105200,"Amyloidosis, Familial Visceral",FGA,,,Kidney,2,1,1158
+105200,"Amyloidosis, Familial Visceral",APOA1,,,Kidney,2,1,1159
+105200,"Amyloidosis, Familial Visceral",LYZ,,,Kidney,2,1,1160
+105200,"Amyloidosis, Familial Visceral",B2M,,,Kidney,2,1,1161
+106070,"Angioma, Hereditary Neurocutaneousspinal Arterial Venous Malformations With Cutaneous Hemangiomas, Included",,,,Kidney,0,0,1162
+611773,"Angiopathy, Hereditary, With Nephropathy, Aneurysms, And Muscle Cramps",COL4A1,,,Kidney,2,2,1163
+206750,"Aniridia, Partial, With Unilateral Renal Agenesis And Psychomotorretardation",,,,Kidney,0,0,1164
+201750,Antley-bixler Syndrome With Genital Anomalies And Disordered Steroidogenesis,POR,,,Kidney,2,1,1165
+207410,Antley-bixler Syndrome Without Genital Anomalies Or Disordered Steroidogenesis,FGFR2,,,Kidney,2,1,1166
+101200,Apert Syndrome,FGFR2,,,Kidney,2,1,1167
+243910,Arima Syndrome,,,,Kidney,0,0,1168
+614473,"Arterial Calcification, Generalized, Of Infancy, 2",ABCC6,PS208000,Generalized arterial calcification of infancy,Kidney,0,0,1169
+208060,"Arteriosclerosis, Severe Juvenile",,,,Kidney,0,0,1170
+618947,Arthrogryposis Multiplex Congenita 5,TOR1A,PS617468,Arthrogryposis multiplex congenita,Kidney,0,0,1171
+618265,"Arthrogryposis, Cleft Palate, Craniosynostosis, And Impaired Intellectual Development",PPP3CA,,,Kidney,2,0,1172
+208085,"Arthrogryposis, Renal Dysfunction, And Cholestasis",VPS33B,PS208085,"Arthrogryposis, renal dysfunction, and cholestasis",Kidney,0,0,1173
+613404,"Arthrogryposis, Renal Dysfunction, And Cholestasis 2",VIPAS39,PS208085,"Arthrogryposis, renal dysfunction, and cholestasis",Kidney,0,0,1174
+613819,Asphyxiating Thoracic Dystrophy 4,TTC21B,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1175
+614376,Asphyxiating Thoracic Dystrophy 5,WDR19,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1176
+209010,"Atherosclerosis, Premature, With Deafness, Nephropathy, Diabetes Mellitus,photomyoclonus, And Degenerative Neurologic Disease",,,,Kidney,0,0,1177
+617006,"Autoimmune Disease, Multisystem, Infantile-onset, 2",ZAP70,PS615952,"Autoimmune disease, multisystem, infantile-onset",Kidney,0,0,1178
+616414,"Autoimmune Interstitial Lung, Joint, And Kidney Disease",COPA,,,Kidney,2,0,1179
+603909,"Autoimmune Lymphoproliferative Syndrome, Type Iia",CASP10,,,Kidney,0,0,1180
+615559,"Autoimmune Lymphoproliferative Syndrome, Type Iii",PRKCD,,,Kidney,2,0,1181
+240300,"Autoimmune Polyendocrinopathy Syndrome , Type I, With Or Without Reversible Metaphyseal Dysplasia",AIRE,,,Kidney,0,0,1182
+618999,"Autoinflammation, Immune Dysregulation, And Eosinophilia",JAK1,,,Kidney,1,1,1183
+109130,Axial Osteomalacia,,,,Kidney,0,0,1184
+218600,Baller-gerold Syndrome,RECQL4,,,Kidney,0,0,1185
+209900,Bardet-biedl Syndrome 1,CCDC28B,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1186
+209900,Bardet-biedl Syndrome 1,ARL6,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1187
+209900,Bardet-biedl Syndrome 1,BBS1,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1188
+615987,Bardet-biedl Syndrome 10,BBS10,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1189
+615988,Bardet-biedl Syndrome 11,TRIM32,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1190
+615989,Bardet-biedl Syndrome 12,BBS12,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1191
+615993,Bardet-biedl Syndrome 16,SDCCAG8,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1192
+615994,Bardet-biedl Syndrome 17,LZTFL1,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1193
+615995,Bardet-biedl Syndrome 18,BBIP1,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1194
+615996,Bardet-biedl Syndrome 19,IFT27,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1195
+617406,Bardet-biedl Syndrome 21,C8orf37,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1196
+600151,Bardet-biedl Syndrome 3,ARL6,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1197
+615982,Bardet-biedl Syndrome 4,BBS4,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1198
+605231,Bardet-biedl Syndrome 6,MKKS,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1199
+615985,Bardet-biedl Syndrome 8,TTC8,PS209900,Bardet-Biedl syndrome,Kidney,2,2,1200
+615986,Bardet-biedl Syndrome 9,BBS9,PS209900,Bardet-Biedl syndrome,Kidney,0,0,1201
+601678,"Bartter Syndrome, Antenatal, Type 1",SLC12A1,PS601678,Bartter syndrome,Kidney,2,2,1202
+241200,"Bartter Syndrome, Antenatal, Type 2",KCNJ1,PS601678,Bartter syndrome,Kidney,2,2,1203
+602522,"Bartter Syndrome, Infantile, With Sensorineural Deafness",BSND,PS601678,Bartter syndrome,Kidney,2,2,1204
+607364,"Bartter Syndrome, Type 3",CLCNKB,PS601678,Bartter syndrome,Kidney,2,2,1205
+613090,"Bartter Syndrome, Type 4b",CLCNKA,PS601678,Bartter syndrome,Kidney,2,2,1206
+613090,"Bartter Syndrome, Type 4b",CLCNKB,PS601678,Bartter syndrome,Kidney,2,2,1207
+300971,"Bartter Syndrome, Type 5, Antenatal, Transient",MAGED2,PS601678,Bartter syndrome,Kidney,2,2,1208
+616449,Basel-vanagaite-smirin-yosef Syndrome,MED25,,,Kidney,1,1,1209
+613680,Beaulieu-boycott-innes Syndrome,THOC6,,,Kidney,2,1,1210
+130650,Beckwith-wiedemann Syndrome,ICR1,,,Kidney,0,0,1211
+130650,Beckwith-wiedemann Syndrome,KCNQ1OT1,,,Kidney,0,0,1212
+130650,Beckwith-wiedemann Syndrome,CDKN1C,,,Kidney,0,0,1213
+608980,Bifid Nose With Or Without Anorectal And Renal Anomalies,FREM1,,,Kidney,0,0,1214
+210550,Biliary Malformation With Renal Tubular Insufficiency,,,,Kidney,0,0,1215
+617595,Birk-landau-perez Syndrome,SLC30A9,,,Kidney,2,1,1216
+135150,Birt-hogg-dube Syndrome,FLCN,,,Kidney,2,2,1217
+109820,Bladder Diverticulum,,,,Kidney,0,0,1218
+191800,"Bladder Dysfunction, Autonomic, With Impaired Pupillary Reflex And Secondary Cakut",CHRNA3,,,Kidney,0,0,1219
+211000,Blue Diaper Syndrome,,,,Kidney,0,0,1220
+113470,Brachymesomelia-renal Syndrome,,,,Kidney,0,0,1221
+609945,"Brachyphalangy, Polydactyly, And Tibial Aplasia/hypoplasia",,,,Kidney,0,0,1222
+113620,Branchiooculofacial Syndrome,TFAP2A,,,Kidney,2,1,1223
+113650,Branchiootorenal Syndrome 1,EYA1,,,Kidney,0,0,1224
+610896,Branchiootorenal Syndrome 2,SIX5,,,Kidney,2,1,1225
+608572,Burn-mckeown Syndrome,TXNL4A,,,Kidney,2,1,1226
+211750,C Syndrome,CD96,,,Kidney,0,0,1227
+613652,C1q Deficiency,C1QA,,,Kidney,2,1,1228
+613652,C1q Deficiency,C1QC,,,Kidney,2,1,1229
+613652,C1q Deficiency,C1QB,,,Kidney,2,1,1230
+211890,"Campomelia, Cumming Type",,,,Kidney,0,0,1231
+114290,Campomelic Dysplasia,SOX9,,,Kidney,0,0,1232
+212093,"Cardiac Valvular Defect, Developmental",PLD1,,,Kidney,0,0,1233
+115150,Cardiofaciocutaneous Syndrome 1,BRAF,PS115150,Cardiofaciocutaneous syndrome,Kidney,2,1,1234
+265050,Carnevale Syndrome,COLEC11,PS257920,3MC syndrome,Kidney,0,0,1235
+255120,Carnitine Palmitoyltransferase I Deficiency,CPT1A,,,Kidney,0,0,1236
+255110,"Carnitine Palmitoyltransferase Ii Deficiency, Late-onset",CPT2,,,Kidney,2,0,1237
+608836,"Carnitine Palmitoyltransferase Ii Deficiency, Lethal Neonatal",CPT2,,,Kidney,2,2,1238
+201000,Carpenter Syndrome,RAB23,PS201000,Carpenter syndrome,Kidney,0,0,1239
+115470,Cat Eye Syndrome,CECR,,,Kidney,0,0,1240
+212780,Cenani-lenz Syndactyly Syndrome,LRP4,,,Kidney,2,1,1241
+117650,Cerebrocostomandibular Syndrome,SNRPB,,,Kidney,2,1,1242
+601389,"Cervical Ribs, Sprengel Anomaly, Anal Atresia, And Urethral Obstruction",,,,Kidney,0,0,1243
+614809,Cfhr5 Deficiency,CFHR5,,,Kidney,0,0,1244
+614455,"Charcot-marie-tooth Disease, Dominant Intermediate E",INF2,PS118220,Charcot-Marie-Tooth disease,Kidney,2,1,1245
+214800,Charge Syndrome,SEMA3E,,,Kidney,0,0,1246
+214800,Charge Syndrome,CHD7,,,Kidney,2,1,1247
+302960,"Chondrodysplasia Punctata 2, X-linked Dominant",EBP,,,Kidney,2,1,1248
+215250,"Chondroitin-6-sulfaturia, Defective Cellular Immunity, Nephrotic Syndrome",,,,Kidney,0,0,1249
+616368,Chops Syndrome,AFF4,,,Kidney,1,1,1250
+610543,Chromosome 16p13.3 Deletion Syndrome,DEL16p13.3,PS180849,Rubinstein-Taybi syndrome,Kidney,0,0,1251
+614527,Chromosome 17q12 Deletion Syndrome,DEL17q12,,,Kidney,0,0,1252
+617219,"Chromosome 19q13.11 Deletion Syndrome, Proximal",DEL19q13.11p,,,Kidney,0,0,1253
+613735,Chromosome 1p32-p31 Deletion Syndrome,NFIA,,,Kidney,1,1,1254
+607872,Chromosome 1p36 Deletion Syndrome,DEL1p36,,,Kidney,0,0,1255
+612513,Chromosome 2p16.1-p15 Deletion Syndrome,DEL2p16.1-p15,,,Kidney,0,0,1256
+613792,Chromosome 3pter-p25 Deletion Syndrome,DEL3pterp25,,,Kidney,0,0,1257
+618935,"Chronic Granulomatous Disease 5, Autosomal Recessive",CYBC1,PS306400,"Granulomatous disease, chronic",Kidney,0,0,1258
+216100,Cleft Lip/palate With Abnormal Thumbs And Microcephaly,ESCO2,,,Kidney,0,0,1259
+216360,Coach Syndrome,TMEM67,,,Kidney,0,0,1260
+216400,"Cockayne Syndrome, Type A",ERCC8,,,Kidney,0,0,1261
+133540,"Cockayne Syndrome, Type B",ERCC6,,,Kidney,0,0,1262
+607426,"Coenzyme Q10 Deficiency, Primary, 1",COQ2,PS607426,"Coenzyme Q10 deficiency, primary",Kidney,2,2,1263
+614652,"Coenzyme Q10 Deficiency, Primary, 3",PDSS2,PS607426,"Coenzyme Q10 deficiency, primary",Kidney,2,2,1264
+614650,"Coenzyme Q10 Deficiency, Primary, 6",COQ6,PS607426,"Coenzyme Q10 deficiency, primary",Kidney,2,2,1265
+616733,"Coenzyme Q10 Deficiency, Primary, 8",COQ7,PS607426,"Coenzyme Q10 deficiency, primary",Kidney,2,2,1266
+135900,Coffin-siris Syndrome 1,ARID1B,PS135900,Coffin-Siris syndrome,Kidney,0,0,1267
+135900,Coffin-siris Syndrome 1,ARID1B,PS156200,"Mental retardation, autosomal dominant",Kidney,0,0,1268
+120400,Coloboma Of Macula With Type B Brachydactyly,,,,Kidney,0,0,1269
+120433,"Coloboma, Ocular, With Or Without Hearing Impairment, Cleft Lip/palate, And/or Mental Retardation",YAP1,,,Kidney,1,1,1270
+114500,Colorectal Cancer,PLA2G2A,,,Kidney,2,2,1271
+114500,Colorectal Cancer,NRAS,,,Kidney,2,2,1272
+114500,Colorectal Cancer,BUB1,,,Kidney,2,2,1273
+114500,Colorectal Cancer,CTNNB1,,,Kidney,2,2,1274
+114500,Colorectal Cancer,PIK3CA,,,Kidney,2,2,1275
+114500,Colorectal Cancer,FGFR3,,,Kidney,2,2,1276
+114500,Colorectal Cancer,TLR2,,,Kidney,2,2,1277
+114500,Colorectal Cancer,APC,,,Kidney,2,2,1278
+114500,Colorectal Cancer,MCC,,,Kidney,2,2,1279
+114500,Colorectal Cancer,PTPN12,,,Kidney,2,2,1280
+114500,Colorectal Cancer,BRAF,,,Kidney,2,2,1281
+114500,Colorectal Cancer,DLC1,,,Kidney,2,2,1282
+114500,Colorectal Cancer,PDGFRL,,,Kidney,2,2,1283
+114500,Colorectal Cancer,RAD54B,,,Kidney,2,2,1284
+114500,Colorectal Cancer,PTPRJ,,,Kidney,2,2,1285
+114500,Colorectal Cancer,CCND1,,,Kidney,2,2,1286
+114500,Colorectal Cancer,MLH3,,,Kidney,2,2,1287
+114500,Colorectal Cancer,AKT1,,,Kidney,2,2,1288
+114500,Colorectal Cancer,BUB1B,,,Kidney,2,2,1289
+114500,Colorectal Cancer,TP53,,,Kidney,2,2,1290
+114500,Colorectal Cancer,FLCN,,,Kidney,2,2,1291
+114500,Colorectal Cancer,AXIN2,,,Kidney,2,2,1292
+114500,Colorectal Cancer,DCC,,,Kidney,2,2,1293
+114500,Colorectal Cancer,BAX,,,Kidney,2,2,1294
+114500,Colorectal Cancer,SRC,,,Kidney,2,2,1295
+114500,Colorectal Cancer,AURKA,,,Kidney,2,2,1296
+114500,Colorectal Cancer,EP300,,,Kidney,2,2,1297
+614922,Combined Oxidative Phosphorylation Deficiency 11,RMND1,PS609060,Combined oxidative phosphorylation deficiency,Kidney,2,1,1298
+616239,Combined Oxidative Phosphorylation Deficiency 24,NARS2,PS609060,Combined oxidative phosphorylation deficiency,Kidney,2,1,1299
+617713,Combined Oxidative Phosphorylation Deficiency 33,C1QBP,PS609060,Combined oxidative phosphorylation deficiency,Kidney,2,1,1300
+618329,Combined Oxidative Phosphorylation Deficiency 37,MICOS13,PS609060,Combined oxidative phosphorylation deficiency,Kidney,0,0,1301
+611719,Combined Oxidative Phosphorylation Deficiency 5,MRPS22,PS609060,Combined oxidative phosphorylation deficiency,Kidney,2,1,1302
+613779,"Complement Component 3 Deficiency, Autosomal Recessive",C3,,,Kidney,2,0,1303
+614380,Complement Component 4a Deficiency,C4A,,,Kidney,0,0,1304
+216950,Complement Component C1r Deficiency,,,,Kidney,0,0,1305
+609814,Complement Factor H Deficiency,CFH,,,Kidney,2,0,1306
+610984,Complement Factor I Deficiency,CFI,,,Kidney,0,0,1307
+618270,Congenital Anomalies Of Kidney And Urinary Tract 3,NRIP1,PS610805,Congenital anomalies of kidney and urinary tract,Kidney,2,2,1308
+617641,"Congenital Anomalies Of Kidney And Urinary Tract Syndrome With Or Without Hearing Loss, Abnormal Ears, Or Developmental Delay",PBX1,,,Kidney,2,2,1309
+610805,"Congenital Anomalies Of Kidney And Urinary Tract, Susceptibility To",DSTYK,PS610805,Congenital anomalies of kidney and urinary tract,Kidney,2,2,1310
+618005,Congenital Disorder Of Glycosylation With Defective Fucosylation 1,FUT8,PS618005,Congenital disorder of glycosylation with defective fucosylation,Kidney,1,1,1311
+212065,"Congenital Disorder Of Glycosylation, Type Ia",PMM2,PS212065,"Congenital disorders of glycosylation, type I",Kidney,2,1,1312
+608779,"Congenital Disorder Of Glycosylation, Type Iie",COG7,PS212066,"Congenital disorders of glycosylation, type II",Kidney,2,1,1313
+611209,"Congenital Disorder Of Glycosylation, Type Iig",COG1,PS212066,"Congenital disorders of glycosylation, type II",Kidney,2,1,1314
+614576,"Congenital Disorder Of Glycosylation, Type Iil",COG6,PS212066,"Congenital disorders of glycosylation, type II",Kidney,2,1,1315
+608776,"Congenital Disorder Of Glycosylation, Type Il",ALG9,PS212065,"Congenital disorders of glycosylation, type I",Kidney,2,1,1316
+616457,"Congenital Disorder Of Glycosylation, Type Iz",CAD,PS308350,Developmental and epileptic encephalopathy,Kidney,0,0,1317
+308050,Congenital Hemidysplasia With Ichthyosiform Erythroderma And Limb Defects,NSDHL,,,Kidney,2,1,1318
+618494,"Congenital Hypotonia, Epilepsy, Developmental Delay, And Digital Anomalies",ATN1,,,Kidney,1,1,1319
+612918,"Congenital Lipomatous Overgrowth, Vascular Malformations, And Epidermalnevi",PIK3CA,,,Kidney,0,0,1320
+122470,Cornelia De Lange Syndrome 1,NIPBL,PS122470,Cornelia de Lange syndrome,Kidney,2,1,1321
+300004,"Corpus Callosum, Agenesis Of, With Abnormal Genitalia",ARX,,,Kidney,0,0,1322
+218040,Costello Syndrome,HRAS,,,Kidney,0,0,1323
+615106,Cowden Syndrome 3,,,,Kidney,0,0,1324
+615107,Cowden Syndrome 4,KLLN,PS158350,Cowden disease,Kidney,0,0,1325
+218330,Cranioectodermal Dysplasia,IFT122,PS218330,Cranioectodermal dysplasia,Kidney,2,1,1326
+613610,Cranioectodermal Dysplasia 2,WDR35,PS218330,Cranioectodermal dysplasia,Kidney,2,2,1327
+614099,Cranioectodermal Dysplasia 3,IFT43,PS218330,Cranioectodermal dysplasia,Kidney,0,0,1328
+614378,Cranioectodermal Dysplasia 4,WDR19,PS218330,Cranioectodermal dysplasia,Kidney,0,0,1329
+213980,"Craniofacial Dysmorphism, Skeletal Anomalies, And Mental Retardationsyndrome",TMCO1,,,Kidney,1,1,1330
+218350,Craniofacial Dyssynostosis With Short Stature,,,,Kidney,0,0,1331
+300712,Craniofacioskeletal Syndrome,CFSS,,,Kidney,0,0,1332
+218649,Craniosynostosis-mental Retardation Syndrome Of Lin And Gettig,,,,Kidney,0,0,1333
+218650,Craniosynostosis-mental Retardation-clefting Syndrome,,,,Kidney,0,0,1334
+123450,Cri-du-chat Syndrome,,,,Kidney,0,0,1335
+218900,Crome Syndrome,,,,Kidney,0,0,1336
+123540,"Cryofibrinogenemia, Familial Primary",,,,Kidney,0,0,1337
+123550,"Cryoglobulinemia, Familial Mixed",,,,Kidney,0,0,1338
+219050,"Cryptorchidism, Unilateral Or Bilateral",INSL3,,,Kidney,0,0,1339
+176450,Currarino Syndrome,MNX1,,,Kidney,0,0,1340
+613177,"Cutis Laxa With Severe Pulmonary, Gastrointestinal, And Urinary Abnormalities",LTBP4,PS123700,Cutis laxa,Kidney,2,1,1341
+616603,"Cutis Laxa, Autosomal Dominant 3",ALDH18A1,PS123700,Cutis laxa,Kidney,0,0,1342
+304150,"Cutis Laxa, X-linked",ATP7A,,,Kidney,2,1,1343
+219721,"Cystic Fibrosis With Helicobacter Pylori Gastritis, Megaloblasticanemia, And Mental Retardation",,,,Kidney,0,0,1344
+219900,"Cystinosis, Late-onset Juvenile Or Adolescent Nephropathic Type",CTNS,,,Kidney,2,1,1345
+219800,"Cystinosis, Nephropathic",CTNS,,,Kidney,2,1,1346
+220100,Cystinuria,SLC3A1,,,Kidney,2,2,1347
+220100,Cystinuria,SLC7A9,,,Kidney,2,2,1348
+261515,D-bifunctional Protein Deficiency,HSD17B4,,,Kidney,2,1,1349
+220210,Dandy-walker-like Malformation With Atrioventricular Septal Defect,WASHC5,PS220210,Ritscher-Schinzel syndrome,Kidney,0,0,1350
+124100,Danubian Endemic Familial Nephropathy,,,,Kidney,0,0,1351
+221200,"Deafness, Cochlear, With Myopia And Intellectual Impairment",SLITRK6,,,Kidney,0,0,1352
+300009,Dent Disease 1,CLCN5,PS300009,Dent disease,Kidney,2,2,1353
+300555,Dent Disease 2,OCRL,PS300009,Dent disease,Kidney,0,0,1354
+194080,Denys-drash Syndrome,WT1,,,Kidney,2,2,1355
+618454,Developmental Delay With Or Without Dysmorphic Facies And Autism,TRRAP,,,Kidney,2,1,1356
+616901,"Developmental Delay With Short Stature, Dysmorphic Features, And Sparse Hair",DPH1,,,Kidney,0,0,1357
+125800,"Diabetes Insipidus, Nephrogenic, Autosomal",AQP2,,,Kidney,2,2,1358
+304800,"Diabetes Insipidus, Nephrogenic, X-linked",AVPR2,,,Kidney,2,2,1359
+304900,"Diabetes Insipidus, Neurohypophyseal Type",,,,Kidney,0,0,1360
+222100,"Diabetes Mellitus, Insulin-dependent-1",PTPN22,,,Kidney,2,0,1361
+222100,"Diabetes Mellitus, Insulin-dependent-1",IDDM1,,,Kidney,2,0,1362
+222100,"Diabetes Mellitus, Insulin-dependent-1",ITPR3,,,Kidney,2,0,1363
+222100,"Diabetes Mellitus, Insulin-dependent-1",IL6,,,Kidney,2,0,1364
+222100,"Diabetes Mellitus, Insulin-dependent-1",HNF1A,,,Kidney,2,0,1365
+610199,"Diabetes Mellitus, Neonatal, With Congenital Hypothyroidism",GLIS3,,,Kidney,0,0,1366
+105650,Diamond-blackfan Anemia 1,RPS19,PS105650,Diamond-Blackfan anemia,Kidney,2,1,1367
+613309,Diamond-blackfan Anemia 10,RPS26,PS105650,Diamond-Blackfan anemia,Kidney,2,1,1368
+614900,Diamond-blackfan Anemia 11,RPL26,PS105650,Diamond-Blackfan anemia,Kidney,2,1,1369
+612562,Diamond-blackfan Anemia 7,RPL11,PS105650,Diamond-Blackfan anemia,Kidney,2,1,1370
+608022,Diaphanospondylodysostosis,BMPER,,,Kidney,0,0,1371
+618183,"Diarrhea 10, Protein-losing Enteropathy Type",PLVAP,PS214700,"Diarrhea, congenital",Kidney,2,1,1372
+222730,Dicarboxylicamino Aciduria,SLC1A1,,,Kidney,2,2,1373
+188400,Digeorge Syndrome,TBX1,,,Kidney,0,0,1374
+602722,"Distal Renal Tubular Acidosis 3, With Or Without Sensorineural Hearing Loss",ATP6V0A4,PS179800,Distal renal tubular acidosis,Kidney,2,2,1375
+222448,Donnai-barrow Syndrome,LRP2,,,Kidney,0,0,1376
+220500,Doors Syndrome,TBC1D24,,,Kidney,2,1,1377
+607323,Duane-radial Ray Syndrome,SALL4,,,Kidney,0,0,1378
+127350,Dyschondrosteosis And Nephritis,,,,Kidney,0,0,1379
+305000,"Dyskeratosis Congenita, X-linked",DKC1,PS127550,Dyskeratosis congenita,Kidney,2,1,1380
+224250,Dysmyelination With Jaundice,,,,Kidney,0,0,1381
+129900,"Ectrodactyly, Ectodermal Dysplasia, And Cleft Lip/palate Syndrome",EEC1,,,Kidney,0,0,1382
+604292,"Ectrodactyly, Ectodermal Dysplasia, And Cleft Lip/palate Syndrome 3",TP63,,,Kidney,0,0,1383
+601776,"Ehlers-danlos Syndrome, Musculocontractural Type",CHST14,PS130000,Ehlers-Danlos syndrome,Kidney,0,0,1384
+606408,Ehlers-danlos-like Syndrome Due To Tenascin-x Deficiency,TNXB,PS130000,Ehlers-Danlos syndrome,Kidney,0,0,1385
+609029,Emanuel Syndrome,DER22t11-22,,,Kidney,0,0,1386
+204690,Enamel-renal Syndrome,FAM20A,PS104500,Amelogenesis imperfecta,Kidney,2,2,1387
+613001,Encephalocraniocutaneous Lipomatosis,FGFR1,,,Kidney,0,0,1388
+617668,"Encephalopathy, Neonatal Severe, With Lactic Acidosis And Brain Abnormalities",LIPT2,,,Kidney,0,0,1389
+612651,Endocrine-cerebroosteodysplasia,CILK1,,,Kidney,0,0,1390
+254900,"Epilepsy, Progressive Myoclonic 4, With Or Without Renal Failure",SCARB2,PS254800,"Epilepsy, progressive myoclonic",Kidney,2,2,1391
+618548,"Epileptic Encephalopathy, Early Infantile, 77",PIGQ,PS308350,Developmental and epileptic encephalopathy,Kidney,1,1,1392
+618548,"Epileptic Encephalopathy, Early Infantile, 77",PIGQ,PS614080,Multiple congenital anomalies-hypotonia-seizures syndrome,Kidney,1,1,1393
+226980,"Epiphyseal Dysplasia, Multiple, With Early-onset Diabetes Mellitus",EIF2AK3,,,Kidney,2,1,1394
+616854,Even-plus Syndrome,HSPA9,,,Kidney,2,1,1395
+600057,"Exstrophy Of Bladderbladder Exstrophy And Epispadias Complex, Included",,,,Kidney,0,0,1396
+301500,Fabry Disease,GLA,,,Kidney,0,0,1397
+227255,Facial Dysmorphism With Multiple Malformations,,,,Kidney,0,0,1398
+227280,Faciocardiorenal Syndrome,,,,Kidney,0,0,1399
+120100,Familial Cold Inflammatory Syndrome 1,NLRP3,PS120100,Familial cold autoinflammatory syndrome,Kidney,2,1,1400
+134610,"Familial Mediterranean Fever, Ad",MEFV,,,Kidney,0,0,1401
+249100,"Familial Mediterranean Fever, Ar",MEFV,,,Kidney,0,0,1402
+227650,Fanconi Anemia,FANCA,PS227650,Fanconi anemia,Kidney,2,1,1403
+300514,"Fanconi Anemia, Complementation Group B",FANCB,PS227650,Fanconi anemia,Kidney,0,0,1404
+227645,"Fanconi Anemia, Complementation Group C",FANCC,PS227650,Fanconi anemia,Kidney,2,1,1405
+227646,"Fanconi Anemia, Complementation Group D2",FANCD2,PS227650,Fanconi anemia,Kidney,2,1,1406
+600901,"Fanconi Anemia, Complementation Group E",FANCE,PS227650,Fanconi anemia,Kidney,2,1,1407
+609053,"Fanconi Anemia, Complementation Group I",FANCI,PS227650,Fanconi anemia,Kidney,2,1,1408
+614083,"Fanconi Anemia, Complementation Group L",FANCL,PS227650,Fanconi anemia,Kidney,2,1,1409
+610832,"Fanconi Anemia, Complementation Group N",PALB2,PS227650,Fanconi anemia,Kidney,2,1,1410
+613390,"Fanconi Anemia, Complementation Group O",RAD51C,PS227650,Fanconi anemia,Kidney,2,1,1411
+613951,"Fanconi Anemia, Complementation Group P",SLX4,PS227650,Fanconi anemia,Kidney,2,1,1412
+617784,"Fanconi Anemia, Complementation Group W",RFWD3,PS227650,Fanconi anemia,Kidney,2,1,1413
+134600,Fanconi Renotubular Syndrome 1,GATM,PS134600,Fanconi renotubular syndrome,Kidney,2,2,1414
+613388,Fanconi Renotubular Syndrome 2,SLC34A1,PS134600,Fanconi renotubular syndrome,Kidney,2,2,1415
+616026,Fanconi Renotubular Syndrome 4 With Maturity-onset Diabetes Of The Young,HNF4A,PS134600,Fanconi renotubular syndrome,Kidney,2,2,1416
+618913,Fanconi Renotubular Syndrome 5,NDUFAF6,PS134600,Fanconi renotubular syndrome,Kidney,0,0,1417
+227810,Fanconi-bickel Syndrome,SLC2A2,,,Kidney,2,2,1418
+228100,Fatty Metamorphosis Of Viscera,,,,Kidney,0,0,1419
+153640,Fechtner Syndrome,,,,Kidney,0,0,1420
+134780,Femoral-facial Syndrome,,,,Kidney,0,0,1421
+135580,Fibromuscular Dysplasia Of Arteries,,,,Kidney,0,0,1422
+228940,Fibuloulnar Aplasia Or Hypoplasia With Renal Abnormalities,,,,Kidney,0,0,1423
+136140,Floating-harbor Syndrome,SRCAP,,,Kidney,0,0,1424
+305600,Focal Dermal Hypoplasia,PORCN,,,Kidney,0,0,1425
+603278,Focal Segmental Glomerulosclerosis 1,ACTN4,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1426
+603965,Focal Segmental Glomerulosclerosis 2,TRPC6,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1427
+607832,"Focal Segmental Glomerulosclerosis 3, Susceptibility To",CD2AP,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1428
+612551,"Focal Segmental Glomerulosclerosis 4, Susceptibility To",APOL1,PS603278,Focal segmental glomerulosclerosis,Kidney,0,0,1429
+614131,Focal Segmental Glomerulosclerosis 6,MYO1E,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1430
+616002,Focal Segmental Glomerulosclerosis 7,PAX2,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1431
+616032,Focal Segmental Glomerulosclerosis 8,ANLN,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1432
+616220,Focal Segmental Glomerulosclerosis 9,CRB2,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1433
+613606,Forsythe-wakeling Syndrome,FWS,,,Kidney,0,0,1434
+219000,Fraser Syndrome,FRAS1,PS219000,Fraser syndrome,Kidney,2,1,1435
+617666,Fraser Syndrome 2,FREM2,PS219000,Fraser syndrome,Kidney,2,1,1436
+136680,Frasier Syndrome,WT1,,,Kidney,2,2,1437
+305620,Frontometaphyseal Dysplasia,FLNA,PS305620,Frontometaphyseal dysplasia,Kidney,2,1,1438
+229600,"Fructose Intolerance, Hereditary",ALDOB,,,Kidney,2,2,1439
+229850,Fryns Syndrome,,,,Kidney,0,0,1440
+251300,Galloway-mowat Syndrome,WDR73,PS251300,Galloway-Mowat syndrome,Kidney,2,2,1441
+301006,"Galloway-mowat Syndrome 2, X-linked",LAGE3,PS251300,Galloway-Mowat syndrome,Kidney,0,0,1442
+617729,Galloway-mowat Syndrome 3,OSGEP,PS251300,Galloway-Mowat syndrome,Kidney,2,2,1443
+617730,Galloway-mowat Syndrome 4,TP53RK,PS251300,Galloway-Mowat syndrome,Kidney,0,0,1444
+617731,Galloway-mowat Syndrome 5,TPRKB,PS251300,Galloway-Mowat syndrome,Kidney,2,2,1445
+618347,Galloway-mowat Syndrome 6,WDR4,PS251300,Galloway-Mowat syndrome,Kidney,0,0,1446
+618348,Galloway-mowat Syndrome 7,NUP107,PS251300,Galloway-Mowat syndrome,Kidney,0,0,1447
+618349,Galloway-mowat Syndrome 8,NUP133,PS251300,Galloway-Mowat syndrome,Kidney,0,0,1448
+230740,Gapo Syndrome,ANTXR1,,,Kidney,1,1,1449
+231060,Genitopalatocardiac Syndrome,,,,Kidney,0,0,1450
+606170,Genitopatellar Syndrome,KAT6B,,,Kidney,0,0,1451
+263210,Gillessen-kaesbach-nishimura Syndrome,ALG9,,,Kidney,2,1,1452
+263800,Gitelman Syndrome,SLC12A3,,,Kidney,2,2,1453
+617260,"Global Developmental Delay, Absent Or Hypoplastic Corpus Callosum, And Dysmorphic Facies",ZNF148,,,Kidney,2,1,1454
+618272,"Global Developmental Delay, Lung Cysts, Overgrowth, And Wilms Tumor",DICER1,,,Kidney,0,0,1455
+609886,Glomerulocystic Kidney Disease With Hyperuricemia And Isosthenuria,,,,Kidney,0,0,1456
+137950,Glomerulopathy With Fibronectin Deposits 1,GFND1,PS137950,Glomerulopathy with fibronectin deposits,Kidney,0,0,1457
+601894,Glomerulopathy With Fibronectin Deposits 2,FN1,PS137950,Glomerulopathy with fibronectin deposits,Kidney,0,0,1458
+613237,"Glomerulosclerosis, Focal Segmental, 5",INF2,PS603278,Focal segmental glomerulosclerosis,Kidney,2,2,1459
+138500,Glycinuria With Or Without Oxalate Urolithiasis,SLC6A20,,,Kidney,0,0,1460
+138500,Glycinuria With Or Without Oxalate Urolithiasis,SLC6A19,,,Kidney,2,2,1461
+138500,Glycinuria With Or Without Oxalate Urolithiasis,SLC36A2,,,Kidney,0,0,1462
+232200,Glycogen Storage Disease Ia,G6PC1,,,Kidney,2,2,1463
+232220,Glycogen Storage Disease Ib,SLC37A4,,,Kidney,2,2,1464
+232240,Glycogen Storage Disease Ic,SLC37A4,,,Kidney,2,2,1465
+232500,Glycogen Storage Disease Iv,GBE1,,,Kidney,2,2,1466
+612933,Glycogen Storage Disease Xi,LDHA,,,Kidney,2,1,1467
+138790,"Goiter, Multinodular, Cystic Renal Disease And Digital Anomalies",,,,Kidney,0,0,1468
+618419,"Gonadal Dysgenesis, Dysmorphic Facies, Retinal Dystrophy, And Myopathy",PPP2R3C,,,Kidney,1,1,1469
+233450,Goodpasture Syndrome,,,,Kidney,0,0,1470
+300323,"Gout, Hprt-related",HPRT1,,,Kidney,2,1,1471
+602531,Grange Syndrome,YY1AP1,,,Kidney,0,0,1472
+617093,"Growth Retardation, Intellectual Developmental Disorder, Hypotonia, And Hepatopathy",IARS1,,,Kidney,1,1,1473
+612946,Hadziselimovic Syndrome,,,,Kidney,0,0,1474
+140000,Hand-foot-uterus Syndrome,HOXA13,,,Kidney,0,0,1475
+612726,Hardikar Syndrome,,,,Kidney,0,0,1476
+601095,Harrod Syndrome,,,,Kidney,0,0,1477
+617671,Helix Syndrome,CLDN10,,,Kidney,2,2,1478
+141200,"Hematuria, Benign Familial",COL4A4,,,Kidney,2,2,1479
+141200,"Hematuria, Benign Familial",COL4A3,,,Kidney,2,2,1480
+614034,Heme Oxygenase-1 Deficiency,HMOX1,,,Kidney,2,1,1481
+164210,Hemifacial Microsomia,HFM,,,Kidney,0,0,1482
+235000,"Hemihyperplasia, Isolated",IH,,,Kidney,0,0,1483
+235400,"Hemolytic Uremic Syndrome, Atypical",CFH,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1484
+235400,"Hemolytic Uremic Syndrome, Atypical",CFHR3,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1485
+235400,"Hemolytic Uremic Syndrome, Atypical",CFHR1,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1486
+612922,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 2",CD46,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1487
+612923,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 3",CFI,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1488
+612924,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 4",CFB,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1489
+612925,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 5",C3,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1490
+612926,"Hemolytic Uremic Syndrome, Atypical, Susceptibility To, 6",THBD,PS235400,Hemolytic uremic syndrome,Kidney,2,1,1491
+613730,"Hemorrhagic Destruction Of The Brain, Subependymal Calcification,and Cataracts",JAM3,,,Kidney,1,1,1492
+235510,Hennekam Lymphangiectasia-lymphedema Syndrome,CCBE1,PS235510,Hennekam lymphangiectasia-lymphedema syndrome,Kidney,0,0,1493
+150800,Hereditary Leiomyomatosis And Renal Cell Cancer,FH,,,Kidney,2,2,1494
+203300,Hermansky-pudlak Syndrome,HPS1,PS203300,Hermansky-Pudlak syndrome,Kidney,2,1,1495
+306955,"Heterotaxy, Visceral, 1, X-linked",ZIC3,PS306955,"Heterotaxy, visceral",Kidney,0,0,1496
+235760,Hirschsprung Disease With Hypoplastic Nails And Dysmorphic Facialfeatures,,,,Kidney,0,0,1497
+235740,"Hirschsprung Disease With Polydactyly, Renal Agenesis, And Deafness",,,,Kidney,0,0,1498
+235830,Histidinuria Due To A Renal Tubular Defect,,,,Kidney,0,0,1499
+142945,Holoprosencephaly 3,SHH,PS236100,Holoprosencephaly,Kidney,0,0,1500
+236110,Holzgreve Syndrome,,,,Kidney,0,0,1501
+606528,Homozygous 11p15-p14 Deletion Syndrome,DEL11p15p14,,,Kidney,0,0,1502
+236400,Humeroradial Synostosishumeroradial/multiple Synostosis Syndrome,,,,Kidney,0,0,1503
+236450,Hutterite Cerebroosteonephrodysplasia Syndrome,,,,Kidney,0,0,1504
+236680,Hydrolethalus Syndrome 1,HYLS1,PS236680,Hydrolethalus syndrome,Kidney,0,0,1505
+236800,Hydroxykynureninuria,KYNU,,,Kidney,2,2,1506
+237000,Hydroxyprolinemia,,,,Kidney,0,0,1507
+260920,Hyper-igd Syndrome,MVK,,,Kidney,2,0,1508
+613677,"Hyperaldosteronism, Familial, Type Iii",KCNJ5,PS103900,Hyperaldosteronism,Kidney,2,0,1509
+616963,"Hypercalcemia, Infantile 2",SLC34A1,PS143880,"Hypercalcemia, infantile",Kidney,2,1,1510
+143880,"Hypercalcemia, Infantile, 1",CYP24A1,PS143880,"Hypercalcemia, infantile",Kidney,2,0,1511
+143870,"Hypercalciuria, Absorptive, 2",ADCY10,,,Kidney,0,0,1512
+259900,"Hyperoxaluria, Primary, Type I",AGXT,PS259900,"Hyperoxaluria, primary",Kidney,2,0,1513
+260000,"Hyperoxaluria, Primary, Type Ii",GRHPR,PS259900,"Hyperoxaluria, primary",Kidney,2,0,1514
+613616,"Hyperoxaluria, Primary, Type Iii",HOGA1,PS259900,"Hyperoxaluria, primary",Kidney,2,0,1515
+145001,Hyperparathyroidism 2,CDC73,PS145000,Hyperparathyroidism,Kidney,2,0,1516
+617343,Hyperparathyroidism 4,GCM2,PS145000,Hyperparathyroidism,Kidney,0,0,1517
+239199,"Hyperparathyroidism, Neonatal Self-limited Primary, With Hypercalciuria",,,,Kidney,0,0,1518
+239200,"Hyperparathyroidism, Neonatal Severe",CASR,PS145000,Hyperparathyroidism,Kidney,2,0,1519
+239300,Hyperphosphatasia With Mental Retardation Syndrome 1,PIGV,PS239300,Hyperphosphatasia with mental retardation syndrome,Kidney,0,0,1520
+616809,Hyperphosphatasia With Mental Retardation Syndrome 6,PIGY,PS239300,Hyperphosphatasia with mental retardation syndrome,Kidney,2,1,1521
+239350,"Hyperphosphatemia, Polyuria, And Seizures",,,,Kidney,0,0,1522
+239800,"Hypertelorism, Microtia, Facial Clefting Syndrome",,,,Kidney,0,0,1523
+613845,"Hyperuricemia, Pulmonary Hypertension, Renal Failure, And Alkalosis",SARS2,,,Kidney,0,0,1524
+162000,"Hyperuricemic Nephropathy, Familial Juvenile, 1",UMOD,PS162000,Tubulointerstitial kidney disease,Kidney,2,2,1525
+613092,"Hyperuricemic Nephropathy, Familial Juvenile, 2",REN,PS162000,Tubulointerstitial kidney disease,Kidney,2,2,1526
+614227,"Hyperuricemic Nephropathy, Familial Juvenile, 3",HNFJ3,,,Kidney,0,0,1527
+617056,"Hyperuricemic Nephropathy, Familial Juvenile, 4",SEC61A1,PS162000,Tubulointerstitial kidney disease,Kidney,2,2,1528
+240150,"Hypervitaminosis A, Susceptibility To",,,,Kidney,0,0,1529
+601198,"Hypocalcemia, Autosomal Dominant 1",CASR,PS601198,Hypocalcemia,Kidney,2,2,1530
+145980,"Hypocalciuric Hypercalcemia, Familial, Type I",CASR,PS145980,Hypocalciuric hypercalcemia,Kidney,2,2,1531
+145981,"Hypocalciuric Hypercalcemia, Familial, Type Ii",GNA11,PS145980,Hypocalciuric hypercalcemia,Kidney,2,2,1532
+600740,"Hypocalciuric Hypercalcemia, Familial, Type Iii",AP2S1,PS145980,Hypocalciuric hypercalcemia,Kidney,2,2,1533
+308700,Hypogonadotropic Hypogonadism 1 With Or Without Anosmia,ANOS1,PS147950,Hypogonadotropic hypogonadism with or without anosmia,Kidney,0,0,1534
+244200,Hypogonadotropic Hypogonadism 3 With Or Without Anosmia,PROKR2,PS147950,Hypogonadotropic hypogonadism with or without anosmia,Kidney,0,0,1535
+241150,"Hypokalemia, Familial",,,,Kidney,0,0,1536
+154020,"Hypomagnesemia 2, Renal",FXYD2,PS602014,Hypomagnesemia,Kidney,0,0,1537
+248250,"Hypomagnesemia 3, Renal",CLDN16,PS602014,Hypomagnesemia,Kidney,2,2,1538
+248190,"Hypomagnesemia, Renal, With Ocular Involvement",CLDN19,PS602014,Hypomagnesemia,Kidney,2,2,1539
+618314,"Hypomagnesemia, Seizures, And Mental Retardation 2",ATP1A1,PS616418,"Hypomagnesemia, seizures, and mental retardation",Kidney,2,2,1540
+146255,"Hypoparathyroidism, Sensorineural Deafness, And Renal Disease",GATA3,,,Kidney,2,1,1541
+241500,"Hypophosphatasia, Infantile",ALPL,,,Kidney,0,0,1542
+241530,"Hypophosphatemic Rickets With Hypercalciuria, Hereditary",SLC34A3,,,Kidney,2,2,1543
+613312,"Hypophosphatemic Rickets, Autosomal Recessive, 2",ENPP1,PS193100,Hypophosphatemic rickets,Kidney,2,2,1544
+307800,"Hypophosphatemic Rickets, X-linked Dominant",PHEX,PS193100,Hypophosphatemic rickets,Kidney,0,0,1545
+300554,"Hypophosphatemic Rickets, X-linked Recessive",CLCN5,PS193100,Hypophosphatemic rickets,Kidney,2,2,1546
+241800,"Hypothalamic Hamartomascongenital Hypothalamic Hamartoma Syndrome, Included",SMO,,,Kidney,0,0,1547
+616900,"Hypotonia, Infantile, With Psychomotor Retardation And Characteristic Facies 3",TBCK,PS615419,"Hypotonia, infantile, with psychomotor retardation and characteristic facies",Kidney,0,0,1548
+606407,Hypotonia-cystinuria Syndrome,DEL2p21,,,Kidney,0,0,1549
+137940,Hypotrichosis-lymphedema-telangiectasia-renal Defect Syndrome,SOX18,,,Kidney,2,2,1550
+220150,"Hypouricemia, Renal, 1",SLC22A12,,,Kidney,2,2,1551
+612076,"Hypouricemia, Renal, 2",SLC2A9,,,Kidney,2,2,1552
+308205,"Ichthyosis Follicularis, Atrichia, And Photophobia Syndrome",MBTPS2,PS308205,IFAP syndrome,Kidney,0,0,1553
+242530,"Ichthyosis, Mental Retardation, Dwarfism, And Renal Impairment",,,,Kidney,0,0,1554
+161950,"Iga Nephropathy, Susceptibility To, 1",IGAN1,PS161950,IgA nephropathy,Kidney,0,0,1555
+613944,"Iga Nephropathy, Susceptibility To, 2",IGAN2,PS161950,IgA nephropathy,Kidney,0,0,1556
+616818,"Iga Nephropathy, Susceptibility To, 3",SPRY2,PS161950,IgA nephropathy,Kidney,2,0,1557
+615816,Immunodeficiency 23,PGM3,PS300755,Immunodeficiency (Select Examples),Kidney,2,1,1558
+613496,"Immunodeficiency, Common Variable, 6",CD81,PS607594,"Immunodeficiency, common variable",Kidney,2,1,1559
+304790,"Immunodysregulation, Polyendocrinopathy, And Enteropathy, X-linked",FOXP3,,,Kidney,0,0,1560
+242900,"Immunoosseous Dysplasia, Schimke Type",SMARCAL1,,,Kidney,2,1,1561
+269920,Infantile Sialic Acid Storage Disorder,SLC17A5,,,Kidney,2,2,1562
+600989,Infundibulopelvic Dysgenesis,,,,Kidney,0,0,1563
+618653,Intellectual Developmental Disorder With Impaired Language And Dysmorphic Facies,DDX6,,,Kidney,2,0,1564
+618060,Intellectual Developmental Disorder With Or Without Epilepsy Or Cerebellar Ataxia,RORA,,,Kidney,0,0,1565
+614748,"Interstitial Lung Disease, Nephrotic Syndrome, And Epidermolysis Bullosa, Congenital",ITGA3,,,Kidney,2,2,1566
+614817,"Interstitial Nephritis, Karyomegalic",FAN1,,,Kidney,0,0,1567
+263000,"Interstitial Pneumonitis, Desquamative, Familial",,,,Kidney,0,0,1568
+300048,"Intestinal Pseudoobstruction, Neuronal, Chronic Idiopathic, X-linked",FLNA,,,Kidney,1,1,1569
+243800,Johanson-blizzard Syndrome,UBR1,,,Kidney,2,1,1570
+213300,Joubert Syndrome 1,INPP5E,PS213300,Joubert syndrome,Kidney,2,2,1571
+614424,Joubert Syndrome 14,TMEM237,PS213300,Joubert syndrome,Kidney,2,1,1572
+614464,Joubert Syndrome 15,CEP41,PS213300,Joubert syndrome,Kidney,2,1,1573
+614465,Joubert Syndrome 16,TMEM138,PS213300,Joubert syndrome,Kidney,2,1,1574
+614815,Joubert Syndrome 18,TCTN3,PS213300,Joubert syndrome,Kidney,2,1,1575
+608091,Joubert Syndrome 2,TMEM216,PS213300,Joubert syndrome,Kidney,2,2,1576
+614970,Joubert Syndrome 20,TMEM231,PS213300,Joubert syndrome,Kidney,2,1,1577
+615636,Joubert Syndrome 21,CSPP1,PS213300,Joubert syndrome,Kidney,2,2,1578
+615665,Joubert Syndrome 22,PDE6D,PS213300,Joubert syndrome,Kidney,2,2,1579
+608629,Joubert Syndrome 3,AHI1,PS213300,Joubert syndrome,Kidney,2,2,1580
+618161,Joubert Syndrome 35,ARL3,PS213300,Joubert syndrome,Kidney,2,2,1581
+609583,Joubert Syndrome 4,NPHP1,PS213300,Joubert syndrome,Kidney,2,2,1582
+610188,Joubert Syndrome 5,CEP290,PS213300,Joubert syndrome,Kidney,2,2,1583
+610688,Joubert Syndrome 6,TMEM67,PS213300,Joubert syndrome,Kidney,2,1,1584
+611560,Joubert Syndrome 7,RPGRIP1L,PS213300,Joubert syndrome,Kidney,2,1,1585
+612285,Joubert Syndrome 9,CC2D2A,PS213300,Joubert syndrome,Kidney,2,2,1586
+147920,Kabuki Syndrome,KMT2D,PS147920,Kabuki syndrome,Kidney,0,0,1587
+308750,Kallmann Syndrome With Spastic Paraplegia,,,,Kidney,0,0,1588
+530000,Kearns-sayre Syndrome,,,,Kidney,0,0,1589
+618460,Khan-khan-katsanis Syndrome,NCAPG2,,,Kidney,0,0,1590
+610253,Kleefstra Syndrome,EHMT1,PS156200,"Mental retardation, autosomal dominant",Kidney,0,0,1591
+610253,Kleefstra Syndrome,EHMT1,PS610253,Kleefstra syndrome,Kidney,0,0,1592
+118100,"Klippel-feil Syndrome 1, Autosomal Dominant",GDF6,PS118100,Klippel-Feil syndrome,Kidney,0,0,1593
+610443,Koolen-de Vries Syndrome,KANSL1,PS156200,"Mental retardation, autosomal dominant",Kidney,0,0,1594
+149730,Lacrimoauriculodentodigital Syndrome,FGFR3,,,Kidney,2,1,1595
+149730,Lacrimoauriculodentodigital Syndrome,FGF10,,,Kidney,2,1,1596
+149730,Lacrimoauriculodentodigital Syndrome,FGFR2,,,Kidney,2,1,1597
+607330,Lathosterolosis,SC5D,,,Kidney,1,1,1598
+245900,Lecithin:cholesterol Acyltransferase Deficiency,LCAT,,,Kidney,0,0,1599
+308940,"Leiomyomatosis, Diffuse, With Alport Syndrome",,,,Kidney,0,0,1600
+151100,Leopard Syndrome 1,PTPN11,PS151100,LEOPARD syndrome,Kidney,2,1,1601
+300322,Lesch-nyhan Syndrome,HPRT1,,,Kidney,2,1,1602
+618681,Lessel-kubisch Syndrome,MDM2,,,Kidney,2,2,1603
+607598,Lethal Congenital Contracture Syndrome 2,ERBB3,PS253310,Lethal congenital contracture syndrome,Kidney,0,0,1604
+151600,Leukonychia Totalis,PLCD1,PS161050,"Nail disorder, nonsyndromic congenital",Kidney,0,0,1605
+151623,Li-fraumeni Syndrome 1,TP53,PS151623,Li-Fraumeni syndrome,Kidney,0,0,1606
+177200,Liddle Syndrome,SCNN1B,PS177200,Liddle syndrome,Kidney,2,2,1607
+608594,"Lipodystrophy, Congenital Generalized, Type 1",AGPAT2,PS608594,"Lipodystrophy, congenital generalized",Kidney,0,0,1608
+269700,"Lipodystrophy, Congenital Generalized, Type 2",BSCL2,PS608594,"Lipodystrophy, congenital generalized",Kidney,2,1,1609
+608709,"Lipodystrophy, Partial, Acquired, Susceptibility To",LMNB2,,,Kidney,1,1,1610
+613913,"Lipodystrophy, Partial, Acquired, With Low Complement Component C3,with Or Without Glomerulonephritis",,,,Kidney,0,0,1611
+611771,Lipoprotein Glomerulopathy,APOE,,,Kidney,2,1,1612
+309000,Lowe Oculocerebrorenal Syndrome,OCRL,,,Kidney,0,0,1613
+247410,Lymphedema-hypoparathyroidism Syndrome,,,,Kidney,0,0,1614
+247800,"Lymphopenic Hypergammaglobulinemia, Antibody Deficiency, Autoimmunehemolytic Anemia, And Glomerulonephritis",,,,Kidney,0,0,1615
+247950,Lysine Malabsorption Syndrome,,,,Kidney,0,0,1616
+222700,Lysinuric Protein Intolerance,SLC7A7,,,Kidney,2,2,1617
+247990,Macdermot-winter Syndrome,,,,Kidney,0,0,1618
+602501,Macrocephaly-capillary Malformation,PIK3CA,,,Kidney,0,0,1619
+619127,Mandibuloacral Dysplasia Progeroid Syndrome,MTX2,,,Kidney,2,1,1620
+248700,Marden-walker Syndrome,PIEZO2,,,Kidney,0,0,1621
+248760,Marfanoid Habitus With Microcephaly And Glomerulonephritis,,,,Kidney,0,0,1622
+236700,Mckusick-kaufman Syndrome,MKKS,,,Kidney,2,1,1623
+616258,Meckel Syndrome 12,KIF14,PS249000,Meckel syndrome,Kidney,2,2,1624
+617562,Meckel Syndrome 13,TMEM107,PS213300,Joubert syndrome,Kidney,2,2,1625
+617562,Meckel Syndrome 13,TMEM107,PS249000,Meckel syndrome,Kidney,2,2,1626
+249000,"Meckel Syndrome, Type 1",MKS1,PS249000,Meckel syndrome,Kidney,2,2,1627
+614175,"Meckel Syndrome, Type 10",B9D2,PS213300,Joubert syndrome,Kidney,2,2,1628
+614175,"Meckel Syndrome, Type 10",B9D2,PS249000,Meckel syndrome,Kidney,2,2,1629
+615397,"Meckel Syndrome, Type 11",TMEM231,PS249000,Meckel syndrome,Kidney,2,2,1630
+603194,"Meckel Syndrome, Type 2",TMEM216,PS249000,Meckel syndrome,Kidney,2,2,1631
+607361,"Meckel Syndrome, Type 3",TMEM67,PS249000,Meckel syndrome,Kidney,2,2,1632
+611134,"Meckel Syndrome, Type 4",CEP290,PS249000,Meckel syndrome,Kidney,2,2,1633
+612284,"Meckel Syndrome, Type 6",CC2D2A,PS249000,Meckel syndrome,Kidney,2,2,1634
+267010,"Meckel Syndrome, Type 7",NPHP3,PS249000,Meckel syndrome,Kidney,0,0,1635
+613885,"Meckel Syndrome, Type 8",TCTN2,PS249000,Meckel syndrome,Kidney,2,2,1636
+614209,"Meckel Syndrome, Type 9",B9D1,PS249000,Meckel syndrome,Kidney,2,2,1637
+174000,Medullary Cystic Kidney Disease 1,MUC1,PS162000,Tubulointerstitial kidney disease,Kidney,0,0,1638
+603860,Medullary Cystic Kidney Disease 2,,,,Kidney,0,0,1639
+618719,"Megabladder, Congenital",MYOCD,,,Kidney,2,0,1640
+617564,Meier-gorlin Syndrome 8,MCM5,PS224690,Meier-Gorlin syndrome,Kidney,2,1,1641
+309350,Melnick-needles Syndrome,FLNA,,,Kidney,2,1,1642
+305800,"Membranoproliferative Glomerulonephritis, X-linked",,,,Kidney,0,0,1643
+616973,"Mental Retardation, Autosomal Dominant 42",GNB1,PS156200,"Mental retardation, autosomal dominant",Kidney,0,0,1644
+300968,"Mental Retardation, X-linked 99, Syndromic, Female-restricted",USP9X,PS309530,"Mental retardation, nonsyndromic, X-linked",Kidney,2,1,1645
+300519,"Mental Retardation, X-linked, Syndromic, Martin-probst Type",MRXSMP,PS309510,"Mental retardation, X-linked syndromic",Kidney,0,0,1646
+309580,"Mental Retardation-hypotonic Facies Syndrome, X-linked, 1",ATRX,,,Kidney,2,1,1647
+249660,"Mesangial Sclerosis, Diffuse Renal, With Ocular Abnormalities",,,,Kidney,0,0,1648
+600383,Mesomelia-synostoses Syndrome,DEL8q13,,,Kidney,0,0,1649
+156400,"Metaphyseal Chondrodysplasia, Jansen Type",PTH1R,,,Kidney,2,1,1650
+277400,"Methylmalonic Aciduria And Homocystinuria, Cblc Type",MMACHC,,,Kidney,0,0,1651
+277400,"Methylmalonic Aciduria And Homocystinuria, Cblc Type",PRDX1,,,Kidney,2,2,1652
+251000,Methylmalonic Aciduria Due To Methylmalonyl-coa Mutase Deficiency,MMUT,,,Kidney,0,0,1653
+210710,"Microcephalic Osteodysplastic Primordial Dwarfism, Type I",RNU4ATAC,,,Kidney,0,0,1654
+617090,"Microcephaly 17, Primary, Autosomal Recessive",CIT,PS251200,"Microcephaly, primary autosomal recessive",Kidney,0,0,1655
+617914,"Microcephaly 20, Primary, Autosomal Recessive",KIF14,PS251200,"Microcephaly, primary autosomal recessive",Kidney,0,0,1656
+601355,"Microcephaly, Congenital Heart Disease, Unilateral Renal Agenesis,and Hyposegmented Lungs",,,,Kidney,0,0,1657
+618142,"Microcephaly, Facial Dysmorphism, Renal Agenesis, And Ambiguous Genitalia Syndrome",CTU2,,,Kidney,2,2,1658
+616817,"Microcephaly, Short Stature, And Impaired Glucose Metabolism 2",PPP1R15B,,,Kidney,2,1,1659
+156810,Microgastria-limb Reduction Defects Association,,,,Kidney,0,0,1660
+309800,"Microphthalmia, Syndromic 1",NAA10,PS309800,"Microphthalmia, syndromic",Kidney,2,1,1661
+607932,"Microphthalmia, Syndromic 6",BMP4,PS309800,"Microphthalmia, syndromic",Kidney,2,1,1662
+601186,"Microphthalmia, Syndromic 9",STRA6,PS300345,"Microphthalmia, isolated, with coloboma",Kidney,0,0,1663
+601186,"Microphthalmia, Syndromic 9",STRA6,PS309800,"Microphthalmia, syndromic",Kidney,0,0,1664
+300990,"Midface Hypoplasia, Hearing Impairment, Elliptocytosis, And Nephrocalcinosis",AMMECR1,,,Kidney,0,0,1665
+247200,Miller-dieker Lissencephaly Syndrome,MDLS,PS607432,Lissencephaly,Kidney,0,0,1666
+618240,"Mitochondrial Complex I Deficiency, Nuclear Type 18",NDUFAF3,PS252010,"Mitochondrial complex I deficiency, nuclear type",Kidney,1,1,1667
+618250,"Mitochondrial Complex I Deficiency, Nuclear Type 29",TMEM126B,PS252010,"Mitochondrial complex I deficiency, nuclear type",Kidney,1,1,1668
+124000,Mitochondrial Complex Iii Deficiency,BCS1L,PS124000,"Mitochondrial complex III deficiency, nuclear type",Kidney,2,1,1669
+615824,"Mitochondrial Complex Iii Deficiency, Nuclear Type 7",UQCC2,PS124000,"Mitochondrial complex III deficiency, nuclear type",Kidney,0,0,1670
+220110,Mitochondrial Complex Iv Deficiency,SURF1,PS220110,"Mitochondrial complex IV deficiency, nuclear-type",Kidney,2,2,1671
+619053,"Mitochondrial Complex Iv Deficiency, Nuclear Type 10",COX14,PS220110,"Mitochondrial complex IV deficiency, nuclear-type",Kidney,0,0,1672
+615471,Mitochondrial Dna Depletion Syndrome 13 (encephalomyopathic Type),FBXL4,PS603041,Mitochondrial DNA depletion syndrome,Kidney,2,1,1673
+612075,Mitochondrial Dna Depletion Syndrome 8a (encephalomyopathic Type Withrenal Tubulopathy),RRM2B,PS603041,Mitochondrial DNA depletion syndrome,Kidney,2,0,1674
+157800,"Mitral Regurgitation, Conductive Deafness, And Fusion Of Cervicalvertebrae And Of Carpal And Tarsal Bones",MAP3K7,,,Kidney,0,0,1675
+252150,Molybdenum Cofactor Deficiency,MOCS1,PS252150,Molybdenum cofactor deficiency,Kidney,0,0,1676
+252160,"Molybdenum Cofactor Deficiency, Complementation Group B",MOCS2,PS252150,Molybdenum cofactor deficiency,Kidney,0,0,1677
+257300,Mosaic Variegated Aneuploidy Syndrome 1,BUB1B,PS257300,Mosaic variegated aneuploidy syndrome,Kidney,0,0,1678
+617598,Mosaic Variegated Aneuploidy Syndrome 3,TRIP13,PS257300,Mosaic variegated aneuploidy syndrome,Kidney,0,0,1679
+235730,Mowat-wilson Syndrome,ZEB2,,,Kidney,0,0,1680
+191900,Muckle-wells Syndrome,NLRP3,,,Kidney,2,1,1681
+158310,"Mucoepithelial Dysplasia, Hereditary",SREBF1,,,Kidney,0,0,1682
+617303,Mucopolysaccharidosis-plus Syndrome,VPS33A,,,Kidney,2,2,1683
+617352,Mulchandani-bhoj-conlin Syndrome,MBCS,,,Kidney,0,0,1684
+253250,Mulibrey Nanism,TRIM37,,,Kidney,0,0,1685
+158330,Mullerian Aplasia And Hyperandrogenism,WNT4,,,Kidney,2,1,1686
+235255,"Mullerian Derivatives, Persistence Of, With Lymphangiectasia And Postaxialpolydactyly",,,,Kidney,0,0,1687
+601076,"Mullerian Duct Aplasia, Unilateral Renal Agenesis, And Cervicothoracicsomite Anomalies",,,,Kidney,0,0,1688
+143400,"Multicystic Renal Dysplasia, Bilateral",TBX18,PS610805,Congenital anomalies of kidney and urinary tract,Kidney,0,0,1689
+236500,"Multinucleated Neurons, Anhydramnios, Renal Dysplasia, Cerebellar Hypoplasia, And Hydranencephaly",CEP55,,,Kidney,0,0,1690
+231680,Multiple Acyl-coa Dehydrogenase Deficiency,ETFDH,,,Kidney,2,1,1691
+231680,Multiple Acyl-coa Dehydrogenase Deficiency,ETFA,,,Kidney,2,1,1692
+231680,Multiple Acyl-coa Dehydrogenase Deficiency,ETFB,,,Kidney,2,1,1693
+614080,Multiple Congenital Anomalies-hypotonia-seizures Syndrome 1,PIGN,PS614080,Multiple congenital anomalies-hypotonia-seizures syndrome,Kidney,0,0,1694
+300868,Multiple Congenital Anomalies-hypotonia-seizures Syndrome 2,PIGA,PS308350,Developmental and epileptic encephalopathy,Kidney,1,1,1695
+300868,Multiple Congenital Anomalies-hypotonia-seizures Syndrome 2,PIGA,PS614080,Multiple congenital anomalies-hypotonia-seizures syndrome,Kidney,1,1,1696
+615398,Multiple Congenital Anomalies-hypotonia-seizures Syndrome 3,PIGT,PS614080,Multiple congenital anomalies-hypotonia-seizures syndrome,Kidney,2,1,1697
+610755,"Multiple Endocrine Neoplasia, Type Iv",CDKN1B,PS131100,Multiple endocrine neoplasia,Kidney,2,2,1698
+194071,Multiple Tumor-associated Chromosome Region 1,ICR1,PS194070,Wilms tumor,Kidney,0,0,1699
+611376,Mungan Syndrome,MGS,,,Kidney,0,0,1700
+611376,Mungan Syndrome,RAD21,,,Kidney,2,1,1701
+236670,Muscular Dystrophy-dystroglycanopathy (congenital With Brain And Eye,POMT1,PS236670,"Muscular dystrophy-dystroglycanopathy, type A",Kidney,2,1,1702
+615287,"Muscular Dystrophy-dystroglycanopathy (congenital With Brain And Eye Anomalies), Type A, 13",B4GAT1,PS236670,"Muscular dystrophy-dystroglycanopathy, type A",Kidney,0,0,1703
+160010,"Myoglobinuria, Autosomal Dominant",,,,Kidney,0,0,1704
+618578,"Myopathy, Congenital, Progressive, With Scoliosis",PAX7,,,Kidney,0,0,1705
+618975,"Myopathy, Congenital, With Diaphragmatic Defects, Respiratory Insufficiency, And Dysmorphic Facies",MYOD1,,,Kidney,0,0,1706
+618829,"Nabais Sa-de Vries Syndrome, Type 2",SPOP,,,Kidney,0,0,1707
+161200,Nail-patella Syndrome,LMX1B,,,Kidney,0,0,1708
+256020,Nail-patella-like Renal Disease,LMX1B,PS603278,Focal segmental glomerulosclerosis,Kidney,0,0,1709
+167030,"Nephrolithiasis, Calcium Oxalate",SLC26A1,,,Kidney,2,2,1710
+310468,"Nephrolithiasis, X-linked Recessive, With Renal Failure",CLCN5,,,Kidney,2,2,1711
+612286,"Nephrolithiasis/osteoporosis, Hypophosphatemic, 1",SLC34A1,PS612286,"Nephrolithiasis/osteoporosis, hypophosphatemic",Kidney,2,2,1712
+612287,"Nephrolithiasis/osteoporosis, Hypophosphatemic, 2",SLC9A3R1,PS612286,"Nephrolithiasis/osteoporosis, hypophosphatemic",Kidney,2,2,1713
+256100,Nephronophthisis 1,NPHP1,PS256100,Nephronophthisis,Kidney,2,2,1714
+613550,Nephronophthisis 11,TMEM67,PS256100,Nephronophthisis,Kidney,2,2,1715
+613820,Nephronophthisis 12,TTC21B,PS256100,Nephronophthisis,Kidney,2,2,1716
+614377,Nephronophthisis 13,WDR19,PS256100,Nephronophthisis,Kidney,0,0,1717
+614844,Nephronophthisis 14,ZNF423,PS213300,Joubert syndrome,Kidney,0,0,1718
+614844,Nephronophthisis 14,ZNF423,PS256100,Nephronophthisis,Kidney,0,0,1719
+614845,Nephronophthisis 15,CEP164,PS256100,Nephronophthisis,Kidney,2,2,1720
+615382,Nephronophthisis 16,ANKS6,PS256100,Nephronophthisis,Kidney,2,2,1721
+615862,Nephronophthisis 18,CEP83,PS256100,Nephronophthisis,Kidney,2,2,1722
+616217,Nephronophthisis 19,DCDC2,PS256100,Nephronophthisis,Kidney,2,2,1723
+602088,Nephronophthisis 2,INVS,PS256100,Nephronophthisis,Kidney,2,2,1724
+617271,Nephronophthisis 20,MAPKBP1,PS256100,Nephronophthisis,Kidney,2,2,1725
+604387,Nephronophthisis 3,NPHP3,PS256100,Nephronophthisis,Kidney,2,2,1726
+606966,Nephronophthisis 4,NPHP4,PS256100,Nephronophthisis,Kidney,2,2,1727
+611498,Nephronophthisis 7,GLIS2,PS256100,Nephronophthisis,Kidney,2,2,1728
+613824,Nephronophthisis 9,NEK8,PS256100,Nephronophthisis,Kidney,2,2,1729
+613159,Nephronophthisis-like Nephropathy 1,XPNPEP3,PS256100,Nephronophthisis,Kidney,0,0,1730
+609057,Nephropathy With Pretibial Epidermolysis Bullosa And Deafness,CD151,,,Kidney,2,1,1731
+256120,"Nephropathy, Deafness, And Hyperparathyroidism",,,,Kidney,0,0,1732
+602114,"Nephropathy, Progressive Tubulointerstitial, With Cholestatic Liverdisease",,,,Kidney,0,0,1733
+256150,Nephrosialidosis,,,,Kidney,0,0,1734
+256200,Nephrosis With Deafness And Urinary Tract And Digital Malformations,,,,Kidney,0,0,1735
+256300,"Nephrotic Syndrome, Type 1",NPHS1,PS256300,Nephrotic syndrome,Kidney,2,2,1736
+615861,"Nephrotic Syndrome, Type 10",EMP2,PS256300,Nephrotic syndrome,Kidney,2,2,1737
+616730,"Nephrotic Syndrome, Type 11",NUP107,PS256300,Nephrotic syndrome,Kidney,2,2,1738
+616892,"Nephrotic Syndrome, Type 12",NUP93,PS256300,Nephrotic syndrome,Kidney,2,2,1739
+616893,"Nephrotic Syndrome, Type 13",NUP205,PS256300,Nephrotic syndrome,Kidney,2,2,1740
+617575,"Nephrotic Syndrome, Type 14",SGPL1,PS256300,Nephrotic syndrome,Kidney,2,2,1741
+617609,"Nephrotic Syndrome, Type 15",MAGI2,PS256300,Nephrotic syndrome,Kidney,0,0,1742
+617783,"Nephrotic Syndrome, Type 16",KANK2,PS256300,Nephrotic syndrome,Kidney,2,2,1743
+618176,"Nephrotic Syndrome, Type 17",NUP85,PS256300,Nephrotic syndrome,Kidney,2,2,1744
+618177,"Nephrotic Syndrome, Type 18",NUP133,PS256300,Nephrotic syndrome,Kidney,0,0,1745
+618178,"Nephrotic Syndrome, Type 19",NUP160,PS256300,Nephrotic syndrome,Kidney,0,0,1746
+600995,"Nephrotic Syndrome, Type 2",NPHS2,PS256300,Nephrotic syndrome,Kidney,2,2,1747
+301028,"Nephrotic Syndrome, Type 20",TBC1D8B,PS256300,Nephrotic syndrome,Kidney,2,2,1748
+618594,"Nephrotic Syndrome, Type 21",AVIL,PS256300,Nephrotic syndrome,Kidney,0,0,1749
+610725,"Nephrotic Syndrome, Type 3",PLCE1,PS256300,Nephrotic syndrome,Kidney,2,2,1750
+256370,"Nephrotic Syndrome, Type 4",WT1,PS256300,Nephrotic syndrome,Kidney,2,2,1751
+614199,"Nephrotic Syndrome, Type 5, With Or Without Ocular Abnormalities",LAMB2,PS256300,Nephrotic syndrome,Kidney,2,2,1752
+614196,"Nephrotic Syndrome, Type 6",PTPRO,PS256300,Nephrotic syndrome,Kidney,2,2,1753
+615008,"Nephrotic Syndrome, Type 7",DGKE,PS235400,Hemolytic uremic syndrome,Kidney,2,2,1754
+615008,"Nephrotic Syndrome, Type 7",DGKE,PS256300,Nephrotic syndrome,Kidney,2,2,1755
+615244,"Nephrotic Syndrome, Type 8",ARHGDIA,PS256300,Nephrotic syndrome,Kidney,2,2,1756
+615573,"Nephrotic Syndrome, Type 9",COQ8B,PS256300,Nephrotic syndrome,Kidney,2,2,1757
+256520,Neu-laxova Syndrome,PHGDH,PS256520,Neu-Laxova syndrome,Kidney,2,1,1758
+618571,"Neurodevelopmental Disorder With Cataracts, Poor Growth, And Dysmorphic Facies",INTS1,,,Kidney,1,1,1759
+618659,Neurodevelopmental Disorder With Dysmorphic Facies And Distal Skeletal Anomalies,ZMIZ1,,,Kidney,2,1,1760
+617913,"Neurodevelopmental Disorder With Microcephaly, Cataracts, And Renal Abnormalities",GEMIN4,,,Kidney,0,0,1761
+616975,"Neurodevelopmental Disorder With Or Without Anomalies Of The Brain, Eye, Or Heart",RERE,,,Kidney,2,1,1762
+618914,"Neurodevelopmental, Jaw, Eye, And Digital Syndrome",FBXW11,,,Kidney,0,0,1763
+256690,Neurofaciodigitorenal Syndrome,,,,Kidney,0,0,1764
+162200,"Neurofibromatosis, Type I",NF1,,,Kidney,0,0,1765
+618733,Neuromuscular Disease And Ocular Or Auditory Anomalies With Or Without Seizures,DHX16,,,Kidney,2,1,1766
+223900,"Neuropathy, Hereditary Sensory And Autonomic, Type Iii",ELP1,PS162400,Hereditary sensory and autonomic neuropathy,Kidney,0,0,1767
+612541,"Neutropenia, Severe Congenital, 4, Autosomal Recessive",G6PC3,PS202700,"Neutropenia, severe congenital",Kidney,2,1,1768
+251260,Nijmegen Breakage Syndrome,NBN,,,Kidney,1,1,1769
+163700,"Nipples, Supernumerary",,,,Kidney,0,0,1770
+163850,"Noduli Cutanei, Multiple, With Urinary Tract Abnormalities",,,,Kidney,0,0,1771
+619087,Noonan Syndrome 13,MAPK1,PS163950,Noonan syndrome,Kidney,0,0,1772
+257550,Ocular Motor Apraxia,COMA,,,Kidney,0,0,1773
+257970,Oculorenocerebellar Syndrome,,,,Kidney,0,0,1774
+618440,Oculoskeletodental Syndrome,PIK3C2A,,,Kidney,2,1,1775
+258040,Oeis Complex,,,,Kidney,0,0,1776
+145410,"Opitz Gbbb Syndrome, Autosomal Dominant",SPECC1L,PS300000,Opitz GBBB syndrome,Kidney,2,1,1777
+311200,Orofaciodigital Syndrome I,OFD1,PS311200,Orofaciodigital syndrome,Kidney,2,1,1778
+174300,Orofaciodigital Syndrome V,DDX59,PS311200,Orofaciodigital syndrome,Kidney,0,0,1779
+617127,Orofaciodigital Syndrome Xv,KIAA0753,PS311200,Orofaciodigital syndrome,Kidney,0,0,1780
+617926,Orofaciodigital Syndrome Xvii,INTU,PS311200,Orofaciodigital syndrome,Kidney,0,0,1781
+258900,Orotic Aciduria,UMPS,,,Kidney,0,0,1782
+618182,Orthostatic Hypotension 2,CYB561,PS223360,Orthostatic hypotension,Kidney,2,1,1783
+184260,Osteochondrodysplasia,TRIP11,,,Kidney,1,1,1784
+616897,"Osteochondrodysplasia, Complex Lethal, Symoens-barnes-gistelinck Type",TAPT1,,,Kidney,2,1,1785
+610682,"Osteogenesis Imperfecta, Type Vii",CRTAP,PS166200,Osteogenesis imperfecta,Kidney,2,1,1786
+613848,"Osteogenesis Imperfecta, Type X",SERPINH1,PS166200,Osteogenesis imperfecta,Kidney,2,1,1787
+166300,"Osteolysis, Hereditary, Of Carpal Bones With Nephropathy",MAFB,,,Kidney,2,1,1788
+300373,Osteopathia Striata With Cranial Sclerosis,AMER1,,,Kidney,0,0,1789
+259730,"Osteopetrosis, Autosomal Recessive 3",CA2,PS259700,"Osteopetrosis, autosomal recessive",Kidney,2,2,1790
+259720,"Osteopetrosis, Autosomal Recessive 5",OSTM1,PS259700,"Osteopetrosis, autosomal recessive",Kidney,0,0,1791
+304120,"Otopalatodigital Syndrome, Type Ii",FLNA,,,Kidney,2,1,1792
+616833,Paget Disease Of Bone 6,ZNF687,PS167250,Paget disease of bone,Kidney,2,1,1793
+146510,Pallister-hall Syndrome 1,GLI3,,,Kidney,0,0,1794
+601803,Pallister-killian Syndrome,PKS,,,Kidney,0,0,1795
+120330,Papillorenal Syndrome,PAX2,,,Kidney,2,2,1796
+115310,Paragangliomas 4,SDHB,PS168000,Paragangliomas,Kidney,2,1,1797
+557000,Pearson Marrow-pancreas Syndrome,,,,Kidney,0,0,1798
+169545,Pelvic Lipomatosis With Crossed Renal Ectopia,,,,Kidney,0,0,1799
+260660,Pelviscapular Dysplasia,TBX15,,,Kidney,0,0,1800
+267000,Perlman Syndrome,DIS3L2,,,Kidney,0,0,1801
+617370,Peroxisome Biogenesis Disorder 10b,PEX3,PS214100,Peroxisome biogenesis disorder,Kidney,2,1,1802
+614883,Peroxisome Biogenesis Disorder 11a (zellweger),PEX13,PS214100,Peroxisome biogenesis disorder,Kidney,2,1,1803
+614886,Peroxisome Biogenesis Disorder 12a (zellweger),PEX19,PS214100,Peroxisome biogenesis disorder,Kidney,2,1,1804
+601539,Peroxisome Biogenesis Disorder 1b,PEX1,PS214100,Peroxisome biogenesis disorder,Kidney,2,1,1805
+214110,Peroxisome Biogenesis Disorder 2a (zellweger),PEX5,PS214100,Peroxisome biogenesis disorder,Kidney,2,1,1806
+614859,Peroxisome Biogenesis Disorder 3a (zellweger),PEX12,PS214100,Peroxisome biogenesis disorder,Kidney,2,1,1807
+614862,Peroxisome Biogenesis Disorder 4a (zellweger),PEX6,PS214100,Peroxisome biogenesis disorder,Kidney,0,0,1808
+614866,Peroxisome Biogenesis Disorder 5a (zellweger),PEX2,PS214100,Peroxisome biogenesis disorder,Kidney,0,0,1809
+614870,Peroxisome Biogenesis Disorder 6a (zellweger),PEX10,PS214100,Peroxisome biogenesis disorder,Kidney,0,0,1810
+261540,Peters-plus Syndrome,B3GLCT,,,Kidney,0,0,1811
+606232,Phelan-mcdermid Syndrome,SHANK3,,,Kidney,1,1,1812
+171300,Pheochromocytoma,KIF1B,,,Kidney,0,0,1813
+171300,Pheochromocytoma,SDHB,,,Kidney,0,0,1814
+171300,Pheochromocytoma,TMEM127,,,Kidney,0,0,1815
+171300,Pheochromocytoma,VHL,,,Kidney,0,0,1816
+171300,Pheochromocytoma,GDNF,,,Kidney,0,0,1817
+171300,Pheochromocytoma,RET,,,Kidney,0,0,1818
+171300,Pheochromocytoma,SDHD,,,Kidney,0,0,1819
+171300,Pheochromocytoma,MAX,,,Kidney,0,0,1820
+261650,"Phosphoenolpyruvate Carboxykinase 2, Mitochondrial",PCK2,,,Kidney,0,0,1821
+261680,"Phosphoenolpyruvate Carboxykinase Deficiency, Cytosolic",PCK1,,,Kidney,1,1,1822
+300653,Phosphoglycerate Kinase 1 Deficiency,PGK1,,,Kidney,2,0,1823
+261670,"Phosphoglycerate Mutase, Muscle, Deficiency Of",PGAM2,,,Kidney,2,0,1824
+300661,Phosphoribosylpyrophosphate Synthetase Superactivity,PRPS1,,,Kidney,2,0,1825
+172500,"Photomyoclonus, Diabetes Mellitus, Deafness, Nephropathy, And Cerebral",,,,Kidney,0,0,1826
+609049,Pierson Syndrome,LAMB2,,,Kidney,2,2,1827
+219090,"Pituitary Adenoma, Acth-secreting",USP8,PS102200,Pituitary adenoma,Kidney,0,0,1828
+217090,"Plasminogen Deficiency, Type Iligneous Conjunctivitis, Included",PLG,,,Kidney,0,0,1829
+613095,Polycystic Kidney Disease 2,PKD2,PS173900,Polycystic kidney disease,Kidney,2,2,1830
+600666,Polycystic Kidney Disease 3,GANAB,PS173900,Polycystic kidney disease,Kidney,2,2,1831
+617610,Polycystic Kidney Disease 5,DZIP1L,PS173900,Polycystic kidney disease,Kidney,2,2,1832
+618061,Polycystic Kidney Disease 6 With Or Without Polycystic Liver Disease,DNAJB11,PS173900,Polycystic kidney disease,Kidney,2,2,1833
+263200,"Polycystic Kidney Disease, Autosomal Recessive",PKHD1,PS173900,Polycystic kidney disease,Kidney,2,2,1834
+600273,"Polycystic Kidney Disease, Infantile Severe, With Tuberous Sclerosis",PKDTS,,,Kidney,0,0,1835
+263100,"Polycystic Kidney, Cataract, And Congenital Blindness",,,,Kidney,0,0,1836
+173900,Polycystic Kidneys,PKD1,PS173900,Polycystic kidney disease,Kidney,2,2,1837
+174050,Polycystic Liver Disease,PRKCSH,PS174050,Polycystic liver disease,Kidney,2,1,1838
+617874,Polycystic Liver Disease 3 With Or Without Kidney Cysts,ALG8,PS174050,Polycystic liver disease,Kidney,0,0,1839
+617875,Polycystic Liver Disease 4 With Or Without Kidney Cysts,LRP5,PS174050,Polycystic liver disease,Kidney,2,1,1840
+611087,"Polyhydramnios, Megalencephaly, And Symptomatic Epilepsy",STRADA,,,Kidney,0,0,1841
+263630,Polysyndactyly With Cardiac Malformation,,,,Kidney,0,0,1842
+263750,Postaxial Acrofacial Dysostosis,DHODH,,,Kidney,0,0,1843
+610883,Potocki-lupski Syndrome,PTLS,,,Kidney,0,0,1844
+615474,"Primary Aldosteronism, Seizures, And Neurologic Abnormalities",CACNA1D,,,Kidney,0,0,1845
+308990,"Proteinuria, Low Molecular Weight, With Hypercalciuria And Nephrocalcinosis",CLCN5,,,Kidney,2,2,1846
+264140,"Prune Belly Syndrome With Pulmonic Stenosis, Mental Retardation, Anddeafness",,,,Kidney,0,0,1847
+251290,Pseudo-torch Syndrome,OCLN,PS251290,Pseudo-TORCH syndrome,Kidney,2,1,1848
+618886,Pseudo-torch Syndrome 3,STAT2,PS251290,Pseudo-TORCH syndrome,Kidney,2,1,1849
+264480,Pseudotrisomy 13 Syndrome,,,,Kidney,0,0,1850
+264800,Pseudoxanthoma Elasticum,ABCC6,,,Kidney,0,0,1851
+264800,Pseudoxanthoma Elasticum,XYLT1,,,Kidney,0,0,1852
+264800,Pseudoxanthoma Elasticum,XYLT2,,,Kidney,2,1,1853
+178610,"Pulmonary Nodular Lymphoid Hyperplasia, Familial",,,,Kidney,0,0,1854
+266150,Pyruvate Carboxylase Deficiency,PC,,,Kidney,2,2,1855
+179280,Radial-renal Syndrome,,,,Kidney,0,0,1856
+259775,Raine Syndrome,FAM20C,,,Kidney,2,1,1857
+179613,Recombinant Chromosome 8 Syndrome,,,,Kidney,0,0,1858
+266500,Refsum Disease,PHYH,,,Kidney,0,0,1859
+266810,Renal And Mullerian Duct Hypoplasia,,,,Kidney,0,0,1860
+144700,"Renal Cell Carcinoma, Nonpapillary",OGG1,,,Kidney,2,2,1861
+144700,"Renal Cell Carcinoma, Nonpapillary",VHL,,,Kidney,2,2,1862
+144700,"Renal Cell Carcinoma, Nonpapillary",RNF139,,,Kidney,2,2,1863
+144700,"Renal Cell Carcinoma, Nonpapillary",HNF1A,,,Kidney,2,2,1864
+144700,"Renal Cell Carcinoma, Nonpapillary",FLCN,,,Kidney,2,2,1865
+144700,"Renal Cell Carcinoma, Nonpapillary",HNF1B,,,Kidney,2,2,1866
+605074,"Renal Cell Carcinoma, Papillary, 1, Familial And Somatic",PRCC,,,Kidney,2,2,1867
+605074,"Renal Cell Carcinoma, Papillary, 1, Familial And Somatic",MET,,,Kidney,0,0,1868
+300854,"Renal Cell Carcinoma, Xp11-associated",TFE3,,,Kidney,2,2,1869
+137920,Renal Cysts And Diabetes Syndrome,HNF1B,PS162000,Tubulointerstitial kidney disease,Kidney,2,2,1870
+601331,"Renal Dysplasia, Cystic, Susceptibility To",BICC1,,,Kidney,2,1,1871
+266910,Renal Dysplasia-limb Defects Syndrome,,,,Kidney,0,0,1872
+161900,"Renal Failure, Progressive, With Hypertension",RFH1,,,Kidney,0,0,1873
+233100,Renal Glucosuria,SLC5A2,,,Kidney,2,2,1874
+191830,Renal Hypodysplasia/aplasia 1,ITGA8,PS191830,Renal hypodysplasia/aplasia,Kidney,2,2,1875
+617805,Renal Hypodysplasia/aplasia 3,GREB1L,PS191830,Renal hypodysplasia/aplasia,Kidney,2,2,1876
+267200,Renal Tubular Acidosis Iii,,,,Kidney,0,0,1877
+179800,"Renal Tubular Acidosis, Distal, Autosomal Dominant",SLC4A1,PS179800,Distal renal tubular acidosis,Kidney,0,0,1878
+611590,"Renal Tubular Acidosis, Distal, With Hemolytic Anemia",SLC4A1,PS179800,Distal renal tubular acidosis,Kidney,0,0,1879
+611555,"Renal Tubular Acidosis, Distal, With Nephrocalcinosis, Short Stature, Mental Retardation, And Distinctive Facies",,,,Kidney,0,0,1880
+267300,"Renal Tubular Acidosis, Distal, With Progressive Nerve Deafness",ATP6V1B1,PS179800,Distal renal tubular acidosis,Kidney,2,2,1881
+179830,"Renal Tubular Acidosis, Proximal",,,,Kidney,0,0,1882
+604278,"Renal Tubular Acidosis, Proximal, With Ocular Abnormalities And Mentalretardation",SLC4A4,,,Kidney,2,2,1883
+267430,Renal Tubular Dysgenesis,REN,,,Kidney,2,2,1884
+267430,Renal Tubular Dysgenesis,AGT,,,Kidney,2,2,1885
+267430,Renal Tubular Dysgenesis,AGTR1,,,Kidney,2,2,1886
+267430,Renal Tubular Dysgenesis,ACE,,,Kidney,2,2,1887
+560000,"Renal Tubulopathy, Diabetes Mellitus, And Cerebellar Ataxia",,,,Kidney,0,0,1888
+267400,"Renal, Genital, And Middle Ear Anomalies",,,,Kidney,0,0,1889
+208540,Renal-hepatic-pancreatic Dysplasia,NPHP3,PS208540,Renal-hepatic-pancreatic dysplasia,Kidney,0,0,1890
+615415,Renal-hepatic-pancreatic Dysplasia 2,NEK8,PS208540,Renal-hepatic-pancreatic dysplasia,Kidney,0,0,1891
+309500,Renpenning Syndrome,PQBP1,PS309510,"Mental retardation, X-linked syndromic",Kidney,2,1,1892
+180080,Retinal Venous Beading,,,,Kidney,0,0,1893
+613861,Retinitis Pigmentosa 59,DHDDS,PS212065,"Congenital disorders of glycosylation, type I",Kidney,1,1,1894
+613861,Retinitis Pigmentosa 59,DHDDS,PS268000,Retinitis pigmentosa,Kidney,1,1,1895
+250410,Retinitis Pigmentosa With Or Without Skeletal Anomalies,CWC27,,,Kidney,1,1,1896
+268200,"Rhabdomyolysis, Acute Recurrent",LPIN1,,,Kidney,2,0,1897
+180295,"Rhabdomyosarcoma, Embryonal, 2",DICER1,,,Kidney,0,0,1898
+618821,Rhizomelic Limb Shortening With Dysmorphic Features,PKDCC,,,Kidney,2,1,1899
+602152,Rhyns Syndrome,TMEM67,,,Kidney,0,0,1900
+268300,Roberts Syndrome,ESCO2,,,Kidney,0,0,1901
+180700,"Robinow Syndrome, Autosomal Dominant",WNT5A,PS268310,Robinow syndrome,Kidney,2,1,1902
+268310,"Robinow Syndrome, Autosomal Recessive",ROR2,PS268310,Robinow syndrome,Kidney,0,0,1903
+613328,Roifman-chitayat Syndrome,RCHTS,,,Kidney,0,0,1904
+180849,Rubinstein-taybi Syndrome 1,CREBBP,PS180849,Rubinstein-Taybi syndrome,Kidney,1,1,1905
+181180,Say Syndrome,,,,Kidney,0,0,1906
+181270,Scalp-ear-nipple Syndrome,KCTD1,,,Kidney,2,1,1907
+163200,Schimmelpenning-feuerstein-mims Syndrome,NRAS,,,Kidney,0,0,1908
+163200,Schimmelpenning-feuerstein-mims Syndrome,HRAS,,,Kidney,0,0,1909
+163200,Schimmelpenning-feuerstein-mims Syndrome,KRAS,,,Kidney,0,0,1910
+269150,Schinzel-giedion Midface-retraction Syndrome,SETBP1,,,Kidney,2,1,1911
+181510,Schizophrenia 1,,,,Kidney,0,0,1912
+606744,Seckel Syndrome 2,RBBP8,PS210600,Seckel syndrome,Kidney,1,1,1913
+615807,Seckel Syndrome 8,DNA2,PS210600,Seckel syndrome,Kidney,0,0,1914
+612780,"Seizures, Sensorineural Deafness, Ataxia, Mental Retardation, And",KCNJ10,,,Kidney,2,2,1915
+266900,Senior-loken Syndrome 1,NPHP1,PS266900,Senior-Loken syndrome,Kidney,2,2,1916
+606995,Senior-loken Syndrome 3,SLSN3,PS266900,Senior-Loken syndrome,Kidney,0,0,1917
+606996,Senior-loken Syndrome 4,NPHP4,PS266900,Senior-Loken syndrome,Kidney,2,2,1918
+609254,Senior-loken Syndrome 5,IQCB1,PS266900,Senior-Loken syndrome,Kidney,2,2,1919
+610189,Senior-loken Syndrome 6,CEP290,PS266900,Senior-Loken syndrome,Kidney,2,2,1920
+613615,Senior-loken Syndrome 7,SDCCAG8,PS266900,Senior-Loken syndrome,Kidney,2,2,1921
+616307,Senior-loken Syndrome 8,WDR19,PS266900,Senior-Loken syndrome,Kidney,2,2,1922
+616629,Senior-loken Syndrome 9,TRAF3IP1,PS266900,Senior-Loken syndrome,Kidney,2,2,1923
+102700,"Severe Combined Immunodeficiency, Autosomal Recessive, T Cell-negative,b Cell-negative, Nk Cell-negative, Due To Adenosine Deaminase Deficiency",ADA,,,Kidney,2,1,1924
+601350,"Short Stature Syndrome, Brussels Type",,,,Kidney,0,0,1925
+616541,"Short Stature, Microcephaly, And Endocrine Dysfunction",XRCC4,,,Kidney,2,1,1926
+208500,Short-rib Thoracic Dysplasia 1 With Or Without Polydactyly,SRTD1,PS208500,Short-rib thoracic dysplasia,Kidney,0,0,1927
+615630,Short-rib Thoracic Dysplasia 10 With Or Without Polydactyly,IFT172,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1928
+615633,Short-rib Thoracic Dysplasia 11 With Or Without Polydactyly,DYNC2I2,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1929
+269860,Short-rib Thoracic Dysplasia 12,,PS208500,Short-rib thoracic dysplasia,Kidney,0,0,1930
+616300,Short-rib Thoracic Dysplasia 13 With Or Without Polydactyly,CEP120,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1931
+617088,Short-rib Thoracic Dysplasia 15 With Polydactyly,DYNC2LI1,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1932
+617866,Short-rib Thoracic Dysplasia 18 With Polydactyly,IFT43,PS208500,Short-rib thoracic dysplasia,Kidney,0,0,1933
+613091,Short-rib Thoracic Dysplasia 3 With Or Without Polydactyly,DYNC2H1,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1934
+263520,Short-rib Thoracic Dysplasia 6 With Or Without Polydactyly,NEK1,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1935
+614091,Short-rib Thoracic Dysplasia 7 With Or Without Polydactyly,WDR35,PS208500,Short-rib thoracic dysplasia,Kidney,2,1,1936
+266920,Short-rib Thoracic Dysplasia 9 With Or Without Polydactyly,IFT140,PS208500,Short-rib thoracic dysplasia,Kidney,2,2,1937
+260400,Shwachman-diamond Syndrome,SBDS,PS260400,Schwachman-Diamond syndrome,Kidney,2,1,1938
+603903,Sickle Cell Anemia,HBB,,,Kidney,0,0,1939
+616084,"Sideroblastic Anemia With B-cell Immunodeficiency, Periodic Fevers, And Developmental Delay",TRNT1,,,Kidney,1,1,1940
+617159,Sifrim-hitz-weiss Syndrome,CHD4,,,Kidney,2,1,1941
+180860,Silver-russell Syndrome,ICR1,PS180860,Silver-Russell syndrome,Kidney,0,0,1942
+312870,"Simpson-golabi-behmel Syndrome, Type 1",GPC3,,,Kidney,2,1,1943
+300209,"Simpson-golabi-behmel Syndrome, Type 2",OFD1,,,Kidney,0,0,1944
+270150,Sjogren Syndrome,,,,Kidney,0,0,1945
+270400,Smith-lemli-opitz Syndrome,DHCR7,,,Kidney,0,0,1946
+182290,"Smith-magenis Syndrome Smith-magenis Chromosome Region, Included",RAI1,,,Kidney,2,1,1947
+117550,Sotos Syndrome,NSD1,PS117550,Sotos syndrome,Kidney,2,1,1948
+182690,"Spastic Paraplegia, Sensorineural Deafness, Mental Retardation, And",,,,Kidney,0,0,1949
+183802,"Split-hand With Obstructive Uropathy, Spina Bifida, And Diaphragmaticdefects",,,,Kidney,0,0,1950
+246560,Split-hand/foot Malformation 3,SHFM3,PS183600,Split-hand/foot malformation,Kidney,0,0,1951
+272460,Spondylocarpotarsal Synostosis Syndrome,FLNB,,,Kidney,0,0,1952
+271520,Spondylocostal Dysostosis With Anal Atresia And Urogenital Anomalies,,,,Kidney,0,0,1953
+607944,Spondyloenchondrodysplasia With Immune Dysregulation,ACP5,PS184255,Spondylometaphyseal dysplasia,Kidney,0,0,1954
+184705,Steinfeld Syndrome,,,,Kidney,0,0,1955
+243605,Stromme Syndrome,CENPF,,,Kidney,0,0,1956
+617478,Structural Heart Defects And Renal Anomalies Syndrome,TMEM260,,,Kidney,0,0,1957
+222900,"Sucrase-isomaltase Deficiency, Congenital",SI,,,Kidney,0,0,1958
+618950,Suleiman-el-hattab Syndrome,TASP1,,,Kidney,0,0,1959
+152700,Systemic Lupus Erythematosus,PTPN22,,,Kidney,2,0,1960
+152700,Systemic Lupus Erythematosus,FCGR2A,,,Kidney,2,0,1961
+152700,Systemic Lupus Erythematosus,FCGR2B,,,Kidney,2,0,1962
+152700,Systemic Lupus Erythematosus,CTLA4,,,Kidney,2,0,1963
+152700,Systemic Lupus Erythematosus,TREX1,,,Kidney,2,0,1964
+152700,Systemic Lupus Erythematosus,DNASE1,,,Kidney,2,0,1965
+614420,Systemic Lupus Erythematosus 16,DNASE1L3,,,Kidney,2,0,1966
+609939,"Systemic Lupus Erythematosus, Susceptibility To, 6",SLEB6,,,Kidney,0,0,1967
+616737,Takenouchi-kosaki Syndrome,CDC42,,,Kidney,0,0,1968
+311900,Tarp Syndrome,RBM10,,,Kidney,2,1,1969
+272950,Teebi-shaltout Syndrome,,,,Kidney,0,0,1970
+273120,"Teratoma, Pineal",,,,Kidney,0,0,1971
+273395,"Tetra-amelia, Autosomal Recessive",WNT3,,,Kidney,0,0,1972
+617107,Thauvin-robinet-faivre Syndrome,FIBP,,,Kidney,2,1,1973
+313850,Thoracoabdominal Syndrome,THAS,,,Kidney,0,0,1974
+314000,Thrombocytopenia With Elevated Serum Iga And Renal Disease,,,,Kidney,0,0,1975
+274000,Thrombocytopenia-absent Radius Syndrome,RBM8A,,,Kidney,2,1,1976
+274150,"Thrombotic Thrombocytopenic Purpura, Congenital",ADAMTS13,,,Kidney,0,0,1977
+274210,Thymic Aplasia With Fetal Death,,,,Kidney,0,0,1978
+274265,Thymic-renal-anal-lung Dysplasia,,,,Kidney,0,0,1979
+274240,Thyrocerebroretinal Syndrome,,,,Kidney,0,0,1980
+300707,"Toe Syndactyly, Telecanthus, And Anogenital And Renal Malformations",CCNQ,,,Kidney,0,0,1981
+314300,"Torticollis, Keloids, Cryptorchidism, And Renal Dysplasia",TKCR,,,Kidney,0,0,1982
+107480,Townes-brocks Syndrome,SALL1,PS107480,Townes-Brocks syndrome,Kidney,2,1,1983
+617466,Townes-brocks Syndrome 2,DACT1,PS107480,Townes-Brocks syndrome,Kidney,2,1,1984
+222470,Trichohepatoenteric Syndrome 1,TTC37,PS222470,Trichohepatoenteric syndrome,Kidney,0,0,1985
+191100,Tuberous Sclerosis-1,TSC1,PS191100,Tuberous sclerosis,Kidney,2,2,1986
+613254,Tuberous Sclerosis-2,IFNG,PS191100,Tuberous sclerosis,Kidney,2,1,1987
+613254,Tuberous Sclerosis-2,TSC2,PS191100,Tuberous sclerosis,Kidney,2,1,1988
+607665,Tubulointerstitial Nephritis With Uveitis,,,,Kidney,0,0,1989
+614327,Tumor Predisposition Syndrome,BAP1,,,Kidney,2,1,1990
+211900,"Tumoral Calcinosis, Hyperphosphatemic, Familial",GALNT3,,,Kidney,2,2,1991
+617993,"Tumoral Calcinosis, Hyperphosphatemic, Familial, 2",FGF23,,,Kidney,0,0,1992
+276700,"Tyrosinemia, Type I",FAH,PS276700,Tyrosinemia,Kidney,2,0,1993
+191650,Ureterocele,,,,Kidney,0,0,1994
+236730,Urofacial Syndrome,HPSE2,PS236730,Urofacial syndrome,Kidney,0,0,1995
+615112,Urofacial Syndrome 2,LRIG2,PS236730,Urofacial syndrome,Kidney,0,0,1996
+191700,"Urolithiasis, Uric Acid, Autosomal Dominant",,,,Kidney,0,0,1997
+192050,Uterus Bicornis Bicollis With Partial Vaginal Septum And Unilateralhematocolpos With Ipsilateral Renal Agenesis,,,,Kidney,0,0,1998
+276950,Vacterl Association With Hydrocephalus,,,,Kidney,0,0,1999
+314390,"Vacterl Association With Hydrocephalus, X-linked",ZIC3,,,Kidney,0,0,2000
+601390,Van Maldergem Syndrome 1,DCHS1,PS601390,Van Maldergem syndrome,Kidney,2,1,2001
+615546,Van Maldergem Syndrome 2,FAT4,PS601390,Van Maldergem syndrome,Kidney,2,1,2002
+277170,Varadi-papp Syndrome,CPLANE1,PS311200,Orofaciodigital syndrome,Kidney,0,0,2003
+615688,"Vasculitis, Autoinflammation, Immunodeficiency, And Hematologic Defects Syndrome",ADA2,,,Kidney,0,0,2004
+192315,"Vasculopathy, Retinal, With Cerebral Leukodystrophy",TREX1,,,Kidney,2,1,2005
+192350,"Vater Associationvacterl Association, Included",,,,Kidney,0,0,2006
+608406,"Vater-like Defects With Pulmonary Hypertension, Laryngeal Webs, Andgrowth Deficiency",,,,Kidney,0,0,2007
+219730,Ventriculomegaly With Cystic Kidney Disease,CRB2,,,Kidney,0,0,2008
+602200,Ventriculomegaly With Defects Of The Radius And Kidney,,,,Kidney,0,0,2009
+615583,Verheij Syndrome,PUF60,,,Kidney,2,1,2010
+617660,"Vertebral, Cardiac, Renal, And Limb Defects Syndrome 1",HAAO,PS617660,"Vertebral, cardiac, renal, and limb defects syndrome",Kidney,2,1,2011
+617661,"Vertebral, Cardiac, Renal, And Limb Defects Syndrome 2",KYNU,PS617660,"Vertebral, cardiac, renal, and limb defects syndrome",Kidney,2,1,2012
+618845,"Vertebral, Cardiac, Renal, And Limb Defects Syndrome 3",NADSYN1,PS617660,"Vertebral, cardiac, renal, and limb defects syndrome",Kidney,2,1,2013
+610878,Vesicoureteral Reflux 2,ROBO2,PS193000,Vesicoureteral reflux,Kidney,0,0,2014
+613674,Vesicoureteral Reflux 3,SOX17,PS193000,Vesicoureteral reflux,Kidney,2,0,2015
+615963,Vesicoureteral Reflux 8,TNXB,PS193000,Vesicoureteral reflux,Kidney,0,0,2016
+155310,Visceral Myopathy,ACTG2,,,Kidney,0,0,2017
+193300,Von Hippel-lindau Syndrome,VHL,,,Kidney,2,2,2018
+193300,Von Hippel-lindau Syndrome,CCND1,,,Kidney,2,2,2019
+615926,Webb-dattani Syndrome,ARNT2,,,Kidney,2,1,2020
+602418,Weyers Ulnar Ray/oligodactyly Syndrome,,,,Kidney,0,0,2021
+609757,Williams-beuren Region Duplication Syndrome,DUP7q11.23,,,Kidney,0,0,2022
+194050,Williams-beuren Syndrome,WBS,,,Kidney,0,0,2023
+194070,Wilms Tumor 1,WT1,PS194070,Wilms tumor,Kidney,2,2,2024
+194070,Wilms Tumor 1,BRCA2,PS194070,Wilms tumor,Kidney,2,2,2025
+194070,Wilms Tumor 1,GPC3,PS194070,Wilms tumor,Kidney,2,2,2026
+194090,Wilms Tumor 3,WT3,PS194070,Wilms tumor,Kidney,0,0,2027
+601363,Wilms Tumor 4,WT4,PS194070,Wilms tumor,Kidney,0,0,2028
+601583,Wilms Tumor 5,POU6F2,PS194070,Wilms tumor,Kidney,0,0,2029
+616806,Wilms Tumor 6,REST,PS194070,Wilms tumor,Kidney,2,2,2030
+194072,"Wilms Tumor, Aniridia, Genitourinary Anomalies, And Mental Retardation Syndrome Chromosome 11p13 Deletion Syndrome",DEL11p13,,,Kidney,0,0,2031
+277900,Wilson Disease,ATP7B,,,Kidney,0,0,2032
+301000,Wiskott-aldrich Syndrome,WAS,PS300755,Immunodeficiency (Select Examples),Kidney,2,0,2033
+600903,"Wiskott-aldrich Syndrome, Autosomal Dominant Form",,,,Kidney,0,0,2034
+222300,Wolfram Syndrome 1,WFS1,,,Kidney,2,1,2035
+598500,"Wolfram Syndrome, Mitochondrial Form",,,,Kidney,0,0,2036
+278300,"Xanthinuria, Type I",XDH,PS278300,Xanthinuria,Kidney,2,1,2037
+603592,"Xanthinuria, Type Ii",MOCOS,PS278300,Xanthinuria,Kidney,0,0,2038
+610965,Xfe Progeroid Syndrome,ERCC4,,,Kidney,0,0,2039
+617321,Yao Syndrome,NOD2,,,Kidney,0,0,2040
+214100,Zellweger Syndrome,PEX1,PS214100,Peroxisome biogenesis disorder,Kidney,2,2,2041
+135500,Zimmermann-laband Syndrome 1,KCNH1,PS135500,Zimmermann-Laband syndrome,Kidney,0,0,2042
+617140,Zttk Syndrome,SON,,,Kidney,2,1,2043
+280000,Zunich Neuroectodermal Syndrome,PIGL,,,Kidney,0,0,2044

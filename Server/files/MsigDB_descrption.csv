@@ -1,0 +1,51 @@
+id,process,Systematic name,Description
+0,HALLMARK_ADIPOGENESIS,M5905,Genes up-regulated during adipocyte differentiation (adipogenesis).
+1,HALLMARK_ALLOGRAFT_REJECTION,M5950,Genes up-regulated during transplant rejection.
+2,HALLMARK_ANDROGEN_RESPONSE,M5908,Genes defining response to androgens.
+3,HALLMARK_ANGIOGENESIS,M5944,Genes up-regulated during formation of blood vessels (angiogenesis).
+4,HALLMARK_APICAL_JUNCTION,M5915,Genes encoding components of apical junction complex.
+5,HALLMARK_APICAL_SURFACE,M5916,"Genes encoding proteins over-represented on the apical surface of epithelial cells, e.g., important for cell polarity (apical area)."
+6,HALLMARK_APOPTOSIS,M5902,Genes mediating programmed cell death (apoptosis) by activation of caspases.
+7,HALLMARK_BILE_ACID_METABOLISM,M5948,Genes involve in metabolism of bile acids and salts.
+8,HALLMARK_CHOLESTEROL_HOMEOSTASIS,M5892,Genes involved in cholesterol homeostasis.
+9,HALLMARK_COAGULATION,M5946,Genes encoding components of blood coagulation system; also up-regulated in platelets.
+10,HALLMARK_COMPLEMENT,M5921,"Genes encoding components of the complement system, which is part of the innate immune system."
+11,HALLMARK_DNA_REPAIR,M5898,Genes involved in DNA repair.
+12,HALLMARK_E2F_TARGETS,M5925,Genes encoding cell cycle related targets of E2F transcription factors.
+13,HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION,M5930,"Genes defining epithelial-mesenchymal transition, as in wound healing, fibrosis and metastasis."
+14,HALLMARK_ESTROGEN_RESPONSE_EARLY,M5906,Genes defining early response to estrogen.
+15,HALLMARK_ESTROGEN_RESPONSE_LATE,M5907,Genes defining late response to estrogen.
+16,HALLMARK_FATTY_ACID_METABOLISM,M5935,Genes encoding proteins involved in metabolism of fatty acids.
+17,HALLMARK_G2M_CHECKPOINT,M5901,"Genes involved in the G2/M checkpoint, as in progression through the cell division cycle."
+18,HALLMARK_GLYCOLYSIS,M5937,Genes encoding proteins involved in glycolysis and gluconeogenesis.
+19,HALLMARK_HEDGEHOG_SIGNALING,M5919,Genes up-regulated by activation of hedgehog signaling.
+20,HALLMARK_HEME_METABOLISM,M5945,Genes involved in metabolism of heme (a cofactor consisting of iron and porphyrin) and erythroblast differentiation.
+21,HALLMARK_HYPOXIA,M5891,Genes up-regulated in response to low oxygen levels (hypoxia).
+22,HALLMARK_IL2_STAT5_SIGNALING,M5947,Genes up-regulated by STAT5 in response to IL2 stimulation.
+23,HALLMARK_IL6_JAK_STAT3_SIGNALING,M5897,"Genes up-regulated by IL6 [GeneID=3569] via STAT3 [GeneID=6774], e.g., during acute phase response."
+24,HALLMARK_INFLAMMATORY_RESPONSE,M5932,Genes defining inflammatory response.
+25,HALLMARK_INTERFERON_ALPHA_RESPONSE,M5911,Genes up-regulated in response to alpha interferon proteins.
+26,HALLMARK_INTERFERON_GAMMA_RESPONSE,M5913,Genes up-regulated in response to IFNG [GeneID=3458].
+27,HALLMARK_KRAS_SIGNALING_DN,M5956,Genes down-regulated by KRAS activation.
+28,HALLMARK_KRAS_SIGNALING_UP,M5953,Genes up-regulated by KRAS activation.
+29,HALLMARK_MITOTIC_SPINDLE,M5893,Genes important for mitotic spindle assembly.
+30,HALLMARK_MTORC1_SIGNALING,M5924,Genes up-regulated through activation of mTORC1 complex.
+31,HALLMARK_MYC_TARGETS_V1,M5926,A subgroup of genes regulated by MYC - version 1 (v1).
+32,HALLMARK_MYC_TARGETS_V2,M5928,A subgroup of genes regulated by MYC - version 2 (v2).
+33,HALLMARK_MYOGENESIS,M5909,Genes involved in development of skeletal muscle (myogenesis).
+34,HALLMARK_NOTCH_SIGNALING,M5903,Genes up-regulated by activation of Notch signaling.
+35,HALLMARK_OXIDATIVE_PHOSPHORYLATION,M5936,Genes encoding proteins involved in oxidative phosphorylation.
+36,HALLMARK_P53_PATHWAY,M5939,Genes involved in p53 pathways and networks.
+37,HALLMARK_PANCREAS_BETA_CELLS,M5957,Genes specifically up-regulated in pancreatic beta cells.
+38,HALLMARK_PEROXISOME,M5949,Genes encoding components of peroxisome.
+39,HALLMARK_PI3K_AKT_MTOR_SIGNALING,M5923,Genes up-regulated by activation of the PI3K/AKT/mTOR pathway.
+40,HALLMARK_PROTEIN_SECRETION,M5910,Genes involved in protein secretion pathway.
+41,HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY,M5938,Genes up-regulated by reactive oxigen species (ROS).
+42,HALLMARK_SPERMATOGENESIS,M5951,"Genes up-regulated during production of male gametes (sperm), as in spermatogenesis."
+43,HALLMARK_TGF_BETA_SIGNALING,M5896,Genes up-regulated in response to TGFB1 [GeneID=7040].
+44,HALLMARK_TNFA_SIGNALING_VIA_NFKB,M5890,Genes regulated by NF-kB in response to TNF [GeneID=7124].
+45,HALLMARK_UNFOLDED_PROTEIN_RESPONSE,M5922,"Genes up-regulated during unfolded protein response, a cellular stress response related to the endoplasmic reticulum."
+46,HALLMARK_UV_RESPONSE_DN,M5942,Genes down-regulated in response to ultraviolet (UV) radiation.
+47,HALLMARK_UV_RESPONSE_UP,M5941,Genes up-regulated in response to ultraviolet (UV) radiation.
+48,HALLMARK_WNT_BETA_CATENIN_SIGNALING,M5895,Genes up-regulated by activation of WNT signaling through accumulation of beta catenin CTNNB1 [GeneID=1499].
+49,HALLMARK_XENOBIOTIC_METABOLISM,M5934,Genes encoding proteins involved in processing of drugs and other xenobiotics.

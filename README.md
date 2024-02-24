@@ -1,13 +1,11 @@
 # CarpoolBGU
 
----
-
-## Client:
+### Client:
 
 To install the npm packages run:\
 ```npm ci```
 
-## Server:
+### Server:
 
 To install the pip packages run:\
 ```pip install -r requirements.txt```

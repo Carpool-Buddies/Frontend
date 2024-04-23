@@ -3,7 +3,8 @@ import re
 
 from utils.auth_exceptions import *
 
-MAX_AGE = 16
+MIN_AGE = 16
+MAX_AGE = 120
 
 class User:
     def __init__(self, _email, _password, _first_name, _last_name, _phone_number, _birthday):
@@ -30,7 +31,7 @@ class User:
         # Combining all conditions into a single regular expression for efficiency
         regex = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$')
         if not regex.search(self.password):
-            raise PasswordValidationError("Password must contain at least one symbol.")
+            raise PasswordValidationError("Password must contain at least one uppercase letter, one lowercase letter and one digit.")
 
 
     def __validate_email(self):
@@ -47,9 +48,9 @@ class User:
 
     def __validate_birthday(self):
         """
-        Validates the birthday to ensure it is in a correct format and the person is at least 16 years old.
+        Validates the birthday to ensure it is in a correct format and the person is between 16 and 120 years old.
 
-        :raises InvalidBirthdayError: If the birthday does not match the expected format or if the person is under 16.
+        :raises InvalidBirthdayError: If the birthday does not match the expected format or if the person is under 16 or over 120.
         """
         # Expected date format 'YYYY-MM-DD'
         format = "%Y-%m-%d"
@@ -58,7 +59,10 @@ class User:
             today = datetime.now()
             age = today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
 
-            if age < MAX_AGE:
+            if age < MIN_AGE:
                 raise InvalidBirthdayError("Must be at least 16 years old.")
+            elif age > MAX_AGE:
+                raise InvalidBirthdayError("Cannot be older than 120 years.")
+
         except ValueError:
             raise InvalidBirthdayError("Invalid birthday date. Please use the YYYY-MM-DD format.")

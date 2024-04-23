@@ -19,7 +19,7 @@ class Users(db.Model):
     date_joined = db.Column(db.DateTime(), default=datetime.utcnow)
 
     def __repr__(self):
-        return f"User {self.username}"
+        return f"User {self.email}"
 
     def save(self):
         db.session.add(self)
@@ -27,12 +27,8 @@ class Users(db.Model):
 
     @staticmethod
     def register_user(user):
-        # Users.validate_email(email)
         if Users.get_by_email(user.email):
             raise EmailAlreadyExistsError("Email already exists.")
-
-        # Users.validate_password(password)
-        # Users.validate_birthday(birthday_str)
 
         new_user = Users(
             email=user.email,
@@ -55,9 +51,6 @@ class Users(db.Model):
     def update_email(self, new_email):
         self.email = new_email
 
-    def update_username(self, new_username):
-        self.username = new_username
-
     def check_jwt_auth_active(self):
         return self.jwt_auth_active
 
@@ -72,14 +65,10 @@ class Users(db.Model):
     def get_by_email(cls, email):
         return cls.query.filter_by(email=email).first()
 
-    @classmethod
-    def get_by_username(cls, username):
-        return cls.query.filter_by(username=username).first()
 
     def toDICT(self):
         cls_dict = {}
         cls_dict['_id'] = self.id
-        cls_dict['username'] = self.username
         cls_dict['email'] = self.email
 
         return cls_dict

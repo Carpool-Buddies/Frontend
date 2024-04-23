@@ -28,6 +28,7 @@ rest_api.add_namespace(driver_ns, path='/api/drivers')
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+# TODO: maybe need to add user name
 
 @rest_api.route('/api/sessions/oauth/github/')
 class GitHubLogin(Resource):

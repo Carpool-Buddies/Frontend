@@ -6,7 +6,6 @@ from datetime import datetime, timedelta, timezone
 import jwt
 
 from models import Users, JWTTokenBlocklist
-from .config import BaseConfig
 
 from services.auth_service import AuthService
 from .token_decorators import token_required
@@ -32,10 +31,12 @@ login_model = auth_ns.model('LoginModel', {"email": fields.String(required=True,
                                             "password": fields.String(required=True, min_length=4, max_length=16)
                                             })
 
-user_edit_model = auth_ns.model('UserEditModel', {"userID": fields.String(required=True, min_length=1, max_length=32),
-                                                   "username": fields.String(required=True, min_length=2, max_length=32),
-                                                   "email": fields.String(required=True, min_length=4, max_length=64)
-                                                   })
+user_edit_model = auth_ns.model('UserEditModel', {"first_name": fields.String(required=True, min_length=1, max_length=32),
+                                            "last_name": fields.String(required=True, min_length=1, max_length=32),
+                                            "birthday": fields.Date(required=True)
+                                            })
+
+
 
 """
     Flask-Restx routes
@@ -76,25 +77,8 @@ class Login(Resource):
         _email = req_data.get("email")
         _password = req_data.get("password")
 
-        user_exists = Users.get_by_email(_email)
+        return auth.login(_email, _password)
 
-        if not user_exists:
-            return {"success": False,
-                    "msg": "This email does not exist."}, 400
-
-        if not user_exists.check_password(_password):
-            return {"success": False,
-                    "msg": "Wrong credentials."}, 400
-
-        # create access token uwing JWT
-        token = jwt.encode({'email': _email, 'exp': datetime.utcnow() + timedelta(minutes=30)}, BaseConfig.SECRET_KEY)
-
-        user_exists.set_jwt_auth_active(True)
-        user_exists.save()
-
-        return {"success": True,
-                "token": token,
-                "user": user_exists.toJSON()}, 200
 
 
 @auth_ns.route('/edit')
@@ -102,25 +86,19 @@ class EditUser(Resource):
     """
        Edits User's username or password or both using 'user_edit_model' input
     """
-
+    # TODO: implement this functionality
     @auth_ns.expect(user_edit_model)
     @token_required
     def post(self, current_user):
 
         req_data = request.get_json()
 
-        _new_username = req_data.get("username")
-        _new_email = req_data.get("email")
+        _new_first_name = req_data.get("first_name")
+        _new_last_name = req_data.get("last_name")
+        _new_birthday = req_data.get("birthday")
+        return auth.edit_user(current_user, _new_first_name, _new_last_name, _new_birthday)
 
-        if _new_username:
-            self.update_username(_new_username)
 
-        if _new_email:
-            self.update_email(_new_email)
-
-        self.save()
-
-        return {"success": True}, 200
 
 @auth_ns.route('/logout')
 class LogoutUser(Resource):
@@ -132,11 +110,4 @@ class LogoutUser(Resource):
     def post(self, current_user):
 
         _jwt_token = request.headers["authorization"]
-
-        jwt_block = JWTTokenBlocklist(jwt_token=_jwt_token, created_at=datetime.now(timezone.utc))
-        jwt_block.save()
-
-        self.set_jwt_auth_active(False)
-        self.save()
-
-        return {"success": True}, 200
+        return auth.logout(_jwt_token, current_user)

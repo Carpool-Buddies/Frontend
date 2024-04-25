@@ -2,8 +2,6 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -12,10 +10,11 @@ import Container from '@mui/material/Container';
 import {styled} from "@mui/material/styles";
 import {useState} from "react";
 import logo from './static/BGU_logo.png'
-import {DatePicker, LocalizationProvider, StaticDatePicker} from "@mui/x-date-pickers";
+import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from "dayjs";
-import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {useNavigate} from "react-router-dom";
+import {register} from "./common/fetchers";
+import {MenuItem} from "@mui/material";
 
 
 const Register = props => {
@@ -29,6 +28,16 @@ const Register = props => {
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNUmber] = useState('');
     const [birthday, setBirthday] = useState('');
+
+    const handleSubmit = async event => {
+        event.preventDefault();
+
+        const ret = await register(email, password, firstName, lastName, '', birthday);
+        if (ret.message === 'Login successful')
+            props.history.push(`/home`);
+        else
+            console.log(ret);
+    };
 
     const maxBirthDate = dayjs().subtract(16, 'year');
 
@@ -45,14 +54,6 @@ const Register = props => {
             </Typography>
         );
     }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log({
-            email: username,
-            password: password,
-        });
-    };
 
     const MyComponent = styled('button')({
             fontSize: 60,
@@ -111,17 +112,48 @@ const Register = props => {
                                 name="last_name"
                                 onChange={(e) => setLastName(e.target.value)}
                             />
-                                <DatePicker
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    label="תאריך לידה"
-                                    name="birth-date"
-                                    openTo="year"
-                                    maxDate={maxBirthDate}
-                                    views={['year', 'month', 'day']}
-                                    onChange={(e) => setBirthday(e)}
-                                />
+                            <Grid>
+                                <Grid item xs={10}>
+                                    <TextField
+                                        margin="normal"
+                                        required
+                                        label='מספר טלפון'
+                                        name="last_name"
+                                        onChange={(e) => setLastName(e.target.value)}
+                                    />
+                                </Grid>
+                                <Grid item xs={2}>
+                                    <TextField
+                                        id="outlined-select-currency"
+                                        select
+                                        defaultValue="050"
+                                        InputProps={{
+                                            style: { width: `${80}px` },
+                                        }}
+                                    >
+                                        {[{value: '050', label: '050'}, {value: '052', label: '052'},
+                                            {value: '053', label: '053'}, {value: '054', label: '054'},
+                                            {value: '055', label: '055'}, {value: '058', label: '058'}
+                                        ].map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
+
+                                </Grid>
+                            </Grid>
+                            <DatePicker
+                                margin="normal"
+                                required
+                                fullWidth
+                                label="תאריך לידה"
+                                name="birth-date"
+                                openTo="year"
+                                maxDate={maxBirthDate}
+                                views={['year', 'month', 'day']}
+                                onChange={(e) => setBirthday(e)}
+                            />
                             <TextField
                                 margin="normal"
                                 required
@@ -144,8 +176,8 @@ const Register = props => {
                                 required
                                 fullWidth
                                 label="אימות סיסמה"
-                                name="password"
-                                onChange={(e) => setPassword(e.target.value)}
+                                name="confirm-password"
+                                onChange={(e) => setConfirmPassword(e.target.value)}
                                 type="password"
                             />
                             <Button
@@ -154,7 +186,7 @@ const Register = props => {
                                 variant="contained"
                                 // sx={{mt: 3, mb: 2}}
                             >
-                                התחבר
+                                הירשם
                             </Button>
                             <Grid container>
                                 <Grid item>

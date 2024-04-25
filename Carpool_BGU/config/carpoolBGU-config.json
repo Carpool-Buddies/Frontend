@@ -1,0 +1,9 @@
+{
+  "development": {
+    "run_on_local_server": true
+  },
+  "api_urls": {
+    "production_api_url": "TODO: change when relevant to production",
+    "local_server_api": "http://127.0.0.1:5000"
+  }
+}

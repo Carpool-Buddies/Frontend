@@ -11,6 +11,7 @@ import Container from '@mui/material/Container';
 import {styled} from "@mui/material/styles";
 import {useState} from "react";
 import logo from './static/BGU_logo.png'
+import {Paper} from "@mui/material";
 
 
 const Home = props => {
@@ -109,12 +110,12 @@ const Home = props => {
                                 התחבר
                             </Button>
                             <Grid container>
-                                <Grid item xs>
+                                <Grid item xs={12}>
                                     <Link href="#" variant="body2">
                                         שכחתי סיסמה
                                     </Link>
                                 </Grid>
-                                <Grid item>
+                                <Grid item xs={12}>
                                     <Link
                                         onClick={(event) => {
                                             navigate('/register')

@@ -15,6 +15,7 @@ import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
 import {register} from "./common/fetchers";
 import {MenuItem} from "@mui/material";
+import MuiPhoneNumber from "mui-phone-number";
 
 
 const Register = props => {
@@ -32,7 +33,7 @@ const Register = props => {
     const handleSubmit = async event => {
         event.preventDefault();
 
-        const ret = await register(email, password, firstName, lastName, '', birthday);
+        const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
         if (ret.message === 'Login successful')
             props.history.push(`/home`);
         else
@@ -112,37 +113,12 @@ const Register = props => {
                                 name="last_name"
                                 onChange={(e) => setLastName(e.target.value)}
                             />
-                            <Grid>
-                                <Grid item xs={10}>
-                                    <TextField
-                                        margin="normal"
-                                        required
-                                        label='מספר טלפון'
-                                        name="last_name"
-                                        onChange={(e) => setLastName(e.target.value)}
-                                    />
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <TextField
-                                        id="outlined-select-currency"
-                                        select
-                                        defaultValue="050"
-                                        InputProps={{
-                                            style: { width: `${80}px` },
-                                        }}
-                                    >
-                                        {[{value: '050', label: '050'}, {value: '052', label: '052'},
-                                            {value: '053', label: '053'}, {value: '054', label: '054'},
-                                            {value: '055', label: '055'}, {value: '058', label: '058'}
-                                        ].map((option) => (
-                                            <MenuItem key={option.value} value={option.value}>
-                                                {option.label}
-                                            </MenuItem>
-                                        ))}
-                                    </TextField>
-
-                                </Grid>
-                            </Grid>
+                            <MuiPhoneNumber
+                                defaultCountry={'il'}
+                                onlyCountries={['il']}
+                                label='מספר טלפון'
+                                variant='outlined'
+                                onChange={(e) => setPhoneNUmber(e)}/>
                             <DatePicker
                                 margin="normal"
                                 required

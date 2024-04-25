@@ -11,7 +11,7 @@ export const register = async (email, password, first_name, last_name, phone_num
                 first_name: first_name,
                 last_name: last_name,
                 phone_number: phone_number,
-                birthday: birthday
+                birthday: birthday.format('YYYY-MM-DD')
             })
         });
         return await response.json();

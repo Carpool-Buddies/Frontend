@@ -1,5 +1,8 @@
 import * as React from 'react';
 import {useEffect, useState} from "react";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import 'dayjs/locale/he';
 
 const App = (props) => {
 
@@ -11,7 +14,11 @@ const App = (props) => {
 
     const {children} = props;
 
-    return (serverRunning === 1) ? (<>{children}</>) : (<h2>השרת שלנו לא באוויר :(</h2>)
+    return (serverRunning === 1) ? (
+        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="he">
+            {children}
+        </LocalizationProvider>
+    ) : (<h2>השרת שלנו לא באוויר :(</h2>)
 }
 
 export default App

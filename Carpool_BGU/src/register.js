@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {useNavigate} from "react-router-dom";
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -11,15 +12,26 @@ import Container from '@mui/material/Container';
 import {styled} from "@mui/material/styles";
 import {useState} from "react";
 import logo from './static/BGU_logo.png'
+import {DatePicker, LocalizationProvider, StaticDatePicker} from "@mui/x-date-pickers";
+import dayjs from "dayjs";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+import {useNavigate} from "react-router-dom";
 
 
-const Home = props => {
+const Register = props => {
+
     const navigate = useNavigate();
 
-    const {children} = props;
-
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phoneNumber, setPhoneNUmber] = useState('');
+    const [birthday, setBirthday] = useState('');
+
+    const maxBirthDate = dayjs().subtract(16, 'year');
+
 
     function Copyright(props) {
         return (
@@ -83,21 +95,57 @@ const Home = props => {
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                             <TextField
-                                onChange={(e) => setUsername(e.target.value)}
+                                autoFocus
+                                margin="normal"
+                                required
+                                fullWidth
+                                label='שם פרטי'
+                                name="first_name"
+                                onChange={(e) => setFirstName(e.target.value)}
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                label='שם משפחה'
+                                name="last_name"
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
+                                <DatePicker
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    label="תאריך לידה"
+                                    name="birth-date"
+                                    openTo="year"
+                                    maxDate={maxBirthDate}
+                                    views={['year', 'month', 'day']}
+                                    onChange={(e) => setBirthday(e)}
+                                />
+                            <TextField
                                 margin="normal"
                                 required
                                 fullWidth
                                 label='דוא"ל'
                                 name="email"
-                                autoFocus
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                             <TextField
-                                onChange={(e) => setPassword(e.target.value)}
                                 margin="normal"
                                 required
                                 fullWidth
-                                name="password"
                                 label="סיסמה"
+                                name="password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                label="אימות סיסמה"
+                                name="password"
+                                onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                             />
                             <Button
@@ -109,18 +157,12 @@ const Home = props => {
                                 התחבר
                             </Button>
                             <Grid container>
-                                <Grid item xs>
-                                    <Link href="#" variant="body2">
-                                        שכחתי סיסמה
-                                    </Link>
-                                </Grid>
                                 <Grid item>
                                     <Link
                                         onClick={(event) => {
-                                            navigate('/register')
-                                        }}
-                                        variant="body2">
-                                        {"עדיין אין לך משתמש?"}
+                                            navigate('/')
+                                        }} variant="body2">
+                                        {"כבר יש לך משתמש קיים?"}
                                     </Link>
                                 </Grid>
                             </Grid>
@@ -129,9 +171,8 @@ const Home = props => {
                     <Copyright sx={{mt: 8, mb: 4}}/>
                 </Grid>
             </Grid>
-
         </Container>
     );
 }
 
-export default Home;
+export default Register;

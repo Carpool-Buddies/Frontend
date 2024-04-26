@@ -27,16 +27,12 @@ export const login = async (username, password) => {
             headers: {'Content-Type': 'application/json', Accept: 'application/json'},
             body: JSON.stringify({
                 email: username,
-                password: password,
-                first_name: 'mike',
-                last_name: 'T',
-                phone_number: '+972-50-6325100',
-                birthday: '1997-03-14'
+                password: password
             })
         });
         return await response.json();
     } catch (error) {
-        return 'error'
+        return error
     }
 };
 

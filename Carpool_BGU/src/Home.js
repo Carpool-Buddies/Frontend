@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import {styled} from "@mui/material/styles";
 import {useState} from "react";
 import logo from './static/BGU_logo.png'
-import {Paper} from "@mui/material";
+import {login} from './common/fetchers'
 
 
 const Home = props => {
@@ -19,7 +19,7 @@ const Home = props => {
 
     const {children} = props;
 
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     function Copyright(props) {
@@ -35,12 +35,15 @@ const Home = props => {
         );
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async event => {
         event.preventDefault();
-        console.log({
-            email: username,
-            password: password,
-        });
+
+        const ret = await login(email, password);
+        console.log(ret)
+        if (ret.success === true)
+            console.log('yay!')
+        else
+            console.log('nay.')
     };
 
     const MyComponent = styled('button')({
@@ -84,7 +87,7 @@ const Home = props => {
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                             <TextField
-                                onChange={(e) => setUsername(e.target.value)}
+                                onChange={(e) => setEmail(e.target.value)}
                                 margin="normal"
                                 required
                                 fullWidth

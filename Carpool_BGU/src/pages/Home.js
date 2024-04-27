@@ -16,7 +16,7 @@ import AuthContext from "../common/AuthProvider";
 import {Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SideMenu from "../components/sideMenu/SideMenu";
-import FormDialog from "../components/PostFutureRide";
+import FormDialog from "../components/PostFutureRideDialog";
 
 
 const Home = props => {
@@ -35,7 +35,7 @@ const Home = props => {
     const navigate = useNavigate();
     const {setAuth} = useContext(AuthContext);
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [email, setEmail] = useState('');

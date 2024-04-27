@@ -8,14 +8,23 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-// import {styled} from "@mui/material/styles";
+import Map, {Marker} from 'react-map-gl/maplibre';
 import {useContext, useState} from "react";
 import logo from './static/BGU_logo.png'
 import {login} from './common/fetchers'
 import AuthContext from "./common/AuthProvider";
+import {Divider, Drawer, Fab, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 const Home = props => {
+    const [open, setOpen] = React.useState(false);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpen(newOpen);
+    };
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -64,91 +73,140 @@ const Home = props => {
     //         }
     //     });
 
-    return isLoggedIn ? (<section>
-        <h1>You are logged in!</h1>
-        <br />
-        <p>
-            <a href="#">Go to Home</a>
-        </p>
-    </section>) : (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline/>
-            <Grid
-                container
-                spacing={0}
-                direction="column"
-                alignItems="center"
-                justifyContent="center"
-                sx={{minHeight: '100vh'}}
-            >
-                <Grid item xs={3}>
-                    <Box
-                        sx={{
-                            marginTop: 8,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            border: 1,
-                            borderRadius: 10,
-                            boxShadow: 5,
-                            padding: 10
-                        }}
-                    >
-                        <img src={logo} style={{width: 50}} alt="bgu logo"/>
-                        <Typography component="h1" variant="h5">
-                            Carpool BGU
-                        </Typography>
-                        <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
-                            <TextField
-                                onChange={(e) => setEmail(e.target.value)}
-                                margin="normal"
-                                required
-                                fullWidth
-                                label='דוא"ל'
-                                name="email"
-                                autoFocus
-                            />
-                            <TextField
-                                onChange={(e) => setPassword(e.target.value)}
-                                margin="normal"
-                                required
-                                fullWidth
-                                name="password"
-                                label="סיסמה"
-                                type="password"
-                            />
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                // sx={{mt: 3, mb: 2}}
-                            >
-                                התחבר
-                            </Button>
-                            <Grid container>
-                                <Grid item xs={12}>
-                                    <Link href="#" variant="body2">
-                                        שכחתי סיסמה
-                                    </Link>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <Link
-                                        onClick={(event) => {
-                                            navigate('/register')
-                                        }}
-                                        variant="body2">
-                                        {"עדיין אין לך משתמש?"}
-                                    </Link>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Box>
-                    <Copyright sx={{mt: 8, mb: 4}}/>
-                </Grid>
-            </Grid>
-
-        </Container>
+    const DrawerList = (
+        <Box sx={{width: 250}} role="presentation" onClick={toggleDrawer(false)}>
+            <List>
+                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    <ListItem key={text} disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                            </ListItemIcon>
+                            <ListItemText primary={text}/>
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+            <Divider/>
+            <List>
+                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    <ListItem key={text} disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
+                            </ListItemIcon>
+                            <ListItemText primary={text}/>
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
     );
+
+    const loggedIn = (<Box display='flex' height="100vh">
+        <Fab variant="extended" style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}
+             onClick={toggleDrawer(true)}>
+            <MenuIcon sx={{mr: 1}}/>
+            תפריט
+        </Fab>
+        <Drawer open={open} onClose={toggleDrawer(false)}>
+            {DrawerList}
+        </Drawer>
+        <Map
+            initialViewState={{
+                longitude: 34.874982,
+                latitude: 32.033997,
+                zoom: 14
+            }}
+            style={{width: '100%', height: '100%', zIndex: 0}}
+            mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+
+        >
+            <Marker longitude={34.874982} latitude={32.033997} anchor="bottom" pitchAlignment='map'>
+                <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
+            </Marker>
+        </Map>
+    </Box>)
+
+    const loggedOut = (<Container component="main" maxWidth="xs">
+        <CssBaseline/>
+        <Grid
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            sx={{minHeight: '100vh'}}
+        >
+            <Grid item xs={3}>
+                <Box
+                    sx={{
+                        marginTop: 8,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        border: 1,
+                        borderRadius: 10,
+                        boxShadow: 5,
+                        padding: 10
+                    }}
+                >
+                    <img src={logo} style={{width: 50}} alt="bgu logo"/>
+                    <Typography component="h1" variant="h5">
+                        Carpool BGU
+                    </Typography>
+                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
+                        <TextField
+                            onChange={(e) => setEmail(e.target.value)}
+                            margin="normal"
+                            required
+                            fullWidth
+                            label='דוא"ל'
+                            name="email"
+                            autoFocus
+                        />
+                        <TextField
+                            onChange={(e) => setPassword(e.target.value)}
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="סיסמה"
+                            type="password"
+                        />
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            // sx={{mt: 3, mb: 2}}
+                        >
+                            התחבר
+                        </Button>
+                        <Grid container>
+                            <Grid item xs={12}>
+                                <Link href="#" variant="body2">
+                                    שכחתי סיסמה
+                                </Link>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Link
+                                    onClick={(event) => {
+                                        navigate('/register')
+                                    }}
+                                    variant="body2">
+                                    {"עדיין אין לך משתמש?"}
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Box>
+                <Copyright sx={{mt: 8, mb: 4}}/>
+            </Grid>
+        </Grid>
+
+    </Container>)
+
+    return true ? (loggedIn) : (loggedOut);
 }
 
 export default Home;

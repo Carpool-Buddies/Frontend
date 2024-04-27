@@ -8,44 +8,26 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Map, {Marker} from 'react-map-gl/maplibre';
+import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
 import {useContext, useState} from "react";
 import logo from './static/BGU_logo.png'
 import {login} from './common/fetchers'
 import AuthContext from "./common/AuthProvider";
-import {Divider, Drawer, Fab, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import {Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import SideMenu from "./components/SideMenu";
 
 
 const Home = props => {
-    const [open, setOpen] = React.useState(false);
-
-    const toggleDrawer = (newOpen) => () => {
-        setOpen(newOpen);
-    };
-    const navigate = useNavigate();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
     const {children} = props;
+    const navigate = useNavigate();
     const {setAuth} = useContext(AuthContext);
+
+    const [open, setOpen] = React.useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    function Copyright(props) {
-        return (
-            <Typography variant="body2" color="text.secondary" align="center" {...props}>
-                {'Copyright © '}
-                <Link color="inherit" href="https://www.google.com">
-                    Carpool BGU
-                </Link>{' '}
-                {new Date().getFullYear()}
-                {'.'}
-            </Typography>
-        );
-    }
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -62,67 +44,45 @@ const Home = props => {
             console.log('nay.')
     };
 
-    // const MyComponent = styled('button')({
-    //         fontSize: 60,
-    //         backgroundColor: 'orange'
-    //     },
-    //     {
-    //         '&:hover': {
-    //             fontSize: 40,
-    //             backgroundColor: 'red'
-    //         }
-    //     });
+    const toggleSideMenu = (newOpen) => () => {
+        setOpen(newOpen);
+    };
 
-    const DrawerList = (
-        <Box sx={{width: 250}} role="presentation" onClick={toggleDrawer(false)}>
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
-                            </ListItemIcon>
-                            <ListItemText primary={text}/>
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-            <Divider/>
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
-                            </ListItemIcon>
-                            <ListItemText primary={text}/>
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
+    function Copyright(props) {
+        return (
+            <Typography variant="body2" color="text.secondary" align="center" {...props}>
+                {'Copyright © '}
+                <Link color="inherit" href="https://www.google.com">
+                    Carpool BGU
+                </Link>{' '}
+                {new Date().getFullYear()}
+                {'.'}
+            </Typography>
+        );
+    }
+
+    const lat = 32.034191
+    const long = 34.87721
 
     const loggedIn = (<Box display='flex' height="100vh">
-        <Fab variant="extended" style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}
-             onClick={toggleDrawer(true)}>
+        <Fab variant="extended"
+             onClick={toggleSideMenu(true)}
+             style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
             <MenuIcon sx={{mr: 1}}/>
             תפריט
         </Fab>
-        <Drawer open={open} onClose={toggleDrawer(false)}>
-            {DrawerList}
-        </Drawer>
+        <SideMenu open={open} setOpen={setOpen}/>
         <Map
             initialViewState={{
-                longitude: 34.874982,
-                latitude: 32.033997,
+                longitude: long,
+                latitude: lat,
                 zoom: 14
             }}
             style={{width: '100%', height: '100%', zIndex: 0}}
             mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-
         >
-            <Marker longitude={34.874982} latitude={32.033997} anchor="bottom" pitchAlignment='map'>
+            <GeolocateControl position='bottom-left'/>
+            <Marker longitude={long} latitude={lat} anchor="bottom" pitchAlignment='map'>
                 <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
             </Marker>
         </Map>
@@ -190,7 +150,7 @@ const Home = props => {
                             </Grid>
                             <Grid item xs={12}>
                                 <Link
-                                    onClick={(event) => {
+                                    onClick={() => {
                                         navigate('/register')
                                     }}
                                     variant="body2">

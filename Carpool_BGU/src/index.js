@@ -14,6 +14,7 @@ import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 import rtlPlugin from 'stylis-plugin-rtl';
 import dayjs from "dayjs";
+import {AuthProvider} from "./common/AuthProvider";
 
 
 const defaultTheme = createTheme({
@@ -44,17 +45,19 @@ require('dayjs/locale/he')
 dayjs.locale('he') // use locale globally
 
 createRoot(document.getElementById('app')).render(
-    <ThemeProvider theme={defaultTheme}>
-        <CacheProvider value={cacheRtl}>
-            <BrowserRouter hashType="noslash">
-                <App>
-                    <Routes>
-                        <Route exact path="/" element={<Home/>}/>
-                        <Route path="/home" element={<Home/>}/>
-                        <Route path="/register" element={<Register/>}/>
-                    </Routes>
-                </App>
-            </BrowserRouter>
-        </CacheProvider>
-    </ThemeProvider>
+    <AuthProvider>
+        <ThemeProvider theme={defaultTheme}>
+            <CacheProvider value={cacheRtl}>
+                <BrowserRouter hashType="noslash">
+                    <App>
+                        <Routes>
+                            <Route exact path="/" element={<Home/>}/>
+                            <Route path="/home" element={<Home/>}/>
+                            <Route path="/register" element={<Register/>}/>
+                        </Routes>
+                    </App>
+                </BrowserRouter>
+            </CacheProvider>
+        </ThemeProvider>
+    </AuthProvider>
 );

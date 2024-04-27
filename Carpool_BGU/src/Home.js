@@ -8,16 +8,19 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import {styled} from "@mui/material/styles";
-import {useState} from "react";
+// import {styled} from "@mui/material/styles";
+import {useContext, useState} from "react";
 import logo from './static/BGU_logo.png'
 import {login} from './common/fetchers'
+import AuthContext from "./common/AuthProvider";
 
 
 const Home = props => {
     const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const {children} = props;
+    const {setAuth} = useContext(AuthContext);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -40,24 +43,34 @@ const Home = props => {
 
         const ret = await login(email, password);
         console.log(ret)
-        if (ret.success === true)
+        if (ret.success === true) {
             console.log('yay!')
-        else
+            const user = ret.user.email
+            const ret_token = ret.token
+            setAuth({user, ret_token});
+            setIsLoggedIn(true)
+        } else
             console.log('nay.')
     };
 
-    const MyComponent = styled('button')({
-            fontSize: 60,
-            backgroundColor: 'orange'
-        },
-        {
-            '&:hover': {
-                fontSize: 40,
-                backgroundColor: 'red'
-            }
-        });
+    // const MyComponent = styled('button')({
+    //         fontSize: 60,
+    //         backgroundColor: 'orange'
+    //     },
+    //     {
+    //         '&:hover': {
+    //             fontSize: 40,
+    //             backgroundColor: 'red'
+    //         }
+    //     });
 
-    return (
+    return isLoggedIn ? (<section>
+        <h1>You are logged in!</h1>
+        <br />
+        <p>
+            <a href="#">Go to Home</a>
+        </p>
+    </section>) : (
         <Container component="main" maxWidth="xs">
             <CssBaseline/>
             <Grid
@@ -81,7 +94,7 @@ const Home = props => {
                             padding: 10
                         }}
                     >
-                        <img src={logo} style={{width: 50}}/>
+                        <img src={logo} style={{width: 50}} alt="bgu logo"/>
                         <Typography component="h1" variant="h5">
                             Carpool BGU
                         </Typography>

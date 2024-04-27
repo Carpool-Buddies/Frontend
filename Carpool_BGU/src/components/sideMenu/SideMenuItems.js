@@ -4,7 +4,7 @@ export default [
         "icon": "AccountCircleIcon",
         "primary": "שלום אורח",
         "secondary": "ערוך פרופיל",
-        "link": "./register",
+        "link": "./profileView",
         "divider_after": true
     },
     {
@@ -12,7 +12,7 @@ export default [
         "icon": "DirectionsCarFilledIcon",
         "primary": "פרסם נסיעה",
         "secondary": "",
-        "link": "./register",
+        "link": "publish-ride",
         "divider_after": false
     },
     {

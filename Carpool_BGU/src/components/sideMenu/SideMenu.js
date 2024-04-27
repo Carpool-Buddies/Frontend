@@ -6,7 +6,7 @@ import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import SideMenuItems from "./SideMenuItems";
 
-const SideMenu = ({open, setOpen, navigate}) => {
+const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
@@ -18,7 +18,14 @@ const SideMenu = ({open, setOpen, navigate}) => {
                     <>
                         <ListItem key={item.key}>
                             <ListItemButton onClick={() => {
-                                navigate(item.link)
+                                switch (item.link) {
+                                    case "publish-ride":
+                                        handleOpenDialog()
+                                        break
+                                    default:
+                                        navigate(item.link)
+                                        break
+                                }
                             }}>
                                 <ListItemIcon>
                                     {item.icon === 'DirectionsCarFilledIcon' && <DirectionsCarFilledIcon/>}

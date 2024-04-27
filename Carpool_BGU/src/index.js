@@ -6,8 +6,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import './fonts/OpenSansHebrew/OpenSansHebrew-Regular.ttf'
 import './fonts/MyriadPro/MYRIADPRO-REGULAR.woff'
-import Home from "./Home";
-import Register from "./register";
+import Home from "./pages/Home";
+import Register from "./pages/register";
 import {heIL} from "@mui/x-date-pickers/locales";
 import {prefixer} from 'stylis';
 import {CacheProvider} from '@emotion/react';
@@ -15,6 +15,7 @@ import createCache from '@emotion/cache';
 import rtlPlugin from 'stylis-plugin-rtl';
 import dayjs from "dayjs";
 import {AuthProvider} from "./common/AuthProvider";
+import Box from "@mui/material/Box";
 
 
 const defaultTheme = createTheme({
@@ -54,6 +55,7 @@ createRoot(document.getElementById('app')).render(
                             <Route exact path="/" element={<Home/>}/>
                             <Route path="/home" element={<Home/>}/>
                             <Route path="/register" element={<Register/>}/>
+                            <Route path="/profileView" element={<Box/>}/>
                         </Routes>
                     </App>
                 </BrowserRouter>

@@ -9,11 +9,11 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {styled} from "@mui/material/styles";
 import {useState} from "react";
-import logo from './static/BGU_logo.png'
+import logo from '../static/BGU_logo.png'
 import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
-import {register} from "./common/fetchers";
+import {register} from "../common/fetchers";
 import {MenuItem} from "@mui/material";
 import MuiPhoneNumber from "mui-phone-number";
 

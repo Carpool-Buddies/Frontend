@@ -15,7 +15,7 @@ import {login} from './common/fetchers'
 import AuthContext from "./common/AuthProvider";
 import {Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import SideMenu from "./components/SideMenu";
+import SideMenu from "./components/sideMenu/SideMenu";
 
 
 const Home = props => {
@@ -71,7 +71,7 @@ const Home = props => {
             <MenuIcon sx={{mr: 1}}/>
             תפריט
         </Fab>
-        <SideMenu open={open} setOpen={setOpen}/>
+        <SideMenu open={open} setOpen={setOpen} navigate={navigate}/>
         <Map
             initialViewState={{
                 longitude: long,

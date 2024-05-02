@@ -181,7 +181,7 @@ const Home = props => {
 
     </Container>)
 
-    return true ? (loggedIn) : (loggedOut);
+    return isLoggedIn ? (loggedIn) : (loggedOut);
 }
 
 export default Home;

@@ -16,6 +16,7 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import dayjs from "dayjs";
 import {AuthProvider} from "./common/AuthProvider";
 import Box from "@mui/material/Box";
+import ForgotPassword from "./pages/ForgotPassword";
 
 
 const defaultTheme = createTheme({
@@ -56,6 +57,7 @@ createRoot(document.getElementById('app')).render(
                             <Route path="/home" element={<Home/>}/>
                             <Route path="/register" element={<Register/>}/>
                             <Route path="/profileView" element={<Box/>}/>
+                            <Route path="/forgot-password" element={<ForgotPassword />} />
                         </Routes>
                     </App>
                 </BrowserRouter>

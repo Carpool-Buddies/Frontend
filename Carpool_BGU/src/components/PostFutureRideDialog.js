@@ -29,7 +29,6 @@ export default function FormDialog({open, handleCloseDialog}) {
                             const formData = new FormData(event.currentTarget);
                             const formJson = Object.fromEntries(formData.entries());
                             const email = formJson.email;
-                            console.log(email);
                             handleCloseDialog();
                         },
                     }}
@@ -63,8 +62,6 @@ export default function FormDialog({open, handleCloseDialog}) {
                         options={Object.keys(townNames)}
                         sx={{width: 300}}
                         onChange={(e, v)=>{
-                            console.log(e)
-                            console.log(v)
                             setOriginLat(townNames[v][0])
                             setOriginLong(townNames[v][1])
                         }}

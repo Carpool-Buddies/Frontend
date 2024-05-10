@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import logo from '../static/BGU_logo.png'
 import {login} from '../common/fetchers'
 import AuthContext from "../common/AuthProvider";
@@ -35,11 +35,24 @@ const Home = props => {
     const navigate = useNavigate();
     const {setAuth} = useContext(AuthContext);
 
+    const [viewport, setViewport] = useState({});
     const [open, setOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                setViewport({
+                    ...viewport,
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    zoom: 14,
+                });
+            });
+    }, []); // Empty dependency array ensures this runs only once when component mounts
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -52,6 +65,7 @@ const Home = props => {
             const ret_token = ret.token
             setAuth({user, ret_token});
             setIsLoggedIn(true)
+            localStorage.setItem('access_token', ret_token)
         } else
             console.log('nay.')
     };
@@ -85,20 +99,19 @@ const Home = props => {
                 תפריט
             </Fab>
             <SideMenu open={open} setOpen={setOpen} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
+            {viewport.latitude && viewport.longitude && (
             <Map
-                initialViewState={{
-                    longitude: long,
-                    latitude: lat,
-                    zoom: 14
-                }}
+                initialViewState={viewport}
                 style={{width: '100%', height: '100%', zIndex: 0}}
                 mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
             >
                 <GeolocateControl position='bottom-left'/>
-                <Marker longitude={long} latitude={lat} anchor="bottom" pitchAlignment='map'>
+                <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
+                        pitchAlignment='map'>
                     <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
                 </Marker>
             </Map>
+            )}
             <FormDialog open={openDialog} handleCloseDialog={handleCloseDialog}/>
         </Box>
     )

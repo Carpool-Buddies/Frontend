@@ -21,26 +21,19 @@ import FormDialog from "../components/PostFutureRideDialog";
 
 const Home = props => {
 
-    const [openDialog, setOpenDialog] = useState(false);
-
-    const handleOpenDialog = () => {
-        setOpenDialog(true);
-    };
-
-    const handleCloseDialog = () => {
-        setOpenDialog(false);
-    };
-
     const {children} = props;
-    const navigate = useNavigate();
-    const {setAuth} = useContext(AuthContext);
 
-    const [viewport, setViewport] = useState({});
-    const [open, setOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+    const [openDialog, setOpenDialog] = useState(false);
+    const [viewport, setViewport] = useState({});
+    const [openSideMenu, setOpenSideMenu] = useState(false);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const {setAuth} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
@@ -52,8 +45,16 @@ const Home = props => {
                     zoom: 14,
                 });
             });
-    }, []); // Empty dependency array ensures this runs only once when component mounts
+    }, []);
 
+    const handleOpenDialog = () => {
+        setOpenDialog(true);
+    };
+
+    const handleCloseDialog = () => {
+        setOpenDialog(false);
+    };
+    
     const handleSubmit = async event => {
         event.preventDefault();
 
@@ -71,7 +72,7 @@ const Home = props => {
     };
 
     const toggleSideMenu = (newOpen) => () => {
-        setOpen(newOpen);
+        setOpenSideMenu(newOpen);
     };
 
     function Copyright(props) {
@@ -87,34 +88,29 @@ const Home = props => {
         );
     }
 
-    const lat = 32.034191
-    const long = 34.87721
-
-    const loggedIn = (
-        <Box display='flex' height="100vh">
+    const loggedIn = (<Box display='flex' height="100vh">
             <Fab variant="extended" color='primary'
                  onClick={toggleSideMenu(true)}
                  style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
                 <MenuIcon sx={{mr: 1}}/>
                 תפריט
             </Fab>
-            <SideMenu open={open} setOpen={setOpen} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
+            <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
             {viewport.latitude && viewport.longitude && (
-            <Map
-                initialViewState={viewport}
-                style={{width: '100%', height: '100%', zIndex: 0}}
-                mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-            >
-                <GeolocateControl position='bottom-left'/>
-                <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
-                        pitchAlignment='map'>
-                    <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
-                </Marker>
-            </Map>
+                <Map
+                    initialViewState={viewport}
+                    style={{width: '100%', height: '100%', zIndex: 0}}
+                    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+                >
+                    <GeolocateControl position='bottom-left'/>
+                    <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
+                            pitchAlignment='map'>
+                        <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
+                    </Marker>
+                </Map>
             )}
             <FormDialog open={openDialog} handleCloseDialog={handleCloseDialog}/>
-        </Box>
-    )
+        </Box>)
 
     const loggedOut = (<Container component="main" maxWidth="xs">
         <CssBaseline/>

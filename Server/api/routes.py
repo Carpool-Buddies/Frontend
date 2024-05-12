@@ -138,3 +138,8 @@ class GoogleLogin(Resource):
                     "username": user.username,
                     "token": token,
                 }}, 200
+
+@rest_api.route('/api/ping')
+class Ping(Resource):
+    def get(self):
+        return {"success": True, "message": "Server is up and running!"}, 200

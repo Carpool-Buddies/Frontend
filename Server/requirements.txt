@@ -36,4 +36,5 @@ Werkzeug==2.1.2
 zipp==3.11.0
 flask_mysqldb
 pymysql
+googlemaps==4.10.0
 # psycopg2-binary

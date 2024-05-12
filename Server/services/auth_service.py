@@ -69,21 +69,24 @@ class AuthService:
 
         current_user.set_jwt_auth_active(False)
         current_user.save()
-        # TODO: maybe add try catch for un excepted errors
+
         return {"success": True}, 200
 
     @staticmethod
-    def edit_user(self, current_user, _new_first_name, _new_last_name, _new_birthday):
+    def edit_user(current_user, _new_first_name, _new_last_name, _new_phone_number, _new_birthday):
+        user_exists = User(current_user.email, current_user.password, current_user.first_name, current_user.last_name, current_user.phone_number, current_user.birthday, current_user)
         if _new_first_name:
-            current_user.update_first_name(_new_first_name)
+            user_exists.update_first_name(_new_first_name)
 
         if _new_last_name:
-            current_user.update_last_name(_new_last_name)
+            user_exists.update_last_name(_new_last_name)
+
+        if _new_phone_number:
+            user_exists.update_phone_number(_new_phone_number)
 
         if _new_birthday:
-            current_user.update_bithday(_new_birthday)
-
-        current_user.save()
+            user_exists.update_birthday(_new_birthday)
 
         return {"success": True}, 200
+
 

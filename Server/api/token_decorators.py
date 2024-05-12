@@ -43,6 +43,6 @@ def token_required(f):
         except:
             return {"success": False, "msg": "Token is invalid"}, 400
 
-        return f(current_user, *args, **kwargs)
+        return f(*args, current_user, **kwargs)
 
     return decorator

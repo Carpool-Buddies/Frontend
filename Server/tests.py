@@ -1,15 +1,9 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
 import pytest
 import json
 
-from models import db
 from api import app
-
-
 
 SUCCESS_CODE = 200
 BAD_REQUEST_CODE = 400
@@ -18,7 +12,7 @@ USER_REGISTRATION_INVALID_EMAIL_MESSAGE = "Invalid email format"
 USER_REGISTRATION_INVALID_PASSWORD_MESSAGE = "Invalid password format"
 USER_REGISTRATION_INVALID_BIRTHDAY_MESSAGE = "Invalid birthday date"
 USER_ALREADY_EXISTS_MESSAGE = "Email already exists!"
-UNEXISTS_USER_LOGIN = "This email does not exist."
+UN_EXISTS_USER_LOGIN = "This email does not exist."
 INCORRECT_CREDENTIALS_LOGIN = "Wrong credentials."
 # TODO extract to constants class
 # from constants import BAD_REQUEST_CODE, USER_REGISTRATION_INVALID_PASSWORD_MESSAGE
@@ -54,19 +48,7 @@ def test_GivenValidUserData_thenSignUp_returnSuccessCodeAndMsg(email, password, 
     """
        Tests /users/register API
     """
-    response = client.post(
-        "api/auth/register",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password,
-                "first_name": first_name,
-                "last_name": last_name,
-                "phone_number": phone_number,
-                "birthday": birthday
-            }
-        ),
-        content_type="application/json")
+    response = register(email, password, first_name, last_name, phone_number, birthday, client)
 
     data = json.loads(response.data.decode())
     print(data)
@@ -99,19 +81,7 @@ def test_GivenInvalidEmail_thenSignUp_returnAppropriateCodeAndMsg(email, passwor
     """
        Tests /api/auth/register API with various invalid email formats to ensure proper error handling.
     """
-    response = client.post(
-        "/api/auth/register",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password,
-                "first_name": first_name,
-                "last_name": last_name,
-                "phone_number": phone_number,
-                "birthday": birthday
-            }
-        ),
-        content_type="application/json")
+    response = register(email, password, first_name, last_name, phone_number, birthday, client)
 
     data = json.loads(response.data.decode())
     assert response.status_code == BAD_REQUEST_CODE
@@ -139,19 +109,7 @@ def test_GivenInvalidPassword_thenSignUp_returnAppropriateCodeAndMsg(email, pass
     """
        Tests /api/auth/register API with various invalid password formats to ensure proper error handling.
     """
-    response = client.post(
-        "/api/auth/register",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password,
-                "first_name": first_name,
-                "last_name": last_name,
-                "phone_number": phone_number,
-                "birthday": birthday
-            }
-        ),
-        content_type="application/json")
+    response = register(email, password, first_name, last_name, phone_number, birthday, client)
 
     data = json.loads(response.data.decode())
     assert response.status_code == BAD_REQUEST_CODE
@@ -169,19 +127,7 @@ def test_GivenInvalidBirthday_thenSignUp_returnAppropriateCodeAndMsg(email, pass
     """
        Tests /api/auth/register API with various invalid birthday formats to ensure proper error handling.
     """
-    response = client.post(
-        "/api/auth/register",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password,
-                "first_name": first_name,
-                "last_name": last_name,
-                "phone_number": phone_number,
-                "birthday": birthday
-            }
-        ),
-        content_type="application/json")
+    response = register(email, password, first_name, last_name, phone_number, birthday, client)
 
     data = json.loads(response.data.decode())
     assert response.status_code == BAD_REQUEST_CODE
@@ -203,19 +149,7 @@ def test_GivenExistingUser_thenSignUp_returnsAppropriateCodeAndMsg(email, passwo
     """
     test_GivenValidUserData_thenSignUp_returnSuccessCodeAndMsg(email, password, first_name, last_name, phone_number, birthday, client)
 
-    response = client.post(
-        "/api/auth/register",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password,
-                "first_name": first_name,
-                "last_name": last_name,
-                "phone_number": phone_number,
-                "birthday": birthday
-            }
-        ),
-        content_type="application/json")
+    response = register(email, password, first_name, last_name, phone_number, birthday, client)
 
     # Check if the response contains the appropriate error message and status code
     data = json.loads(response.data.decode())
@@ -234,16 +168,7 @@ def test_GivenValidUserData_thenLogin_returnSuccessCodeAndMsg(email, password, f
     test_GivenValidUserData_thenSignUp_returnSuccessCodeAndMsg(email, password, first_name, last_name, phone_number, birthday, client)
 
     # login
-    response = client.post(
-        "api/auth/login",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password
-            }
-        ),
-        content_type="application/json")
-
+    response = login(client, email, password)
     data = json.loads(response.data.decode())
     assert response.status_code == SUCCESS_CODE
     assert data["success"]
@@ -257,20 +182,10 @@ def test_GivenUnexitstsUser_thenLogin_returnAppropriateCodeAndMsg(email, passwor
     """
        Tests /users/register API
     """
-    # login
-    response = client.post(
-        "api/auth/login",
-        data=json.dumps(
-            {
-                "email": email,
-                "password": password
-            }
-        ),
-        content_type="application/json")
-
+    response = login(client, email, password)
     data = json.loads(response.data.decode())
     assert response.status_code == BAD_REQUEST_CODE
-    assert UNEXISTS_USER_LOGIN in data["msg"]
+    assert UN_EXISTS_USER_LOGIN in data["msg"]
 
 @pytest.mark.parametrize("email, password, first_name, last_name, phone_number, birthday", [
     # Test case 1: All fields are valid
@@ -281,20 +196,82 @@ def test_GivenIncorrectUserData_thenLogin_returnAppropriateCodeAndMsg(email, pas
        Tests /users/register API
     """
     # Sign up the user to the system
-    test_GivenValidUserData_thenSignUp_returnSuccessCodeAndMsg(email, password, first_name, last_name, phone_number, birthday, client)
+    register(email, password, first_name, last_name, phone_number, birthday, client)
+    # login
+    response = login(client, email, password + "1")
+    data = json.loads(response.data.decode())
+    assert response.status_code == BAD_REQUEST_CODE
+    # TODO: test to long error
+    assert INCORRECT_CREDENTIALS_LOGIN in data["msg"]
 
+@pytest.mark.parametrize("email, password, first_name, last_name, phone_number, birthday", [
+    # Test case 1: All fields are valid
+    ("user4-login@example.com", "ValidPassword1!", "John", "Doe", "1234567890", "1990-01-01")
+])
+def test_GivenLoggedInUser_thenLogout_returnAppropriateCodeAndMsg(email, password, first_name, last_name, phone_number, birthday, client):
+    """
+       Tests /users/register API
+    """
+    # Sign up the user to the system
+    register(email, password, first_name, last_name, phone_number, birthday, client)
+    response = login(client, email, password)
+    data = json.loads(response.data.decode())
+    response = logout(client, data["token"])
+    # data = json.loads(response.data.decode())
+
+    assert response.status_code == SUCCESS_CODE
+
+@pytest.mark.parametrize("email, password, first_name, last_name, phone_number, birthday", [
+    # Test case 1: All fields are valid
+    ("user4-edit@example.com", "ValidPassword1!", "John", "Doe", "1234567890", "1990-01-01")
+])
+def test_GivenLoggedInUser_thenEdit_returnAppropriateCodeAndMsg(email, password, first_name, last_name, phone_number, birthday, client):
+    """
+       Tests /users/register API
+    """
+    # Sign up the user to the system
+    register(email, password, first_name, last_name, phone_number, birthday, client)
+    response = login(client, email, password)
+    data = json.loads(response.data.decode())
+    response = logout(client, data["token"])
+    # data = json.loads(response.data.decode())
+
+    assert response.status_code == SUCCESS_CODE
+
+
+def login(client, email, password):
     # login
     response = client.post(
         "api/auth/login",
         data=json.dumps(
             {
                 "email": email,
-                "password": password + "1"
+                "password": password
             }
         ),
         content_type="application/json")
+    return response
 
-    data = json.loads(response.data.decode())
-    assert response.status_code == BAD_REQUEST_CODE
-    # TODO: test to long error
-    assert INCORRECT_CREDENTIALS_LOGIN in data["msg"]
+def logout(client, token):
+    headers = {"Authorization": f"{token}"}
+    response = client.post(
+        "/api/auth/logout",
+        headers=headers,
+        content_type="application/json")
+    return response
+
+def register(email, password, first_name, last_name, phone_number, birthday, client):
+    response = client.post(
+        "/api/auth/register",
+        data=json.dumps(
+            {
+                "email": email,
+                "password": password,
+                "first_name": first_name,
+                "last_name": last_name,
+                "phone_number": phone_number,
+                "birthday": birthday
+            }
+        ),
+        content_type="application/json")
+    return response

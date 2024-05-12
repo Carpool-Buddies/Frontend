@@ -7,18 +7,25 @@ MIN_AGE = 16
 MAX_AGE = 120
 
 class User:
-    def __init__(self, _email, _password, _first_name, _last_name, _phone_number, _birthday):
+    def __init__(self, _email, _password, _first_name, _last_name, _phone_number, _birthday, _current_user=None):
         self.email = _email
         self.password = _password
         self.first_name = _first_name
         self.last_name = _last_name
         self.phone_number = _phone_number
         self.birthday = _birthday
+        self.current_user = _current_user
 
     def validate(self):
         self.__validate_email()
         self.__validate_password()
         self.__validate_birthday()
+        self.__validate_phone_number()
+
+    def __validate_phone_number(self):
+        regex = re.compile(r'^(\+\d{1,3})?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$')
+        if not regex.search(self.phone_number):
+            raise PhoneNumberValidationError("Invalid phone number format.")
 
     def __validate_password(self):
         """
@@ -66,3 +73,21 @@ class User:
 
         except ValueError:
             raise InvalidBirthdayError("Invalid birthday date. Please use the YYYY-MM-DD format.")
+
+    def update_phone_number(self, new_phone_number):
+        self.phone_number = new_phone_number
+        self.__validate_phone_number()
+        self.current_user.update_field('phone_number', new_phone_number)
+
+    def update_first_name(self, new_first_name):
+        self.first_name = new_first_name
+        self.current_user.update_field('first_name', new_first_name)
+
+    def update_last_name(self, new_last_name):
+        self.last_name = new_last_name
+        self.current_user.update_field('last_name', new_last_name)
+
+    def update_birthday(self, new_birthday):
+        self.birthday = new_birthday
+        self.__validate_birthday()
+        self.current_user.update_field('birthday', new_birthday)

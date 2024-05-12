@@ -1,17 +1,17 @@
 {
-    "name": "api-server-flask",
+    "name": "carpool-buddies-api",
     "version": "1.0.0",
-    "description": "Open-source Flask API Server",
+    "description": "Carpool-Buddies Flask API Server",
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/app-generator/api-server-flask"
+        "url": "https://github.com/ChaiShalev18/Carpool-Buddies"
     },
     "bugs": {
-        "url": "https://github.com/app-generator/api-server-flask/issues",
-        "email": "support@appseed.us"
+        "url": "https://github.com/ChaiShalev18/Carpool-Buddies.git/issues",
+        "email": "carpoolbuddies@gmail.com"
     },
-    "author": "AppSeed App Generator <support@appseed.us> (https://appseed.us)",
+    "author": "BGU Students",
     "engines": {
         "node": ">=10.0.0"
     },

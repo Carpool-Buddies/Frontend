@@ -51,6 +51,13 @@ class Users(db.Model):
     def update_email(self, new_email):
         self.email = new_email
 
+    def update_field(self, field, value):
+        if hasattr(self, field):
+            setattr(self, field, value)
+            self.save()
+        else:
+            raise AttributeError("Invalid field name.")
+
     def check_jwt_auth_active(self):
         return self.jwt_auth_active
 

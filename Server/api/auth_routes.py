@@ -1,19 +1,14 @@
 from flask import request
 from flask_restx import Resource, Namespace, fields
 
-from datetime import datetime, timedelta, timezone
-
-import jwt
-
-from models import Users, JWTTokenBlocklist
-
 from services.auth_service import AuthService
 from .token_decorators import token_required
 
 auth = AuthService()
 
 # Namespace for Auth
-auth_ns = Namespace('auth', description='Authentication and user management')
+authorizations = {'JWT Bearer': {'type': 'apiKey', 'in': 'header', 'name': 'Authorization'}}
+auth_ns = Namespace('auth', description='Authentication and user management', authorizations=authorizations)
 
 """
     Flask-Restx models for api request and response data
@@ -80,13 +75,12 @@ class Login(Resource):
         return auth.login(_email, _password)
 
 
-
+@auth_ns.doc(security='JWT Bearer')
 @auth_ns.route('/edit')
 class EditUser(Resource):
     """
        Edits User's username or password or both using 'user_edit_model' input
     """
-    # TODO: implement this functionality
     @auth_ns.expect(user_edit_model)
     @token_required
     def post(self, current_user):
@@ -95,11 +89,12 @@ class EditUser(Resource):
 
         _new_first_name = req_data.get("first_name")
         _new_last_name = req_data.get("last_name")
+        _new_phone_number = req_data.get("phone_number")
         _new_birthday = req_data.get("birthday")
-        return auth.edit_user(current_user, _new_first_name, _new_last_name, _new_birthday)
+        return auth.edit_user(current_user, _new_first_name, _new_last_name, _new_phone_number, _new_birthday)
 
 
-
+@auth_ns.doc(security='JWT Bearer')
 @auth_ns.route('/logout')
 class LogoutUser(Resource):
     """
@@ -108,6 +103,14 @@ class LogoutUser(Resource):
 
     @token_required
     def post(self, current_user):
-
+        # Test Token require
         _jwt_token = request.headers["authorization"]
         return auth.logout(_jwt_token, current_user)
+
+    
+@auth_ns.doc(security='JWT Bearer')
+@auth_ns.route('/home')
+class Home(Resource):
+    @token_required
+    def get(self, current_user):
+        return {"success": True, "message": "User is logged in.", "user": current_user.toJSON()}, 200

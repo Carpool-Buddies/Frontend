@@ -13,3 +13,9 @@ class InvalidBirthdayError(Exception):
 class PasswordValidationError(Exception):
     """Exception raised for password validation errors with a specific message."""
     pass
+
+class PhoneNumberValidationError(Exception):
+    """Exception raised for password validation errors with a specific message."""
+    pass
+
+

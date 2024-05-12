@@ -29,6 +29,8 @@ class DriverService:
             if _available_seats <= 0:
                 raise ValueError("Available seats must be greater than 0")
 
+            #TODO: check that doesn't have to post that at the same time
+
             # Create a new Ride object with the provided details
             new_ride = Rides(driver_id=_driver_id,
                 departure_location=_departure_location,
@@ -67,6 +69,26 @@ class DriverService:
         """
         try:
             ride_posts = Rides.query.filter_by(driver_id=user_id).all()
+            return [ride.to_dict() for ride in ride_posts]
+        except Exception as e:
+            # Handle any exceptions and return an empty list in case of errors
+            print(f"Error fetching ride posts: {str(e)}")
+            return []
+
+    @staticmethod
+    def get_future_ride_posts_by_user_id(user_id):
+        """
+        Fetches ride posts associated with a specific user ID.
+
+        Parameters:
+        - user_id: int, the ID of the user whose ride posts to fetch
+
+        Returns:
+        - ride_posts: list, a list of dictionaries containing ride post data
+        """
+        # TODO: Take care to status
+        try:
+            ride_posts = Rides.query.filter_by(driver_id=user_id, status="").all()
             return [ride.to_dict() for ride in ride_posts]
         except Exception as e:
             # Handle any exceptions and return an empty list in case of errors

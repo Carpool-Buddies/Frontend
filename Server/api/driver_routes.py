@@ -8,7 +8,8 @@ from .token_decorators import token_required
 driver_service = DriverService()
 
 # Namespace for Driver
-driver_ns = Namespace('driver', description='Driver related operations')
+authorizations = {'JWT Bearer': {'type': 'apiKey', 'in': 'header', 'name': 'Authorization'}}
+driver_ns = Namespace('driver', description='Driver related operations', authorizations=authorizations)
 """
     Flask-Restx models for api request and response data
 """
@@ -41,6 +42,7 @@ ride_request_model = driver_ns.model('RideRequestModel', {'passenger_id': fields
     Flask-Restx routes
 """
 
+@driver_ns.doc(security='JWT Bearer')
 @driver_ns.route('/post-future-rides')
 class PostFutureRides(Resource):
     """
@@ -62,7 +64,7 @@ class PostFutureRides(Resource):
         _notes = req_data.get("notes")
 
         # Call the service method to post the future ride
-        success = driver_service.post_future_ride(_departure_location, _pickup_radius, _destination,
+        success = driver_service.post_future_ride(current_user.id, _departure_location, _pickup_radius, _destination,
                                                   _drop_radius, _departure_datetime, _available_seats, _notes)
 
         if success:
@@ -70,7 +72,7 @@ class PostFutureRides(Resource):
         else:
             return {"error": "Failed to post future ride"}, 500
 
-
+@driver_ns.doc(security='JWT Bearer')
 @driver_ns.route('/<int:user_id>/rides')
 class ManageUserRidePosts(Resource):
     """
@@ -88,6 +90,7 @@ class ManageUserRidePosts(Resource):
 
         return {"ride_posts": ride_posts}, 200
 
+@driver_ns.doc(security='JWT Bearer')
 @driver_ns.route('/<int:user_id>/rides/<int:ride_id>/update')
 class UpdateRideDetails(Resource):
     """
@@ -116,6 +119,7 @@ class UpdateRideDetails(Resource):
             return {"error": str(e)}, 500
 
 
+@driver_ns.doc(security='JWT Bearer')
 @driver_ns.route('/<int:user_id>/rides/manage_requests/<int:ride_id>')
 class ManagePassengerRequests(Resource):
     """

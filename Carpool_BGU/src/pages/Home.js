@@ -109,7 +109,7 @@ const Home = props => {
                     </Marker>
                 </Map>
             )}
-            <FormDialog open={openDialog} handleCloseDialog={handleCloseDialog}/>
+            <FormDialog openDialog={openDialog} handleCloseDialog={handleCloseDialog}/>
         </Box>)
 
     const loggedOut = (<Container component="main" maxWidth="xs">

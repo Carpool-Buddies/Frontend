@@ -66,6 +66,22 @@ export const logout = async (accessToken) => {
     }
 }
 
+export const getAddress = async (addressText) => {
+    const apiKey = '663e40e401c53715963317sdt785944'
+    try {
+        const response = await fetch('https://geocode.maps.co/search?q=' + addressText + '&api_key=' + apiKey)
+        if (!response.ok) {
+            throw new Error('Failed to fetch address');
+        }
+        const data = await response.json();
+        console.log(data)
+    } catch (error) {
+        console.error('Error fetching address:', error);
+        // Handle error appropriately
+        return null;
+    }
+}
+
 export const mystery = async (accessToken) => {
     try {
         const response = await fetch(`${BASE_API_URL}/protected`, {

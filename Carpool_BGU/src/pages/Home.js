@@ -177,13 +177,11 @@
                                     </Grid>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <Link
-                                        onClick={() => {
-                                            navigate('/register')
-                                        }}
+                                    <StyledLink
+                                        onClick={() => navigate('/register')}
                                         variant="body2">
-                                        {"עדיין אין לך משתמש?"}
-                                    </Link>
+                                        עדיין אין לך משתמש?
+                                    </StyledLink>
                                 </Grid>
                             </Grid>
                         </Box>

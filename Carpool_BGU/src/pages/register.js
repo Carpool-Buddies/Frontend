@@ -1,21 +1,18 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import {styled} from "@mui/material/styles";
-import {useState} from "react";
-import logo from '../static/BGU_logo.png'
 import {DatePicker} from "@mui/x-date-pickers";
-import dayjs from "dayjs";
-import {useNavigate} from "react-router-dom";
-import {register} from "../common/fetchers";
 import {MenuItem} from "@mui/material";
 import MuiPhoneNumber from "mui-phone-number";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { register } from "../common/fetchers";
+import { TextField, Button, Grid, Typography, Box, Container, Link } from "@mui/material";
+import dayjs from 'dayjs';
+import logo from '../static/BGU_logo.png';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 const Register = props => {
@@ -29,18 +26,36 @@ const Register = props => {
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNUmber] = useState('');
     const [birthday, setBirthday] = useState('');
+    const maxBirthDate = dayjs().subtract(16, 'year');
+
 
     const handleSubmit = async event => {
         event.preventDefault();
 
-        const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
-        if (ret.message === 'Login successful')
-            props.history.push(`/home`);
-        else
-            console.log(ret);
-    };
+        // Validate form fields
+        if (!email || !password || !confirmPassword || !firstName || !lastName || !phoneNumber || !birthday) {
+            toast.error("Please fill in all fields");
+            return;
+        }
 
-    const maxBirthDate = dayjs().subtract(16, 'year');
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match");
+            return;
+        }
+
+        if (dayjs(birthday).isAfter(maxBirthDate)) {
+            toast.error("You must be at least 16 years old to register");
+            return;
+        }
+
+        const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
+        if (ret.success) {
+            toast.success("Registration successful");
+            navigate('/');
+        } else {
+            toast.error(ret.error);
+        }
+    };
 
 
     function Copyright(props) {
@@ -179,6 +194,7 @@ const Register = props => {
                     <Copyright sx={{mt: 8, mb: 4}}/>
                 </Grid>
             </Grid>
+            <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} closeOnClick pauseOnHover draggable pauseOnFocusLoss />
         </Container>
     );
 }

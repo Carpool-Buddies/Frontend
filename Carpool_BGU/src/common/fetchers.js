@@ -40,9 +40,21 @@ export const login = async (username, password) => {
                 password: password
             })
         });
-        return await response.json();
+        const data = await response.json();
+        if (!response.ok) {
+            if (data && data.msg) {
+                console.log("here1");
+                return { success: false, error: data.msg };
+            } else {
+                console.log("here2");
+                return { success: false, error: 'Login failed' };
+            }
+        }
+
+        return { success: true, data };
     } catch (error) {
-        return error
+        console.log("error");
+        return { success: false, error: 'Login failed' };
     }
 };
 

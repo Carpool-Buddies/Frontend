@@ -18,6 +18,7 @@
     import SideMenu from "../components/sideMenu/SideMenu";
     import FormDialog from "../components/PostFutureRideDialog";
     import { styled } from '@mui/material/styles';
+    import {toast} from "react-toastify";
 
 
     const StyledLink = styled(Link)(({ theme }) => ({
@@ -48,20 +49,27 @@
     
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
-    
+
         const handleSubmit = async event => {
             event.preventDefault();
-    
+
             const ret = await login(email, password);
-            console.log(ret)
             if (ret.success === true) {
-                console.log('yay!')
+                console.log("Login successful");
+                toast.success("Login successful");
                 const user = ret.user.email
                 const ret_token = ret.token
                 setAuth({user, ret_token});
                 setIsLoggedIn(true)
-            } else
-                console.log('nay.')
+            } else {
+                console.log('Login failed');
+                console.log(ret);
+                if (ret.error) {
+                    toast.error(ret.error);
+                } else {
+                    toast.error('Login failed');
+                }
+            }
         };
     
         const toggleSideMenu = (newOpen) => () => {

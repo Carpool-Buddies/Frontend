@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import Map, {GeolocateControl, Marker} from "react-map-gl/maplibre";
+import Map, {Source, Layer, GeolocateControl, Marker} from "react-map-gl/maplibre";
 import Box from "@mui/material/Box";
 import RoomIcon from '@mui/icons-material/Room';
-import {Autocomplete, IconButton, InputAdornment, Tab, Tabs} from "@mui/material";
+import {Autocomplete, IconButton, InputAdornment, Slider, Tab, Tabs} from "@mui/material";
 import townNames from "../static/townNames";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -10,6 +10,8 @@ import {getAddress} from "../common/fetchers";
 import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 import SearchIcon from '@mui/icons-material/Search';
+import Typography from "@mui/material/Typography";
+import circle from "@turf/circle"
 
 function CustomTabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -37,35 +39,26 @@ function a11yProps(index) {
     };
 }
 
-const LocationSelector = () => {
-    const [lat, setLat] = useState(32.034191)
-    const [long, setLong] = useState(34.87721)
-    const [originSearchText, setOriginSearchText] = useState('')
+const LocationSelector = ({title, setLocationDetails}) => {
     const [tabValue, setTabValue] = React.useState(0);
+    const [searchText, setSearchText] = useState('')
+    const [coords, setCoords] = useState({lat: 32.034191, long: 34.87721})
+    const [radius, setRadius] = useState(1);
 
-    const [markerPosition, setMarkerPosition] = useState({
-        latitude: lat, longitude: long,
+    const markerRadius = circle([coords.long, coords.lat], radius, {
+        steps: 50,
+        units: "kilometers",
+        properties: {foo: "bar"}
     });
 
-    const findOriginAddress = async () => {
-        const ret = await getAddress(originSearchText)
+    const findAddress = async () => {
+        const ret = await getAddress(searchText)
         console.log(ret)
     }
 
-    const handleChange = (event, newValue) => {
-        setTabValue(newValue);
-    };
-
-    const handleSubmit = () => {
-        console.log('Chosen location:', markerPosition);
-    };
-
-    const handleViewportChange = (newViewport) => {
-        if (tabValue === 2) {
-            setMarkerPosition({
-                latitude: newViewport.viewState.latitude, longitude: newViewport.viewState.longitude,
-            });
-        }
+    const handleCoordsSubmit = () => {
+        setLocationDetails({coords: coords, radius: radius})
+        console.log('Chosen location:', coords.lat, coords.long);
     };
 
     return (<Box display='flex'
@@ -74,8 +67,13 @@ const LocationSelector = () => {
             container
             display='flex'
             justifyContent="center">
+            <Grid item xs={12}>
+                <Typography>
+                    {title}
+                </Typography>
+            </Grid>
             <Grid item xs={12} justifyContent='center'>
-                <Tabs value={tabValue} onChange={handleChange} variant="fullWidth">
+                <Tabs value={tabValue} onChange={(e, v) => setTabValue(v)} variant="fullWidth">
                     <Tab label='לפי עיר' {...a11yProps(0)}/>
                     <Tab label='לפי כתובת' {...a11yProps(1)}/>
                     <Tab label='לפי נקודה' {...a11yProps(2)}/>
@@ -84,20 +82,46 @@ const LocationSelector = () => {
             <Grid item xs={12}>
                 <Map
                     initialViewState={{
-                        longitude: long, latitude: lat, zoom: 14
+                        longitude: coords.long, latitude: coords.lat, zoom: 14
                     }}
-                    onMove={handleViewportChange}
+                    onMove={(vp) => {
+                        if (tabValue === 2)
+                            setCoords({lat: vp.viewState.latitude, long: vp.viewState.longitude})
+                    }}
                     style={{width: '100%', height: 300}}
                     mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
                 >
                     <GeolocateControl position='bottom-left'/>
                     <Marker
-                        latitude={markerPosition.latitude}
-                        longitude={markerPosition.longitude}
+                        anchor="bottom"
+                        latitude={coords.lat}
+                        longitude={coords.long}
                     >
                         <RoomIcon color='primary'/>
                     </Marker>
+                    <Source id="my-data" type="geojson" data={markerRadius}>
+                        <Layer
+                            id="point-90-hi"
+                            type="fill"
+                            paint={{
+                                "fill-color": "#088",
+                                "fill-opacity": 0.4,
+                                "fill-outline-color": "yellow"
+                            }}
+                        />
+                    </Source>
                 </Map>
+                <Slider
+                    size="small"
+                    value={radius}
+                    min={0.5}
+                    max={5}
+                    step={0.1}
+                    valueLabelDisplay="auto"
+                    onChange={(event, newValue) => {
+                        setRadius(newValue);
+                    }}
+                />
             </Grid>
             <Grid item xs={12}>
                 <CustomTabPanel value={tabValue} index={0}>
@@ -105,25 +129,25 @@ const LocationSelector = () => {
                         disablePortal
                         options={Object.keys(townNames)}
                         onChange={(e, v) => {
-                            setLat(townNames[v][0])
-                            setLong(townNames[v][1])
+                            console.log(townNames[v])
+                            setCoords({lat: townNames[v][0], long: townNames[v][1]})
                         }}
                         renderInput={(params) => <TextField {...params} label="עיר מוצא"/>}
                     />
                 </CustomTabPanel>
                 <CustomTabPanel value={tabValue} index={1}>
-                    <TextField
-                        InputProps={{
-                            endAdornment: (<InputAdornment position="end">
-                                <IconButton onClick={findOriginAddress} ><SearchIcon/></IconButton>
-                            </InputAdornment>),
-                        }}
-                        label="הקלד כתובת"
-                        onChange={(e) => setOriginSearchText(e.target.value)}
+                    <TextField fullWidth
+                               InputProps={{
+                                   endAdornment: (<InputAdornment position="end">
+                                       <IconButton onClick={findAddress}><SearchIcon/></IconButton>
+                                   </InputAdornment>),
+                               }}
+                               label="הקלד כתובת"
+                               onChange={(e) => setSearchText(e.target.value)}
                     />
                 </CustomTabPanel>
                 <CustomTabPanel value={tabValue} index={2}>
-                    <Button onClick={handleSubmit} variant="contained">בחר</Button>
+                    <Button onClick={handleCoordsSubmit} variant="contained">בחר</Button>
                 </CustomTabPanel>
             </Grid>
         </Grid>

@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import logo from '../static/BGU_logo.png'
 import {login} from '../common/fetchers'
 import AuthContext from "../common/AuthProvider";
@@ -21,7 +21,31 @@ import FormDialog from "../components/PostFutureRideDialog";
 
 const Home = props => {
 
+    const {children} = props;
+
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+
     const [openDialog, setOpenDialog] = useState(false);
+    const [viewport, setViewport] = useState({});
+    const [openSideMenu, setOpenSideMenu] = useState(false);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const {setAuth} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                setViewport({
+                    ...viewport,
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    zoom: 14,
+                });
+            });
+    }, []);
 
     const handleOpenDialog = () => {
         setOpenDialog(true);
@@ -30,17 +54,7 @@ const Home = props => {
     const handleCloseDialog = () => {
         setOpenDialog(false);
     };
-
-    const {children} = props;
-    const navigate = useNavigate();
-    const {setAuth} = useContext(AuthContext);
-
-    const [open, setOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
+    
     const handleSubmit = async event => {
         event.preventDefault();
 
@@ -52,12 +66,13 @@ const Home = props => {
             const ret_token = ret.token
             setAuth({user, ret_token});
             setIsLoggedIn(true)
+            localStorage.setItem('access_token', ret_token)
         } else
             console.log('nay.')
     };
 
     const toggleSideMenu = (newOpen) => () => {
-        setOpen(newOpen);
+        setOpenSideMenu(newOpen);
     };
 
     function Copyright(props) {
@@ -73,35 +88,29 @@ const Home = props => {
         );
     }
 
-    const lat = 32.034191
-    const long = 34.87721
-
-    const loggedIn = (
-        <Box display='flex' height="100vh">
+    const loggedIn = (<Box display='flex' height="100vh">
             <Fab variant="extended" color='primary'
                  onClick={toggleSideMenu(true)}
                  style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
                 <MenuIcon sx={{mr: 1}}/>
                 תפריט
             </Fab>
-            <SideMenu open={open} setOpen={setOpen} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
-            <Map
-                initialViewState={{
-                    longitude: long,
-                    latitude: lat,
-                    zoom: 14
-                }}
-                style={{width: '100%', height: '100%', zIndex: 0}}
-                mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-            >
-                <GeolocateControl position='bottom-left'/>
-                <Marker longitude={long} latitude={lat} anchor="bottom" pitchAlignment='map'>
-                    <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
-                </Marker>
-            </Map>
-            <FormDialog open={openDialog} handleCloseDialog={handleCloseDialog}/>
-        </Box>
-    )
+            <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
+            {viewport.latitude && viewport.longitude && (
+                <Map
+                    initialViewState={viewport}
+                    style={{width: '100%', height: '100%', zIndex: 0}}
+                    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+                >
+                    <GeolocateControl position='bottom-left'/>
+                    <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
+                            pitchAlignment='map'>
+                        <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
+                    </Marker>
+                </Map>
+            )}
+            <FormDialog openDialog={openDialog} handleCloseDialog={handleCloseDialog}/>
+        </Box>)
 
     const loggedOut = (<Container component="main" maxWidth="xs">
         <CssBaseline/>

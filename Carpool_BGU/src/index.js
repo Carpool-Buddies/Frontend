@@ -16,6 +16,8 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import dayjs from "dayjs";
 import {AuthProvider} from "./common/AuthProvider";
 import Box from "@mui/material/Box";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
+import {LocalizationProvider} from "@mui/x-date-pickers";
 
 
 const defaultTheme = createTheme({
@@ -49,16 +51,18 @@ createRoot(document.getElementById('app')).render(
     <AuthProvider>
         <ThemeProvider theme={defaultTheme}>
             <CacheProvider value={cacheRtl}>
-                <BrowserRouter hashType="noslash">
-                    <App>
-                        <Routes>
-                            <Route exact path="/" element={<Home/>}/>
-                            <Route path="/home" element={<Home/>}/>
-                            <Route path="/register" element={<Register/>}/>
-                            <Route path="/profileView" element={<Box/>}/>
-                        </Routes>
-                    </App>
-                </BrowserRouter>
+                <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="he">
+                    <BrowserRouter hashType="noslash">
+                        <App>
+                            <Routes>
+                                <Route exact path="/" element={<Home/>}/>
+                                <Route path="/home" element={<Home/>}/>
+                                <Route path="/register" element={<Register/>}/>
+                                <Route path="/profileView" element={<Box/>}/>
+                            </Routes>
+                        </App>
+                    </BrowserRouter>
+                </LocalizationProvider>
             </CacheProvider>
         </ThemeProvider>
     </AuthProvider>

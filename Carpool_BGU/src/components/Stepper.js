@@ -11,8 +11,9 @@ import Grid from "@mui/material/Grid";
 import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from "dayjs";
 import {useState} from "react";
+import Typography from "@mui/material/Typography";
 
-function ExtraDetailsForm({avSeats, setAvSeats, dateTime, setDateTime, notes, setNotes}) {
+function ExtraDetailsForm({notes, setAvSeats, setDateTime, setNotes}) {
 
     const roundToNearest30Minutes = (time) => {
         const roundedMinute = Math.round(time.minute() / 30) * 30;
@@ -24,9 +25,14 @@ function ExtraDetailsForm({avSeats, setAvSeats, dateTime, setDateTime, notes, se
              justifyContent="center">
             <Grid container display='flex' justifyContent="center">
                 <Grid item xs={12}>
+                    <Typography>
+                        הכנס פרטים נוספים
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
                     <TextField type="number"
                                label="מקומות פנויים"
-                               value={avSeats}
+                               defaultValue={0}
                                fullWidth
                                margin="normal"
                                onChange={(e) => setAvSeats(e.target.value)}
@@ -56,20 +62,45 @@ function ExtraDetailsForm({avSeats, setAvSeats, dateTime, setDateTime, notes, se
     )
 }
 
-export default function TextMobileStepper({setFormDetails}) {
+export default function TextMobileStepper({rideDetails, setRideDetails}) {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
-    const [pickupLocationDetails, setPickupLocationDetails] = useState({
-        coords: {lat: 0, long: 0},
-        radius: 0.0
-    })
-    const [dropOffLocationDetails, setDropOffLocationDetails] = useState({
-        coords: {lat: 0, long: 0},
-        radius: 0.0
-    })
-    const [avSeats, setAvSeats] = useState(0)
-    const [dateTime, setDateTime] = useState(null)
-    const [notes, setNotes] = useState('')
+    const setPickupLocationDetails = (pickupLocationDetails) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            origin: {
+                coords: pickupLocationDetails.coords,
+                radius: pickupLocationDetails.radius
+            }
+        }))
+    }
+    const setDropOffLocationDetails = (dropOffLocationDetails) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            destination: {
+                coords: dropOffLocationDetails.coords,
+                radius: dropOffLocationDetails.radius
+            }
+        }))
+    }
+    const setAvSeats = (avSeats) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            avSeats: avSeats
+        }))
+    }
+    const setDateTime = (dateTime) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            dateTime: dateTime
+        }))
+    }
+    const setNotes = (notes) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            notes: notes
+        }))
+    }
     const maxSteps = 3;
 
     const originSelector = (<LocationSelector
@@ -98,11 +129,9 @@ export default function TextMobileStepper({setFormDetails}) {
                 </Box>
                 <Box hidden={activeStep !== 2}>
                     <ExtraDetailsForm
-                        avSeats={avSeats}
+                        notes={rideDetails.notes}
                         setAvSeats={setAvSeats}
-                        dateTime={dateTime}
                         setDateTime={setDateTime}
-                        notes={notes}
                         setNotes={setNotes}/>
                 </Box>
             </Grid>

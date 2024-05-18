@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextMobileStepper from "./Stepper";
 import {useState} from "react";
@@ -35,7 +34,7 @@ export default function FormDialog({openDialog, handleCloseDialog}) {
         >
             <DialogTitle>פרסום נסיעה חדשה</DialogTitle>
             <DialogContent>
-                <TextMobileStepper setFormDetails={setRideDetails}/>
+                <TextMobileStepper rideDetails={rideDetails} setRideDetails={setRideDetails}/>
             </DialogContent>
             <DialogActions>
                 <Button type="submit">שלח</Button>

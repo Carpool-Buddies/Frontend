@@ -82,6 +82,22 @@ export const getAddress = async (addressText) => {
     }
 }
 
+export const postFutureRide = async (rideDetails) => {
+    // try {
+    //     const response = await fetch(`${BASE_API_URL}/protected`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Authorization': `Bearer ${accessToken}`,
+    //             'Content-Type': 'application/json',
+    //             Accept: 'application/json'
+    //         }
+    //     });
+    //     return await response.json();
+    // } catch (error) {
+    //     return 'error'
+    // }
+}
+
 export const mystery = async (accessToken) => {
     try {
         const response = await fetch(`${BASE_API_URL}/protected`, {

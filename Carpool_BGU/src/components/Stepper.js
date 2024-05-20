@@ -13,13 +13,7 @@ import dayjs from "dayjs";
 import {useState} from "react";
 import Typography from "@mui/material/Typography";
 
-function ExtraDetailsForm({notes, setAvSeats, setDateTime, setNotes}) {
-
-    const roundToNearest30Minutes = (time) => {
-        const roundedMinute = Math.round(time.minute() / 30) * 30;
-        return time.startOf("hour").add(roundedMinute, "minute");
-    };
-
+function ExtraDetailsForm({notes, setAvSeats, dateTime, setDateTime, setNotes}) {
     return (
         <Box display='flex'
              justifyContent="center">
@@ -41,8 +35,8 @@ function ExtraDetailsForm({notes, setAvSeats, setDateTime, setNotes}) {
                 <Grid item xs={12}>
                     <DateTimePicker margin="normal"
                                     label="תאריך ושעת יציאה משוערת"
-                                    onChange={(v) => setDateTime(v.format('YYYY-MM-DD_HH:MM'))}
-                                    defaultValue={roundToNearest30Minutes(dayjs().add(6, 'h'))}
+                                    onChange={(v) => setDateTime(v.toISOString())}
+                                    defaultValue={dateTime}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -92,7 +86,7 @@ export default function TextMobileStepper({rideDetails, setRideDetails}) {
     const setDateTime = (dateTime) => {
         setRideDetails(existingState => ({
             ...existingState,
-            dateTime: dateTime
+            dateTime: dayjs(dateTime)
         }))
     }
     const setNotes = (notes) => {
@@ -103,13 +97,6 @@ export default function TextMobileStepper({rideDetails, setRideDetails}) {
     }
     const maxSteps = 3;
 
-    const originSelector = (<LocationSelector
-        title="בחר כתובת מוצא"
-        setLocationDetails={setPickupLocationDetails}/>)
-    const destinationSelector = (<LocationSelector
-        title="בחר כתובת יעד"
-        setLocationDetails={setDropOffLocationDetails}/>)
-
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
@@ -117,6 +104,17 @@ export default function TextMobileStepper({rideDetails, setRideDetails}) {
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
+
+    const originSelector = (<LocationSelector
+        title="בחר כתובת מוצא"
+        setLocationDetails={setPickupLocationDetails}
+        selectionClick={handleNext}
+        actionText="איסוף"/>)
+    const destinationSelector = (<LocationSelector
+        title="בחר כתובת יעד"
+        setLocationDetails={setDropOffLocationDetails}
+        selectionClick={handleNext}
+        actionText="הורדה"/>)
 
     return (
         <Grid container display="flex" justifyContent="center">
@@ -131,6 +129,7 @@ export default function TextMobileStepper({rideDetails, setRideDetails}) {
                     <ExtraDetailsForm
                         notes={rideDetails.notes}
                         setAvSeats={setAvSeats}
+                        dateTime={rideDetails.dateTime}
                         setDateTime={setDateTime}
                         setNotes={setNotes}/>
                 </Box>
@@ -144,11 +143,17 @@ export default function TextMobileStepper({rideDetails, setRideDetails}) {
                         size="small"
                         onClick={handleNext}
                         disabled={activeStep === maxSteps - 1}
+                        sx={{visibility: activeStep === maxSteps - 1 ? 'hidden' : 'visible'}}
                     >
                         הבא
                         {theme.direction === 'rtl' ? (<KeyboardArrowLeft/>) : (<KeyboardArrowRight/>)}
                     </Button>}
-                    backButton={<Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                    backButton={<Button
+                        size="small"
+                        onClick={handleBack}
+                        disabled={activeStep === 0}
+                        sx={{visibility: activeStep === 0 ? 'hidden' : 'visible'}}
+                    >
                         {theme.direction === 'rtl' ? (<KeyboardArrowRight/>) : (<KeyboardArrowLeft/>)}
                         הקודם
                     </Button>}

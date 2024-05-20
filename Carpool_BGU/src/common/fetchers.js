@@ -1,14 +1,12 @@
 import {BASE_API_URL} from "../../config/environment";
 
 export const getServerStatus = async () => {
-    // TODO: implement when available on backend
     try {
         const response = await fetch(`${BASE_API_URL}/api/ping`);
         return await response.json();
     } catch (error) {
         return false
     }
-    return 1
 }
 
 export const register = async (email, password, first_name, last_name, phone_number, birthday) => {
@@ -97,20 +95,28 @@ export const getAddress = async (addressText) => {
     }
 }
 
-export const postFutureRide = async (rideDetails) => {
-    // try {
-    //     const response = await fetch(`${BASE_API_URL}/protected`, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Authorization': `Bearer ${accessToken}`,
-    //             'Content-Type': 'application/json',
-    //             Accept: 'application/json'
-    //         }
-    //     });
-    //     return await response.json();
-    // } catch (error) {
-    //     return 'error'
-    // }
+export const postFutureRide = async (rideDetails, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/drivers/post-future-rides`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+                departure_location: rideDetails.origin.coords.lat + ',' + rideDetails.origin.coords.long,
+                pickup_radius: Number(rideDetails.origin.radius),
+                destination: rideDetails.destination.coords.lat + ',' + rideDetails.destination.coords.long,
+                drop_radius: Number(rideDetails.destination.radius),
+                departure_datetime: rideDetails.dateTime,
+                available_seats: Number(rideDetails.avSeats),
+                notes: rideDetails.notes
+            })
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
 }
 
 export const mystery = async (accessToken) => {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Map, {Source, Layer, GeolocateControl, Marker} from "react-map-gl/maplibre";
 import Box from "@mui/material/Box";
 import RoomIcon from '@mui/icons-material/Room';
@@ -39,11 +39,20 @@ function a11yProps(index) {
     };
 }
 
-const LocationSelector = ({title, setLocationDetails}) => {
-    const [tabValue, setTabValue] = React.useState(0);
+const LocationSelector = ({title, setLocationDetails, selectionClick, actionText}) => {
+    const [tabValue, setTabValue] = React.useState(2);
     const [searchText, setSearchText] = useState('')
-    const [coords, setCoords] = useState({lat: 32.034191, long: 34.87721})
+    const [coords, setCoords] = useState({lat: 0, long: 0})
     const [radius, setRadius] = useState(1);
+
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                setCoords({lat: position.coords.latitude, long: position.coords.longitude});
+            });
+        console.log(coords)
+    }, []);
 
     const markerRadius = circle([coords.long, coords.lat], radius, {
         steps: 50,
@@ -53,15 +62,14 @@ const LocationSelector = ({title, setLocationDetails}) => {
 
     const findAddress = async () => {
         const ret = await getAddress(searchText)
-        console.log(ret)
     }
 
     const handleCoordsSubmit = () => {
         setLocationDetails({coords: coords, radius: radius})
-        console.log('Chosen location:', coords.lat, coords.long);
+        selectionClick()
     };
 
-    return (<Box display='flex'
+    return coords.lat!==0 && (<Box display='flex'
                  justifyContent="center">
         <Grid
             container
@@ -74,8 +82,8 @@ const LocationSelector = ({title, setLocationDetails}) => {
             </Grid>
             <Grid item xs={12} justifyContent='center'>
                 <Tabs value={tabValue} onChange={(e, v) => setTabValue(v)} variant="fullWidth">
-                    <Tab label='לפי עיר' {...a11yProps(0)}/>
-                    <Tab label='לפי כתובת' {...a11yProps(1)}/>
+                    <Tab disabled label='לפי עיר (בקרוב!)' {...a11yProps(0)}/>
+                    <Tab disabled label='לפי כתובת (בקרוב!)' {...a11yProps(1)}/>
                     <Tab label='לפי נקודה' {...a11yProps(2)}/>
                 </Tabs>
             </Grid>
@@ -111,6 +119,9 @@ const LocationSelector = ({title, setLocationDetails}) => {
                         />
                     </Source>
                 </Map>
+                <Typography>
+                    רדיוס {actionText} (ק"מ)
+                </Typography>
                 <Slider
                     size="small"
                     value={radius}
@@ -129,7 +140,6 @@ const LocationSelector = ({title, setLocationDetails}) => {
                         disablePortal
                         options={Object.keys(townNames)}
                         onChange={(e, v) => {
-                            console.log(townNames[v])
                             setCoords({lat: townNames[v][0], long: townNames[v][1]})
                         }}
                         renderInput={(params) => <TextField {...params} label="עיר מוצא"/>}

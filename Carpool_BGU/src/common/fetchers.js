@@ -2,15 +2,12 @@ import {BASE_API_URL} from "../../config/environment";
 
 export const getServerStatus = async () => {
     // TODO: implement when available on backend
-    // try {
-    //     const response = await fetch(`${BASE_API_URL}/server_status`, {
-    //         method: 'GET',
-    //         headers: {'Content-Type': 'application/json', Accept: 'application/json'}
-    //     });
-    //     return await response.json();
-    // } catch (error) {
-    //     return false
-    // }
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/ping`);
+        return await response.json();
+    } catch (error) {
+        return false
+    }
     return 1
 }
 

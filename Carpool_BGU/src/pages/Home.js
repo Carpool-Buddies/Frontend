@@ -21,9 +21,7 @@ import FormDialog from "../components/PostFutureRideDialog";
 
 const Home = props => {
 
-    const {children} = props;
-
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [openDialog, setOpenDialog] = useState(false);
     const [viewport, setViewport] = useState({});

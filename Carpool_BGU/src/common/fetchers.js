@@ -63,6 +63,24 @@ export const fetchHome = async (token) => {
     }
 };
 
+export const getUserDetails = async (token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/userDetails`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            }
+        });
+        if (!response.ok)
+            throw new Error('Network response was not ok');
+        const data = await response.json();
+        return data
+    } catch (error) {
+        return false
+    }
+};
+
 export const logout = async (accessToken) => {
     try {
         const response = await fetch(`${BASE_API_URL}/logout`, {

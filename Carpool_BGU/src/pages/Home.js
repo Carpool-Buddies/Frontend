@@ -11,9 +11,9 @@ import Container from '@mui/material/Container';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
 import {useContext, useEffect, useState} from "react";
 import logo from '../static/BGU_logo.png'
-import {fetchHome, login} from '../common/fetchers'
+import {fetchHome, getUserDetails, login} from '../common/fetchers'
 import AuthContext from "../common/AuthProvider";
-import {Fab} from "@mui/material";
+import {Avatar, Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SideMenu from "../components/sideMenu/SideMenu";
 import FormDialog from "../components/PostFutureRideDialog";
@@ -23,12 +23,14 @@ const Home = props => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const [openDialog, setOpenDialog] = useState(false);
-    const [viewport, setViewport] = useState({});
-    const [openSideMenu, setOpenSideMenu] = useState(false);
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [viewport, setViewport] = useState({});
+    const [openSideMenu, setOpenSideMenu] = useState(false);
+    const [openDialog, setOpenDialog] = useState(false);
+
+    const [avatarInitials, setAvatarInitials] = useState('')
 
     const {setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
@@ -54,6 +56,13 @@ const Home = props => {
                 });
             });
     }, []);
+
+    useEffect(() => {
+        getUserDetails(localStorage.getItem('access_token')).then((ret) => {
+            if (ret.success)
+                setAvatarInitials(ret.first_name[0] + ret.last_name[0])
+        }).catch()
+    }, [isLoggedIn]);
 
     const handleOpenDialog = () => {
         setOpenDialog(true);
@@ -113,7 +122,8 @@ const Home = props => {
                 <GeolocateControl position='bottom-left'/>
                 <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
                         pitchAlignment='map'>
-                    <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
+                    {avatarInitials && (<Avatar
+                        sx={{ width: 24, height: 24, fontSize: 14 }}>{avatarInitials}</Avatar>)}
                 </Marker>
             </Map>
         )}

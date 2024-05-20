@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
 import {useContext, useEffect, useState} from "react";
 import logo from '../static/BGU_logo.png'
-import {login} from '../common/fetchers'
+import {fetchHome, login} from '../common/fetchers'
 import AuthContext from "../common/AuthProvider";
 import {Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -34,6 +34,16 @@ const Home = props => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        fetchHome(localStorage.getItem('access_token')).then((ret) => {
+            if (ret.success)
+                setIsLoggedIn(true)
+            else
+                localStorage.removeItem('access_token')
+            if (!ret) {
+                console.log('ret false')
+            }
+        }).catch(() => localStorage.removeItem('access_token'))
+
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 setViewport({
@@ -87,28 +97,28 @@ const Home = props => {
     }
 
     const loggedIn = (<Box display='flex' height="100vh">
-            <Fab variant="extended" color='primary'
-                 onClick={toggleSideMenu(true)}
-                 style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
-                <MenuIcon sx={{mr: 1}}/>
-                תפריט
-            </Fab>
-            <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
-            {viewport.latitude && viewport.longitude && (
-                <Map
-                    initialViewState={viewport}
-                    style={{width: '100%', height: '100%', zIndex: 0}}
-                    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-                >
-                    <GeolocateControl position='bottom-left'/>
-                    <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
-                            pitchAlignment='map'>
-                        <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
-                    </Marker>
-                </Map>
-            )}
-            <FormDialog openDialog={openDialog} handleCloseDialog={handleCloseDialog}/>
-        </Box>)
+        <Fab variant="extended" color='primary'
+             onClick={toggleSideMenu(true)}
+             style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
+            <MenuIcon sx={{mr: 1}}/>
+            תפריט
+        </Fab>
+        <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate} handleOpenDialog={handleOpenDialog}/>
+        {viewport.latitude && viewport.longitude && (
+            <Map
+                initialViewState={viewport}
+                style={{width: '100%', height: '100%', zIndex: 0}}
+                mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+            >
+                <GeolocateControl position='bottom-left'/>
+                <Marker longitude={viewport.longitude} latitude={viewport.latitude} anchor="bottom"
+                        pitchAlignment='map'>
+                    <img alt='marker' src={logo} style={{width: 20, height: "auto"}}/>
+                </Marker>
+            </Map>
+        )}
+        <FormDialog openDialog={openDialog} handleCloseDialog={handleCloseDialog}/>
+    </Box>)
 
     const loggedOut = (<Container component="main" maxWidth="xs">
         <CssBaseline/>

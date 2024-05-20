@@ -14,7 +14,6 @@ import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
 import {register} from "../common/fetchers";
-import {MenuItem} from "@mui/material";
 import MuiPhoneNumber from "mui-phone-number";
 
 

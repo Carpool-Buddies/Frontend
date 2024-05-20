@@ -15,8 +15,8 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
         <Box sx={{width: 250}} role="presentation" onClick={toggleDrawer(false)}>
             <List>
                 {SideMenuItems.map(item => (
-                    <>
-                        <ListItem key={item.key}>
+                    <React.Fragment key={item.key}>
+                        <ListItem>
                             <ListItemButton onClick={() => {
                                 switch (item.link) {
                                     case "publish-ride":
@@ -36,7 +36,7 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
                             </ListItemButton>
                         </ListItem>
                         {item.divider_after && <Divider/>}
-                    </>
+                    </React.Fragment>
                 ))}
             </List>
         </Box>

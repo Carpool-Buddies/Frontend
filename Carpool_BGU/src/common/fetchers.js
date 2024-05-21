@@ -25,6 +25,7 @@ export const register = async (email, password, first_name, last_name, phone_num
         });
         return await response.json();
     } catch (error) {
+        console.log(error)
         return 'error'
     }
 };

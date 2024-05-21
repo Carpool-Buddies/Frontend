@@ -11,6 +11,13 @@ import FormDialog from "../components/PostFutureRideDialog";
 import LoginComp from "../components/login";
 
 
+    const StyledLink = styled(Link)(({ theme }) => ({
+        cursor: 'pointer', // Change the cursor to pointer (hand icon)
+        '&:hover': {
+            textDecoration: 'underline', // Optionally, add an underline on hover
+        },
+    }));
+
 const Home = props => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);

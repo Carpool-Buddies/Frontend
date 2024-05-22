@@ -55,7 +55,7 @@ const Register = props => {
         const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
         if (ret.success) {
             toast.success("Registration successful");
-            props.history.push(`/home`);
+            navigate('/');
             }
         else {
             toast.error(ret.error);

@@ -1,4 +1,7 @@
 import {BASE_API_URL} from "../../config/environment";
+import 'react-toastify/dist/ReactToastify.css';
+import {toast} from "react-toastify";
+
 
 export const getServerStatus = async () => {
     try {
@@ -187,5 +190,61 @@ export const argsUser = async (arg1, arg2, arg3, arg4) => {
     } catch (e) {
         console.log(e);
         return null
+    }
+};
+
+export const getCode = async (email) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/GetCode`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ email }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+            if (response.status === 400) {
+                toast.error('Bad request: ' + (data.msg || 'Invalid request'));
+            } else if (response.status === 503) {
+                toast.error('Service is temporarily unavailable. Please try again later.');
+            } else {
+                toast.error('Failed to get code: ' + (data.msg || 'Unknown error'));
+            }
+            return { success: false, msg: data.msg || 'Failed to get code' };
+        }
+        return data;
+    } catch (error) {
+        console.error('Error getting code:', error);
+        toast.error('Failed to get code');
+        return { success: false, msg: 'Failed to get code' };
+    }
+};
+
+export const enterCode = async (code) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/EnterCode`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ code }),
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error entering code:', error);
+        return { success: false, msg: 'Failed to enter code' };
+    }
+};
+
+export const resetPassword = async (password, confirmPassword) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/ForgetPassword`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ password, confirmPassword }),
+        });
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error resetting password:', error);
+        return { success: false, msg: 'Failed to reset password' };
     }
 };

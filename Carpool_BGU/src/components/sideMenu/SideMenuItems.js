@@ -28,7 +28,7 @@ export default [
         "icon": "EmojiPeopleIcon",
         "primary": "פרסם בקשה לטרמפ",
         "secondary": "",
-        "link": "./register",
+        "link": "publish-request",
         "divider_after": false
     },
     {

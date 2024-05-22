@@ -12,7 +12,7 @@ import {login} from "../common/fetchers";
 import {useContext, useState} from "react";
 import AuthContext from "../common/AuthProvider";
 
-export default function LoginComp({setIsLoggedIn}) {
+export default function LoginComp({navigate, setIsLoggedIn}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

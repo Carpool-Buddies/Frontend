@@ -1,8 +1,8 @@
- import * as React from 'react';
+import * as React from 'react';
 import {useNavigate} from "react-router-dom";
 import Box from '@mui/material/Box';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {fetchHome, getUserDetails} from '../common/fetchers'
 import {Avatar, Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -19,7 +19,8 @@ const Home = props => {
     const [viewport, setViewport] = useState({});
     const [openSideMenu, setOpenSideMenu] = useState(false);
 
-    const [openDialog, setOpenDialog] = useState(false);
+    const [openPostRideDialog, setOpenPostRideDialog] = useState(false);
+    const [openRideRequestDialog, setOpenRideRequestDialog] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -41,7 +42,16 @@ const Home = props => {
                     longitude: position.coords.longitude,
                     zoom: 14,
                 });
-            });
+            },
+            function (error) {
+                console.log(error.code + ": " + error.message);
+            },
+            {
+                enableHighAccuracy: true,
+                maximumAge: 10000,
+                timeout: 5000
+            }
+        )
     }, []);
 
     useEffect(() => {
@@ -51,12 +61,29 @@ const Home = props => {
         }).catch()
     }, [isLoggedIn]);
 
-    const handleOpenDialog = () => {
-        setOpenDialog(true);
+    const handleOpenDialog = (dialogKey) => {
+        switch (dialogKey) {
+            case 'publish-ride':
+                setOpenPostRideDialog(true)
+                break
+            case 'publish-request':
+                setOpenRideRequestDialog(true)
+                break
+            default:
+                break
+        }
     };
 
-    const handleCloseDialog = () => {
-        setOpenDialog(false);
+    const handleCloseDialog = (dialogKey) => {
+        switch (dialogKey) {
+            case 'publish-ride':
+                setOpenPostRideDialog(false);
+            case 'publish-request':
+                setOpenRideRequestDialog(false)
+                break
+            default:
+                break
+        }
     };
 
     const toggleSideMenu = (newOpen) => () => {
@@ -85,10 +112,11 @@ const Home = props => {
                 </Marker>
             </Map>
         )}
-        <FormDialog openDialog={openDialog} handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={'driver'} openDialog={openPostRideDialog} handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={'passenger'} openDialog={openRideRequestDialog}  handleCloseDialog={handleCloseDialog}/>
     </Box>)
 
-    return isLoggedIn ? (loggedIn) : (<LoginComp setIsLoggedIn={setIsLoggedIn}/>);
+    return isLoggedIn ? (loggedIn) : (<LoginComp navigate={navigate} setIsLoggedIn={setIsLoggedIn}/>);
 }
 
 export default Home;

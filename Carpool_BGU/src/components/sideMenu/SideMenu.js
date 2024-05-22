@@ -20,7 +20,10 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
                             <ListItemButton onClick={() => {
                                 switch (item.link) {
                                     case "publish-ride":
-                                        handleOpenDialog()
+                                        handleOpenDialog(item.link)
+                                        break
+                                    case "publish-request":
+                                        handleOpenDialog(item.link)
                                         break
                                     default:
                                         navigate(item.link)

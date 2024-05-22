@@ -13,7 +13,7 @@ import dayjs from "dayjs";
 import {useState} from "react";
 import Typography from "@mui/material/Typography";
 
-function ExtraDetailsForm({notes, setAvSeats, dateTime, setDateTime, setNotes}) {
+function ExtraDetailsForm({dialogContext, notes, setAvSeats, dateTime, setDateTime, setNotes}) {
     return (
         <Box display='flex'
              justifyContent="center">
@@ -25,7 +25,7 @@ function ExtraDetailsForm({notes, setAvSeats, dateTime, setDateTime, setNotes}) 
                 </Grid>
                 <Grid item xs={12}>
                     <TextField type="number"
-                               label="מקומות פנויים"
+                               label={dialogContext.seats}
                                defaultValue={0}
                                fullWidth
                                margin="normal"
@@ -34,7 +34,7 @@ function ExtraDetailsForm({notes, setAvSeats, dateTime, setDateTime, setNotes}) 
                 </Grid>
                 <Grid item xs={12}>
                     <DateTimePicker margin="normal"
-                                    label="תאריך ושעת יציאה משוערת"
+                                    label={dialogContext.dateTime}
                                     onChange={(v) => setDateTime(v.toISOString())}
                                     defaultValue={dateTime}
                     />
@@ -56,7 +56,7 @@ function ExtraDetailsForm({notes, setAvSeats, dateTime, setDateTime, setNotes}) 
     )
 }
 
-export default function TextMobileStepper({rideDetails, setRideDetails}) {
+export default function TextMobileStepper({dialogContext, rideDetails, setRideDetails}) {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const setPickupLocationDetails = (pickupLocationDetails) => {
@@ -127,6 +127,7 @@ export default function TextMobileStepper({rideDetails, setRideDetails}) {
                 </Box>
                 <Box hidden={activeStep !== 2}>
                     <ExtraDetailsForm
+                        dialogContext={dialogContext}
                         notes={rideDetails.notes}
                         setAvSeats={setAvSeats}
                         dateTime={rideDetails.dateTime}

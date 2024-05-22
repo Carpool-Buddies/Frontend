@@ -35,14 +35,14 @@ const ForgotPassword = () => {
                 }}
             >
                 <Typography component="h1" variant="h5">
-                    Forgot Password
+                    שכחתי סיסמה
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                     <TextField
                         margin="normal"
                         required
                         fullWidth
-                        label="Email Address"
+                        label='כתובת דוא"ל'
                         name="email"
                         autoComplete="email"
                         autoFocus
@@ -50,7 +50,7 @@ const ForgotPassword = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                        Reset Password
+                        אתחול סיסמה
                     </Button>
                 </Box>
             </Box>

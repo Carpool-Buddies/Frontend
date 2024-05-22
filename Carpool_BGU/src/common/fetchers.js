@@ -23,12 +23,22 @@ export const register = async (email, password, first_name, last_name, phone_num
                 birthday: birthday.format('YYYY-MM-DD')
             })
         });
-        return await response.json();
+        const data = await response.json();
+        if (!response.ok) {
+            if (data && data.msg) {
+                return { success: false, error: data.msg };
+            } else {
+                return { success: false, error: 'Registration failed' };
+            }
+        }
+
+        return { success: true, data };
     } catch (error) {
-        console.log(error)
-        return 'error'
+        console.log(error);
+        return { success: false, error: 'Registration failed' };
     }
 };
+
 
 export const login = async (username, password) => {
     try {
@@ -40,9 +50,21 @@ export const login = async (username, password) => {
                 password: password
             })
         });
-        return await response.json();
+        const data = await response.json();
+        if (!response.ok) {
+            if (data && data.msg) {
+                return { success: false, error: data.msg, user: null };
+            } else {
+                return { success: false, error: 'Login failed', user: null };
+            }
+        }
+
+        const user = data.user ? data.user : null;
+        return { success: true, data, user };
+
     } catch (error) {
-        return error
+        console.log("error");
+        return { success: false, error: 'Login failed', user: null };
     }
 };
 

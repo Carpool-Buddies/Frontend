@@ -7,6 +7,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import logo from "./static/BGU_logo.png";
 import Typography from "@mui/material/Typography";
+import { ToastContainer } from 'react-toastify';
+
 
 const App = (props) => {
 
@@ -27,6 +29,7 @@ const App = (props) => {
     return (serverRunning === 1) ? (
             <div>
                 {children}
+                <ToastContainer />
             </div>
         ) : (serverRunning === 0) ? (
             <div>
@@ -59,6 +62,7 @@ const App = (props) => {
                         </Box>
                     </Grid>
                 </Grid>
+                <ToastContainer />
             </div>
         ) : (
             <div>
@@ -90,6 +94,7 @@ const App = (props) => {
                         </Box>
                     </Grid>
                 </Grid>
+                <ToastContainer />
             </div>
         )
 }

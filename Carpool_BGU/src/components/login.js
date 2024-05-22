@@ -11,12 +11,16 @@ import * as React from "react";
 import {login} from "../common/fetchers";
 import {useContext, useState} from "react";
 import AuthContext from "../common/AuthProvider";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {useNavigate} from "react-router-dom";
+
 
 export default function LoginComp({setIsLoggedIn}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const navigate = useNavigate();
     const {setAuth} = useContext(AuthContext);
 
     const handleSubmit = async event => {
@@ -31,8 +35,16 @@ export default function LoginComp({setIsLoggedIn}) {
             setAuth({user, ret_token});
             setIsLoggedIn(true)
             localStorage.setItem('access_token', ret_token)
-        } else
-            console.log('nay.')
+            toast.success('Login successful!');
+        } else {
+            console.log('Login failed');
+            console.log(ret);
+            if (ret.error) {
+                toast.error(ret.error);
+            } else {
+                toast.error('Login failed');
+            }
+        }
     };
 
     function Copyright(props) {
@@ -105,7 +117,11 @@ export default function LoginComp({setIsLoggedIn}) {
                             </Button>
                             <Grid container>
                                 <Grid item xs={12}>
-                                    <Link href="#" variant="body2">
+                                    <Link
+                                        href="#"
+                                        variant="body2"
+                                        onClick={() => navigate('/forgot-password')}
+                                    >
                                         שכחתי סיסמה
                                     </Link>
                                 </Grid>
@@ -114,7 +130,9 @@ export default function LoginComp({setIsLoggedIn}) {
                                         onClick={() => {
                                             navigate('/register')
                                         }}
-                                        variant="body2">
+                                        variant="body2"
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         {"עדיין אין לך משתמש?"}
                                     </Link>
                                 </Grid>

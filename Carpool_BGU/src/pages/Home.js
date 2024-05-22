@@ -1,5 +1,7 @@
  import * as React from 'react';
 import {useNavigate} from "react-router-dom";
+import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
 import {useEffect, useState} from "react";

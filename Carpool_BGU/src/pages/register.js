@@ -15,6 +15,9 @@ import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
 import {register} from "../common/fetchers";
 import MuiPhoneNumber from "mui-phone-number";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 const Register = props => {
@@ -28,18 +31,37 @@ const Register = props => {
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNUmber] = useState('');
     const [birthday, setBirthday] = useState('');
+    const maxBirthDate = dayjs().subtract(16, 'year');
 
     const handleSubmit = async event => {
         event.preventDefault();
 
-        const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
-        if (ret.message === 'Login successful')
-            props.history.push(`/home`);
-        else
-            console.log(ret);
-    };
+        // Validate form fields
+        if (!email || !password || !confirmPassword || !firstName || !lastName || !phoneNumber || !birthday) {
+            toast.error("Please fill in all fields");
+            return;
+        }
 
-    const maxBirthDate = dayjs().subtract(16, 'year');
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match");
+            return;
+        }
+
+        if (dayjs(birthday).isAfter(maxBirthDate)) {
+            toast.error("You must be at least 16 years old to register");
+            return;
+        }
+
+        const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
+        if (ret.success) {
+            toast.success("Registration successful");
+            props.history.push(`/home`);
+            }
+        else {
+            toast.error(ret.error);
+            console.log(ret);
+        }
+    };
 
 
     function Copyright(props) {
@@ -168,7 +190,10 @@ const Register = props => {
                                     <Link
                                         onClick={(event) => {
                                             navigate('/')
-                                        }} variant="body2">
+                                        }}
+                                        variant="body2"
+                                        style={{ cursor: 'pointer' }}
+                                        >
                                         {"כבר יש לך משתמש קיים?"}
                                     </Link>
                                 </Grid>

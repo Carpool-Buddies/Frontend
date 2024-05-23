@@ -198,6 +198,7 @@ export const getCode = async (email) => {
         const response = await fetch(`${BASE_API_URL}/api/auth/GetCode`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'include',
             body: JSON.stringify({ email }),
         });
         const data = await response.json();
@@ -223,6 +224,7 @@ export const enterCode = async (code) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/auth/EnterCode`, {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             body: JSON.stringify({ code }),
         });

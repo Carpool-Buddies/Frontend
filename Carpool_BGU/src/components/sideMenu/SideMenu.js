@@ -17,10 +17,13 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
                 {SideMenuItems.map(item => (
                     <React.Fragment key={item.key}>
                         <ListItem>
-                            <ListItemButton onClick={() => {
+                            <ListItemButton disabled={item.disabled} onClick={() => {
                                 switch (item.link) {
                                     case "publish-ride":
-                                        handleOpenDialog()
+                                        handleOpenDialog(item.link)
+                                        break
+                                    case "publish-request":
+                                        handleOpenDialog(item.link)
                                         break
                                     default:
                                         navigate(item.link)

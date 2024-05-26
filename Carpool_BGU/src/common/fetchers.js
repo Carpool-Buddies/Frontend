@@ -248,3 +248,23 @@ export const resetPassword = async (password, confirmPassword) => {
         return { success: false, msg: 'Failed to reset password' };
     }
 };
+
+export const updateUserDetails = async (password, first_name, last_name, phone_number, birthday) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/update-user-details`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ password, first_name, last_name, phone_number, birthday}),
+        });
+
+        if (response.ok) {
+            return { success: true };
+        } else {
+            const errorData = await response.json();
+            return { success: false, error: errorData.message || 'An error occurred' };
+        }
+    } catch (error) {
+        console.error('Error updating user details:', error);
+        return { success: false, error: 'Failed to update user details' };
+    }
+};

@@ -9,7 +9,6 @@ import logo from "./static/BGU_logo.png";
 import Typography from "@mui/material/Typography";
 import { ToastContainer } from 'react-toastify';
 
-
 const App = (props) => {
 
     const [serverRunning, setServerStatus] = useState(0);
@@ -29,7 +28,7 @@ const App = (props) => {
     return (serverRunning === 1) ? (
             <div>
                 {children}
-                <ToastContainer />
+                <ToastContainer rtl={true} />
             </div>
         ) : (serverRunning === 0) ? (
             <div>
@@ -62,7 +61,7 @@ const App = (props) => {
                         </Box>
                     </Grid>
                 </Grid>
-                <ToastContainer />
+                <ToastContainer rtl={true} />
             </div>
         ) : (
             <div>
@@ -94,7 +93,7 @@ const App = (props) => {
                         </Box>
                     </Grid>
                 </Grid>
-                <ToastContainer />
+                <ToastContainer rtl={true} />
             </div>
         )
 }

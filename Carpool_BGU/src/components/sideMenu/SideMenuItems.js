@@ -5,6 +5,7 @@ export default [
         "primary": "שלום אורח",
         "secondary": "ערוך פרופיל",
         "link": "./profileView",
+        "disabled": false,
         "divider_after": true
     },
     {
@@ -13,6 +14,7 @@ export default [
         "primary": "פרסם נסיעה",
         "secondary": "",
         "link": "publish-ride",
+        "disabled": false,
         "divider_after": false
     },
     {
@@ -21,14 +23,16 @@ export default [
         "primary": "מצא טרמפיסטים",
         "secondary": "",
         "link": "./register",
+        "disabled": false,
         "divider_after": false
     },
     {
         "key": "publish-request",
         "icon": "EmojiPeopleIcon",
-        "primary": "פרסם בקשה לטרמפ",
+        "primary": "פרסם בקשה לטרמפ (בקרוב!)",
         "secondary": "",
         "link": "publish-request",
+        "disabled": true,
         "divider_after": false
     },
     {
@@ -37,6 +41,7 @@ export default [
         "primary": "מצא טרמפ",
         "secondary": "",
         "link": "./register",
+        "disabled": false,
         "divider_after": false
     }
 ]

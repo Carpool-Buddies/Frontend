@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextMobileStepper from "./Stepper";
 import {useState} from "react";
-import {postFutureRide} from "../common/fetchers";
+import {postFutureRide, postRideJoinRequest} from "../common/fetchers";
 import dayjs from "dayjs";
 import {DialogContentText} from "@mui/material";
 import {makeRideOfferContext, postFutureRideContext} from "./DialogContexts"
@@ -46,22 +46,37 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
 
     async function handleSubmit(event) {
         event.preventDefault();
-        // TODO: generalize fetch
-        const ret = await postFutureRide(rideDetails, localStorage.getItem('access_token'))
-        handleClickOpen()
-        if (ret.success) {
-            setSuccessTitle('הפעולה הושלמה בהצלחה!')
-            setSuccessDescription('תוכל לראות את הנסיעה שלך ברשימת הנסיעות בעמוד הפרופיל שלך')
-            handleCloseDialog(context.dialogLink)
-        }
-        else{
-            setSuccessTitle('הפעולה נכשלה')
-            setSuccessDescription(ret.msg)
+        let ret;
+        switch (dialogContext) {
+            case 'driver':
+                ret = await postFutureRide(rideDetails, localStorage.getItem('access_token'))
+                handleClickOpen()
+                if (ret.success) {
+                    setSuccessTitle('הפעולה הושלמה בהצלחה!')
+                    setSuccessDescription('תוכל לראות את הנסיעה שלך ברשימת הנסיעות בעמוד הפרופיל שלך')
+                    handleCloseDialog(context.dialogLink)
+                } else {
+                    setSuccessTitle('הפעולה נכשלה')
+                    setSuccessDescription(ret.msg)
+                }
+                break
+            case 'passenger':
+                ret = await postRideJoinRequest(rideDetails, localStorage.getItem('access_token'))
+                handleClickOpen()
+                if (ret.success) {
+                    setSuccessTitle('הפעולה הושלמה בהצלחה!')
+                    setSuccessDescription('תוכל לראות את הבקשה שלך ברשימת הבקשות בעמוד הפרופיל שלך')
+                    handleCloseDialog(context.dialogLink)
+                } else {
+                    setSuccessTitle('הפעולה נכשלה')
+                    setSuccessDescription(ret.msg)
+                }
+                break
         }
     }
 
     return (<React.Fragment>
-        <Dialog open={openDialog} onClose={()=>handleCloseDialog(context.dialogLink)} fullWidth={true} maxWidth={'xs'}
+        <Dialog open={openDialog} onClose={() => handleCloseDialog(context.dialogLink)} fullWidth={true} maxWidth={'xs'}
                 PaperProps={{
                     component: 'form', onSubmit: (event) => {
                         handleSubmit(event);

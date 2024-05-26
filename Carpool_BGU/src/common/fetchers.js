@@ -137,6 +137,30 @@ export const postFutureRide = async (rideDetails, token) => {
     }
 }
 
+export const postRideJoinRequest = async (rideDetails, token) => { //TODO: wait for API to support!
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/drivers/post-ride-join-request`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+                departure_location: rideDetails.origin.coords.lat + ',' + rideDetails.origin.coords.long,
+                pickup_radius: Number(rideDetails.origin.radius),
+                destination: rideDetails.destination.coords.lat + ',' + rideDetails.destination.coords.long,
+                drop_radius: Number(rideDetails.destination.radius),
+                departure_datetime: rideDetails.dateTime,
+                available_seats: Number(rideDetails.avSeats),
+                notes: rideDetails.notes
+            })
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
 export const mystery = async (accessToken) => {
     try {
         const response = await fetch(`${BASE_API_URL}/protected`, {

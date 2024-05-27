@@ -3,8 +3,7 @@ import {contextTypes} from "../DialogContexts";
 export default [
     {
         "key": "profile",
-        "icon": "AccountCircleIcon",
-        "primary": "שלום אורח",
+        "primary": "שלום, ",
         "secondary": "ערוך פרופיל",
         "link": "./profileView",
         "disabled": false,
@@ -12,7 +11,6 @@ export default [
     },
     {
         "key": contextTypes.publishRide,
-        "icon": "DirectionsCarFilledIcon",
         "primary": "פרסם נסיעה",
         "secondary": "",
         "link": contextTypes.publishRide,
@@ -21,16 +19,14 @@ export default [
     },
     {
         "key": contextTypes.findRiders,
-        "icon": "DirectionsCarFilledIcon",
         "primary": "מצא טרמפיסטים",
-        "secondary": "",
+        "secondary": "בקרוב!",
         "link": "./register",
-        "disabled": false,
+        "disabled": true,
         "divider_after": false
     },
     {
         "key": contextTypes.publishRideSearch,
-        "icon": "EmojiPeopleIcon",
         "primary": "פרסם בקשה לטרמפ",
         "secondary": "בקרוב!",
         "link": contextTypes.publishRideSearch,
@@ -39,11 +35,26 @@ export default [
     },
     {
         "key": contextTypes.findRide,
-        "icon": "EmojiPeopleIcon",
         "primary": "מצא טרמפ",
         "secondary": "",
         "link": contextTypes.findRide,
         "disabled": false,
+        "divider_after": true
+    },
+    {
+        "key": 'myRides',
+        "primary": "הנסיעות שלך",
+        "secondary": "בקרוב!",
+        "link": '',
+        "disabled": true,
         "divider_after": false
+    },
+    {
+        "key": 'myRequests',
+        "primary": "הבקשות שלך",
+        "secondary": "בקרוב!",
+        "link": '',
+        "disabled": true,
+        "divider_after": true
     }
 ]

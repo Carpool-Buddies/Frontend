@@ -4,9 +4,11 @@ import Box from "@mui/material/Box";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
+import LogoutIcon from '@mui/icons-material/Logout';
 import SideMenuItems from "./SideMenuItems";
+import {contextTypes} from "../DialogContexts";
 
-const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
+const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout}) => {
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
@@ -19,10 +21,10 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
                         <ListItem>
                             <ListItemButton disabled={item.disabled} onClick={() => {
                                 switch (item.link) {
-                                    case "publish-ride":
-                                        handleOpenDialog(item.link)
-                                        break
-                                    case "publish-request":
+                                    case contextTypes.publishRide:
+                                    case contextTypes.publishRideSearch:
+                                    case contextTypes.findRide:
+                                    case contextTypes.findRiders:
                                         handleOpenDialog(item.link)
                                         break
                                     default:
@@ -41,6 +43,16 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog}) => {
                         {item.divider_after && <Divider/>}
                     </React.Fragment>
                 ))}
+                <React.Fragment key='logout'>
+                    <ListItem>
+                        <ListItemButton onClick={handleLogout}>
+                            <ListItemIcon>
+                                <LogoutIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary='התנתק'/>
+                        </ListItemButton>
+                    </ListItem>
+                </React.Fragment>
             </List>
         </Box>
     );

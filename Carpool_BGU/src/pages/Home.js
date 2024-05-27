@@ -1,24 +1,16 @@
 import * as React from 'react';
 import {useNavigate} from "react-router-dom";
-import { styled } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
-import {useEffect, useRef, useState} from "react";
-import {fetchHome, getUserDetails} from '../common/fetchers'
+import {useEffect, useState} from "react";
+import {fetchHome, getUserDetails, logout} from '../common/fetchers'
 import {Avatar, Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SideMenu from "../components/sideMenu/SideMenu";
 import FormDialog from "../components/PostFutureRideDialog";
 import LoginComp from "../components/login";
-
-
-    const StyledLink = styled(Link)(({ theme }) => ({
-        cursor: 'pointer', // Change the cursor to pointer (hand icon)
-        '&:hover': {
-            textDecoration: 'underline', // Optionally, add an underline on hover
-        },
-    }));
+import {contextTypes} from "../components/DialogContexts";
+import {toast} from "react-toastify";
 
 const Home = props => {
 
@@ -30,6 +22,7 @@ const Home = props => {
 
     const [openPostRideDialog, setOpenPostRideDialog] = useState(false);
     const [openRideRequestDialog, setOpenRideRequestDialog] = useState(false);
+    const [openFindRideDialog, setOpenFindRideDialog] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -39,7 +32,7 @@ const Home = props => {
             else
                 localStorage.removeItem('access_token')
             if (!ret) {
-                console.log('ret false')
+                console.log('Access token based login failed')
             }
         }).catch(() => localStorage.removeItem('access_token'))
 
@@ -64,19 +57,24 @@ const Home = props => {
     }, []);
 
     useEffect(() => {
-        getUserDetails(localStorage.getItem('access_token')).then((ret) => {
-            if (ret.success)
-                setAvatarInitials(ret.first_name[0] + ret.last_name[0])
-        }).catch()
+        if (isLoggedIn) {
+            getUserDetails(localStorage.getItem('access_token')).then((ret) => {
+                if (ret.success)
+                    setAvatarInitials(ret.first_name[0] + ret.last_name[0])
+            }).catch()
+        }
     }, [isLoggedIn]);
 
     const handleOpenDialog = (dialogKey) => {
         switch (dialogKey) {
-            case 'publish-ride':
+            case contextTypes.publishRide:
                 setOpenPostRideDialog(true)
                 break
-            case 'publish-request':
+            case contextTypes.publishRideSearch:
                 setOpenRideRequestDialog(true)
+                break
+            case contextTypes.findRide:
+                setOpenFindRideDialog(true)
                 break
             default:
                 break
@@ -85,10 +83,14 @@ const Home = props => {
 
     const handleCloseDialog = (dialogKey) => {
         switch (dialogKey) {
-            case 'publish-ride':
+            case contextTypes.publishRide:
                 setOpenPostRideDialog(false);
-            case 'publish-request':
+                break
+            case contextTypes.publishRideSearch:
                 setOpenRideRequestDialog(false)
+                break
+            case contextTypes.findRide:
+                setOpenFindRideDialog(false)
                 break
             default:
                 break
@@ -99,6 +101,21 @@ const Home = props => {
         setOpenSideMenu(newOpen);
     };
 
+    const handleLogout = async () => {
+        const ret = await logout(localStorage.getItem('access_token'));
+        if (ret.success === true) {
+            setIsLoggedIn(false)
+            localStorage.removeItem('access_token')
+            toast.success('התנתקת בהצלחה');
+        } else {
+            if (ret.error) {
+                toast.error(ret.error);
+            } else {
+                toast.error('ההתנתקות נכשלה');
+            }
+        }
+    }
+
     const loggedIn = (<Box display='flex' height="100vh">
         <Fab variant="extended" color='primary'
              onClick={toggleSideMenu(true)}
@@ -107,7 +124,7 @@ const Home = props => {
             תפריט
         </Fab>
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
-                  handleOpenDialog={handleOpenDialog}/>
+                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout}/>
         {viewport.latitude && viewport.longitude && (
             <Map
                 initialViewState={viewport}
@@ -121,8 +138,9 @@ const Home = props => {
                 </Marker>
             </Map>
         )}
-        <FormDialog dialogContext={'driver'} openDialog={openPostRideDialog} handleCloseDialog={handleCloseDialog}/>
-        <FormDialog dialogContext={'passenger'} openDialog={openRideRequestDialog}  handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={contextTypes.publishRide} openDialog={openPostRideDialog} handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={contextTypes.publishRideSearch} openDialog={openRideRequestDialog} handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={contextTypes.findRide} openDialog={openFindRideDialog} handleCloseDialog={handleCloseDialog}/>
     </Box>)
 
     return isLoggedIn ? (loggedIn) : (<LoginComp navigate={navigate} setIsLoggedIn={setIsLoggedIn}/>);

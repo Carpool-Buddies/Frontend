@@ -127,7 +127,7 @@ const Home = props => {
             תפריט
         </Fab>
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
-                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} name={userFirstName}/>
+                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} name={userFirstName} avatarInitials={avatarInitials}/>
         {viewport.latitude && viewport.longitude && (
             <Map
                 initialViewState={viewport}

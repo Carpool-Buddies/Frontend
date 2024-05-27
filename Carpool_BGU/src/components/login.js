@@ -16,7 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from "react-router-dom";
 
 
-export default function LoginComp({setIsLoggedIn}) {
+export default function LoginComp({navigate, setIsLoggedIn}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

@@ -19,7 +19,7 @@ import Box from "@mui/material/Box";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import ForgotPassword from "./pages/ForgotPassword";
-import ProfileEdit from "./pages/ProfileEdit";
+import EditProfilePage from "./pages/EditProfilePage";
 
 
 const defaultTheme = createTheme({
@@ -62,7 +62,7 @@ createRoot(document.getElementById('app')).render(
                                 <Route path="/register" element={<Register/>}/>
                                 <Route path="/profileView" element={<Box/>}/>
                                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                                <Route path="/profile-edit" element={<ProfileEdit />} />
+                                <Route path="/edit-profile" element={<EditProfilePage />} /> {/* Add the route for EditProfilePage */}
                             </Routes>
                         </App>
                     </BrowserRouter>

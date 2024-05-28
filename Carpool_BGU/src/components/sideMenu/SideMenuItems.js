@@ -1,3 +1,5 @@
+import {contextTypes} from "../DialogContexts";
+
 export default [
     {
         "key": "profile",
@@ -9,16 +11,16 @@ export default [
         "divider_after": true
     },
     {
-        "key": "publish-ride",
+        "key": contextTypes.publishRide,
         "icon": "DirectionsCarFilledIcon",
         "primary": "פרסם נסיעה",
         "secondary": "",
-        "link": "publish-ride",
+        "link": contextTypes.publishRide,
         "disabled": false,
         "divider_after": false
     },
     {
-        "key": "find-riders",
+        "key": contextTypes.findRiders,
         "icon": "DirectionsCarFilledIcon",
         "primary": "מצא טרמפיסטים",
         "secondary": "",
@@ -27,20 +29,20 @@ export default [
         "divider_after": false
     },
     {
-        "key": "publish-request",
+        "key": contextTypes.publishRideSearch,
         "icon": "EmojiPeopleIcon",
-        "primary": "פרסם בקשה לטרמפ (בקרוב!)",
-        "secondary": "",
-        "link": "publish-request",
+        "primary": "פרסם בקשה לטרמפ",
+        "secondary": "בקרוב!",
+        "link": contextTypes.publishRideSearch,
         "disabled": true,
         "divider_after": false
     },
     {
-        "key": "find-drivers",
+        "key": contextTypes.findRide,
         "icon": "EmojiPeopleIcon",
         "primary": "מצא טרמפ",
         "secondary": "",
-        "link": "./register",
+        "link": contextTypes.findRide,
         "disabled": false,
         "divider_after": false
     }

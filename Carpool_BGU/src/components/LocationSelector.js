@@ -6,7 +6,7 @@ import {Autocomplete, IconButton, InputAdornment, Slider, Tab, Tabs} from "@mui/
 import townNames from "../static/townNames";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import {getAddress} from "../common/fetchers";
+import {getCoordsFromAddress} from "../common/fetchers";
 import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 import SearchIcon from '@mui/icons-material/Search';
@@ -51,7 +51,6 @@ const LocationSelector = ({title, setLocationDetails, selectionClick, actionText
             (position) => {
                 setCoords({lat: position.coords.latitude, long: position.coords.longitude});
             });
-        console.log(coords)
     }, []);
 
     const markerRadius = circle([coords.long, coords.lat], radius, {
@@ -61,7 +60,8 @@ const LocationSelector = ({title, setLocationDetails, selectionClick, actionText
     });
 
     const findAddress = async () => {
-        const ret = await getAddress(searchText)
+        const ret = await getCoordsFromAddress(searchText)
+        console.log(ret)
     }
 
     const handleCoordsSubmit = () => {

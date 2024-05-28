@@ -10,73 +10,12 @@ import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from "dayjs";
-import {useState} from "react";
 import Typography from "@mui/material/Typography";
+import {Slider} from "@mui/material";
+import {contextTypes} from "./DialogContexts";
+import RideResults from "./RideResults/RideResults";
 
-function ExtraDetailsForm({dialogContext, notes, setAvSeats, dateTime, setDateTime, setNotes}) {
-    return (
-        <Box display='flex'
-             justifyContent="center">
-            <Grid container display='flex' justifyContent="center">
-                <Grid item xs={12}>
-                    <Typography>
-                        הכנס פרטים נוספים
-                    </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField type="number"
-                               label={dialogContext.seats}
-                               defaultValue={0}
-                               fullWidth
-                               margin="normal"
-                               onChange={(e) => setAvSeats(e.target.value)}
-                               InputProps={{inputProps: {min: 0, max: 10}}}/>
-                </Grid>
-                <Grid item xs={12}>
-                    <DateTimePicker margin="normal"
-                                    label={dialogContext.dateTime}
-                                    onChange={(v) => setDateTime(v.toISOString())}
-                                    defaultValue={dateTime}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        margin="normal"
-                        label={"הערות (" + notes.length + "/120)"}
-                        multiline
-                        fullWidth
-                        value={notes}
-                        onChange={(e) => setNotes(e.target.value)}
-                        rows={4}
-                        inputProps={{maxLength: 120}}
-                    />
-                </Grid>
-            </Grid>
-        </Box>
-    )
-}
-
-export default function TextMobileStepper({dialogContext, rideDetails, setRideDetails}) {
-    const theme = useTheme();
-    const [activeStep, setActiveStep] = useState(0);
-    const setPickupLocationDetails = (pickupLocationDetails) => {
-        setRideDetails(existingState => ({
-            ...existingState,
-            origin: {
-                coords: pickupLocationDetails.coords,
-                radius: pickupLocationDetails.radius
-            }
-        }))
-    }
-    const setDropOffLocationDetails = (dropOffLocationDetails) => {
-        setRideDetails(existingState => ({
-            ...existingState,
-            destination: {
-                coords: dropOffLocationDetails.coords,
-                radius: dropOffLocationDetails.radius
-            }
-        }))
-    }
+function ExtraDetailsForm({context, notes, dateTime, setRideDetails}) {
     const setAvSeats = (avSeats) => {
         setRideDetails(existingState => ({
             ...existingState,
@@ -95,7 +34,103 @@ export default function TextMobileStepper({dialogContext, rideDetails, setRideDe
             notes: notes
         }))
     }
-    const maxSteps = 3;
+    const setDeltaHours = (hours) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            deltaHours: hours
+        }))
+    }
+    return (
+        <Box display='flex'>
+            <Grid container display='flex'>
+                <Grid item xs={12}>
+                    <Typography>
+                        הכנס פרטים נוספים
+                    </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField type="number"
+                               label={context.seats}
+                               defaultValue={0}
+                               fullWidth
+                               margin="normal"
+                               onChange={(e) => setAvSeats(e.target.value)}
+                               InputProps={{inputProps: {min: 0, max: 10}}}/>
+                </Grid>
+                <Grid item xs={12}>
+                    <DateTimePicker margin="normal"
+                                    label={context.dateTime}
+                                    onChange={(v) => setDateTime(v.toISOString())}
+                                    defaultValue={dateTime}
+                    />
+                </Grid>
+                {context.contextId === contextTypes.findRide ?
+                    <React.Fragment>
+                        <Grid item xs={12}>
+                            <Typography>
+                                טווח גמישות (בשעות)
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Slider
+                                size="small"
+                                defaultValue={0.5}
+                                min={0.5}
+                                max={10}
+                                step={0.5}
+                                valueLabelDisplay="auto"
+                                onChange={(event, newValue) => {
+                                    setDeltaHours(newValue);
+                                }}
+                            />
+                        </Grid>
+                    </React.Fragment> :
+                    <Grid item xs={12}>
+                        <TextField
+                            margin="normal"
+                            label={"הערות (" + notes.length + "/120)"}
+                            multiline
+                            fullWidth
+                            value={notes}
+                            onChange={(e) => setNotes(e.target.value)}
+                            rows={4}
+                            inputProps={{maxLength: 120}}
+                        />
+                    </Grid>}
+            </Grid>
+        </Box>
+    )
+}
+
+export default function TextMobileStepper({
+                                              context,
+                                              activeStep,
+                                              setActiveStep,
+                                              rideDetails,
+                                              setRideDetails,
+                                              searchResults,
+                                              handleCloseDialog
+                                          }) {
+    const theme = useTheme();
+    const setPickupLocationDetails = (pickupLocationDetails) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            origin: {
+                coords: pickupLocationDetails.coords,
+                radius: pickupLocationDetails.radius
+            }
+        }))
+    }
+    const setDropOffLocationDetails = (dropOffLocationDetails) => {
+        setRideDetails(existingState => ({
+            ...existingState,
+            destination: {
+                coords: dropOffLocationDetails.coords,
+                radius: dropOffLocationDetails.radius
+            }
+        }))
+    }
+    const maxSteps = context.contextId === contextTypes.findRide ? 4 : 3;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -127,12 +162,16 @@ export default function TextMobileStepper({dialogContext, rideDetails, setRideDe
                 </Box>
                 <Box hidden={activeStep !== 2}>
                     <ExtraDetailsForm
-                        dialogContext={dialogContext}
+                        context={context}
                         notes={rideDetails.notes}
-                        setAvSeats={setAvSeats}
                         dateTime={rideDetails.dateTime}
-                        setDateTime={setDateTime}
-                        setNotes={setNotes}/>
+                        setRideDetails={setRideDetails}/>
+                </Box>
+                <Box hidden={activeStep !== 3}>
+                    <RideResults
+                        results={searchResults}
+                        handleCloseDialog={handleCloseDialog}
+                        context={context}/>
                 </Box>
             </Grid>
             <Grid item xs={12}>
@@ -144,7 +183,7 @@ export default function TextMobileStepper({dialogContext, rideDetails, setRideDe
                         size="small"
                         onClick={handleNext}
                         disabled={activeStep === maxSteps - 1}
-                        sx={{visibility: activeStep === maxSteps - 1 ? 'hidden' : 'visible'}}
+                        sx={{visibility: activeStep === maxSteps - 1 || (context.contextId === contextTypes.findRide && activeStep === 2) ? 'hidden' : 'visible'}}
                     >
                         הבא
                         {theme.direction === 'rtl' ? (<KeyboardArrowLeft/>) : (<KeyboardArrowRight/>)}

@@ -13,7 +13,6 @@ import {useContext, useState} from "react";
 import AuthContext from "../common/AuthProvider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {useNavigate} from "react-router-dom";
 
 
 export default function LoginComp({navigate, setIsLoggedIn}) {
@@ -26,18 +25,14 @@ export default function LoginComp({navigate, setIsLoggedIn}) {
         event.preventDefault();
 
         const ret = await login(email, password);
-        console.log(ret)
         if (ret.success === true) {
-            console.log('yay!')
             const user = ret.user.email
-            const ret_token = ret.token
+            const ret_token = ret.data.token
             setAuth({user, ret_token});
             setIsLoggedIn(true)
             localStorage.setItem('access_token', ret_token)
             toast.success('Login successful!');
         } else {
-            console.log('Login failed');
-            console.log(ret);
             if (ret.error) {
                 toast.error(ret.error);
             } else {

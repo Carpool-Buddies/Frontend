@@ -6,16 +6,21 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextMobileStepper from "./Stepper";
 import {useState} from "react";
-import {postFutureRide, postRideJoinRequest} from "../common/fetchers";
+import {findRide, postFutureRide, postRideJoinRequest} from "../common/fetchers";
 import dayjs from "dayjs";
 import {DialogContentText} from "@mui/material";
-import {makeRideOfferContext, postFutureRideContext} from "./DialogContexts"
+import {contextTypes, publishRideSearchContext, publishRideContext, findRideContext} from "./DialogContexts"
 
 export default function FormDialog({dialogContext, openDialog, handleCloseDialog}) {
     const [open, setOpen] = useState(false);
+    const [activeStep, setActiveStep] = useState(0);
     const [successTitle, setSuccessTitle] = useState('')
     const [successDescription, setSuccessDescription] = useState('')
-    const context = dialogContext === 'driver' ? postFutureRideContext : makeRideOfferContext
+    const [searchResults, setSearchResults] = useState([])
+    const context =
+        dialogContext === contextTypes.publishRide ? publishRideContext :
+            dialogContext === contextTypes.publishRideSearch ? publishRideSearchContext :
+                dialogContext === contextTypes.findRide ? findRideContext : {}
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -41,37 +46,30 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
         },
         avSeats: 0,
         dateTime: roundToNearest30Minutes(dayjs().add(6, 'h')),
-        notes: ''
+        notes: '',
+        deltaHours: 0.5
     })
 
     async function handleSubmit(event) {
         event.preventDefault();
-        let ret;
-        switch (dialogContext) {
-            case 'driver':
-                ret = await postFutureRide(rideDetails, localStorage.getItem('access_token'))
+        let ret =
+            dialogContext === contextTypes.publishRide ? await postFutureRide(rideDetails, localStorage.getItem('access_token')) :
+                dialogContext === contextTypes.publishRideSearch ? await postRideJoinRequest(rideDetails, localStorage.getItem('access_token')) :
+                    dialogContext === contextTypes.findRide ? await findRide(rideDetails, localStorage.getItem('access_token')) : {};
+        if (ret.success) {
+            if (dialogContext === contextTypes.findRide) {
+                setSearchResults(ret.ride_posts)
+                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            } else {
                 handleClickOpen()
-                if (ret.success) {
-                    setSuccessTitle('הפעולה הושלמה בהצלחה!')
-                    setSuccessDescription('תוכל לראות את הנסיעה שלך ברשימת הנסיעות בעמוד הפרופיל שלך')
-                    handleCloseDialog(context.dialogLink)
-                } else {
-                    setSuccessTitle('הפעולה נכשלה')
-                    setSuccessDescription(ret.msg)
-                }
-                break
-            case 'passenger':
-                ret = await postRideJoinRequest(rideDetails, localStorage.getItem('access_token'))
-                handleClickOpen()
-                if (ret.success) {
-                    setSuccessTitle('הפעולה הושלמה בהצלחה!')
-                    setSuccessDescription('תוכל לראות את הבקשה שלך ברשימת הבקשות בעמוד הפרופיל שלך')
-                    handleCloseDialog(context.dialogLink)
-                } else {
-                    setSuccessTitle('הפעולה נכשלה')
-                    setSuccessDescription(ret.msg)
-                }
-                break
+                setSuccessTitle('הפעולה הושלמה בהצלחה!')
+                setSuccessDescription(context.successDescription)
+                handleCloseDialog(context.dialogLink)
+            }
+        } else {
+            handleClickOpen()
+            setSuccessTitle('הפעולה נכשלה')
+            setSuccessDescription(ret.msg)
         }
     }
 
@@ -85,10 +83,18 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
         >
             <DialogTitle>{context.dialogTitle}</DialogTitle>
             <DialogContent>
-                <TextMobileStepper dialogContext={context} rideDetails={rideDetails} setRideDetails={setRideDetails}/>
+                <TextMobileStepper
+                    context={context}
+                    rideDetails={rideDetails}
+                    setRideDetails={setRideDetails}
+                    searchResults={searchResults}
+                    activeStep={activeStep}
+                    setActiveStep={setActiveStep}
+                handleCloseDialog={handleCloseDialog}/>
             </DialogContent>
             <DialogActions>
-                <Button
+                {activeStep!==3 &&
+                (<Button
                     type="submit"
                     disabled={!(rideDetails.origin.coords.lat !== 0 &&
                         rideDetails.origin.coords.long !== 0 &&
@@ -97,7 +103,7 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
                         rideDetails.destination.coords.long !== 0 &&
                         rideDetails.destination.radius !== 0.0 &&
                         rideDetails.avSeats > 0)}
-                >שלח</Button>
+                >{context.submitButtonText}</Button>)}
             </DialogActions>
         </Dialog>
         <Dialog

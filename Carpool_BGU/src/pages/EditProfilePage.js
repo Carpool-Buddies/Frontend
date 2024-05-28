@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import { updateUserDetails } from '../common/fetchers';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { getUserDetails, updateUserDetails } from '../common/fetchers';
+import { toast } from 'react-toastify';
 
 const EditProfilePage = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         password: '',
         firstName: '',
@@ -10,78 +14,128 @@ const EditProfilePage = () => {
         birthday: '',
     });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    useEffect(() => {
+        getUserDetails(localStorage.getItem('access_token'))
+            .then((ret) => {
+                if (ret.success) {
+                    setFormData({
+                        password: '',
+                        firstName: ret.first_name,
+                        lastName: ret.last_name,
+                        phoneNumber: ret.phone_number,
+                        birthday: ret.birthday,
+                    });
+                } else {
+                    toast.error('Failed to fetch user details');
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching user details:', error);
+                toast.error('Failed to fetch user details');
+            });
+    }, []);
+
+    const handleChange = (event) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await updateUserDetails(formData, localStorage.getItem('access_token'));
-            // Handle the response from the server
-            console.log(response);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const requestData = {
+            password: formData.password,
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            phone_number: formData.phoneNumber,
+            birthday: formData.birthday,
+        };
 
+        updateUserDetails(localStorage.getItem('access_token'), requestData)
+            .then((ret) => {
+                if (ret.success) {
+                    toast.success('User details updated successfully');
+                    navigate('/'); // Navigate to the home page after successful update
+                } else {
+                    toast.error('Failed to update user details');
+                }
+            })
+            .catch((error) => {
+                console.error('Error updating user details:', error);
+                toast.error('Failed to update user details');
+            });
+    };
     return (
-        <div>
-            <h2>ערוך פרופיל</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="password">סיסמה חדשה:</label>
-                    <input
-                        type="password"
-                        id="password"
+        <Container maxWidth="sm">
+            <Box
+                sx={{
+                    marginTop: 8,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                }}
+            >
+                <Typography component="h1" variant="h5">
+                    ערוך פרופיל
+                </Typography>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <TextField
+                        margin="normal"
+                        fullWidth
+                        label="סיסמה"
                         name="password"
+                        type="password"
                         value={formData.password}
                         onChange={handleChange}
                     />
-                </div>
-                <div>
-                    <label htmlFor="firstName">שם פרטי:</label>
-                    <input
-                        type="text"
-                        id="firstName"
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        label="שם פרטי"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
                     />
-                </div>
-                <div>
-                    <label htmlFor="lastName">שם משפחה:</label>
-                    <input
-                        type="text"
-                        id="lastName"
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        label="שם משפחה"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
                     />
-                </div>
-                <div>
-                    <label htmlFor="phoneNumber">מספר טלפון:</label>
-                    <input
-                        type="tel"
-                        id="phoneNumber"
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        label="מספר טלפון"
                         name="phoneNumber"
                         value={formData.phoneNumber}
                         onChange={handleChange}
                     />
-                </div>
-                <div>
-                    <label htmlFor="birthday">תאריך לידה:</label>
-                    <input
-                        type="date"
-                        id="birthday"
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        label="תאריך לידה"
                         name="birthday"
                         value={formData.birthday}
                         onChange={handleChange}
+                        InputProps={{
+                            placeholder: 'YYYY-MM-DD', // Show a placeholder with the expected format
+                        }}
                     />
-                </div>
-                <button type="submit">עדכן פרטים</button>
-            </form>
-        </div>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        שמור שינויים
+                    </Button>
+                </Box>
+            </Box>
+        </Container>
     );
 };
 

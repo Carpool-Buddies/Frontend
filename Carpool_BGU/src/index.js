@@ -60,9 +60,8 @@ createRoot(document.getElementById('app')).render(
                                 <Route exact path="/" element={<Home/>}/>
                                 <Route path="/home" element={<Home/>}/>
                                 <Route path="/register" element={<Register/>}/>
-                                <Route path="/profileView" element={<Box/>}/>
+                                <Route path="/profileView" element={<EditProfilePage />}/>
                                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                                <Route path="/edit-profile" element={<EditProfilePage />} /> {/* Add the route for EditProfilePage */}
                             </Routes>
                         </App>
                     </BrowserRouter>

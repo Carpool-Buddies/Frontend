@@ -275,23 +275,16 @@ export const resetPassword = async (password, confirmPassword) => {
     }
 };
 
-export const updateUserDetails = async (formData, token) => {
+export const updateUserDetails = async (accessToken, requestData) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/auth/update-user-details`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${token}`
-            },
-            body: JSON.stringify({
-                password: formData.password,
-                first_name: formData.firstName,
-                last_name: formData.lastName,
-                phone_number: formData.phoneNumber,
-                birthday: formData.birthday
-            })
-        });
-        return await response.json();
+                'Authorization': `Bearer ${accessToken}`},
+                body: JSON.stringify(requestData),
+            });
+        return response.json();
     } catch (error) {
         return error;
     }

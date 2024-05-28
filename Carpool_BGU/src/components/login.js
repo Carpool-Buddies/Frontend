@@ -20,7 +20,6 @@ export default function LoginComp({navigate, setIsLoggedIn}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
     const {setAuth} = useContext(AuthContext);
 
     const handleSubmit = async event => {

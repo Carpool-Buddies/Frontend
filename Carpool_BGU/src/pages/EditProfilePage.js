@@ -8,9 +8,9 @@ const EditProfilePage = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         password: '',
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
+        first_name: '',
+        last_name: '',
+        phone_number: '',
         birthday: '',
     });
 
@@ -20,9 +20,9 @@ const EditProfilePage = () => {
                 if (ret.success) {
                     setFormData({
                         password: '',
-                        firstName: ret.first_name,
-                        lastName: ret.last_name,
-                        phoneNumber: ret.phone_number,
+                        first_name: ret.first_name,
+                        last_name: ret.last_name,
+                        phone_number: ret.phone_number,
                         birthday: ret.birthday,
                     });
                 } else {
@@ -43,11 +43,12 @@ const EditProfilePage = () => {
         event.preventDefault();
         const requestData = {
             password: formData.password,
-            first_name: formData.firstName,
-            last_name: formData.lastName,
-            phone_number: formData.phoneNumber,
+            first_name: formData.first_name,
+            last_name: formData.last_name,
+            phone_number: formData.phone_number,
             birthday: formData.birthday,
         };
+
 
         updateUserDetails(localStorage.getItem('access_token'), requestData)
             .then((ret) => {
@@ -55,6 +56,7 @@ const EditProfilePage = () => {
                     toast.success('User details updated successfully');
                     navigate('/'); // Navigate to the home page after successful update
                 } else {
+                    console.error('Failed to update user details:', ret); // Debug
                     toast.error('Failed to update user details');
                 }
             })

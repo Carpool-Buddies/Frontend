@@ -314,7 +314,7 @@ export const updateUserDetails = async (accessToken, requestData) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${accessToken}`},
+                'Authorization':  `${accessToken}`},
                 body: JSON.stringify(requestData),
             });
         return response.json();

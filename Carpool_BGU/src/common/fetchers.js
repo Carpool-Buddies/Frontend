@@ -184,6 +184,24 @@ export const getUserDetails = async (token) => {
     }
 };
 
+export const getProfile = async (userId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/users/${userId}/profile`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            }
+        });
+        if (!response.ok)
+            throw new Error('Network response was not ok');
+        const data = await response.json();
+        return data
+    } catch (error) {
+        return false
+    }
+};
+
 // ---------- driver ----------
 
 export const postFutureRide = async (rideDetails, token) => {
@@ -225,7 +243,7 @@ export const fetchRides = async (userId, token) => {
     }
 }
 
-export const manageRequests = async (userId, rideId, token) => {
+export const manageRequestsGet = async (userId, rideId, token) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/drivers/${userId}/rides/manage_requests/${rideId}`, {
             method: 'GET',
@@ -233,6 +251,25 @@ export const manageRequests = async (userId, rideId, token) => {
                 'Content-Type': 'application/json',
                 'Authorization': `${token}`
             }
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
+export const manageRequestsPut = async (userId, rideId, statusUpdate, requestId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/drivers/${userId}/rides/manage_requests/${rideId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+                request_id: requestId,
+                status_update: statusUpdate
+            })
         });
         return await response.json();
     } catch (error) {

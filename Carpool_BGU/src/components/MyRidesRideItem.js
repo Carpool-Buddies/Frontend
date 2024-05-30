@@ -1,21 +1,61 @@
-import {ButtonGroup, IconButton, List, ListItem, ListItemText} from "@mui/material";
-import Button from "@mui/material/Button";
+import {
+    Avatar,
+    Button,
+    ButtonGroup,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Grid,
+    IconButton,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemText,
+    Typography
+} from "@mui/material";
 import dayjs from "dayjs";
-import Typography from "@mui/material/Typography";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {getAddressFromCoords, manageRequests} from "../common/fetchers";
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import Grid from "@mui/material/Grid";
-import DialogActions from "@mui/material/DialogActions";
+import {getAddressFromCoords, getProfile, manageRequestsGet, manageRequestsPut} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
 import {dateSort} from "../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 
-export default function RideItem({ride}) {
+function RideViewRequestListItem(props) {
+    const [profile, setProfile] = useState(null)
+
+    useEffect(() => {
+        getProfile(props.request.passenger_id, localStorage.getItem('access_token'))
+            .then((ret) => setProfile(ret.profile))
+    }, [])
+
+    const handleRespondToRequest = async (status) => {
+        const ret = await manageRequestsPut(props.rideDetails.driverId, props.rideDetails.id, status, props.request.id, localStorage.getItem('access_token'))
+        //TODO: handle success
+        props.refreshRequestsList()
+    }
+
+    return profile &&
+        <ListItem
+            secondaryAction={props.type === 'accepted' ?
+                <ButtonGroup variant="contained">
+                    {/*TODO: re-enable when it's possible to remove user from ride*/}
+                    <IconButton disabled><CloseIcon/></IconButton>
+                </ButtonGroup>
+                :
+                <ButtonGroup variant="contained">
+                    <IconButton onClick={() => handleRespondToRequest('accept')}><CheckIcon/></IconButton>
+                    <IconButton onClick={() => handleRespondToRequest('reject')}><CloseIcon/></IconButton>
+                </ButtonGroup>
+            }>
+            <ListItemAvatar><Avatar>{profile.first_name[0] + profile.last_name[0]}</Avatar></ListItemAvatar>
+            <ListItemText primary={profile.first_name + ' ' + profile.last_name}/>
+        </ListItem>;
+}
+
+export default function RideItem({ride, userFirstName}) {
 
     const [departureCity, setDepartureCity] = useState('')
     const [destinationCity, setDestinationCity] = useState('')
@@ -39,6 +79,11 @@ export default function RideItem({ride}) {
         notes: '',
         deltaHours: 0.5
     })
+
+    function refreshRequestsList() {
+        manageRequestsGet(ride._driver_id, ride.ride_id, localStorage.getItem('access_token'))
+            .then((ret) => setRideRequests(ret.pending_requests))
+    }
 
     useEffect(() => {
         getAddressFromCoords(ride._departure_location)
@@ -71,8 +116,7 @@ export default function RideItem({ride}) {
             dateTime: ride._departure_datetime,
             notes: ride._notes
         })
-        manageRequests(ride._driver_id, ride.ride_id, localStorage.getItem('access_token'))
-            .then((ret) => setRideRequests(ret.pending_requests))
+        refreshRequestsList();
     }, []);
 
     const handleClickOpen = () => {
@@ -93,21 +137,20 @@ export default function RideItem({ride}) {
                     primary={"ב-" + dayjs(rideDetails.dateTime).format("D/M/YY, H:mm")}
                     secondary={
                         <React.Fragment>
-                            מ-{departureCity}
+                            מ-{departureCity === '' ? "..." : departureCity}
                             <br/>
-                            ל-{destinationCity}
+                            ל-{destinationCity === '' ? "..." : destinationCity}
                             <br/>
                             {rideDetails.confirmedPassengers}/{rideDetails.avSeats} מקומות נתפסו
                         </React.Fragment>
                     }
                 />
             </ListItem>
-            <Dialog open={moreDialogOpen} onClose={handleClose} aria-labelledby="alert-dialog-title"
+            <Dialog open={moreDialogOpen} onClose={handleClose}
                     fullWidth={true}
-                    maxWidth={'xs'}
-                    aria-describedby="alert-dialog-description">
+                    maxWidth={'xs'}>
                 <DialogTitle id="alert-dialog-title">
-                    הנסיעה של {rideDetails.driverId}
+                    הנסיעה של {userFirstName}
                 </DialogTitle>
                 <DialogContent>
                     <Grid
@@ -124,38 +167,30 @@ export default function RideItem({ride}) {
                         <Grid item xs={12}>
                             <Typography variant='h5'>טרמפיסטים בנסיעה</Typography>
                             <List>
-                                {/*{rideRequests*/}
-                                {/*    .filter((request) => request.status === 'pending')*/}
-                                {/*    .sort((a, b) => dateSort(a, b))*/}
-                                {/*    .map(request => (*/}
-                                {/*        <ListItem key={request.id} alignItems="flex-start"*/}
-                                {/*                  secondaryAction={*/}
-                                {/*                      <ButtonGroup variant='contained'>*/}
-                                {/*                          <IconButton><CloseIcon/></IconButton>*/}
-                                {/*                      </ButtonGroup>*/}
-                                {/*                  }>*/}
-                                {/*            <ListItemText primary={request.passenger_id}/>*/}
-                                {/*        </ListItem>*/}
-                                {/*    ))}*/}
+                                {rideRequests.filter((request) => request.status === 'accepted').length > 0 ?
+                                    rideRequests
+                                        .filter((request) => request.status === 'accepted')
+                                        .sort((a, b) => dateSort(a, b))
+                                        .map(request => (
+                                            <RideViewRequestListItem key={request.id} request={request}
+                                                                     rideDetails={rideDetails} type='accepted'/>
+                                        )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>
+                                }
                             </List>
                         </Grid>
                         <Grid item xs={12}>
                             <Typography variant='h5'>בקשות הצטרפות</Typography>
                             <List>
-                                {rideRequests
-                                    .filter((request) => request.status === 'pending')
-                                    .sort((a, b) => dateSort(a, b))
-                                    .map(request => (
-                                        <ListItem key={request.id} alignItems="flex-start"
-                                                  secondaryAction={
-                                                      <ButtonGroup variant='contained'>
-                                                          <IconButton><CheckIcon/></IconButton>
-                                                          <IconButton><CloseIcon/></IconButton>
-                                                      </ButtonGroup>
-                                                  }>
-                                            <ListItemText primary={request.passenger_id}/>
-                                        </ListItem>
-                                    ))}
+                                {rideRequests.filter((request) => request.status === 'pending').length > 0 ?
+                                    rideRequests
+                                        .filter((request) => request.status === 'pending')
+                                        .sort((a, b) => dateSort(a, b))
+                                        .map(request => (
+                                            <RideViewRequestListItem key={request.id} request={request}
+                                                                     rideDetails={rideDetails} type='pending'
+                                                                     refreshRequestsList={refreshRequestsList}/>
+                                        )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>
+                                }
                             </List>
                         </Grid>
                     </Grid>

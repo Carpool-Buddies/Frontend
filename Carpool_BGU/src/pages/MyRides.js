@@ -69,7 +69,7 @@ const MyRides = (props) => {
                                 .filter((ride) => dayjs(ride._departure_datetime).isAfter(dayjs()))
                                 .sort((a, b) => dateSort(a, b))
                                 .map(ride => (
-                                    <RideItem key={ride.ride_id} ride={ride}/>
+                                    <RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>
                                 ))}
                             <Typography>
                                 נסיעות עבר

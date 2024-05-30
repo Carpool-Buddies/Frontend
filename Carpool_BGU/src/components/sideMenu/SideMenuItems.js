@@ -44,9 +44,9 @@ export default [
     {
         "key": 'myRides',
         "primary": "הנסיעות שלך",
-        "secondary": "בקרוב!",
-        "link": '',
-        "disabled": true,
+        "secondary": '',
+        "link": './myRides',
+        "disabled": false,
         "divider_after": false
     },
     {

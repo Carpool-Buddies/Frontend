@@ -225,6 +225,21 @@ export const fetchRides = async (userId, token) => {
     }
 }
 
+export const manageRequests = async (userId, rideId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/drivers/${userId}/rides/manage_requests/${rideId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            }
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
 // ---------- passengers ----------
 
 export const joinRide = async (rideId, requestedSeats, token) => {

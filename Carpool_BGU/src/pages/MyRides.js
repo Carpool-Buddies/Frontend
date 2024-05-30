@@ -6,6 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {fetchHome, fetchRides, getUserDetails} from "../common/fetchers";
 import RideItem from "../components/MyRidesRideItem";
+import {dateSort} from "../common/Functions";
 
 const MyRides = (props) => {
 
@@ -45,18 +46,6 @@ const MyRides = (props) => {
             navigate('/')
         }
     }, [isLoggedIn]);
-
-    const dateSort = (a, b) => {
-        const dateA = dayjs(a._departure_datetime);
-        const dateB = dayjs(b._departure_datetime);
-
-        // Compare the dates
-        if (dateA.isBefore(dateB)) return -1;
-        if (dateA.isAfter(dateB)) return 1;
-        return 0;
-
-
-    }
 
     return (
         <Box sx={{flexGrow: 1}}>

@@ -1,4 +1,4 @@
-import {List, ListItem, ListItemText} from "@mui/material";
+import {ButtonGroup, IconButton, List, ListItem, ListItemText} from "@mui/material";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
@@ -11,11 +11,15 @@ import DialogContent from "@mui/material/DialogContent";
 import Grid from "@mui/material/Grid";
 import DialogActions from "@mui/material/DialogActions";
 import RideViewMap from "./RideViewMap";
+import {dateSort} from "../common/Functions";
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function RideItem({ride}) {
 
     const [departureCity, setDepartureCity] = useState('')
     const [destinationCity, setDestinationCity] = useState('')
+    const [rideRequests, setRideRequests] = useState([])
 
     const [moreDialogOpen, setMoreDialogOpen] = useState(false)
     const [rideDetails, setRideDetails] = useState({
@@ -51,7 +55,6 @@ export default function RideItem({ride}) {
                 else
                     setDestinationCity(ret.address.town)
             })
-        console.log(ride)
         setRideDetails({
             id: ride.ride_id,
             driverId: ride._driver_id,
@@ -69,7 +72,7 @@ export default function RideItem({ride}) {
             notes: ride._notes
         })
         manageRequests(ride._driver_id, ride.ride_id, localStorage.getItem('access_token'))
-            .then((ret) => console.log(ret))
+            .then((ret) => setRideRequests(ret.pending_requests))
     }, []);
 
     const handleClickOpen = () => {
@@ -113,7 +116,7 @@ export default function RideItem({ride}) {
                         justifyContent="center">
                         <RideViewMap rideDetails={rideDetails}/>
                         <Grid item xs={12}>
-                            <Typography variant='h5'>הערות{rideDetails.driverId}</Typography>
+                            <Typography variant='h5'>הערות</Typography>
                             <Typography>
                                 {rideDetails.notes}
                             </Typography>
@@ -121,13 +124,38 @@ export default function RideItem({ride}) {
                         <Grid item xs={12}>
                             <Typography variant='h5'>טרמפיסטים בנסיעה</Typography>
                             <List>
-
+                                {/*{rideRequests*/}
+                                {/*    .filter((request) => request.status === 'pending')*/}
+                                {/*    .sort((a, b) => dateSort(a, b))*/}
+                                {/*    .map(request => (*/}
+                                {/*        <ListItem key={request.id} alignItems="flex-start"*/}
+                                {/*                  secondaryAction={*/}
+                                {/*                      <ButtonGroup variant='contained'>*/}
+                                {/*                          <IconButton><CloseIcon/></IconButton>*/}
+                                {/*                      </ButtonGroup>*/}
+                                {/*                  }>*/}
+                                {/*            <ListItemText primary={request.passenger_id}/>*/}
+                                {/*        </ListItem>*/}
+                                {/*    ))}*/}
                             </List>
                         </Grid>
                         <Grid item xs={12}>
                             <Typography variant='h5'>בקשות הצטרפות</Typography>
                             <List>
-
+                                {rideRequests
+                                    .filter((request) => request.status === 'pending')
+                                    .sort((a, b) => dateSort(a, b))
+                                    .map(request => (
+                                        <ListItem key={request.id} alignItems="flex-start"
+                                                  secondaryAction={
+                                                      <ButtonGroup variant='contained'>
+                                                          <IconButton><CheckIcon/></IconButton>
+                                                          <IconButton><CloseIcon/></IconButton>
+                                                      </ButtonGroup>
+                                                  }>
+                                            <ListItemText primary={request.passenger_id}/>
+                                        </ListItem>
+                                    ))}
                             </List>
                         </Grid>
                     </Grid>

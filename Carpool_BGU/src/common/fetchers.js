@@ -289,38 +289,64 @@ export const findRide = async (rideDetails, token) => {
 
 export const getCoordsFromAddress = async (addressText) => {
     const apiKey = '663e40e401c53715963317sdt785944'
-    try {
-        const response = await fetch('https://geocode.maps.co/search?q=' + addressText + '&api_key=' + apiKey)
-        if (!response.ok) {
-            throw new Error('Failed to fetch address');
+    const maxRetries = 5
+    let retryCount = 0
+    let delay = 1000 // Initial delay in milliseconds
+
+    while (retryCount < maxRetries) {
+        try {
+            const response = await fetch('https://geocode.maps.co/search?q=' + addressText + '&api_key=' + apiKey);
+            if (response.status === 429) {
+                // Rate limited, wait and retry
+                retryCount++
+                console.warn(`Rate limited. Retrying in ${delay}ms...`)
+                await new Promise(resolve => setTimeout(resolve, delay))
+                delay *= 2 // Exponential backoff
+                continue
+            }
+            if (!response.ok)
+                throw new Error('Failed to fetch address');
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error fetching address:', error);
+            if (retryCount >= maxRetries - 1) {
+                // Max retries reached, throw error or return null
+                console.error('Max retries reached. Giving up.');
+                return null;
+            }
+            retryCount++;
+            await new Promise(resolve => setTimeout(resolve, delay));
+            delay *= 2; // Exponential backoff
         }
-        const data = await response.json();
-    } catch (error) {
-        console.error('Error fetching address:', error);
-        // Handle error appropriately
-        return null;
     }
 }
 
 export const getAddressFromCoords = async (addressText) => {
     const coords = addressText.split(',')
     const apiKey = '663e40e401c53715963317sdt785944'
-    try {
-        const response = await fetch(
-            'https://geocode.maps.co/reverse?' +
-            'lat=' + coords[0] +
-            '&lon=' + coords[1] +
-            '&api_key=' + apiKey)
-        if (!response.ok) {
-            throw new Error('Failed to fetch address');
+    const url = `https://geocode.maps.co/reverse?lat=${coords[0]}&lon=${coords[1]}&api_key=${apiKey}`;
+    const fetchWithRetry = async (url, retries = 5, delay = 1000) => {
+        try {
+            const response = await fetch(url)
+            if (!response.ok) {
+                if (response.status === 429 && retries > 0) {
+                    console.warn(`Rate limited. Retrying in ${delay}ms...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchWithRetry(url, retries - 1, delay * 2); // Increase delay exponentially
+                }
+                throw new Error('Failed to fetch address');
+            }
+            const data = await response.json();
+            return data
+        } catch (error) {
+            console.error('Error fetching address:', error);
+            // Handle error appropriately
+            return null;
         }
-        const data = await response.json();
-        return data
-    } catch (error) {
-        console.error('Error fetching address:', error);
-        // Handle error appropriately
-        return null;
     }
+
+    return fetchWithRetry(url);
 }
 
 // ---------- not yet implemented ----------

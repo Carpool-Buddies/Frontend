@@ -23,7 +23,6 @@ export const AvatarInitials = (props) => {
     const [profile, setProfile] = useState(null)
 
     useEffect(() => {
-        console.log(props.userId)
         getProfile(props.userId, localStorage.getItem('access_token'))
             .then((ret) => {
                 setProfile(ret.profile)
@@ -33,5 +32,7 @@ export const AvatarInitials = (props) => {
             })
     }, [])
 
-    return profile && (<Avatar>{profile.first_name[0] + profile.last_name[0]}</Avatar>)
+    return profile && (props.small ?
+        (<Avatar sx={{width: 24, height: 24, fontSize: 14}}>{profile.first_name[0] + profile.last_name[0]}</Avatar>) :
+        (<Avatar>{profile.first_name[0] + profile.last_name[0]}</Avatar>))
 }

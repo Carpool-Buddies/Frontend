@@ -1,23 +1,22 @@
 import * as React from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import Box from '@mui/material/Box';
 import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
-import {useEffect, useState} from "react";
 import {fetchHome, getUserDetails, logout} from '../common/fetchers'
-import {Avatar, Fab} from "@mui/material";
+import {Box, Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SideMenu from "../components/sideMenu/SideMenu";
 import FormDialog from "../components/PostFutureRideDialog";
 import LoginComp from "../components/login";
 import {contextTypes} from "../components/DialogContexts";
 import {toast} from "react-toastify";
+import {AvatarInitials} from "../common/Functions";
 
-const Home = props => {
+export default function Home() {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const [avatarInitials, setAvatarInitials] = useState('')
-    const [userFirstName, setUserFirstName] = useState('')
+    const [profile, setProfile] = useState(null)
     const [viewport, setViewport] = useState({});
     const [openSideMenu, setOpenSideMenu] = useState(false);
 
@@ -61,8 +60,7 @@ const Home = props => {
         if (isLoggedIn) {
             getUserDetails(localStorage.getItem('access_token')).then((ret) => {
                 if (ret.success) {
-                    setUserFirstName(ret.first_name)
-                    setAvatarInitials(ret.first_name[0] + ret.last_name[0])
+                    setProfile(ret)
                 }
             }).catch()
         }
@@ -127,7 +125,7 @@ const Home = props => {
             תפריט
         </Fab>
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
-                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} name={userFirstName} avatarInitials={avatarInitials}/>
+                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} profile={profile}/>
         {viewport.latitude && viewport.longitude && (
             <Map
                 initialViewState={viewport}
@@ -136,8 +134,7 @@ const Home = props => {
             >
                 <GeolocateControl position='bottom-left'/>
                 <Marker longitude={viewport.longitude} latitude={viewport.latitude}>
-                    {avatarInitials && (<Avatar
-                        sx={{width: 24, height: 24, fontSize: 14}}>{avatarInitials}</Avatar>)}
+                    {profile && <AvatarInitials userId={profile.id} small={true}/>}
                 </Marker>
             </Map>
         )}
@@ -148,5 +145,3 @@ const Home = props => {
 
     return isLoggedIn ? (loggedIn) : (<LoginComp navigate={navigate} setIsLoggedIn={setIsLoggedIn}/>);
 }
-
-export default Home;

@@ -17,6 +17,7 @@ const Home = props => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [avatarInitials, setAvatarInitials] = useState('')
+    const [userFirstName, setUserFirstName] = useState('')
     const [viewport, setViewport] = useState({});
     const [openSideMenu, setOpenSideMenu] = useState(false);
 
@@ -59,8 +60,10 @@ const Home = props => {
     useEffect(() => {
         if (isLoggedIn) {
             getUserDetails(localStorage.getItem('access_token')).then((ret) => {
-                if (ret.success)
+                if (ret.success) {
+                    setUserFirstName(ret.first_name)
                     setAvatarInitials(ret.first_name[0] + ret.last_name[0])
+                }
             }).catch()
         }
     }, [isLoggedIn]);
@@ -124,7 +127,7 @@ const Home = props => {
             תפריט
         </Fab>
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
-                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout}/>
+                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} name={userFirstName} avatarInitials={avatarInitials}/>
         {viewport.latitude && viewport.longitude && (
             <Map
                 initialViewState={viewport}

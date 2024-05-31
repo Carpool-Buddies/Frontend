@@ -108,7 +108,6 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
             setSuccessDescription(ret.msg)
             handleOpenResponseDialog()
         }
-        console.log(ret)
     }
 
     const departureMarker = circle(

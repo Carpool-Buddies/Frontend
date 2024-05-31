@@ -195,8 +195,7 @@ export const getProfile = async (userId, token) => {
         });
         if (!response.ok)
             throw new Error('Network response was not ok');
-        const data = await response.json();
-        return data
+        return await response.json()
     } catch (error) {
         return false
     }
@@ -246,11 +245,14 @@ export const fetchRides = async (userId, token) => {
 export const manageRequestsGet = async (userId, rideId, token) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/drivers/${userId}/rides/manage_requests/${rideId}`, {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `${token}`
-            }
+            },
+            body: JSON.stringify({
+                'request_status': null
+            })
         });
         return await response.json();
     } catch (error) {

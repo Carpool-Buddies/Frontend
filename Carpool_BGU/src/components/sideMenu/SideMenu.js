@@ -1,7 +1,6 @@
-import {Avatar, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+import {Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import * as React from "react";
 import Box from "@mui/material/Box";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HailIcon from '@mui/icons-material/Hail';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import DepartureBoardIcon from '@mui/icons-material/DepartureBoard';
@@ -11,13 +10,14 @@ import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SideMenuItems from "./SideMenuItems";
 import {contextTypes} from "../DialogContexts";
+import {AvatarInitials} from "../../common/Functions";
 
-const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, name, avatarInitials}) => {
+const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, profile}) => {
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
     };
-    const DrawerList = (
+    const DrawerList = profile && (
         <Box sx={{width: 250}} role="presentation" onClick={toggleDrawer(false)}>
             <List>
                 {SideMenuItems.map(item => (
@@ -45,10 +45,10 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, name
                                                         item.key === 'myRides' ? <DepartureBoardIcon/> :
                                                             item.key === 'myRequests' ? <LocalTaxiIcon/> :
                                                                 item.key === 'profile' ?
-                                                                    <Avatar>{avatarInitials}</Avatar> :
+                                                                    <AvatarInitials userId={profile.id}/> :
                                                                     (<></>)}
                                 </ListItemIcon>
-                                <ListItemText primary={(item.primary) + (item.key === 'profile' ? ' ' + name : '')}
+                                <ListItemText primary={(item.primary) + (item.key === 'profile' ? ' ' + profile.first_name : '')}
                                               secondary={item.secondary}/>
                             </ListItemButton>
                         </ListItem>

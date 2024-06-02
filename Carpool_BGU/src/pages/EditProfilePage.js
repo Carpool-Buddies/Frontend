@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import { getUserDetails, updateUserDetails } from '../common/fetchers';
-import { toast } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EditProfilePage = () => {
     const navigate = useNavigate();
@@ -26,12 +27,20 @@ const EditProfilePage = () => {
                         birthday: ret.birthday,
                     });
                 } else {
-                    toast.error('Failed to fetch user details');
+                    toast.error(
+                        <Typography responsive variant="body1">
+                            ארעה שגיאה בטעינת פרטי המשתמש
+                        </Typography>
+                    );
                 }
             })
             .catch((error) => {
                 console.error('Error fetching user details:', error);
-                toast.error('Failed to fetch user details');
+                toast.error(
+                    <Typography responsive variant="body1">
+                        ארעה שגיאה בטעינת פרטי המשתמש
+                    </Typography>
+                );
             });
     }, []);
 
@@ -49,22 +58,34 @@ const EditProfilePage = () => {
             birthday: formData.birthday,
         };
 
-
         updateUserDetails(localStorage.getItem('access_token'), requestData)
             .then((ret) => {
                 if (ret.success) {
-                    toast.success('User details updated successfully');
+                    toast.success(
+                        <Typography responsive variant="body1">
+                            פרטי המשתמש עודכנו בהצלחה
+                        </Typography>
+                    );
                     navigate('/'); // Navigate to the home page after successful update
                 } else {
                     console.error('Failed to update user details:', ret); // Debug
-                    toast.error('Failed to update user details');
+                    toast.error(
+                        <Typography responsive variant="body1">
+                            ארעה שגיאה בעדכון פרטי המשתמש
+                        </Typography>
+                    );
                 }
             })
             .catch((error) => {
                 console.error('Error updating user details:', error);
-                toast.error('Failed to update user details');
+                toast.error(
+                    <Typography responsive variant="body1">
+                        ארעה שגיאה בעדכון פרטי המשתמש
+                    </Typography>
+                );
             });
     };
+
     return (
         <Container maxWidth="sm">
             <Box
@@ -93,8 +114,8 @@ const EditProfilePage = () => {
                         required
                         fullWidth
                         label="שם פרטי"
-                        name="firstName"
-                        value={formData.firstName}
+                        name="first_name"
+                        value={formData.first_name}
                         onChange={handleChange}
                     />
                     <TextField
@@ -102,8 +123,8 @@ const EditProfilePage = () => {
                         required
                         fullWidth
                         label="שם משפחה"
-                        name="lastName"
-                        value={formData.lastName}
+                        name="last_name"
+                        value={formData.last_name}
                         onChange={handleChange}
                     />
                     <TextField
@@ -111,8 +132,8 @@ const EditProfilePage = () => {
                         required
                         fullWidth
                         label="מספר טלפון"
-                        name="phoneNumber"
-                        value={formData.phoneNumber}
+                        name="phone_number"
+                        value={formData.phone_number}
                         onChange={handleChange}
                     />
                     <TextField
@@ -137,6 +158,17 @@ const EditProfilePage = () => {
                     </Button>
                 </Box>
             </Box>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={true}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </Container>
     );
 };

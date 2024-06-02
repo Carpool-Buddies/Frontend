@@ -23,36 +23,62 @@ const ForgotPassword = () => {
             // Request code
             const { success, msg } = await getCode(email);
             if (success) {
-                toast.success('Verification code sent to your email!');
+                toast.success(
+                    <Typography responsive variant="body1">
+                        קוד אימות נשלח לדוא"ל שלך!
+                    </Typography>
+                );
                 setStep(2);
             } else {
-                toast.error(msg || 'Failed to request code');
+                toast.error(
+                    <Typography responsive variant="body1">
+                        {msg || 'ארעה שגיאה בבקשת קוד האימות'}
+                    </Typography>
+                );
             }
         } else if (step === 2) {
-            // Enter code
             const { success, msg } = await enterCode(code);
             if (success) {
-                toast.success('Code verified successfully!');
+                toast.success(
+                    <Typography responsive variant="body1">
+                        הקוד אומת בהצלחה!
+                    </Typography>
+                );
                 setStep(3);
             } else {
-                toast.error(msg || 'Invalid code');
+                toast.error(
+                    <Typography responsive variant="body1">
+                        {msg || 'הקוד שהוזן אינו תקין'}
+                    </Typography>
+                );
             }
         } else if (step === 3) {
             // Reset password
             if (newPassword !== confirmPassword) {
-                toast.error('Passwords do not match');
+                toast.error(
+                    <Typography responsive variant="body1">
+                        הסיסמאות אינן תואמות
+                    </Typography>
+                );
                 return;
             }
             const { success, msg } = await resetPassword(newPassword, confirmPassword);
             if (success) {
-                toast.success('Password reset successfully!');
-                setEmail('');
+                toast.success(
+                    <Typography responsive variant="body1">
+                        הסיסמה אופסה בהצלחה!
+                    </Typography>
+                );                setEmail('');
                 setCode('');
                 setNewPassword('');
                 setConfirmPassword('');
                 setStep(1);
             } else {
-                toast.error(msg || 'Failed to reset password');
+                toast.error(
+                    <Typography responsive variant="body1">
+                        {msg || 'ארעה שגיאה באיפוס הסיסמה'}
+                    </Typography>
+                );
             }
         }
     };
@@ -128,7 +154,17 @@ const ForgotPassword = () => {
                     </Button>
                 </Box>
             </Box>
-            <ToastContainer />
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={true}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </Container>
     );
 };

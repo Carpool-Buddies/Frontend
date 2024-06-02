@@ -20,7 +20,6 @@ export const enterCode = async (code) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/auth/EnterCode`, {
             method: 'POST',
-            credentials: 'include',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             body: JSON.stringify({ code }),
         });
@@ -52,7 +51,6 @@ export const getCode = async (email) => {
         const response = await fetch(`${BASE_API_URL}/api/auth/GetCode`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            credentials: 'include',
             body: JSON.stringify({ email }),
         });
         const data = await response.json();
@@ -333,3 +331,18 @@ export const postRideJoinRequest = async (rideDetails, token) => { //TODO: wait 
         return error
     }
 }
+
+    export const updateUserDetails = async (accessToken, requestData) => {
+        try {
+            const response = await fetch(`${BASE_API_URL}/api/auth/update-user-details`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization':  `${accessToken}`},
+                body: JSON.stringify(requestData),
+            });
+            return response.json();
+        } catch (error) {
+            return error;
+        }
+    }

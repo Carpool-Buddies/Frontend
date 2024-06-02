@@ -140,10 +140,9 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
                         </Typography>
                     }
                 />
-                <Dialog open={moreDialogOpen} onClose={handleClose} aria-labelledby="alert-dialog-title"
+                <Dialog open={moreDialogOpen} onClose={handleClose}
                         fullWidth={true}
-                        maxWidth={'xs'}
-                        aria-describedby="alert-dialog-description">
+                        maxWidth={'xs'}>
                     <DialogTitle id="alert-dialog-title">
                         הנסיעה של {rideDetails.driverId}
                     </DialogTitle>
@@ -211,8 +210,6 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
             <Dialog
                 open={responseDialogOpen}
                 onClose={handleCloseResponseDialog}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
                     {successTitle}

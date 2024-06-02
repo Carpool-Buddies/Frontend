@@ -21,14 +21,21 @@ import RideViewMap from "./RideViewMap";
 import {AvatarInitials, datePassed, dateSort} from "../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
+import InfoIcon from '@mui/icons-material/Info';
+import ProfileViewDialog from "./ProfileViewDialog";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)
+    const [detailsDialogOpen, setDetailsDialogOpen] = React.useState(false);
 
     useEffect(() => {
         getProfile(props.request.passenger_id, localStorage.getItem('access_token'))
             .then((ret) => setProfile(ret.profile))
     }, [])
+
+    const handleDetailsDialogClickOpen = () => {
+        setDetailsDialogOpen(true);
+    };
 
     const handleRespondToRequest = async (status) => {
         await manageRequestsPut(props.rideDetails._driver_id, props.rideDetails.ride_id, status, props.request.id, localStorage.getItem('access_token'))
@@ -41,6 +48,7 @@ function RideViewRequestListItem(props) {
             secondaryAction={props.type === 'accepted' ?
                 <ButtonGroup variant="contained">
                     {/*TODO: re-enable when it's possible to remove user from ride*/}
+                    <IconButton onClick={() => handleDetailsDialogClickOpen()}><InfoIcon/></IconButton>
                     <IconButton disabled><CloseIcon/></IconButton>
                 </ButtonGroup>
                 :
@@ -53,6 +61,8 @@ function RideViewRequestListItem(props) {
             }>
             <ListItemAvatar><AvatarInitials userId={profile.id}/></ListItemAvatar>
             <ListItemText primary={profile.first_name + ' ' + profile.last_name}/>
+            <ProfileViewDialog profile={profile} detailsDialogOpen={detailsDialogOpen}
+                               setDetailsDialogOpen={setDetailsDialogOpen}/>
         </ListItem>;
 }
 
@@ -113,7 +123,7 @@ function MyRideViewDialog(props) {
                                 .map(request => (
                                     <RideViewRequestListItem key={request.id} request={request}
                                                              rideDetails={props.rideDetails} type='pending'
-                                                             refreshRequestsList={props.refreshRequestsList}/>
+                                                             refreshRequestsList={refreshRequestsList}/>
                                 )) : <ListItem><ListItemText primary="לא נמצאו רשומות"/></ListItem>
                         }
                     </List>

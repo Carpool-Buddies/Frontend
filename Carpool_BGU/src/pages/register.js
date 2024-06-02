@@ -53,10 +53,15 @@ const Register = props => {
 
         const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
         if (ret.success) {
-            toast.success("ההרשמה הושלמה בהצלחה");
-            navigate('/');
-        }
-        else {
+            toast.success(
+                <Typography responsive variant="body1">
+                {'ההרשמה הושלמה בהצלחה'}
+            </Typography>
+        );
+            setTimeout(() => {
+                navigate('/');
+            }, 2000); // Delay navigation by 2 seconds (2000 milliseconds)
+        } else {
             toast.error(ret.error);
             console.log(ret);
         }

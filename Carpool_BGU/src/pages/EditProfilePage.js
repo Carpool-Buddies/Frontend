@@ -66,7 +66,9 @@ const EditProfilePage = () => {
                             {'פרטי המשתמש עודכנו בהצלחה'}
                         </Typography>
                     );
-                    navigate('/');
+                    setTimeout(() => {
+                        navigate('/');
+                    }, 2000); // Delay navigation by 2 seconds (2000 milliseconds)
                 } else {
                     console.error('Failed to update user details:', ret);
                     toast.error(

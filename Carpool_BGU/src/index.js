@@ -60,8 +60,8 @@ createRoot(document.getElementById('app')).render(
                                 <Route exact path="/" element={<Home/>}/>
                                 <Route path="/home" element={<Home/>}/>
                                 <Route path="/register" element={<Register/>}/>
-                                <Route path="/profileView" element={<EditProfilePage />}/>
-                                <Route path="/forgot-password" element={<ForgotPassword />} />
+                                <Route path="/EditProfilePage" element={<EditProfilePage/>}/>
+                                <Route path="/forgot-password" element={<ForgotPassword/>} />
                             </Routes>
                         </App>
                     </BrowserRouter>

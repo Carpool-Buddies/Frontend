@@ -29,7 +29,7 @@ const EditProfilePage = () => {
                 } else {
                     toast.error(
                         <Typography responsive variant="body1">
-                            ארעה שגיאה בטעינת פרטי המשתמש
+                            {ret.message ||'ארעה שגיאה בטעינת פרטי המשתמש'}
                         </Typography>
                     );
                 }
@@ -38,7 +38,7 @@ const EditProfilePage = () => {
                 console.error('Error fetching user details:', error);
                 toast.error(
                     <Typography responsive variant="body1">
-                        ארעה שגיאה בטעינת פרטי המשתמש
+                        {error.message ||'ארעה שגיאה בטעינת פרטי המשתמש'}
                     </Typography>
                 );
             });
@@ -63,15 +63,15 @@ const EditProfilePage = () => {
                 if (ret.success) {
                     toast.success(
                         <Typography responsive variant="body1">
-                            פרטי המשתמש עודכנו בהצלחה
+                            {'פרטי המשתמש עודכנו בהצלחה'}
                         </Typography>
                     );
-                    navigate('/'); // Navigate to the home page after successful update
+                    navigate('/');
                 } else {
-                    console.error('Failed to update user details:', ret); // Debug
+                    console.error('Failed to update user details:', ret);
                     toast.error(
                         <Typography responsive variant="body1">
-                            ארעה שגיאה בעדכון פרטי המשתמש
+                            {ret.msg || 'ארעה שגיאה בעדכון פרטי המשתמש'}
                         </Typography>
                     );
                 }
@@ -80,7 +80,7 @@ const EditProfilePage = () => {
                 console.error('Error updating user details:', error);
                 toast.error(
                     <Typography responsive variant="body1">
-                        ארעה שגיאה בעדכון פרטי המשתמש
+                        {error.message || 'ארעה שגיאה בעדכון פרטי המשתמש'}
                     </Typography>
                 );
             });

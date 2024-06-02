@@ -52,9 +52,9 @@ export default [
     {
         "key": 'myRequests',
         "primary": "הבקשות שלך",
-        "secondary": "בקרוב!",
-        "link": '',
-        "disabled": true,
+        "secondary": "",
+        "link": './myJoinRequests',
+        "disabled": false,
         "divider_after": true
     }
 ]

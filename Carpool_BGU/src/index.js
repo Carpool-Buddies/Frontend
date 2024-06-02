@@ -15,12 +15,12 @@ import createCache from '@emotion/cache';
 import rtlPlugin from 'stylis-plugin-rtl';
 import dayjs from "dayjs";
 import {AuthProvider} from "./common/AuthProvider";
-import Box from "@mui/material/Box";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import ForgotPassword from "./pages/ForgotPassword";
 import MyRides from "./pages/MyRides";
 import EditProfilePage from "./pages/EditProfilePage";
+import MyJoinRequests from "./pages/MyJoinRequests";
 
 
 const defaultTheme = createTheme({
@@ -63,7 +63,8 @@ createRoot(document.getElementById('app')).render(
                                 <Route path="/register" element={<Register/>}/>
                                 <Route path="/EditProfilePage" element={<EditProfilePage/>}/>
                                 <Route path="/forgot-password" element={<ForgotPassword/>}/>
-                                <Route path="/myRides" element={<MyRides />} />
+                                <Route path="/myRides" element={<MyRides/>}/>
+                                <Route path="/myJoinRequests" element={<MyJoinRequests/>}/>
                             </Routes>
                         </App>
                     </BrowserRouter>

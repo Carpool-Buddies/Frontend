@@ -10,27 +10,7 @@ import {
     ListItemText
 } from "@mui/material";
 import CallIcon from "@mui/icons-material/Call";
-
-function formatPhoneNumber(phoneNumber) {
-    // Remove any non-digit characters (like +, -, spaces)
-    const cleaned = phoneNumber.replace(/\D/g, '');
-
-    // Check for the country code and format accordingly
-    let formattedNumber;
-    if (cleaned.startsWith('972')) {
-        // Format for numbers starting with country code 972 (Israel)
-        const countryCode = cleaned.slice(0, 3);
-        const areaCode = cleaned.slice(3, 5);
-        const mainNumberPart1 = cleaned.slice(5, 8);
-        const mainNumberPart2 = cleaned.slice(8, 12);
-        formattedNumber = `+${countryCode} ${areaCode} ${mainNumberPart1} ${mainNumberPart2}`;
-    } else {
-        // General format (fallback if country code is not 972)
-        formattedNumber = phoneNumber;
-    }
-
-    return formattedNumber;
-}
+import {formatPhoneNumber} from "../common/Functions";
 
 export default function ProfileViewDialog(props) {
 

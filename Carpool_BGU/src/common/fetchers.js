@@ -322,6 +322,21 @@ export const findRide = async (rideDetails, token) => {
     }
 }
 
+export const fetchJoinRequests = async (userId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/passengers/${userId}/rides`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            }
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
 // ---------- other APIs ----------
 
 export const getCoordsFromAddress = async (addressText) => {

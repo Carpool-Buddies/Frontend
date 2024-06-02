@@ -19,6 +19,7 @@ import Box from "@mui/material/Box";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import ForgotPassword from "./pages/ForgotPassword";
+import MyRides from "./pages/MyRides";
 import EditProfilePage from "./pages/EditProfilePage";
 
 
@@ -62,6 +63,7 @@ createRoot(document.getElementById('app')).render(
                                 <Route path="/register" element={<Register/>}/>
                                 <Route path="/EditProfilePage" element={<EditProfilePage/>}/>
                                 <Route path="/forgot-password" element={<ForgotPassword/>} />
+                                <Route path="/myRides" element={<MyRides />} />
                             </Routes>
                         </App>
                     </BrowserRouter>

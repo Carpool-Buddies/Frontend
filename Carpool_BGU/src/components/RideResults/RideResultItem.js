@@ -1,13 +1,9 @@
 import * as React from "react";
-import {
-    Avatar, DialogContentText, ListItem,
-    ListItemAvatar,
-    ListItemText
-} from "@mui/material";
+import {useEffect, useState} from "react";
+import {DialogContentText, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
 import {getAddressFromCoords, joinRide} from "../../common/fetchers";
-import {useEffect, useState} from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -17,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import Map, {GeolocateControl, Layer, Marker, Source} from "react-map-gl/maplibre";
 import RoomIcon from "@mui/icons-material/Room";
 import circle from "@turf/circle";
+import {AvatarInitials} from "../../common/Functions";
 
 export default function RideResultItem({item, handleCloseDialog, context}) {
 
@@ -108,7 +105,6 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
             setSuccessDescription(ret.msg)
             handleOpenResponseDialog()
         }
-        console.log(ret)
     }
 
     const departureMarker = circle(
@@ -133,7 +129,7 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
                       secondaryAction={
                           <Button variant="outlined" onClick={handleClickOpen}>קרא עוד</Button>
                       }>
-                <ListItemAvatar><Avatar>{rideDetails.driverId}</Avatar></ListItemAvatar>
+                <ListItemAvatar><AvatarInitials userId={rideDetails.driverId}/></ListItemAvatar>
                 <ListItemText
                     primary={rideDetails.driverId + ", ב-" + dayjs(rideDetails.dateTime).format("D/M/YY, H:mm")}
                     secondary={

@@ -11,7 +11,7 @@ import * as React from "react";
 import {login} from "../common/fetchers";
 import {useContext, useState} from "react";
 import AuthContext from "../common/AuthProvider";
-import { toast } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -26,21 +26,26 @@ export default function LoginComp({navigate, setIsLoggedIn}) {
 
         const ret = await login(email, password);
         if (ret.success === true) {
-            const user = ret.user.email
-            const ret_token = ret.data.token
-            setAuth({user, ret_token});
-            setIsLoggedIn(true)
-            localStorage.setItem('access_token', ret_token)
-            toast.success('Login successful!');
+            const user = ret.user.email;
+            const ret_token = ret.data.token;
+            setAuth({ user, ret_token });
+            setIsLoggedIn(true);
+            localStorage.setItem('access_token', ret_token);
+
+            // Show the success toast
+            toast.success('התחברות בוצעה בהצלחה!', {
+                onClose: () => {
+                    navigate('/home');
+                },
+            });
         } else {
             if (ret.error) {
                 toast.error(ret.error);
             } else {
-                toast.error('Login failed');
+                toast.error('ארעה שגיאה בהתחברות');
             }
         }
     };
-
     function Copyright(props) {
         return (
             <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -136,6 +141,16 @@ export default function LoginComp({navigate, setIsLoggedIn}) {
                     <Copyright sx={{mt: 8, mb: 4}}/>
                 </Grid>
             </Grid>
-
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={true}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </Container>)
 }

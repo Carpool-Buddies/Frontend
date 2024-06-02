@@ -36,28 +36,32 @@ const Register = props => {
     const handleSubmit = async event => {
         event.preventDefault();
 
-        // Validate form fields
         if (!email || !password || !confirmPassword || !firstName || !lastName || !phoneNumber || !birthday) {
-            toast.error("Please fill in all fields");
+            toast.error("אנא מלא את כל השדות");
             return;
         }
 
         if (password !== confirmPassword) {
-            toast.error("Passwords do not match");
+            toast.error("הסיסמאות אינן תואמות");
             return;
         }
 
         if (dayjs(birthday).isAfter(maxBirthDate)) {
-            toast.error("You must be at least 16 years old to register");
+            toast.error("עליך להיות לפחות בן 16 כדי להירשם");
             return;
         }
 
         const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
         if (ret.success) {
-            toast.success("Registration successful");
-            navigate('/');
-            }
-        else {
+            toast.success(
+                <Typography responsive variant="body1">
+                {'ההרשמה הושלמה בהצלחה'}
+            </Typography>
+        );
+            setTimeout(() => {
+                navigate('/');
+            }, 2000); // Delay navigation by 2 seconds (2000 milliseconds)
+        } else {
             toast.error(ret.error);
             console.log(ret);
         }
@@ -203,6 +207,24 @@ const Register = props => {
                     <Copyright sx={{mt: 8, mb: 4}}/>
                 </Grid>
             </Grid>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={true}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                style={{
+                    width: '100%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    fontSize: '16px',
+                    fontFamily: 'Arial, sans-serif'
+                }}
+            />
         </Container>
     );
 }

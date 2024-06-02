@@ -5,7 +5,7 @@ export default [
         "key": "profile",
         "primary": "שלום, ",
         "secondary": "ערוך פרופיל",
-        "link": "./profileView",
+        "link": "./EditProfilePage",
         "disabled": false,
         "divider_after": true
     },

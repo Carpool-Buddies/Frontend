@@ -1,7 +1,7 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import logo from "../static/BGU_logo.png";
+import logo from "../static/CPB logo.png";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -51,7 +51,7 @@ export default function LoginComp({navigate, setIsLoggedIn}) {
             <Typography variant="body2" color="text.secondary" align="center" {...props}>
                 {'Copyright © '}
                 <Link color="inherit" href="https://www.google.com">
-                    Carpool BGU
+                    Carpool Buddies
                 </Link>{' '}
                 {new Date().getFullYear()}
                 {'.'}
@@ -83,9 +83,9 @@ export default function LoginComp({navigate, setIsLoggedIn}) {
                             padding: 10
                         }}
                     >
-                        <img src={logo} style={{width: 50}} alt="bgu logo"/>
+                        <img src={logo} style={{width: 50}} alt="cpb logo"/>
                         <Typography component="h1" variant="h5">
-                            Carpool BGU
+                            Carpool Buddies
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                             <TextField

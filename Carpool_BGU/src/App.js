@@ -5,7 +5,7 @@ import {getServerStatus} from "./common/fetchers";
 import {CircularProgress} from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import logo from "./static/BGU_logo.png";
+import logo from "./static/CPB logo.png";
 import Typography from "@mui/material/Typography";
 import { ToastContainer } from 'react-toastify';
 
@@ -53,7 +53,7 @@ const App = (props) => {
                                 padding: 10
                             }}
                         >
-                            <img src={logo} style={{width: 50}} alt="bgu logo"/>
+                            <img src={logo} style={{width: 50}} alt="cpb logo"/>
                             <Typography component="h1" variant="h5">
                                 מתחבר לשרת
                             </Typography>
@@ -86,7 +86,7 @@ const App = (props) => {
                                 padding: 10
                             }}
                         >
-                            <img src={logo} style={{width: 50}} alt="bgu logo"/>
+                            <img src={logo} style={{width: 50}} alt="cpb logo"/>
                             <Typography component="h1" variant="h5">
                                 השרת שלנו לא באוויר :(
                             </Typography>

@@ -7,9 +7,8 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import {styled} from "@mui/material/styles";
 import {useState} from "react";
-import logo from '../static/BGU_logo.png'
+import logo from '../static/CPB logo.png'
 import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
@@ -20,7 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 
-const Register = props => {
+const Register = () => {
 
     const navigate = useNavigate();
 
@@ -73,24 +72,13 @@ const Register = props => {
             <Typography variant="body2" color="text.secondary" align="center" {...props}>
                 {'Copyright © '}
                 <Link color="inherit" href="https://www.google.com">
-                    Carpool BGU
+                    Carpool Buddies
                 </Link>{' '}
                 {new Date().getFullYear()}
                 {'.'}
             </Typography>
         );
     }
-
-    const MyComponent = styled('button')({
-            fontSize: 60,
-            backgroundColor: 'orange'
-        },
-        {
-            '&:hover': {
-                fontSize: 40,
-                backgroundColor: 'red'
-            }
-        });
 
     return (
         <Container component="main" maxWidth="xs">
@@ -116,9 +104,9 @@ const Register = props => {
                             padding: 10
                         }}
                     >
-                        <img src={logo} style={{width: 50}}/>
+                        <img src={logo} alt="cpb logo" style={{width: 50}}/>
                         <Typography component="h1" variant="h5">
-                            Carpool BGU
+                            Carpool Buddies
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                             <TextField
@@ -192,7 +180,7 @@ const Register = props => {
                             <Grid container>
                                 <Grid item>
                                     <Link
-                                        onClick={(event) => {
+                                        onClick={() => {
                                             navigate('/')
                                         }}
                                         variant="body2"

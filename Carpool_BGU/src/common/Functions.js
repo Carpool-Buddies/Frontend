@@ -1,7 +1,7 @@
 import * as React from "react";
 import dayjs from "dayjs";
 import {Avatar} from "@mui/material";
-import {getProfile} from "./fetchers";
+import {getAddressFromCoords, getProfile} from "./fetchers";
 import {useEffect, useState} from "react";
 
 
@@ -56,4 +56,14 @@ export function formatPhoneNumber(phoneNumber) {
     }
 
     return formattedNumber;
+}
+
+export function setCityName(coords, setFunction) {
+    getAddressFromCoords(coords)
+        .then((ret) => {
+            if (ret.address.city)
+                setFunction(ret.address.city)
+            else
+                setFunction(ret.address.town)
+        })
 }

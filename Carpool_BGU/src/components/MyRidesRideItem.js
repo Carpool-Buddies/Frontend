@@ -16,9 +16,9 @@ import {
 import dayjs from "dayjs";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {getAddressFromCoords, getProfile, manageRequestsGet, manageRequestsPut} from "../common/fetchers";
+import {getProfile, manageRequestsGet, manageRequestsPut} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
-import {AvatarInitials, datePassed, dateSort} from "../common/Functions";
+import {AvatarInitials, datePassed, dateSort, setCityName} from "../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
@@ -145,20 +145,8 @@ export default function RideItem({ride, userFirstName}) {
     const [rideDetails, setRideDetails] = useState(null)
 
     useEffect(() => {
-        getAddressFromCoords(ride._departure_location)
-            .then((ret) => {
-                if (ret.address.city)
-                    setDepartureCity(ret.address.city)
-                else
-                    setDepartureCity(ret.address.town)
-            })
-        getAddressFromCoords(ride._destination)
-            .then((ret) => {
-                if (ret.address.city)
-                    setDestinationCity(ret.address.city)
-                else
-                    setDestinationCity(ret.address.town)
-            })
+        setCityName(ride._departure_location, setDepartureCity)
+        setCityName(ride._destination, setDestinationCity)
         setRideDetails(ride)
     }, []);
 

@@ -7,16 +7,18 @@ import {
     Grid,
     List,
     ListItem,
-    ListItemAvatar, ListItemButton, ListItemIcon,
+    ListItemAvatar,
+    ListItemButton,
+    ListItemIcon,
     ListItemText,
     Typography
 } from "@mui/material";
 import dayjs from "dayjs";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {getAddressFromCoords, getProfile} from "../common/fetchers";
+import {getProfile} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
-import {AvatarInitials, formatPhoneNumber} from "../common/Functions";
+import {AvatarInitials, formatPhoneNumber, setCityName} from "../common/Functions";
 import CallIcon from "@mui/icons-material/Call";
 
 function MyRideViewDialog(props) {
@@ -73,20 +75,8 @@ export default function JoinRequestItem({joinRequest, userFirstName}) {
     const [joinRequestDetails, setJoinRequestDetails] = useState(null)
 
     useEffect(() => {
-        getAddressFromCoords(joinRequest._departure_location)
-            .then((ret) => {
-                if (ret.address.city)
-                    setDepartureCity(ret.address.city)
-                else
-                    setDepartureCity(ret.address.town)
-            })
-        getAddressFromCoords(joinRequest._destination)
-            .then((ret) => {
-                if (ret.address.city)
-                    setDestinationCity(ret.address.city)
-                else
-                    setDestinationCity(ret.address.town)
-            })
+        setCityName(joinRequest._departure_location, setDepartureCity)
+        setCityName(joinRequest._destination, setDestinationCity)
         setJoinRequestDetails(joinRequest)
     }, []);
 

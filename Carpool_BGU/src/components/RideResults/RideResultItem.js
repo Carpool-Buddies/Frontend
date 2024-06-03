@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {DialogContentText, IconButton, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
-import {getAddressFromCoords, getProfile, joinRide} from "../../common/fetchers";
+import {getProfile, joinRide} from "../../common/fetchers";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -13,7 +13,7 @@ import Grid from "@mui/material/Grid";
 import Map, {GeolocateControl, Layer, Marker, Source} from "react-map-gl/maplibre";
 import RoomIcon from "@mui/icons-material/Room";
 import circle from "@turf/circle";
-import {AvatarInitials} from "../../common/Functions";
+import {AvatarInitials, setCityName} from "../../common/Functions";
 import InfoIcon from "@mui/icons-material/Info";
 
 function JoinRideResponseDialog(props) {
@@ -43,12 +43,9 @@ function RideInfoDialog(props) {
     const [successDescription, setSuccessDescription] = useState('')
 
     useEffect(() => {
-        getProfile(props.rideDetails.driverId, localStorage.getItem('access_token'))
+        getProfile(props.rideDetails._driver_id, localStorage.getItem('access_token'))
             .then((ret) => {
                 setProfile(ret.profile)
-            })
-            .catch(() => {
-                setProfile({first_name: "CPB", last_name: ""})
             })
     }, [])
 
@@ -63,7 +60,7 @@ function RideInfoDialog(props) {
     };
 
     const handleJoinRide = async () => {
-        const ret = await joinRide(props.rideDetails.id, 1, localStorage.getItem('access_token'))
+        const ret = await joinRide(props.rideDetails.ride_id, 1, localStorage.getItem('access_token'))
         if (ret.success) {
             setRetSuccess(true)
             setSuccessTitle('הפעולה הושלמה בהצלחה!')
@@ -78,16 +75,16 @@ function RideInfoDialog(props) {
     }
 
     const departureMarker = circle(
-        [props.rideDetails.origin.coords.long, props.rideDetails.origin.coords.lat],
-        props.rideDetails.origin.radius, {
+        [props.rideDetails._departure_location.split(',')[1], props.rideDetails._departure_location.split(',')[0]],
+        props.rideDetails._pickup_radius, {
             steps: 50,
             units: "kilometers",
             properties: {foo: "bar"}
         });
 
     const destinationMarker = circle(
-        [props.rideDetails.destination.coords.long, props.rideDetails.destination.coords.lat],
-        props.rideDetails.destination.radius, {
+        [props.rideDetails._destination.split(',')[1], props.rideDetails._destination.split(',')[0]],
+        props.rideDetails._drop_radius, {
             steps: 50,
             units: "kilometers",
             properties: {foo: "bar"}
@@ -108,19 +105,19 @@ function RideInfoDialog(props) {
                     <Grid item xs={12}>
                         <Map
                             initialViewState={{
-                                latitude: props.rideDetails.destination.coords.lat,
-                                longitude: props.rideDetails.destination.coords.long, zoom: 14
+                                latitude: props.rideDetails._destination.split(',')[0],
+                                longitude: props.rideDetails._destination.split(',')[1], zoom: 14
                             }}
                             style={{width: "100%", height: 300}}
                             mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
                         >
                             <GeolocateControl position="bottom-left"/>
-                            <Marker anchor="bottom" latitude={props.rideDetails.destination.coords.lat}
-                                    longitude={props.rideDetails.destination.coords.long}>
+                            <Marker anchor="bottom" latitude={props.rideDetails._destination.split(',')[0]}
+                                    longitude={props.rideDetails._destination.split(',')[1]}>
                                 <RoomIcon color="primary"/>
                             </Marker>
-                            <Marker anchor="bottom" latitude={props.rideDetails.origin.coords.lat}
-                                    longitude={props.rideDetails.origin.coords.long}>
+                            <Marker anchor="bottom" latitude={props.rideDetails._departure_location.split(',')[0]}
+                                    longitude={props.rideDetails._departure_location.split(',')[1]}>
                                 <RoomIcon color="primary"/>
                             </Marker>
                             <Source id="my-data" type="geojson" data={departureMarker}>
@@ -150,7 +147,7 @@ function RideInfoDialog(props) {
                     <Grid item xs={12}>
                         <Typography variant="h5">הערות מ{profile ? profile.first_name : "..."}</Typography>
                         <Typography>
-                            {props.rideDetails.notes}
+                            {props.rideDetails._notes}
                         </Typography>
                     </Grid>
                 </Grid>
@@ -167,57 +164,16 @@ function RideInfoDialog(props) {
 
 export default function RideResultItem({item, handleCloseDialog, context}) {
 
-    const [departureCity, setDepartureCity] = useState('')
-    const [destinationCity, setDestinationCity] = useState('')
-    const [rideDetails, setRideDetails] = useState({
-        id: -1,
-        driverId: -1,
-        origin: {
-            coords: {lat: 0, long: 0},
-            radius: 0.0
-        },
-        destination: {
-            coords: {lat: 0, long: 0},
-            radius: 0.0
-        },
-        avSeats: 0,
-        dateTime: null,
-        notes: '',
-        deltaHours: 0.5
-    })
+    const [departureCity, setDepartureCity] = useState(null)
+    const [destinationCity, setDestinationCity] = useState(null)
+    const [rideDetails, setRideDetails] = useState(null)
 
     const [moreDialogOpen, setMoreDialogOpen] = useState(false)
 
     useEffect(() => {
-        getAddressFromCoords(item._departure_location)
-            .then((ret) => {
-                if (ret.address.city)
-                    setDepartureCity(ret.address.city)
-                else
-                    setDepartureCity(ret.address.town)
-            })
-        getAddressFromCoords(item._destination)
-            .then((ret) => {
-                if (ret.address.city)
-                    setDestinationCity(ret.address.city)
-                else
-                    setDestinationCity(ret.address.town)
-            })
-        setRideDetails({
-            id: item.ride_id,
-            driverId: item._driver_id,
-            origin: {
-                coords: {lat: item._departure_location.split(',')[0], long: item._departure_location.split(',')[1]},
-                radius: item._pickup_radius
-            },
-            destination: {
-                coords: {lat: item._destination.split(',')[0], long: item._destination.split(',')[1]},
-                radius: item._drop_radius
-            },
-            avSeats: item._available_seats,
-            dateTime: item._departure_datetime,
-            notes: item._notes
-        })
+        setCityName(item._departure_location, setDepartureCity)
+        setCityName(item._destination, setDestinationCity)
+        setRideDetails(item)
     }, []);
 
     const handleClickOpen = () => {
@@ -228,15 +184,15 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
         setMoreDialogOpen(false);
     };
 
-    return (departureCity !== '' && destinationCity !== '' &&
+    return (departureCity && destinationCity && item &&
         <React.Fragment>
             <ListItem alignItems="flex-start"
                       secondaryAction={
                           <IconButton variant='outlined' onClick={() => handleClickOpen()}><InfoIcon/></IconButton>
                       }>
-                <ListItemAvatar><AvatarInitials userId={rideDetails.driverId}/></ListItemAvatar>
+                <ListItemAvatar><AvatarInitials userId={rideDetails._driver_id}/></ListItemAvatar>
                 <ListItemText
-                    primary={"ב-" + dayjs(rideDetails.dateTime).format("D/M/YY, H:mm")}
+                    primary={"ב-" + dayjs(rideDetails._departure_datetime).format("D/M/YY, H:mm")}
                     secondary={
                         <React.Fragment>
                             מ-{departureCity}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
+import {AdvancedMarker, APIProvider, Map} from "@vis.gl/react-google-maps";
 import {fetchHome, getUserDetails, logout} from '../common/fetchers'
 import {Box, Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -26,6 +26,20 @@ export default function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const loadGoogleMapsScript = () => {
+            if (!window.google || !window.google.maps) {
+                const script = document.createElement('script');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g&language=he`;
+                script.async = true;
+                script.defer = true;
+                script.onload = () => console.log('Google Maps script loaded');
+                script.onerror = () => console.error('Google Maps script could not be loaded');
+                document.head.appendChild(script);
+            }
+        };
+
+        loadGoogleMapsScript();
+
         fetchHome(localStorage.getItem('access_token')).then((ret) => {
             if (ret.success)
                 setIsLoggedIn(true)
@@ -127,16 +141,21 @@ export default function Home() {
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
                   handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} profile={profile}/>
         {viewport.latitude && viewport.longitude && (
-            <Map
-                initialViewState={viewport}
-                style={{width: '100%', height: '100%', zIndex: 0}}
-                mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-            >
-                <GeolocateControl position='bottom-left'/>
-                <Marker longitude={viewport.longitude} latitude={viewport.latitude}>
-                    {profile && <AvatarInitials userId={profile.id} small={true}/>}
-                </Marker>
-            </Map>
+
+            <APIProvider apiKey='AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'>
+                <Map
+                    mapId={'a6c72e4f93862a68'}
+                    style={{width: '100%', height: '100%', zIndex: 0}}
+                    defaultCenter={{lat: viewport.latitude, lng: viewport.longitude}}
+                    defaultZoom={14}
+                    gestureHandling={'greedy'}
+                    disableDefaultUI={true}
+                >
+                    {profile && <AdvancedMarker position={{lat: viewport.latitude, lng: viewport.longitude}}>
+                        <AvatarInitials userId={profile.id} small={true}/>
+                    </AdvancedMarker>}
+                </Map>
+            </APIProvider>
         )}
         <FormDialog dialogContext={contextTypes.publishRide} openDialog={openPostRideDialog} handleCloseDialog={handleCloseDialog}/>
         <FormDialog dialogContext={contextTypes.publishRideSearch} openDialog={openRideRequestDialog} handleCloseDialog={handleCloseDialog}/>

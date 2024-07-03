@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const fs = require('fs'); TODO: When HTTPS is necessary, try to use this
+const fs = require('fs');
 
 module.exports = {
   output: {
@@ -16,13 +16,13 @@ module.exports = {
   devServer: {
     port: 3030, // you can change the port
     historyApiFallback: true,
-    // server:{  TODO: When HTTPS is necessary, try to use this
-    //   type: 'https',
-    //   options: {
-    //     key: fs.readFileSync('./key.pem'),
-    //     cert: fs.readFileSync('./cert.pem'),
-    //   },
-    // }
+    server:{
+      type: 'https',
+      options: {
+        key: fs.readFileSync('./key.pem'),
+        cert: fs.readFileSync('./cert.pem'),
+      },
+    }
   },
   module: {
     rules: [

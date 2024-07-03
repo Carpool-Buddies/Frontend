@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Map, {Source, Layer, GeolocateControl, Marker} from "react-map-gl/maplibre";
+import {AdvancedMarker, APIProvider, Map} from '@vis.gl/react-google-maps';
 import Box from "@mui/material/Box";
 import RoomIcon from '@mui/icons-material/Room';
 import {Autocomplete, IconButton, InputAdornment, Slider, Tab, Tabs} from "@mui/material";
@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from "@mui/material/Typography";
-import circle from "@turf/circle"
+import {Circle} from "./circle";
 
 function CustomTabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -53,12 +53,6 @@ const LocationSelector = ({title, setLocationDetails, selectionClick, actionText
             });
     }, []);
 
-    const markerRadius = circle([coords.long, coords.lat], radius, {
-        steps: 50,
-        units: "kilometers",
-        properties: {foo: "bar"}
-    });
-
     const findAddress = async () => {
         const ret = await getCoordsFromAddress(searchText)
         console.log(ret)
@@ -88,37 +82,31 @@ const LocationSelector = ({title, setLocationDetails, selectionClick, actionText
                 </Tabs>
             </Grid>
             <Grid item xs={12}>
-                <Map
-                    initialViewState={{
-                        longitude: coords.long, latitude: coords.lat, zoom: 14
-                    }}
-                    onMove={(vp) => {
-                        if (tabValue === 2)
-                            setCoords({lat: vp.viewState.latitude, long: vp.viewState.longitude})
-                    }}
-                    style={{width: '100%', height: 300}}
-                    mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-                >
-                    <GeolocateControl position='bottom-left'/>
-                    <Marker
-                        anchor="bottom"
-                        latitude={coords.lat}
-                        longitude={coords.long}
+                <APIProvider apiKey='AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'>
+                    <Map
+                        mapId={'a6c72e4f93862a68'}
+                        style={{width: '100%', height: 300}}
+                        defaultCenter={{lat: coords.lat, lng: coords.long}}
+                        defaultZoom={14}
+                        gestureHandling={'greedy'}
+                        disableDefaultUI={true}
+                        onDrag={(e) => {
+                            if (tabValue === 2)
+                                setCoords({lat: e.map.getCenter().lat(), long: e.map.getCenter().lng()})
+                        }}
                     >
-                        <RoomIcon color='primary'/>
-                    </Marker>
-                    <Source id="my-data" type="geojson" data={markerRadius}>
-                        <Layer
-                            id="point-90-hi"
-                            type="fill"
-                            paint={{
-                                "fill-color": "#088",
-                                "fill-opacity": 0.4,
-                                "fill-outline-color": "yellow"
-                            }}
+                        <AdvancedMarker position={{lat: coords.lat, lng: coords.long}}>
+                            <RoomIcon color='primary'/>
+                        </AdvancedMarker>
+                        <Circle
+                            radius={radius * 1000}
+                            center={{lng: coords.long, lat: coords.lat}}
+                            strokeOpacity={0}
+                            fillColor={'#088'}
+                            fillOpacity={0.4}
                         />
-                    </Source>
-                </Map>
+                    </Map>
+                </APIProvider>
                 <Typography>
                     רדיוס {actionText} (ק"מ)
                 </Typography>

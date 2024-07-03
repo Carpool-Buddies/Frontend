@@ -21,6 +21,7 @@ export const enterCode = async (code) => {
         const response = await fetch(`${BASE_API_URL}/api/auth/EnterCode`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'include',
             body: JSON.stringify({ code }),
         });
         const data = await response.json();
@@ -36,6 +37,7 @@ export const resetPassword = async (password, confirmPassword) => {
         const response = await fetch(`${BASE_API_URL}/api/auth/ForgetPassword`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'include',
             body: JSON.stringify({ password, confirmPassword }),
         });
         const data = await response.json();
@@ -51,6 +53,7 @@ export const getCode = async (email) => {
         const response = await fetch(`${BASE_API_URL}/api/auth/GetCode`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            credentials: 'include',
             body: JSON.stringify({ email }),
         });
         const data = await response.json();
@@ -340,14 +343,14 @@ export const fetchJoinRequests = async (userId, token) => {
 // ---------- other APIs ----------
 
 export const getCoordsFromAddress = async (addressText) => {
-    const apiKey = '663e40e401c53715963317sdt785944'
+    const apiKey = 'AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'
     const maxRetries = 5
     let retryCount = 0
     let delay = 1000 // Initial delay in milliseconds
 
     while (retryCount < maxRetries) {
         try {
-            const response = await fetch('https://geocode.maps.co/search?q=' + addressText + '&api_key=' + apiKey);
+            const response = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + addressText + '&key=' + apiKey + '&language=he')
             if (response.status === 429) {
                 // Rate limited, wait and retry
                 retryCount++

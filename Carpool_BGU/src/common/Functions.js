@@ -59,11 +59,20 @@ export function formatPhoneNumber(phoneNumber) {
 }
 
 export function setCityName(coords, setFunction) {
+    const levels = ['locality', 'administrative_area_level_2', 'administrative_area_level_1', 'country']
     getAddressFromCoords(coords)
         .then((ret) => {
-            if (ret.address.city)
-                setFunction(ret.address.city)
-            else
-                setFunction(ret.address.town)
+            if (ret.results && ret.results[0]) {
+                for (let j = 0; j < levels.length; j++) {
+                    for (let i = 0; i < ret.results[0].address_components.length; i++) {
+                        if (ret.results[0].address_components[i].types.includes(levels[j])) {
+                            setFunction(ret.results[0].address_components[i].long_name)
+                            return
+                        }
+                    }
+                }
+            } else
+                setFunction('...')
         })
+        .catch(() => setFunction('...'))
 }

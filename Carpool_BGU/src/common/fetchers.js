@@ -350,7 +350,7 @@ export const getCoordsFromAddress = async (addressText) => {
 
     while (retryCount < maxRetries) {
         try {
-            const response = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + addressText + '&key=' + apiKey + '&language=he')
+            const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address='${addressText}&key=${apiKey}&language=he`)
             if (response.status === 429) {
                 // Rate limited, wait and retry
                 retryCount++
@@ -379,8 +379,8 @@ export const getCoordsFromAddress = async (addressText) => {
 
 export const getAddressFromCoords = async (addressText) => {
     const coords = addressText.split(',')
-    const apiKey = '663e40e401c53715963317sdt785944'
-    const url = `https://geocode.maps.co/reverse?lat=${coords[0]}&lon=${coords[1]}&api_key=${apiKey}`;
+    const apiKey = 'AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${addressText}&key=${apiKey}&language=he`;
     const fetchWithRetry = async (url, retries = 5, delay = 1000) => {
         try {
             const response = await fetch(url)

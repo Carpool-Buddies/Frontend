@@ -136,9 +136,9 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
                     primary={"ב-" + dayjs(rideDetails._departure_datetime).format("D/M/YY, H:mm")}
                     secondary={
                         <React.Fragment>
-                            מ-{departureCity}
+                            מ{departureCity}
                             <br/>
-                            ל-{destinationCity}
+                            ל{destinationCity}
                         </React.Fragment>
                     }
                 />

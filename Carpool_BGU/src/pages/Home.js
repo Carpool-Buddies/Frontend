@@ -169,7 +169,7 @@ export default function Home() {
                     disableDefaultUI={true}
                 >
                     {profile && <AdvancedMarker position={{lat: viewport.latitude, lng: viewport.longitude}}>
-                        <AvatarInitials userId={profile.id} small={true}/>
+                        <AvatarInitials userId={profile.id} profile={profile} small={true}/>
                     </AdvancedMarker>}
 
                     {rideMarkers.map((item, index) =>

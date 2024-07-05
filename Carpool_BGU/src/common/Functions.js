@@ -25,19 +25,35 @@ export const AvatarInitials = (props) => {
     const [profile, setProfile] = useState(null)
 
     useEffect(() => {
-        getProfile(props.userId, localStorage.getItem('access_token'))
-            .then((ret) => {
-                setProfile(ret.profile)
-            })
-            .catch(() => {
-                setProfile({first_name: "CPB", last_name: ""})
-            })
+        if (!props.profile) {
+            getProfile(props.userId, localStorage.getItem('access_token'))
+                .then((ret) => {
+                    setProfile(ret.profile)
+                })
+                .catch(() => {
+                    setProfile({first_name: "CPB", last_name: ""})
+                })
+        }
     }, [])
 
     const SmallAvatar = styled(Avatar)(() => ({
         width: 20,
         height: 20
     }));
+
+    if (props.profile)
+        return <Badge
+            overlap="circular"
+            anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
+            badgeContent={
+                props.profile.approved ? <SmallAvatar alt="verified" src={verifiedBadge}/> : <React.Fragment/>
+            }>
+            {props.small ?
+                <Avatar sx={{width: 24, height: 24, fontSize: 14}}>
+                    {props.profile.first_name[0] + props.profile.last_name[0]}
+                </Avatar> :
+                <Avatar sx={{bgcolor: '#FF9900'}}>{props.profile.first_name[0] + props.profile.last_name[0]}</Avatar>}
+        </Badge>
 
     return profile &&
         <Badge

@@ -10,11 +10,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Grid from "@mui/material/Grid";
-import Map, {GeolocateControl, Layer, Marker, Source} from "react-map-gl/maplibre";
-import RoomIcon from "@mui/icons-material/Room";
-import circle from "@turf/circle";
 import {AvatarInitials, setCityName} from "../../common/Functions";
 import InfoIcon from "@mui/icons-material/Info";
+import RideViewMap from "../RideViewMap";
 
 function JoinRideResponseDialog(props) {
     return <Dialog
@@ -35,7 +33,7 @@ function JoinRideResponseDialog(props) {
     </Dialog>;
 }
 
-function RideInfoDialog(props) {
+export function RideInfoDialog(props) {
     const [profile, setProfile] = useState(null)
     const [responseDialogOpen, setResponseDialogOpen] = useState(false)
     const [retSuccess, setRetSuccess] = useState(false)
@@ -55,7 +53,7 @@ function RideInfoDialog(props) {
 
     const handleCloseResponseDialog = () => {
         setResponseDialogOpen(false);
-        if (retSuccess)
+        if (props.isFromMarker === null && retSuccess)
             props.handleCloseDialog(props.context.dialogLink)
     };
 
@@ -74,22 +72,6 @@ function RideInfoDialog(props) {
         }
     }
 
-    const departureMarker = circle(
-        [props.rideDetails._departure_location.split(',')[1], props.rideDetails._departure_location.split(',')[0]],
-        props.rideDetails._pickup_radius, {
-            steps: 50,
-            units: "kilometers",
-            properties: {foo: "bar"}
-        });
-
-    const destinationMarker = circle(
-        [props.rideDetails._destination.split(',')[1], props.rideDetails._destination.split(',')[0]],
-        props.rideDetails._drop_radius, {
-            steps: 50,
-            units: "kilometers",
-            properties: {foo: "bar"}
-        });
-
     return <React.Fragment>
         <Dialog open={props.open} onClose={props.onClose}
                 fullWidth={true}
@@ -102,48 +84,7 @@ function RideInfoDialog(props) {
                     container
                     display="flex"
                     justifyContent="center">
-                    <Grid item xs={12}>
-                        <Map
-                            initialViewState={{
-                                latitude: props.rideDetails._destination.split(',')[0],
-                                longitude: props.rideDetails._destination.split(',')[1], zoom: 14
-                            }}
-                            style={{width: "100%", height: 300}}
-                            mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-                        >
-                            <GeolocateControl position="bottom-left"/>
-                            <Marker anchor="bottom" latitude={props.rideDetails._destination.split(',')[0]}
-                                    longitude={props.rideDetails._destination.split(',')[1]}>
-                                <RoomIcon color="primary"/>
-                            </Marker>
-                            <Marker anchor="bottom" latitude={props.rideDetails._departure_location.split(',')[0]}
-                                    longitude={props.rideDetails._departure_location.split(',')[1]}>
-                                <RoomIcon color="primary"/>
-                            </Marker>
-                            <Source id="my-data" type="geojson" data={departureMarker}>
-                                <Layer
-                                    id="point-90-hi"
-                                    type="fill"
-                                    paint={{
-                                        "fill-color": "#088",
-                                        "fill-opacity": 0.4,
-                                        "fill-outline-color": "yellow"
-                                    }}
-                                />
-                            </Source>
-                            <Source id="my-data2" type="geojson" data={destinationMarker}>
-                                <Layer
-                                    id="point-90-hi2"
-                                    type="fill"
-                                    paint={{
-                                        "fill-color": "#880000",
-                                        "fill-opacity": 0.4,
-                                        "fill-outline-color": "yellow"
-                                    }}
-                                />
-                            </Source>
-                        </Map>
-                    </Grid>
+                    <RideViewMap rideDetails={props.rideDetails}/>
                     <Grid item xs={12}>
                         <Typography variant="h5">הערות מ{profile ? profile.first_name : "..."}</Typography>
                         <Typography>
@@ -195,9 +136,9 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
                     primary={"ב-" + dayjs(rideDetails._departure_datetime).format("D/M/YY, H:mm")}
                     secondary={
                         <React.Fragment>
-                            מ-{departureCity}
+                            מ{departureCity}
                             <br/>
-                            ל-{destinationCity}
+                            ל{destinationCity}
                         </React.Fragment>
                     }
                 />

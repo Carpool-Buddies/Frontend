@@ -143,12 +143,10 @@ export default function TextMobileStepper({
     const originSelector = (<LocationSelector
         title="בחר כתובת מוצא"
         setLocationDetails={setPickupLocationDetails}
-        selectionClick={handleNext}
         actionText="איסוף"/>)
     const destinationSelector = (<LocationSelector
         title="בחר כתובת יעד"
         setLocationDetails={setDropOffLocationDetails}
-        selectionClick={handleNext}
         actionText="הורדה"/>)
 
     return (

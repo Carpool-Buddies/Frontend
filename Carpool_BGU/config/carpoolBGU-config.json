@@ -1,9 +1,9 @@
 {
   "development": {
-    "run_on_local_server": true
+    "run_on_local_server": false
   },
   "api_urls": {
-    "production_api_url": "TODO: change when relevant to production",
+    "production_api_url": "https://carpool-buddies-api.com",
     "local_server_api": "http://127.0.0.1:5000"
   }
 }

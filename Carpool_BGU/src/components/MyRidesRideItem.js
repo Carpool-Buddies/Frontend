@@ -168,9 +168,9 @@ export default function RideItem({ride, userFirstName}) {
                     primary={"ב-" + (rideDetails ? dayjs(rideDetails._departure_datetime).format("D/M/YY, H:mm") : "...")}
                     secondary={
                         <React.Fragment>
-                            מ-{departureCity === '' ? "..." : departureCity}
+                            מ{departureCity === '' ? "..." : departureCity}
                             <br/>
-                            ל-{destinationCity === '' ? "..." : destinationCity}
+                            ל{destinationCity === '' ? "..." : destinationCity}
                             <br/>
                             {rideDetails ? (rideDetails._confirmed_passengers + '/' + rideDetails._available_seats) : "..."} מקומות
                             נתפסו

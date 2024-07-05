@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import Map, {GeolocateControl, Marker} from 'react-map-gl/maplibre';
-import {fetchHome, getUserDetails, logout} from '../common/fetchers'
+import {AdvancedMarker, APIProvider, Map} from "@vis.gl/react-google-maps";
+import {fetchHome, findRide, getUserDetails, logout} from '../common/fetchers'
 import {Box, Fab} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import SideMenu from "../components/sideMenu/SideMenu";
@@ -11,13 +11,17 @@ import LoginComp from "../components/login";
 import {contextTypes} from "../components/DialogContexts";
 import {toast} from "react-toastify";
 import {AvatarInitials} from "../common/Functions";
+import dayjs from "dayjs";
+import MainMapMarker from "../components/mainMapMarker";
 
 export default function Home() {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    const [viewport, setViewport] = useState({})
+    const [rideMarkers, setRideMarkers] = useState([]);
+
     const [profile, setProfile] = useState(null)
-    const [viewport, setViewport] = useState({});
     const [openSideMenu, setOpenSideMenu] = useState(false);
 
     const [openPostRideDialog, setOpenPostRideDialog] = useState(false);
@@ -26,38 +30,65 @@ export default function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetchHome(localStorage.getItem('access_token')).then((ret) => {
-            if (ret.success)
-                setIsLoggedIn(true)
-            else
-                localStorage.removeItem('access_token')
-            if (!ret) {
-                console.log('Access token based login failed')
-            }
-        }).catch(() => localStorage.removeItem('access_token'))
-
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                setViewport({
-                    ...viewport,
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                    zoom: 14,
-                });
-            },
-            function (error) {
-                console.log(error.code + ": " + error.message);
-            },
-            {
-                enableHighAccuracy: true,
-                maximumAge: 10000,
-                timeout: 5000
-            }
-        )
+        if (localStorage.getItem('access_token'))
+            fetchHome(localStorage.getItem('access_token')).then((ret) => {
+                if (ret.success)
+                    setIsLoggedIn(true)
+                else
+                    localStorage.removeItem('access_token')
+                if (!ret) {
+                    console.log('Access token based login failed')
+                }
+            }).catch(() => localStorage.removeItem('access_token'))
     }, []);
 
     useEffect(() => {
         if (isLoggedIn) {
+            if (!window.google || !window.google.maps) {
+                const script = document.createElement('script');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g&language=he`;
+                script.async = true;
+                script.defer = true;
+                script.onerror = () => console.error('Google Maps script could not be loaded');
+                document.head.appendChild(script);
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    setViewport({
+                        ...viewport,
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude,
+                        zoom: 14,
+                    });
+
+                    findRide({
+                        origin: {
+                            coords: {lat: position.coords.latitude, long: position.coords.longitude},
+                            radius: 5 * 1000
+                        },
+                        destination: {
+                            coords: {lat: 31.400000, long: 34.976389},
+                            radius: 240 * 1000
+                        },
+                        avSeats: 1,
+                        dateTime: dayjs().toISOString(),
+                        deltaHours: 240
+                    }, localStorage.getItem('access_token')).then(ret => {
+                        if (ret.success) {
+                            setRideMarkers(ret.ride_posts)
+                        }
+                    })
+                },
+                function (error) {
+                    console.log(error.code + ": " + error.message);
+                },
+                {
+                    enableHighAccuracy: true,
+                    maximumAge: 10000,
+                    timeout: 5000
+                }
+            )
             getUserDetails(localStorage.getItem('access_token')).then((ret) => {
                 if (ret.success) {
                     setProfile(ret)
@@ -127,16 +158,24 @@ export default function Home() {
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
                   handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} profile={profile}/>
         {viewport.latitude && viewport.longitude && (
-            <Map
-                initialViewState={viewport}
-                style={{width: '100%', height: '100%', zIndex: 0}}
-                mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-            >
-                <GeolocateControl position='bottom-left'/>
-                <Marker longitude={viewport.longitude} latitude={viewport.latitude}>
-                    {profile && <AvatarInitials userId={profile.id} small={true}/>}
-                </Marker>
-            </Map>
+
+            <APIProvider apiKey='AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'>
+                <Map
+                    mapId={'a6c72e4f93862a68'}
+                    style={{width: '100%', height: '100%', zIndex: 0}}
+                    defaultCenter={{lat: viewport.latitude, lng: viewport.longitude}}
+                    defaultZoom={14}
+                    gestureHandling={'greedy'}
+                    disableDefaultUI={true}
+                >
+                    {profile && <AdvancedMarker position={{lat: viewport.latitude, lng: viewport.longitude}}>
+                        <AvatarInitials userId={profile.id} small={true}/>
+                    </AdvancedMarker>}
+
+                    {rideMarkers.map((item, index) =>
+                        <MainMapMarker ride={{key: index, rideDetails: item}}/>)}
+                </Map>
+            </APIProvider>
         )}
         <FormDialog dialogContext={contextTypes.publishRide} openDialog={openPostRideDialog} handleCloseDialog={handleCloseDialog}/>
         <FormDialog dialogContext={contextTypes.publishRideSearch} openDialog={openRideRequestDialog} handleCloseDialog={handleCloseDialog}/>

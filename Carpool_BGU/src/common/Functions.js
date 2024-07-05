@@ -1,8 +1,10 @@
 import * as React from "react";
 import dayjs from "dayjs";
-import {Avatar} from "@mui/material";
+import {Avatar, Badge, styled} from "@mui/material";
 import {getAddressFromCoords, getProfile} from "./fetchers";
 import {useEffect, useState} from "react";
+// import verifiedBadge from '../static/BGU_logo.png'
+import verifiedBadge from '../static/Verified_Badge.svg.png'
 
 
 export const dateSort = (a, b) => {
@@ -32,9 +34,24 @@ export const AvatarInitials = (props) => {
             })
     }, [])
 
-    return profile && (props.small ?
-        (<Avatar sx={{width: 24, height: 24, fontSize: 14}}>{profile.first_name[0] + profile.last_name[0]}</Avatar>) :
-        (<Avatar>{profile.first_name[0] + profile.last_name[0]}</Avatar>))
+    const SmallAvatar = styled(Avatar)(() => ({
+        width: 20,
+        height: 20
+    }));
+
+    return profile &&
+        <Badge
+            overlap="circular"
+            anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
+            badgeContent={
+                profile.approved ? <SmallAvatar alt="verified" src={verifiedBadge}/> : <React.Fragment/>
+            }>
+            {props.small ?
+                <Avatar sx={{width: 24, height: 24, fontSize: 14}}>
+                    {profile.first_name[0] + profile.last_name[0]}
+                </Avatar> :
+                <Avatar sx={{bgcolor: '#FF9900'}}>{profile.first_name[0] + profile.last_name[0]}</Avatar>}
+        </Badge>
 }
 
 export function formatPhoneNumber(phoneNumber) {

@@ -33,7 +33,7 @@ function JoinRideResponseDialog(props) {
     </Dialog>;
 }
 
-function RideInfoDialog(props) {
+export function RideInfoDialog(props) {
     const [profile, setProfile] = useState(null)
     const [responseDialogOpen, setResponseDialogOpen] = useState(false)
     const [retSuccess, setRetSuccess] = useState(false)
@@ -53,7 +53,7 @@ function RideInfoDialog(props) {
 
     const handleCloseResponseDialog = () => {
         setResponseDialogOpen(false);
-        if (retSuccess)
+        if (props.isFromMarker === null && retSuccess)
             props.handleCloseDialog(props.context.dialogLink)
     };
 

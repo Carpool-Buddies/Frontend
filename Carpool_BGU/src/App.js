@@ -26,76 +26,44 @@ const App = (props) => {
     const {children} = props;
 
     return (serverRunning === 1) ? (
-            <div>
-                {children}
-                <ToastContainer rtl={true} />
-            </div>
-        ) : (serverRunning === 0) ? (
-            <div>
-                <Grid
-                    container
-                    spacing={0}
-                    direction="column"
-                    alignItems="center"
-                    justifyContent="center"
-                    sx={{minHeight: '100vh'}}
-                >
-                    <Grid item xs={3}>
-                        <Box
-                            sx={{
-                                marginTop: 8,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                border: 1,
-                                borderRadius: 10,
-                                boxShadow: 5,
-                                padding: 10
-                            }}
-                        >
-                            <img src={logo} style={{width: 50}} alt="cpb logo"/>
-                            <Typography component="h1" variant="h5">
-                                מתחבר לשרת
-                            </Typography>
-                            <CircularProgress/>
-                        </Box>
-                    </Grid>
+        <div>
+            {children}
+            <ToastContainer rtl={true}/>
+        </div>
+    ) : (
+        <div>
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                sx={{minHeight: '100vh'}}
+            >
+                <Grid item xs={3}>
+                    <Box
+                        sx={{
+                            marginTop: 8,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            border: 1,
+                            borderRadius: 10,
+                            boxShadow: 5,
+                            padding: 10
+                        }}
+                    >
+                        <img src={logo} style={{width: 50}} alt="cpb logo"/>
+                        <Typography component="h1" variant="h5">
+                            {serverRunning === 0 ? 'מתחבר לשרת' : 'השרת שלנו לא באוויר :('}
+                        </Typography>
+                        {serverRunning === 0 && <CircularProgress/>}
+                    </Box>
                 </Grid>
-                <ToastContainer rtl={true} />
-            </div>
-        ) : (
-            <div>
-                <Grid
-                    container
-                    spacing={0}
-                    direction="column"
-                    alignItems="center"
-                    justifyContent="center"
-                    sx={{minHeight: '100vh'}}
-                >
-                    <Grid item xs={3}>
-                        <Box
-                            sx={{
-                                marginTop: 8,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                border: 1,
-                                borderRadius: 10,
-                                boxShadow: 5,
-                                padding: 10
-                            }}
-                        >
-                            <img src={logo} style={{width: 50}} alt="cpb logo"/>
-                            <Typography component="h1" variant="h5">
-                                השרת שלנו לא באוויר :(
-                            </Typography>
-                        </Box>
-                    </Grid>
-                </Grid>
-                <ToastContainer rtl={true} />
-            </div>
-        )
+            </Grid>
+            <ToastContainer rtl={true}/>
+        </div>
+    )
 }
 
 export default App

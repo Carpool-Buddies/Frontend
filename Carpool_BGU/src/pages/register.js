@@ -13,7 +13,6 @@ import {DatePicker} from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import {useNavigate} from "react-router-dom";
 import {register} from "../common/fetchers";
-import MuiPhoneNumber from "mui-phone-number";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -50,7 +49,7 @@ const Register = () => {
             return;
         }
 
-        const ret = await register(email, password, firstName, lastName, phoneNumber, birthday);
+        const ret = await register(email, password, firstName, lastName, '+972 ' + phoneNumber, birthday);
         if (ret.success) {
             toast.success(
                 <Typography responsive variant="body1">
@@ -126,12 +125,21 @@ const Register = () => {
                                 name="last_name"
                                 onChange={(e) => setLastName(e.target.value)}
                             />
-                            <MuiPhoneNumber
-                                defaultCountry={'il'}
-                                onlyCountries={['il']}
-                                label='מספר טלפון'
-                                variant='outlined'
-                                onChange={(e) => setPhoneNUmber(e)}/>
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                label="מספר טלפון"
+                                value={phoneNumber}
+                                onChange={(e) => {
+                                    const number = e.target.value.trim().replace(/[^0-9]/g, "");
+                                    if (number.length < 4) setPhoneNUmber(number)
+                                    else if (number.length < 7) setPhoneNUmber(number.replace(/(\d{3})(\d)/, "$1-$2"))
+                                    else if (number.length < 11) setPhoneNUmber(number.replace(/(\d{3})(\d{3})(\d)/, "$1-$2-$3"))
+                                    else setPhoneNUmber(number.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3"))
+                                }}
+                                inputProps={{maxLength: 12}}
+                            />
                             <DatePicker
                                 margin="normal"
                                 required

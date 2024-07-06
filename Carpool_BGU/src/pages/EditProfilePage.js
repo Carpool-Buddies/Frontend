@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
-import { getUserDetails, updateUserDetails } from '../common/fetchers';
+import { AppBar, Box, Button, IconButton, TextField, Toolbar, Typography } from '@mui/material';
+import { getProfile, getUserDetails, updateUserDetails } from '../common/fetchers';
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {DatePicker} from "@mui/x-date-pickers";
+import dayjs from "dayjs";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const EditProfilePage = () => {
     const navigate = useNavigate();
@@ -19,13 +22,34 @@ const EditProfilePage = () => {
         getUserDetails(localStorage.getItem('access_token'))
             .then((ret) => {
                 if (ret.success) {
-                    setFormData({
-                        password: '',
-                        first_name: ret.first_name,
-                        last_name: ret.last_name,
-                        phone_number: ret.phone_number,
-                        birthday: ret.birthday,
-                    });
+                    console.log(ret)
+                    getProfile(ret.id, localStorage.getItem('access_token'))
+                        .then((ret) => {
+                            if (ret.success) {
+                                console.log(ret)
+                                setFormData({
+                                    password: '',
+                                    first_name: ret.profile.first_name,
+                                    last_name: ret.profile.last_name,
+                                    phone_number: ret.profile.phone_number.replace('+972',''),
+                                    birthday: ret.profile.birthday,
+                                });
+                            } else {
+                                toast.error(
+                                    <Typography responsive variant="body1">
+                                        {ret.message || 'ארעה שגיאה בטעינת פרטי המשתמש'}
+                                    </Typography>
+                                );
+                            }
+                        })
+                        .catch((error) => {
+                            console.error('Error fetching user details:', error);
+                            toast.error(
+                                <Typography responsive variant="body1">
+                                    {error.message || 'ארעה שגיאה בטעינת פרטי המשתמש'}
+                                </Typography>
+                            );
+                        });
                 } else {
                     toast.error(
                         <Typography responsive variant="body1">
@@ -44,8 +68,24 @@ const EditProfilePage = () => {
             });
     }, []);
 
+    const phoneNumberAutoFormat = (phoneNumber) => {
+        const number = phoneNumber.trim().replace(/[^0-9]/g, "");
+        if (number.length < 4) return number;
+        if (number.length < 7) return number.replace(/(\d{3})(\d)/, "$1-$2");
+        if (number.length < 11) return number.replace(/(\d{3})(\d{3})(\d)/, "$1-$2-$3");
+        return number.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+    };
+
     const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
+        try {
+            if (event.target.name === 'phone_number')
+                setFormData({...formData, [event.target.name]: phoneNumberAutoFormat(event.target.value)});
+            else
+                setFormData({ ...formData, [event.target.name]: event.target.value });
+        }
+        catch(e){
+            setFormData({...formData, birthday: event})
+        }
     };
 
     const handleSubmit = (event) => {
@@ -54,8 +94,8 @@ const EditProfilePage = () => {
             password: formData.password,
             first_name: formData.first_name,
             last_name: formData.last_name,
-            phone_number: formData.phone_number,
-            birthday: formData.birthday,
+            phone_number: '+972 ' + formData.phone_number,
+            birthday: formData.birthday.format('YYYY-MM-DD'),
         };
 
         updateUserDetails(localStorage.getItem('access_token'), requestData)
@@ -89,19 +129,22 @@ const EditProfilePage = () => {
     };
 
     return (
-        <Container maxWidth="sm">
-            <Box
-                sx={{
-                    marginTop: 8,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                }}
-            >
+        <Box sx={{flexGrow: 1}}>
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton onClick={() => navigate('/')}>
+                        <ArrowForwardIcon sx={{mr: 1}}/>
+                    </IconButton>
+                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                        הפרטים האישיים של {formData.first_name}
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Box component="main" sx={{p: 3}}>
                 <Typography component="h1" variant="h5">
                     ערוך פרופיל
                 </Typography>
-                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                     <TextField
                         margin="normal"
                         fullWidth
@@ -137,18 +180,19 @@ const EditProfilePage = () => {
                         name="phone_number"
                         value={formData.phone_number}
                         onChange={handleChange}
+                        inputProps={{ maxLength: 12 }}
                     />
-                    <TextField
+                    <DatePicker
                         margin="normal"
                         required
-                        fullWidth
                         label="תאריך לידה"
                         name="birthday"
-                        value={formData.birthday}
                         onChange={handleChange}
-                        InputProps={{
-                            placeholder: 'YYYY-MM-DD', // Show a placeholder with the expected format
-                        }}
+                        openTo="year"
+                        defaultValue={dayjs(formData.birthday)}
+                        maxDate={dayjs().subtract(16, 'year')}
+                        views={['year', 'month', 'day']}
+                        slotProps={{ textField: { fullWidth: true } }}
                     />
                     <Button
                         type="submit"
@@ -171,7 +215,7 @@ const EditProfilePage = () => {
                 draggable
                 pauseOnHover
             />
-        </Container>
+        </Box>
     );
 };
 

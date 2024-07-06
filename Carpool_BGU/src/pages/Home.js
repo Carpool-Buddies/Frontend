@@ -13,6 +13,7 @@ import {toast} from "react-toastify";
 import {AvatarInitials} from "../common/Functions";
 import dayjs from "dayjs";
 import MainMapMarker from "../components/mainMapMarker";
+import VerifyProfileDialog from "../components/verifyProfileDialog";
 
 export default function Home() {
 
@@ -27,6 +28,7 @@ export default function Home() {
     const [openPostRideDialog, setOpenPostRideDialog] = useState(false);
     const [openRideRequestDialog, setOpenRideRequestDialog] = useState(false);
     const [openFindRideDialog, setOpenFindRideDialog] = useState(false);
+    const [openVerifyProfileDialog, setOpenVerifyProfileDialog] = useState(false)
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -45,14 +47,25 @@ export default function Home() {
     useEffect(() => {
         if (isLoggedIn) {
             if (!window.google || !window.google.maps) {
-                const script = document.createElement('script');
-                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g&language=he`;
-                script.async = true;
-                script.defer = true;
-                script.onerror = () => console.error('Google Maps script could not be loaded');
-                document.head.appendChild(script);
+                const loadScript = (src) => {
+                    return new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = src;
+                        script.async = true;
+                        script.defer = true
+                        script.onload = resolve;
+                        script.onerror = reject;
+                        document.head.appendChild(script);
+                    });
+                };
+                loadScript(`https://maps.googleapis.com/maps/api/js?key=AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g&language=he`)
+                    .then(() => {
+                        // Handle script load success
+                    })
+                    .catch(() => {
+                        console.error('Google Maps script could not be loaded');
+                    });
             }
-
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     setViewport({
@@ -156,7 +169,8 @@ export default function Home() {
             תפריט
         </Fab>
         <SideMenu open={openSideMenu} setOpen={setOpenSideMenu} navigate={navigate}
-                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} profile={profile}/>
+                  handleOpenDialog={handleOpenDialog} handleLogout={handleLogout} profile={profile}
+                  setOpenVerifyProfileDialog={setOpenVerifyProfileDialog}/>
         {viewport.latitude && viewport.longitude && (
 
             <APIProvider apiKey='AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'>
@@ -177,9 +191,14 @@ export default function Home() {
                 </Map>
             </APIProvider>
         )}
-        <FormDialog dialogContext={contextTypes.publishRide} openDialog={openPostRideDialog} handleCloseDialog={handleCloseDialog}/>
-        <FormDialog dialogContext={contextTypes.publishRideSearch} openDialog={openRideRequestDialog} handleCloseDialog={handleCloseDialog}/>
-        <FormDialog dialogContext={contextTypes.findRide} openDialog={openFindRideDialog} handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={contextTypes.publishRide} openDialog={openPostRideDialog}
+                    handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={contextTypes.publishRideSearch} openDialog={openRideRequestDialog}
+                    handleCloseDialog={handleCloseDialog}/>
+        <FormDialog dialogContext={contextTypes.findRide} openDialog={openFindRideDialog}
+                    handleCloseDialog={handleCloseDialog}/>
+        {profile && <VerifyProfileDialog userId={profile.id} open={openVerifyProfileDialog}
+                                         handleCloseDialog={() => setOpenVerifyProfileDialog(false)}/>}
     </Box>)
 
     return isLoggedIn ? (loggedIn) : (<LoginComp navigate={navigate} setIsLoggedIn={setIsLoggedIn}/>);

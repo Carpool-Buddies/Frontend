@@ -185,6 +185,23 @@ export const getUserDetails = async (token) => {
     }
 };
 
+export const verifyEmail = async (userId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/auth/users/${userId}/confirm`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            }
+        });
+        if (!response.ok)
+            throw new Error('Network response was not ok');
+        return await response.json()
+    } catch (error) {
+        return error
+    }
+};
+
 export const getProfile = async (userId, token) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/auth/users/${userId}/profile`, {

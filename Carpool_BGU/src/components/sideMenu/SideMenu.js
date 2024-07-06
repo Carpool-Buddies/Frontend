@@ -11,8 +11,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import SideMenuItems from "./SideMenuItems";
 import {contextTypes} from "../DialogContexts";
 import {AvatarInitials} from "../../common/Functions";
+import verifiedBadge from '../../static/Verified_Badge.svg.png'
 
-const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, profile}) => {
+const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, profile, setOpenVerifyProfileDialog}) => {
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
@@ -52,6 +53,17 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, prof
                                               secondary={item.secondary}/>
                             </ListItemButton>
                         </ListItem>
+                        {item.key === 'profile' && !profile.approved &&
+                            <ListItem>
+                                <ListItemButton onClick={() => setOpenVerifyProfileDialog(true)}>
+                                    <ListItemIcon>
+                                        <img src={verifiedBadge} alt="verified logo"
+                                             style={{width: 20, marginLeft: 15, marginRight: 10}}/>
+                                    </ListItemIcon>
+                                    <ListItemText
+                                        primary={'אמת את חשבונך'}/>
+                                </ListItemButton>
+                            </ListItem>}
                         {item.divider_after && <Divider/>}
                     </React.Fragment>
                 ))}

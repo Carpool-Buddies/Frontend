@@ -73,3 +73,15 @@ createRoot(document.getElementById('app')).render(
         </ThemeProvider>
     </AuthProvider>
 );
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('SW registered: ', registration);
+            // registration.maximumFileSizeToCacheInBytes = 100 * 1024 * 1024; // 10MB, adjust as needed
+        }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+        });
+    });
+}

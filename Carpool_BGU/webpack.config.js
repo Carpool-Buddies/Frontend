@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { GenerateSW } = require('workbox-webpack-plugin');
 const fs = require('fs');
 
 module.exports = {
@@ -11,6 +12,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html", // to import index.html file inside index.js
+    }),
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 10*1024*1024,
     }),
   ],
   devServer: {

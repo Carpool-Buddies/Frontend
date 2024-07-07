@@ -11,7 +11,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import SideMenuItems from "./SideMenuItems";
 import {contextTypes} from "../DialogContexts";
 import {AvatarInitials} from "../../common/Functions";
-import verifiedBadge from '../../static/Verified_Badge.svg.png'
+import verifiedBadge from '../../static/BGU_logo.png'
 
 const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, profile, setOpenVerifyProfileDialog}) => {
 

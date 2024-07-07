@@ -3,8 +3,7 @@ import dayjs from "dayjs";
 import {Avatar, Badge, styled} from "@mui/material";
 import {getAddressFromCoords, getProfile} from "./fetchers";
 import {useEffect, useState} from "react";
-// import verifiedBadge from '../static/BGU_logo.png'
-import verifiedBadge from '../static/Verified_Badge.svg.png'
+import verifiedBadge from '../static/BGU_logo.png'
 
 
 export const dateSort = (a, b) => {
@@ -37,8 +36,8 @@ export const AvatarInitials = (props) => {
     }, [])
 
     const SmallAvatar = styled(Avatar)(() => ({
-        width: 20,
-        height: 20
+        width: props.small? 15: 20,
+        height: props.small? 15: 20
     }));
 
     if (props.profile)

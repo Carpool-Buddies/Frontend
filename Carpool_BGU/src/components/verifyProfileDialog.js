@@ -20,7 +20,7 @@ export default function VerifyProfileDialog(props) {
     async function handleSendCode(event) {
         setLoadingRequest(true)
         event.preventDefault()
-        verifyEmail(props.userId, localStorage.getItem('access_token'))
+        verifyEmail(props.profile.id, localStorage.getItem('access_token'))
             .then(() => { //TODO: check that ret is fine
                 setActiveStep(activeStep + 1)
             })
@@ -30,7 +30,7 @@ export default function VerifyProfileDialog(props) {
     }
 
     async function handleEnterCode() {
-        const {success, msg} = await enterCode(verificationCode);
+        const {success, msg} = await enterCode(props.profile.email, verificationCode);
         if (success) {
             setActiveStep(activeStep + 1)
         } else {
@@ -53,7 +53,7 @@ export default function VerifyProfileDialog(props) {
                     <Grid item xs={12} sx={{width: '100%'}}>
                         <Box hidden={activeStep !== 0} sx={{width: '100%'}}>
                             <Typography>
-                                כדי להגביר את האמון בין משתמשי Carpool Buddies, הוספנו את האפשרות לאמת את החשבון
+                                כדי להגביר את הביטחון בין משתמשי Carpool Buddies, הוספנו את האפשרות לאמת את החשבון
                                 האוניברסיטאי שלך.
                             </Typography>
                             <Typography>

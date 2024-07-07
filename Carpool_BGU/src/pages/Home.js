@@ -161,7 +161,7 @@ export default function Home() {
         }
     }
 
-    const loggedIn = (<Box display='flex' height="100vh">
+    const loggedIn = (<Box display='flex' height="90vh">
         <Fab variant="extended" color='primary'
              onClick={toggleSideMenu(true)}
              style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
@@ -197,7 +197,7 @@ export default function Home() {
                     handleCloseDialog={handleCloseDialog}/>
         <FormDialog dialogContext={contextTypes.findRide} openDialog={openFindRideDialog}
                     handleCloseDialog={handleCloseDialog}/>
-        {profile && <VerifyProfileDialog userId={profile.id} open={openVerifyProfileDialog}
+        {profile && <VerifyProfileDialog profile={profile} open={openVerifyProfileDialog}
                                          handleCloseDialog={() => setOpenVerifyProfileDialog(false)}/>}
     </Box>)
 

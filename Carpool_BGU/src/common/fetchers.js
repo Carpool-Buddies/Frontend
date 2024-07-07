@@ -16,13 +16,16 @@ export const getServerStatus = async () => {
 
 // ---------- auth ----------
 
-export const enterCode = async (code) => {
+export const enterCode = async (email, code) => {
     try {
         const response = await fetch(`${BASE_API_URL}/api/auth/EnterCode`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             credentials: 'include',
-            body: JSON.stringify({ code }),
+            body: JSON.stringify({
+                email: email,
+                code: code
+            }),
         });
         const data = await response.json();
         return data;

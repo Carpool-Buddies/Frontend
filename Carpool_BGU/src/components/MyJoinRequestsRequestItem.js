@@ -20,6 +20,7 @@ import {getProfile} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
 import {AvatarInitials, formatPhoneNumber, setCityName} from "../common/Functions";
 import CallIcon from "@mui/icons-material/Call";
+import {rideRequestStatusTypes} from "../common/backendTerms";
 
 function MyRideViewDialog(props) {
     const [driverProfile, getDriverProfile] = useState(null)
@@ -104,9 +105,9 @@ export default function JoinRequestItem({joinRequest, userFirstName}) {
                             ל{destinationCity === '' ? "..." : destinationCity}
                             <br/>
                             {joinRequestDetails ?
-                                (joinRequestDetails.ride_status === 'accepted' ? "הבקשה אושרה!" :
-                                    joinRequestDetails.ride_status === 'rejected' ? "הבקשה נדחתה" :
-                                        joinRequestDetails.ride_status === 'pending' ? "הבקשה טרם אושרה" : '') : "..."}
+                                (joinRequestDetails.ride_status === rideRequestStatusTypes.accepted ? "הבקשה אושרה!" :
+                                    joinRequestDetails.ride_status === rideRequestStatusTypes.rejected ? "הבקשה נדחתה" :
+                                        joinRequestDetails.ride_status === rideRequestStatusTypes.pending ? "הבקשה טרם אושרה" : '') : "..."}
                         </React.Fragment>
                     }
                 />

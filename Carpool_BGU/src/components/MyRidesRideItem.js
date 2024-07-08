@@ -23,6 +23,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
 import ProfileViewDialog from "./ProfileViewDialog";
+import {rideRequestResponseTypes} from "../common/backendTerms";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)
@@ -54,7 +55,7 @@ function RideViewRequestListItem(props) {
                 :
                 <ButtonGroup variant="contained">
                     <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
-                                onClick={() => handleRespondToRequest('accept')}><CheckIcon/></IconButton>
+                                onClick={() => handleRespondToRequest(rideRequestResponseTypes.accept)}><CheckIcon/></IconButton>
                     <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
                                 onClick={() => handleRespondToRequest('reject')}><CloseIcon/></IconButton>
                 </ButtonGroup>

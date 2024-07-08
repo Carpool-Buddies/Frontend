@@ -85,7 +85,7 @@ export default function Home() {
                             radius: 240 * 1000
                         },
                         avSeats: 1,
-                        dateTime: dayjs().toISOString(),
+                        dateTime: dayjs().format('YYYY-MM-DDTHH:mm:ss.SSS')+'Z',
                         deltaHours: 240
                     }, localStorage.getItem('access_token')).then(ret => {
                         if (ret.success) {

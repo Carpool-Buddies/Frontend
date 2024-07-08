@@ -60,7 +60,7 @@ function ExtraDetailsForm({context, notes, dateTime, setRideDetails}) {
                 <Grid item xs={12}>
                     <DateTimePicker margin="normal"
                                     label={context.dateTime}
-                                    onChange={(v) => setDateTime(v.toISOString())}
+                                    onChange={(v) => setDateTime(v.format('YYYY-MM-DDTHH:mm:ss.SSS') + 'Z')}
                                     defaultValue={dateTime}
                     />
                 </Grid>

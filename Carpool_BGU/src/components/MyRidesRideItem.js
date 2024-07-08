@@ -18,7 +18,7 @@ import * as React from "react";
 import {useEffect, useState} from "react";
 import {getProfile, manageRequestsGet, manageRequestsPut} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
-import {AvatarInitials, datePassed, dateSort, setCityName} from "../common/Functions";
+import {AvatarInitials, datePassed, dateSort, setCityName, startRideIsDue} from "../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
@@ -67,7 +67,7 @@ function RideViewRequestListItem(props) {
         </ListItem>;
 }
 
-function MyRideViewDialog(props) {
+export function MyRideViewDialog(props) {
 
     const [rideRequests, setRideRequests] = useState([])
 
@@ -132,7 +132,17 @@ function MyRideViewDialog(props) {
             </Grid>
         </DialogContent>
         <DialogActions>
-            <Button onClick={props.onClose}>חזרה לתוצאות</Button>
+            <Grid container>
+                <Grid item xs={6} sx={{display: 'flex', justifyContent: 'flex-start'}}>
+                    <Button onClick={props.onClose} variant="contained"
+                            disabled={!startRideIsDue(props.rideDetails._departure_datetime)}>
+                        התחל נסיעה
+                    </Button>
+                </Grid>
+                <Grid item xs={6} sx={{display: 'flex', justifyContent: 'flex-end'}}>
+                    <Button onClick={props.onClose}>חזרה לתוצאות</Button>
+                </Grid>
+            </Grid>
         </DialogActions>
     </Dialog>
 }

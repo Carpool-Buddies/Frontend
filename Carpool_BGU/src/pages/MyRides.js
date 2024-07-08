@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {AppBar, Box, IconButton, List, ListItem, ListItemText, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Divider, IconButton, List, ListItem, ListItemText, Toolbar, Typography} from "@mui/material";
 import dayjs from "dayjs";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from "react-router-dom";
@@ -69,6 +69,7 @@ const MyRides = () => {
                                     .map(ride => (
                                         <RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>
                                     )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
+                            <Divider/>
                             <Typography>
                                 נסיעות עבר
                             </Typography>

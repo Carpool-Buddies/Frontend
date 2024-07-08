@@ -145,6 +145,8 @@ export default function RideItem({ride, userFirstName}) {
     const [moreDialogOpen, setMoreDialogOpen] = useState(false)
     const [rideDetails, setRideDetails] = useState(null)
 
+    const [clicked, setClicked] = useState(false)
+
     useEffect(() => {
         setCityName(ride._departure_location, setDepartureCity)
         setCityName(ride._destination, setDestinationCity)
@@ -152,6 +154,7 @@ export default function RideItem({ride, userFirstName}) {
     }, []);
 
     const handleClickOpen = () => {
+        setClicked(true)
         setMoreDialogOpen(true);
     };
 
@@ -179,7 +182,7 @@ export default function RideItem({ride, userFirstName}) {
                     }
                 />
             </ListItem>
-            {rideDetails &&
+            {rideDetails && clicked &&
                 <MyRideViewDialog
                     open={moreDialogOpen}
                     onClose={handleClose}

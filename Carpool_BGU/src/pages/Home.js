@@ -11,6 +11,7 @@ import {AvatarInitials} from "../common/Functions";
 import dayjs from "dayjs";
 import MainMapMarker from "../components/mainMapMarker";
 import SwipeableTemporaryDrawer from "../components/swipableDrawer";
+import UpcomingRideAlert from "../components/upcomingRideAlert";
 
 export default function Home() {
 
@@ -121,7 +122,6 @@ export default function Home() {
         <SideMenu navigate={navigate} handleLogout={handleLogout} profile={profile}/>
         <SwipeableTemporaryDrawer/>
         {viewport.latitude && viewport.longitude && (
-
             <APIProvider apiKey='AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'>
                 <Map
                     mapId={'a6c72e4f93862a68'}
@@ -140,6 +140,7 @@ export default function Home() {
                 </Map>
             </APIProvider>
         )}
+        {profile && <UpcomingRideAlert profile={profile}/>}
     </Box>)
 
     return isLoggedIn ? (loggedIn) : (<LoginComp navigate={navigate} setIsLoggedIn={setIsLoggedIn}/>);

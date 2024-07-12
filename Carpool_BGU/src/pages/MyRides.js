@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import {fetchHome, fetchRides, getUserDetails} from "../common/fetchers";
 import RideItem from "../components/MyRidesRideItem";
 import {dateSort} from "../common/Functions";
+import {rideStatusTypes} from "../common/backendTerms";
 
 const MyRides = () => {
 
@@ -59,23 +60,36 @@ const MyRides = () => {
             <Box component="main" sx={{p: 3}}>
                 {userRides ? (
                         <List>
-                            <Typography>
-                                נסיעות עתידיות
-                            </Typography>
-                            {userRides.filter((ride) => dayjs(ride._departure_datetime).isAfter(dayjs())).length > 0 ?
+                            {userRides.filter((ride) => ride._status === rideStatusTypes.inProgress).length > 0 ?
+                                <React.Fragment>
+                                    <Typography>נסיעות שמתקיימות כעת</Typography>
+                                    {userRides
+                                        .filter((ride) => ride._status === rideStatusTypes.inProgress)
+                                        .sort((a, b) => dateSort(a, b))
+                                        .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>)
+                                        )}
+                                </React.Fragment>
+                                : (<React.Fragment/>)}
+                            <Divider/>
+                            <Typography>נסיעות עתידיות</Typography>
+                            {userRides.filter((ride) =>
+                                dayjs(ride._departure_datetime).isAfter(dayjs()) &&
+                                ride._status !== rideStatusTypes.inProgress).length > 0 ?
                                 userRides
-                                    .filter((ride) => dayjs(ride._departure_datetime).isAfter(dayjs()))
+                                    .filter((ride) => dayjs(ride._departure_datetime).isAfter(dayjs()) &&
+                                        ride._status !== rideStatusTypes.inProgress)
                                     .sort((a, b) => dateSort(a, b))
-                                    .map(ride => (
-                                        <RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>
-                                    )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
+                                    .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>))
+                                : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
                             <Divider/>
                             <Typography>
                                 נסיעות עבר
                             </Typography>
-                            {userRides.filter((ride) => dayjs(ride._departure_datetime).isBefore(dayjs())).length > 0 ?
+                            {userRides.filter((ride) => dayjs(ride._departure_datetime).isBefore(dayjs()) &&
+                                ride._status !== rideStatusTypes.inProgress).length > 0 ?
                                 userRides
-                                    .filter((ride) => dayjs(ride._departure_datetime).isBefore(dayjs()))
+                                    .filter((ride) => dayjs(ride._departure_datetime).isBefore(dayjs()) &&
+                                        ride._status !== rideStatusTypes.inProgress)
                                     .sort((a, b) => dateSort(b, a))
                                     .map(ride => (
                                         <RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>

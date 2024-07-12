@@ -68,9 +68,9 @@ const MyRides = () => {
                                         .sort((a, b) => dateSort(a, b))
                                         .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>)
                                         )}
+                                    <Divider/>
                                 </React.Fragment>
                                 : (<React.Fragment/>)}
-                            <Divider/>
                             <Typography>נסיעות עתידיות</Typography>
                             {userRides.filter((ride) =>
                                 dayjs(ride._departure_datetime).isAfter(dayjs()) &&

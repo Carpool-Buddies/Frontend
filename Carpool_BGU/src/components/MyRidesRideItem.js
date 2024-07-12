@@ -128,21 +128,22 @@ export function MyRideViewDialog(props) {
                         }
                     </List>
                 </Grid>
-                <Grid item xs={12}>
-                    <Typography variant="h5">בקשות הצטרפות</Typography>
-                    <List>
-                        {rideRequests && rideRequests.filter((request) => request.status === 'pending').length > 0 ?
-                            rideRequests
-                                .filter((request) => request.status === 'pending')
-                                .sort((a, b) => dateSort(a, b))
-                                .map(request => (
-                                    <RideViewRequestListItem key={request.id} request={request}
-                                                             rideDetails={props.rideDetails} type='pending'
-                                                             refreshRequestsList={refreshRequestsList}/>
-                                )) : <ListItem><ListItemText primary="לא נמצאו רשומות"/></ListItem>
-                        }
-                    </List>
-                </Grid>
+                {props.rideDetails._status === rideStatusTypes.waiting ?
+                    <Grid item xs={12}>
+                        <Typography variant="h5">בקשות הצטרפות</Typography>
+                        <List>
+                            {rideRequests && rideRequests.filter((request) => request.status === 'pending').length > 0 ?
+                                rideRequests
+                                    .filter((request) => request.status === 'pending')
+                                    .sort((a, b) => dateSort(a, b))
+                                    .map(request => (
+                                        <RideViewRequestListItem key={request.id} request={request}
+                                                                 rideDetails={props.rideDetails} type='pending'
+                                                                 refreshRequestsList={refreshRequestsList}/>
+                                    )) : <ListItem><ListItemText primary="לא נמצאו רשומות"/></ListItem>
+                            }
+                        </List>
+                    </Grid> : <React.Fragment/>}
             </Grid>
         </DialogContent>
         <DialogActions>

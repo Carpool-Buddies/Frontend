@@ -110,7 +110,7 @@ export function MyRideViewDialog(props) {
                 <RideViewMap rideDetails={props.rideDetails}/>
                 <Grid item xs={12}>
                     <Typography variant="h5">הערות</Typography>
-                    <Typography sx={{whiteSpace:'pre-wrap'}}>
+                    <Typography sx={{whiteSpace: 'pre-wrap'}}>
                         {props.rideDetails ? props.rideDetails._notes : "..."}
                     </Typography>
                 </Grid>
@@ -200,9 +200,7 @@ export default function RideItem({ride, userFirstName}) {
                     primary={"ב-" + (rideDetails ? dayjs(rideDetails._departure_datetime).format("D/M/YY, H:mm") : "...")}
                     secondary={
                         <React.Fragment>
-                            מ{departureCity === '' ? "..." : departureCity}
-                            <br/>
-                            ל{destinationCity === '' ? "..." : destinationCity}
+                            מ{departureCity === '' ? "..." : departureCity} ל{destinationCity === '' ? "..." : destinationCity}
                             <br/>
                             {rideDetails ? (rideDetails._confirmed_passengers + '/' + rideDetails._available_seats) : "..."} מקומות
                             נתפסו

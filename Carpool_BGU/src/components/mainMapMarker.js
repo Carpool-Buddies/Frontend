@@ -79,9 +79,7 @@ export default function MainMapMarker({ride}) {
                             }
                             secondary={
                                 <React.Fragment>
-                                    מ{departureCity ? departureCity : '...'}
-                                    <br/>
-                                    ל{destinationCity ? destinationCity : '...'}
+                                    מ{departureCity ? departureCity : '...'} ל{destinationCity ? destinationCity : '...'}
                                 </React.Fragment>
                             }
                         />

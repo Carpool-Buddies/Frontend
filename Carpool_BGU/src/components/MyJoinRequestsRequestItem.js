@@ -100,9 +100,7 @@ export default function JoinRequestItem({joinRequest, userFirstName}) {
                     primary={"ב-" + (joinRequestDetails ? dayjs(joinRequestDetails._departure_datetime).format("D/M/YY, H:mm") : "...")}
                     secondary={
                         <React.Fragment>
-                            מ{departureCity === '' ? "..." : departureCity}
-                            <br/>
-                            ל{destinationCity === '' ? "..." : destinationCity}
+                            מ{departureCity === '' ? "..." : departureCity} ל{destinationCity === '' ? "..." : destinationCity}
                             <br/>
                             {joinRequestDetails ?
                                 (joinRequestDetails.ride_status === rideRequestStatusTypes.accepted ? "הבקשה אושרה!" :

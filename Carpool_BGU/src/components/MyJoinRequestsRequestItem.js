@@ -44,7 +44,7 @@ function MyRideViewDialog(props) {
                 <RideViewMap rideDetails={props.joinRequestDetails}/>
                 <Grid item xs={12}>
                     <Typography variant="h5">הערות</Typography>
-                    <Typography>
+                    <Typography sx={{whiteSpace:'pre-wrap'}}>
                         {props.joinRequestDetails ? props.joinRequestDetails._notes : "..."}
                     </Typography>
                 </Grid>

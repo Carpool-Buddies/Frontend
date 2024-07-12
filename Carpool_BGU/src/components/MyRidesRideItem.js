@@ -96,7 +96,7 @@ export function MyRideViewDialog(props) {
                 <RideViewMap rideDetails={props.rideDetails}/>
                 <Grid item xs={12}>
                     <Typography variant="h5">הערות</Typography>
-                    <Typography>
+                    <Typography sx={{whiteSpace:'pre-wrap'}}>
                         {props.rideDetails ? props.rideDetails._notes : "..."}
                     </Typography>
                 </Grid>

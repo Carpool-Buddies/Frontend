@@ -87,7 +87,7 @@ export function RideInfoDialog(props) {
                     <RideViewMap rideDetails={props.rideDetails}/>
                     <Grid item xs={12}>
                         <Typography variant="h5">הערות מ{profile ? profile.first_name : "..."}</Typography>
-                        <Typography>
+                        <Typography sx={{whiteSpace:'pre-wrap'}}>
                             {props.rideDetails._notes}
                         </Typography>
                     </Grid>

@@ -46,7 +46,6 @@ const LocationSelector = ({title, setLocationDetails, actionText}) => {
 
     const findAddress = async () => {
         const ret = await getCoordsFromAddress(searchText)
-        console.log(ret)
         if (ret.results && ret.results.length > 0) {
             setCoords({lat: ret.results[0].geometry.location.lat, long: ret.results[0].geometry.location.lng})
             setLocationDetails({

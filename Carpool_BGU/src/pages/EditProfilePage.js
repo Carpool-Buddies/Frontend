@@ -22,11 +22,9 @@ const EditProfilePage = () => {
         getUserDetails(localStorage.getItem('access_token'))
             .then((ret) => {
                 if (ret.success) {
-                    console.log(ret)
                     getProfile(ret.id, localStorage.getItem('access_token'))
                         .then((ret) => {
                             if (ret.success) {
-                                console.log(ret)
                                 setFormData({
                                     password: '',
                                     first_name: ret.profile.first_name,

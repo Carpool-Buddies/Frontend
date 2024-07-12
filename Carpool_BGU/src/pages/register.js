@@ -61,7 +61,6 @@ const Register = () => {
             }, 2000); // Delay navigation by 2 seconds (2000 milliseconds)
         } else {
             toast.error(ret.error);
-            console.log(ret);
         }
     };
 

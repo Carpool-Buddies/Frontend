@@ -35,7 +35,6 @@ const MyJoinRequests = () => {
                 if (ret.success) {
                     setUserFirstName(ret.first_name)
                     fetchJoinRequests(ret.id, localStorage.getItem('access_token')).then((ret) => {
-                        console.log(ret.data)
                         setUserJoinRequests(ret.data)
                     })
                 }

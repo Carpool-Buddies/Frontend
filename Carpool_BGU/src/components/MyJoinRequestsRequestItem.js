@@ -20,7 +20,7 @@ import {getProfile} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
 import {AvatarInitials, formatPhoneNumber, setCityName} from "../common/Functions";
 import CallIcon from "@mui/icons-material/Call";
-import {rideRequestStatusTypes} from "../common/backendTerms";
+import {rideRequestStatusTypes, rideStatusTypes} from "../common/backendTerms";
 
 function MyRideViewDialog(props) {
     const [driverProfile, getDriverProfile] = useState(null)
@@ -58,6 +58,11 @@ function MyRideViewDialog(props) {
                             <ListItemText dir='ltr' primary={driverProfile ? formatPhoneNumber(driverProfile.phone_number) : "..."}/>
                         </ListItemButton>
                     </List>
+                </Grid>
+                <Grid item xs={12} textAlign='center'>
+                    <Button variant='contained' disabled={props.joinRequestDetails._status === rideStatusTypes.waiting}>
+                        דרג את {driverProfile ? driverProfile.first_name : "..."}
+                    </Button>
                 </Grid>
             </Grid>
         </DialogContent>

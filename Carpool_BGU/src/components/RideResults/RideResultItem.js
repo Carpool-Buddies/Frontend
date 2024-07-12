@@ -1,9 +1,9 @@
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {DialogContentText, IconButton, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
+import {DialogContentText, IconButton, ListItem, ListItemAvatar, ListItemText, Rating} from "@mui/material";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
-import {getProfile, joinRide} from "../../common/fetchers";
+import {getProfile, getRating, joinRide} from "../../common/fetchers";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -108,6 +108,7 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
     const [departureCity, setDepartureCity] = useState(null)
     const [destinationCity, setDestinationCity] = useState(null)
     const [rideDetails, setRideDetails] = useState(null)
+    const [userRating, setUserRating] = useState(0)
 
     const [moreDialogOpen, setMoreDialogOpen] = useState(false)
 
@@ -115,6 +116,10 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
         setCityName(item._departure_location, setDepartureCity)
         setCityName(item._destination, setDestinationCity)
         setRideDetails(item)
+        getRating(item._driver_id, localStorage.getItem('access_token'))
+            .then((ret) => {
+                setUserRating(ret.rating)
+            })
     }, []);
 
     const handleClickOpen = () => {
@@ -127,7 +132,7 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
 
     return (departureCity && destinationCity && item &&
         <React.Fragment>
-            <ListItem alignItems="flex-start"
+            <ListItem alignItems="center"
                       secondaryAction={
                           <IconButton variant='outlined' onClick={() => handleClickOpen()}><InfoIcon/></IconButton>
                       }>
@@ -135,11 +140,18 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
                 <ListItemText
                     primary={"ב-" + dayjs(rideDetails._departure_datetime).format("D/M/YY, H:mm")}
                     secondary={
-                        <React.Fragment>
-                            מ{departureCity}
-                            <br/>
-                            ל{destinationCity}
-                        </React.Fragment>
+                        <Typography component="div">
+                            <Grid>
+                                <Grid item>
+                                    <Typography component="span" color="secondary">
+                                        מ{departureCity} ל{destinationCity}
+                                    </Typography>
+                                </Grid>
+                                <Grid item>
+                                    <Rating value={userRating} size="small" readOnly/>
+                                </Grid>
+                            </Grid>
+                        </Typography>
                     }
                 />
                 <RideInfoDialog open={moreDialogOpen} onClose={handleClose} rideDetails={rideDetails}

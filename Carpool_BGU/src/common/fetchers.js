@@ -390,6 +390,28 @@ export const fetchJoinRequests = async (userId, token) => {
     }
 }
 
+// ---------- rating ----------
+
+export const getRating = async (userId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/Rating/rating/get-rating`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+                user_id: userId
+            })
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
+
+
 // ---------- other APIs ----------
 
 export const getCoordsFromAddress = async (addressText) => {

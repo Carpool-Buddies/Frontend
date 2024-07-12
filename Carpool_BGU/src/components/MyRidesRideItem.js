@@ -10,28 +10,33 @@ import {
     List,
     ListItem,
     ListItemAvatar,
-    ListItemText,
+    ListItemText, Rating,
     Typography
 } from "@mui/material";
 import dayjs from "dayjs";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {endRide, getProfile, manageRequestsGet, manageRequestsPut, startRide} from "../common/fetchers";
+import {endRide, getProfile, getRating, manageRequestsGet, manageRequestsPut, startRide} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
 import {AvatarInitials, datePassed, dateSort, setCityName, startRideIsDue} from "../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
 import ProfileViewDialog from "./ProfileViewDialog";
-import {rideRequestResponseTypes, rideStatusTypes} from "../common/backendTerms";
+import {rideRequestResponseTypes, rideRequestStatusTypes, rideStatusTypes} from "../common/backendTerms";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)
+    const [userRating, setUserRating] = useState(0)
     const [detailsDialogOpen, setDetailsDialogOpen] = React.useState(false);
 
     useEffect(() => {
         getProfile(props.request.passenger_id, localStorage.getItem('access_token'))
             .then((ret) => setProfile(ret.profile))
+        getRating(props.request.passenger_id, localStorage.getItem('access_token'))
+            .then((ret) => {
+                setUserRating(ret.rating)
+            })
     }, [])
 
     const handleDetailsDialogClickOpen = () => {
@@ -46,12 +51,17 @@ function RideViewRequestListItem(props) {
 
     return profile &&
         <ListItem
-            secondaryAction={props.type === 'accepted' ?
-                <ButtonGroup variant="contained">
-                    {/*TODO: re-enable when it's possible to remove user from ride*/}
-                    <IconButton onClick={() => handleDetailsDialogClickOpen()}><InfoIcon/></IconButton>
-                    <IconButton disabled><CloseIcon/></IconButton>
-                </ButtonGroup>
+            secondaryAction={props.type === rideRequestStatusTypes.accepted ?
+                props.rideDetails._status === rideStatusTypes.completed ?
+                    <ButtonGroup variant="contained">
+                        <Button>דרג</Button>
+                    </ButtonGroup>
+                    :
+                    <ButtonGroup variant="contained">
+                        {/*TODO: re-enable when it's possible to remove user from ride*/}
+                        <IconButton onClick={() => handleDetailsDialogClickOpen()}><InfoIcon/></IconButton>
+                        <IconButton disabled><CloseIcon/></IconButton>
+                    </ButtonGroup>
                 :
                 <ButtonGroup variant="contained">
                     <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
@@ -61,7 +71,8 @@ function RideViewRequestListItem(props) {
                 </ButtonGroup>
             }>
             <ListItemAvatar><AvatarInitials userId={profile.id}/></ListItemAvatar>
-            <ListItemText primary={profile.first_name + ' ' + profile.last_name}/>
+            <ListItemText primary={profile.first_name + ' ' + profile.last_name}
+                          secondary={<Rating value={userRating} size="small" readOnly/>}/>
             <ProfileViewDialog profile={profile} detailsDialogOpen={detailsDialogOpen}
                                setDetailsDialogOpen={setDetailsDialogOpen}/>
         </ListItem>;

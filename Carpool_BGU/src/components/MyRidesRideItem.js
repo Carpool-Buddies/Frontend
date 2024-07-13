@@ -24,11 +24,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
 import ProfileViewDialog from "./ProfileViewDialog";
 import {rideRequestResponseTypes, rideRequestStatusTypes, rideStatusTypes} from "../common/backendTerms";
+import RateUserDialog from "./rateUserDialog";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)
     const [userRating, setUserRating] = useState(0)
     const [detailsDialogOpen, setDetailsDialogOpen] = React.useState(false);
+    const [ratingDialogOpen, setRatingDialogOpen] = useState(false)
 
     useEffect(() => {
         getProfile(props.request.passenger_id, localStorage.getItem('access_token'))
@@ -45,7 +47,6 @@ function RideViewRequestListItem(props) {
 
     const handleRespondToRequest = async (status) => {
         await manageRequestsPut(props.rideDetails._driver_id, props.rideDetails.ride_id, status, props.request.id, localStorage.getItem('access_token'))
-        //TODO: handle success
         props.refreshRequestsList()
     }
 
@@ -54,7 +55,7 @@ function RideViewRequestListItem(props) {
             secondaryAction={props.type === rideRequestStatusTypes.accepted ?
                 props.rideDetails._status === rideStatusTypes.completed ?
                     <ButtonGroup variant="contained">
-                        <Button>דרג</Button>
+                        <Button onClick={() => setRatingDialogOpen(true)}>דרג</Button>
                     </ButtonGroup>
                     :
                     <ButtonGroup variant="contained">
@@ -75,6 +76,7 @@ function RideViewRequestListItem(props) {
                           secondary={<Rating value={userRating} size="small" readOnly/>}/>
             <ProfileViewDialog profile={profile} detailsDialogOpen={detailsDialogOpen}
                                setDetailsDialogOpen={setDetailsDialogOpen}/>
+            <RateUserDialog profile={profile} ratingDialogOpen={ratingDialogOpen} setRatingDialogOpen={setRatingDialogOpen}/>
         </ListItem>;
 }
 

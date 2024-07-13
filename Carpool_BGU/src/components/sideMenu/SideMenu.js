@@ -9,12 +9,12 @@ import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SideMenuItems from "./SideMenuItems";
-import {contextTypes} from "../DialogContexts";
+import {contextTypes} from "../../common/DialogContexts";
 import {AvatarInitials} from "../../common/Functions";
 import verifiedBadge from '../../static/BGU_logo.png'
 import MenuIcon from "@mui/icons-material/Menu";
 import {useState} from "react";
-import FormDialog from "../PostFutureRideDialog";
+import FormDialog from "../PostRideDialogs/PostFutureRideDialog";
 import VerifyProfileDialog from "../verifyProfileDialog";
 
 const SideMenu = ({navigate, handleLogout, profile}) => {

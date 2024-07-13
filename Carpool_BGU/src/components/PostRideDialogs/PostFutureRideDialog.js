@@ -6,10 +6,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextMobileStepper from "./Stepper";
 import {useState} from "react";
-import {findRide, postFutureRide, postRideJoinRequest} from "../common/fetchers";
+import {findRide, postFutureRide, postRideJoinRequest} from "../../common/fetchers";
 import dayjs from "dayjs";
 import {DialogContentText} from "@mui/material";
-import {contextTypes, publishRideSearchContext, publishRideContext, findRideContext} from "./DialogContexts"
+import {contextTypes, publishRideSearchContext, publishRideContext, findRideContext} from "../../common/DialogContexts"
 
 export default function FormDialog({dialogContext, openDialog, handleCloseDialog}) {
     const [open, setOpen] = useState(false);

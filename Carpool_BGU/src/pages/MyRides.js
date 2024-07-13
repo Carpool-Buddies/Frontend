@@ -5,7 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {fetchHome, fetchRides, getUserDetails} from "../common/fetchers";
-import RideItem from "../components/MyRidesRideItem";
+import RideItem from "../components/MyRides/MyRidesRideItem";
 import {dateSort} from "../common/Functions";
 import {rideStatusTypes} from "../common/backendTerms";
 

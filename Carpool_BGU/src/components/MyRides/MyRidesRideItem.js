@@ -16,15 +16,15 @@ import {
 import dayjs from "dayjs";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {endRide, getProfile, getRating, manageRequestsGet, manageRequestsPut, startRide} from "../common/fetchers";
-import RideViewMap from "./RideViewMap";
-import {AvatarInitials, datePassed, dateSort, setCityName, startRideIsDue} from "../common/Functions";
+import {endRide, getProfile, getRating, manageRequestsGet, manageRequestsPut, startRide} from "../../common/fetchers";
+import RideViewMap from "../RideViewMap";
+import {AvatarInitials, datePassed, dateSort, setCityName, startRideIsDue} from "../../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
 import ProfileViewDialog from "./ProfileViewDialog";
-import {rideRequestResponseTypes, rideRequestStatusTypes, rideStatusTypes} from "../common/backendTerms";
-import RateUserDialog from "./rateUserDialog";
+import {rideRequestResponseTypes, rideRequestStatusTypes, rideStatusTypes} from "../../common/backendTerms";
+import RateUserDialog from "../rateUserDialog";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)

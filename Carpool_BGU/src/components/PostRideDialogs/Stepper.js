@@ -12,8 +12,8 @@ import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
 import {Slider} from "@mui/material";
-import {contextTypes} from "./DialogContexts";
-import RideResults from "./RideResults/RideResults";
+import {contextTypes} from "../../common/DialogContexts";
+import RideResults from "../RideResults/RideResults";
 
 function ExtraDetailsForm({context, notes, dateTime, setRideDetails}) {
     const setAvSeats = (avSeats) => {

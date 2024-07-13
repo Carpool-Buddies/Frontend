@@ -10,7 +10,7 @@ import {
     ListItemText
 } from "@mui/material";
 import CallIcon from "@mui/icons-material/Call";
-import {formatPhoneNumber} from "../common/Functions";
+import {formatPhoneNumber} from "../../common/Functions";
 
 export default function ProfileViewDialog(props) {
 

@@ -1,7 +1,7 @@
 import {Alert, AlertTitle} from "@mui/material";
 import Button from "@mui/material/Button";
 import dayjs from "dayjs";
-import {MyRideViewDialog} from "./MyRidesRideItem";
+import {MyRideViewDialog} from "./MyRides/MyRidesRideItem";
 import * as React from "react";
 import {useEffect, useState} from "react";
 import {fetchRides} from "../common/fetchers";

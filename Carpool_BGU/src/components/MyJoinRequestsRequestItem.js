@@ -21,9 +21,11 @@ import RideViewMap from "./RideViewMap";
 import {AvatarInitials, formatPhoneNumber, setCityName} from "../common/Functions";
 import CallIcon from "@mui/icons-material/Call";
 import {rideRequestStatusTypes, rideStatusTypes} from "../common/backendTerms";
+import RateUserDialog from "./rateUserDialog";
 
 function MyRideViewDialog(props) {
     const [driverProfile, getDriverProfile] = useState(null)
+    const [ratingDialogOpen, setRatingDialogOpen] = useState(false)
 
     useEffect(() => {
         getProfile(props.joinRequestDetails._driver_id, localStorage.getItem('access_token'))
@@ -60,11 +62,14 @@ function MyRideViewDialog(props) {
                     </List>
                 </Grid>
                 <Grid item xs={12} textAlign='center'>
-                    <Button variant='contained' disabled={props.joinRequestDetails._status === rideStatusTypes.waiting}>
+                    <Button onClick={() => setRatingDialogOpen(true)} variant='contained'
+                            disabled={props.joinRequestDetails._status === rideStatusTypes.waiting}>
                         דרג את {driverProfile ? driverProfile.first_name : "..."}
                     </Button>
                 </Grid>
             </Grid>
+            {driverProfile && <RateUserDialog profile={driverProfile} ratingDialogOpen={ratingDialogOpen}
+                                              setRatingDialogOpen={setRatingDialogOpen}/>}
         </DialogContent>
         <DialogActions>
             <Button onClick={props.onClose}>חזרה לתוצאות</Button>

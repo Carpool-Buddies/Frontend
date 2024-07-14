@@ -115,7 +115,7 @@ function RideViewRequestListItem(props) {
                 secondary={userRating ?
                     <Typography component="div">
                         <Box display='flex' alignItems='center'>
-                            <Rating value={userRating.rating} size="small" readOnly/>
+                            <Rating value={userRating.rating} size="small" readOnly precision={0.5}/>
                             <Typography component="span">
                                 ({userRating.num_of_raters})
                             </Typography>

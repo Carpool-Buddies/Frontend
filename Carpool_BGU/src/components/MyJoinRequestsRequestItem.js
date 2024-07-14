@@ -75,7 +75,7 @@ function MyRideViewDialog(props) {
                     <Grid item xs={12} textAlign='center'>
                         <Button onClick={() => setRatingDialogOpen(true)} variant='contained'
                                 disabled={!notYetRated()}>
-                            {notYetRated() ?
+                            {notYetRated() || props.joinRequestDetails._status !== rideStatusTypes.completed ?
                                 <Typography>
                                     דרג את {driverProfile ? driverProfile.first_name : "..."}
                                 </Typography> :

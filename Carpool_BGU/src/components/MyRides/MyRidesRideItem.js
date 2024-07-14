@@ -42,6 +42,7 @@ function RideViewRequestListItem(props) {
     const [userRating, setUserRating] = useState()
     const [detailsDialogOpen, setDetailsDialogOpen] = React.useState(false);
     const [ratingDialogOpen, setRatingDialogOpen] = useState(false)
+    const [rated, setRated] = useState(false)
 
     useEffect(() => {
         getProfile(props.request.passenger_id, localStorage.getItem('access_token'))
@@ -85,13 +86,14 @@ function RideViewRequestListItem(props) {
     const RateButtons = () => {
         return <React.Fragment>
             <ButtonGroup variant="contained">
-                <Button onClick={() => setRatingDialogOpen(true)} disabled={!props.ratingData}>
-                    {props.ratingData ? 'דרג' : 'דורג'}
+                <Button onClick={() => setRatingDialogOpen(true)} disabled={!props.ratingData || rated}>
+                    {!rated ? (props.ratingData ? 'דרג' : 'דורג') : 'דורג'}
                 </Button>
             </ButtonGroup>
             {props.ratingData && <RateUserDialog profile={profile} ratingId={props.ratingData.rating_id}
                                                  ratingDialogOpen={ratingDialogOpen}
-                                                 setRatingDialogOpen={setRatingDialogOpen} userId={props.userId}/>}
+                                                 setRatingDialogOpen={setRatingDialogOpen} userId={props.userId}
+            setRated={setRated}/>}
         </React.Fragment>
     }
 

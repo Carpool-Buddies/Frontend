@@ -27,6 +27,7 @@ function MyRideViewDialog(props) {
     const [driverProfile, getDriverProfile] = useState(null)
     const [missingRatings, setMissingRatings] = useState(null)
     const [ratingDialogOpen, setRatingDialogOpen] = useState(false)
+    const [rated, setRated] = useState(false)
 
     const notYetRated = () => {
         return props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
@@ -74,14 +75,18 @@ function MyRideViewDialog(props) {
                 {props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
                     <Grid item xs={12} textAlign='center'>
                         <Button onClick={() => setRatingDialogOpen(true)} variant='contained'
-                                disabled={!notYetRated()}>
-                            {notYetRated() || props.joinRequestDetails._status !== rideStatusTypes.completed ?
+                                disabled={!notYetRated() || rated}>
+                            {!rated ? notYetRated() || props.joinRequestDetails._status !== rideStatusTypes.completed ?
                                 <Typography>
                                     דרג את {driverProfile ? driverProfile.first_name : "..."}
                                 </Typography> :
                                 <Typography>
                                     דירגת את {driverProfile ? driverProfile.first_name : "..."}
-                                </Typography>}
+                                </Typography> :
+                                <Typography>
+                                    דירגת את {driverProfile ? driverProfile.first_name : "..."}
+                                </Typography>
+                            }
                         </Button>
                     </Grid>}
                 {props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
@@ -99,7 +104,7 @@ function MyRideViewDialog(props) {
                                                  ratingId={missingRatings.find(item => item.user_id === props.joinRequestDetails._driver_id).rating_id || -1}
                                                  ratingDialogOpen={ratingDialogOpen}
                                                  setRatingDialogOpen={setRatingDialogOpen}
-                                                 userId={props.userId}/>}
+                                                 userId={props.userId} setRated={setRated}/>}
         </DialogContent>
         <DialogActions>
             <Button onClick={props.onClose}>חזרה לתוצאות</Button>

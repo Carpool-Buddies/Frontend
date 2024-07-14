@@ -23,6 +23,7 @@ export default function RateUserDialog(props) {
                             {'הדירוג נרשם בהצלחה!'}
                         </Typography>
                     );
+                    props.setRated(true)
                     handleClose()
                 } else {
                     toast.error(

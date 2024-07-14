@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import {AdvancedMarker, APIProvider, Map} from "@vis.gl/react-google-maps";
 import RoomIcon from "@mui/icons-material/Room";
 import * as React from "react";
-import {Circle} from "./circle";
+import {Circle} from "../common/circle";
 
 export default function RideViewMap({rideDetails}) {
 

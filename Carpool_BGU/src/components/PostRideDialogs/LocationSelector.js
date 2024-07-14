@@ -4,12 +4,12 @@ import Box from "@mui/material/Box";
 import RoomIcon from '@mui/icons-material/Room';
 import {CircularProgress, IconButton, InputAdornment, Slider} from "@mui/material";
 import TextField from "@mui/material/TextField";
-import {getCoordsFromAddress} from "../common/fetchers";
+import {getCoordsFromAddress} from "../../common/fetchers";
 import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from "@mui/material/Typography";
-import {Circle} from "./circle";
+import {Circle} from "../../common/circle";
 
 function CustomTabPanel(props) {
     const {children, value, index, ...other} = props;
@@ -46,7 +46,6 @@ const LocationSelector = ({title, setLocationDetails, actionText}) => {
 
     const findAddress = async () => {
         const ret = await getCoordsFromAddress(searchText)
-        console.log(ret)
         if (ret.results && ret.results.length > 0) {
             setCoords({lat: ret.results[0].geometry.location.lat, long: ret.results[0].geometry.location.lng})
             setLocationDetails({

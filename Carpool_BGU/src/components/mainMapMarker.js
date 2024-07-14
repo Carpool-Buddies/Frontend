@@ -2,14 +2,18 @@ import {AvatarInitials, setCityName} from "../common/Functions";
 import {AdvancedMarker, InfoWindow, useAdvancedMarkerRef} from "@vis.gl/react-google-maps";
 import * as React from "react";
 import {useCallback, useEffect, useState} from "react";
-import {getProfile} from "../common/fetchers";
-import {IconButton, ListItem, ListItemText} from "@mui/material";
+import {getComments, getProfile} from "../common/fetchers";
+import {IconButton, ListItem, ListItemText, Rating} from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import dayjs from "dayjs";
 import {RideInfoDialog} from "./RideResults/RideResultItem";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 export default function MainMapMarker({ride}) {
     const [profile, setProfile] = useState(null)
+    const [userRating, setUserRating] = useState(0)
     const [markerRef, marker] = useAdvancedMarkerRef();
     const [infoWindowShown, setInfoWindowShown] = useState(false);
 
@@ -26,6 +30,8 @@ export default function MainMapMarker({ride}) {
             .catch(() => {
                 setProfile({first_name: "CPB", last_name: ""})
             })
+        getComments(ride.rideDetails._driver_id, localStorage.getItem('access_token'))
+            .then((ret) => setUserRating(ret.comments))
     }, [])
 
     const handleMarkerClick = useCallback(() => {
@@ -78,11 +84,27 @@ export default function MainMapMarker({ride}) {
                                 </React.Fragment>
                             }
                             secondary={
-                                <React.Fragment>
-                                    מ{departureCity ? departureCity : '...'}
-                                    <br/>
-                                    ל{destinationCity ? destinationCity : '...'}
-                                </React.Fragment>
+                                <Typography component="div">
+                                    <Grid>
+                                        <Grid item>
+                                            <Typography component="span" color="secondary">
+                                                מ{departureCity ? departureCity : '...'} ל{destinationCity ? destinationCity : '...'}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            {userRating ? <Grid item>
+                                                <Typography component="div">
+                                                    <Box display='flex' alignItems='center'>
+                                                        <Rating value={userRating.rating} size="small" readOnly/>
+                                                        <Typography component="span">
+                                                            ({userRating.num_of_raters})
+                                                        </Typography>
+                                                    </Box>
+                                                </Typography>
+                                            </Grid> : <React.Fragment/>}
+                                        </Grid>
+                                    </Grid>
+                                </Typography>
                             }
                         />
                         <RideInfoDialog open={moreDialogOpen} onClose={handleDialogClose} rideDetails={ride.rideDetails}

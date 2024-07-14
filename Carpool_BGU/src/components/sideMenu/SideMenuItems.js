@@ -1,4 +1,4 @@
-import {contextTypes} from "../DialogContexts";
+import {contextTypes} from "../../common/DialogContexts";
 
 export default [
     {

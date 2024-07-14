@@ -1,4 +1,4 @@
-import {Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
+import {Divider, Drawer, Fab, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from "@mui/material";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import HailIcon from '@mui/icons-material/Hail';
@@ -9,11 +9,25 @@ import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SideMenuItems from "./SideMenuItems";
-import {contextTypes} from "../DialogContexts";
+import {contextTypes} from "../../common/DialogContexts";
 import {AvatarInitials} from "../../common/Functions";
 import verifiedBadge from '../../static/BGU_logo.png'
+import MenuIcon from "@mui/icons-material/Menu";
+import {useState} from "react";
+import FormDialog from "../PostRideDialogs/PostFutureRideDialog";
+import VerifyProfileDialog from "../verifyProfileDialog";
 
-const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, profile, setOpenVerifyProfileDialog}) => {
+const SideMenu = ({navigate, handleLogout, profile}) => {
+    const [open, setOpen] = useState(false);
+
+    const [openPostRideDialog, setOpenPostRideDialog] = useState(false);
+    const [openRideRequestDialog, setOpenRideRequestDialog] = useState(false);
+    const [openFindRideDialog, setOpenFindRideDialog] = useState(false);
+    const [openVerifyProfileDialog, setOpenVerifyProfileDialog] = useState(false)
+
+    const toggleSideMenu = (newOpen) => () => {
+        setOpen(newOpen);
+    };
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
@@ -81,9 +95,56 @@ const SideMenu = ({open, setOpen, navigate, handleOpenDialog, handleLogout, prof
         </Box>
     );
 
-    return (<Drawer open={open} onClose={toggleDrawer(false)}>
-        {DrawerList}
-    </Drawer>)
+    const handleOpenDialog = (dialogKey) => {
+        switch (dialogKey) {
+            case contextTypes.publishRide:
+                setOpenPostRideDialog(true)
+                break
+            case contextTypes.publishRideSearch:
+                setOpenRideRequestDialog(true)
+                break
+            case contextTypes.findRide:
+                setOpenFindRideDialog(true)
+                break
+            default:
+                break
+        }
+    };
+
+    const handleCloseDialog = (dialogKey) => {
+        switch (dialogKey) {
+            case contextTypes.publishRide:
+                setOpenPostRideDialog(false);
+                break
+            case contextTypes.publishRideSearch:
+                setOpenRideRequestDialog(false)
+                break
+            case contextTypes.findRide:
+                setOpenFindRideDialog(false)
+                break
+            default:
+                break
+        }
+    };
+
+    return (
+        <React.Fragment>
+            <Fab variant="extended" color='primary'
+                 onClick={toggleSideMenu(true)}
+                 style={{position: 'absolute', top: 25, right: 25, zIndex: 10}}>
+                <MenuIcon sx={{mr: 1}}/>
+                תפריט
+            </Fab>
+            <Drawer open={open} onClose={toggleDrawer(false)}>
+                {DrawerList}
+            </Drawer>
+            <FormDialog dialogContext={contextTypes.publishRide} openDialog={openPostRideDialog}
+                        handleCloseDialog={handleCloseDialog}/>
+            <FormDialog dialogContext={contextTypes.findRide} openDialog={openFindRideDialog}
+                        handleCloseDialog={handleCloseDialog}/>
+            {profile && <VerifyProfileDialog profile={profile} open={openVerifyProfileDialog}
+                                             handleCloseDialog={() => setOpenVerifyProfileDialog(false)}/>}
+        </React.Fragment>)
 
 }
 

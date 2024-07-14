@@ -12,8 +12,8 @@ import {DateTimePicker} from '@mui/x-date-pickers/DateTimePicker';
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
 import {Slider} from "@mui/material";
-import {contextTypes} from "./DialogContexts";
-import RideResults from "./RideResults/RideResults";
+import {contextTypes} from "../../common/DialogContexts";
+import RideResults from "../RideResults/RideResults";
 
 function ExtraDetailsForm({context, notes, dateTime, setRideDetails}) {
     const setAvSeats = (avSeats) => {
@@ -60,7 +60,7 @@ function ExtraDetailsForm({context, notes, dateTime, setRideDetails}) {
                 <Grid item xs={12}>
                     <DateTimePicker margin="normal"
                                     label={context.dateTime}
-                                    onChange={(v) => setDateTime(v.toISOString())}
+                                    onChange={(v) => setDateTime(v.format('YYYY-MM-DDTHH:mm:ss.SSS') + 'Z')}
                                     defaultValue={dateTime}
                     />
                 </Grid>

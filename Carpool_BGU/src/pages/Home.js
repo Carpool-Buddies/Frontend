@@ -15,7 +15,7 @@ import UpcomingRideAlert from "../components/upcomingRideAlert";
 
 export default function Home() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     const [viewport, setViewport] = useState({})
     const [rideMarkers, setRideMarkers] = useState([]);
@@ -29,12 +29,17 @@ export default function Home() {
             fetchHome(localStorage.getItem('access_token')).then((ret) => {
                 if (ret.success)
                     setIsLoggedIn(true)
-                else
+                else {
                     localStorage.removeItem('access_token')
+                    setIsLoggedIn(false)
+                }
                 if (!ret) {
                     console.log('Access token based login failed')
+                    setIsLoggedIn(false)
                 }
             }).catch(() => localStorage.removeItem('access_token'))
+        else
+            setIsLoggedIn(false)
     }, []);
 
     useEffect(() => {

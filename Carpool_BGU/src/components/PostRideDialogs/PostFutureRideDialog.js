@@ -50,6 +50,25 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
         deltaHours: 0.5
     })
 
+    const resetAndClose = (link) => {
+        setRideDetails({
+            origin: {
+                coords: {lat: 0, long: 0},
+                radius: 0.0
+            },
+            destination: {
+                coords: {lat: 0, long: 0},
+                radius: 0.0
+            },
+            avSeats: 0,
+            dateTime: roundToNearest30Minutes(dayjs().add(6, 'h')),
+            notes: '',
+            deltaHours: 0.5
+        })
+        setActiveStep(0)
+        handleCloseDialog(link)
+    }
+
     async function handleSubmit(event) {
         event.preventDefault();
         let ret =
@@ -64,7 +83,7 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
                 handleClickOpen()
                 setSuccessTitle('הפעולה הושלמה בהצלחה!')
                 setSuccessDescription(context.successDescription)
-                handleCloseDialog(context.dialogLink)
+                resetAndClose(context.dialogLink)
             }
         } else {
             handleClickOpen()
@@ -74,7 +93,7 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
     }
 
     return (<React.Fragment>
-        <Dialog open={openDialog} onClose={() => handleCloseDialog(context.dialogLink)} fullWidth={true} maxWidth={'xs'}
+        <Dialog open={openDialog} onClose={() => resetAndClose(context.dialogLink)} fullWidth={true} maxWidth={'xs'}
                 PaperProps={{
                     component: 'form', onSubmit: (event) => {
                         handleSubmit(event);
@@ -90,7 +109,7 @@ export default function FormDialog({dialogContext, openDialog, handleCloseDialog
                     searchResults={searchResults}
                     activeStep={activeStep}
                     setActiveStep={setActiveStep}
-                handleCloseDialog={handleCloseDialog}/>
+                handleCloseDialog={resetAndClose}/>
             </DialogContent>
             <DialogActions>
                 {activeStep!==3 &&

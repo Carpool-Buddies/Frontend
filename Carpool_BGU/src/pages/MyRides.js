@@ -12,6 +12,7 @@ import {rideStatusTypes} from "../common/backendTerms";
 const MyRides = () => {
 
     const [userFirstName, setUserFirstName] = useState('')
+    const [userId, setUserId] = useState(null)
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [userRides, setUserRides] = useState(null)
 
@@ -35,6 +36,7 @@ const MyRides = () => {
             getUserDetails(localStorage.getItem('access_token')).then((ret) => {
                 if (ret.success) {
                     setUserFirstName(ret.first_name)
+                    setUserId(ret.id)
                     fetchRides(ret.id, localStorage.getItem('access_token')).then((ret) => {
                         setUserRides(ret.ride_posts)
                     })
@@ -66,7 +68,7 @@ const MyRides = () => {
                                     {userRides
                                         .filter((ride) => ride._status === rideStatusTypes.inProgress)
                                         .sort((a, b) => dateSort(a, b))
-                                        .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>)
+                                        .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName} userId={userId}/>)
                                         )}
                                     <Divider/>
                                 </React.Fragment>
@@ -79,7 +81,7 @@ const MyRides = () => {
                                     .filter((ride) => dayjs(ride._departure_datetime).isAfter(dayjs()) &&
                                         ride._status !== rideStatusTypes.inProgress)
                                     .sort((a, b) => dateSort(a, b))
-                                    .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>))
+                                    .map(ride => (<RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName} userId={userId}/>))
                                 : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
                             <Divider/>
                             <Typography>
@@ -92,7 +94,7 @@ const MyRides = () => {
                                         ride._status !== rideStatusTypes.inProgress)
                                     .sort((a, b) => dateSort(b, a))
                                     .map(ride => (
-                                        <RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName}/>
+                                        <RideItem key={ride.ride_id} ride={ride} userFirstName={userFirstName} userId={userId}/>
                                     )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
                         </List>) :
                     (<div>לא מוכן עדיין</div>)}

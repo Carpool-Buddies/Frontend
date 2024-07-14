@@ -11,6 +11,7 @@ import JoinRequestItem from "../components/MyJoinRequestsRequestItem";
 const MyJoinRequests = () => {
 
     const [userFirstName, setUserFirstName] = useState('')
+    const [userId, setUserId] = useState(null)
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [userJoinRequests, setUserJoinRequests] = useState(null)
 
@@ -34,6 +35,7 @@ const MyJoinRequests = () => {
             getUserDetails(localStorage.getItem('access_token')).then((ret) => {
                 if (ret.success) {
                     setUserFirstName(ret.first_name)
+                    setUserId(ret.id)
                     fetchJoinRequests(ret.id, localStorage.getItem('access_token')).then((ret) => {
                         setUserJoinRequests(ret.data)
                     })
@@ -67,7 +69,7 @@ const MyJoinRequests = () => {
                                     .filter((ride) => dayjs(ride._departure_datetime).isAfter(dayjs()))
                                     .sort((a, b) => dateSort(a, b))
                                     .map(ride => (
-                                        <JoinRequestItem key={ride.ride_id} joinRequest={ride} userFirstName={userFirstName}/>
+                                        <JoinRequestItem key={ride.ride_id} joinRequest={ride} userFirstName={userFirstName} userId={userId}/>
                                     )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
                             <Typography>
                                 נסיעות עבר
@@ -77,7 +79,7 @@ const MyJoinRequests = () => {
                                     .filter((ride) => dayjs(ride._departure_datetime).isBefore(dayjs()))
                                     .sort((a, b) => dateSort(b, a))
                                     .map(ride => (
-                                        <JoinRequestItem key={ride.ride_id} joinRequest={ride} />
+                                        <JoinRequestItem key={ride.ride_id} joinRequest={ride} userFirstName={userFirstName} userId={userId}/>
                                     )) : <ListItem><ListItemText primary='לא נמצאו רשומות'/></ListItem>}
                         </List>) :
                     (<div>לא מוכן עדיין</div>)}

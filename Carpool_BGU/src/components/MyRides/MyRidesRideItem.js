@@ -10,13 +10,22 @@ import {
     List,
     ListItem,
     ListItemAvatar,
-    ListItemText, Rating,
+    ListItemText,
+    Rating,
     Typography
 } from "@mui/material";
 import dayjs from "dayjs";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {endRide, getProfile, getRating, manageRequestsGet, manageRequestsPut, startRide} from "../../common/fetchers";
+import {
+    endRide,
+    getComments,
+    getProfile,
+    manageRequestsGet,
+    manageRequestsPut,
+    myRatingsByRide,
+    startRide
+} from "../../common/fetchers";
 import RideViewMap from "../RideViewMap";
 import {AvatarInitials, datePassed, dateSort, setCityName, startRideIsDue} from "../../common/Functions";
 import CheckIcon from '@mui/icons-material/Check';
@@ -25,19 +34,20 @@ import InfoIcon from '@mui/icons-material/Info';
 import ProfileViewDialog from "./ProfileViewDialog";
 import {rideRequestResponseTypes, rideRequestStatusTypes, rideStatusTypes} from "../../common/backendTerms";
 import RateUserDialog from "../rateUserDialog";
+import Box from "@mui/material/Box";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)
-    const [userRating, setUserRating] = useState(0)
+    const [userRating, setUserRating] = useState()
     const [detailsDialogOpen, setDetailsDialogOpen] = React.useState(false);
     const [ratingDialogOpen, setRatingDialogOpen] = useState(false)
 
     useEffect(() => {
         getProfile(props.request.passenger_id, localStorage.getItem('access_token'))
             .then((ret) => setProfile(ret.profile))
-        getRating(props.request.passenger_id, localStorage.getItem('access_token'))
+        getComments(props.request.passenger_id, localStorage.getItem('access_token'))
             .then((ret) => {
-                setUserRating(ret.rating)
+                setUserRating(ret.comments)
             })
     }, [])
 
@@ -50,33 +60,68 @@ function RideViewRequestListItem(props) {
         props.refreshRequestsList()
     }
 
-    return profile &&
-        <ListItem
-            secondaryAction={props.type === rideRequestStatusTypes.accepted ?
-                props.rideDetails._status === rideStatusTypes.completed ?
-                    <ButtonGroup variant="contained">
-                        <Button onClick={() => setRatingDialogOpen(true)}>דרג</Button>
-                    </ButtonGroup>
-                    :
-                    <ButtonGroup variant="contained">
-                        {/*TODO: re-enable when it's possible to remove user from ride*/}
-                        <IconButton onClick={() => handleDetailsDialogClickOpen()}><InfoIcon/></IconButton>
-                        <IconButton disabled><CloseIcon/></IconButton>
-                    </ButtonGroup>
-                :
-                <ButtonGroup variant="contained">
-                    <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
-                                onClick={() => handleRespondToRequest(rideRequestResponseTypes.accept)}><CheckIcon/></IconButton>
-                    <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
-                                onClick={() => handleRespondToRequest('reject')}><CloseIcon/></IconButton>
-                </ButtonGroup>
-            }>
-            <ListItemAvatar><AvatarInitials userId={profile.id}/></ListItemAvatar>
-            <ListItemText primary={profile.first_name + ' ' + profile.last_name}
-                          secondary={<Rating value={userRating} size="small" readOnly/>}/>
+    const ApproveRejectButtons = () => {
+        return <ButtonGroup variant="contained">
+            <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
+                        onClick={() => handleRespondToRequest(rideRequestResponseTypes.accept)}><CheckIcon/></IconButton>
+            <IconButton disabled={datePassed(props.rideDetails._departure_datetime)}
+                        onClick={() => handleRespondToRequest(rideRequestResponseTypes.reject)}><CloseIcon/></IconButton>
+        </ButtonGroup>
+    }
+
+    const DetailsButtons = () => {
+        return <React.Fragment>
+            <ButtonGroup variant="contained">
+                {/*TODO: re-enable when it's possible to remove user from ride*/}
+                <IconButton onClick={() => handleDetailsDialogClickOpen()}><InfoIcon/></IconButton>
+                <IconButton disabled><CloseIcon/></IconButton>
+            </ButtonGroup>
             <ProfileViewDialog profile={profile} detailsDialogOpen={detailsDialogOpen}
                                setDetailsDialogOpen={setDetailsDialogOpen}/>
-            <RateUserDialog profile={profile} ratingDialogOpen={ratingDialogOpen} setRatingDialogOpen={setRatingDialogOpen}/>
+        </React.Fragment>
+    }
+
+    const RateButtons = () => {
+        return <React.Fragment>
+            <ButtonGroup variant="contained">
+                <Button onClick={() => setRatingDialogOpen(true)} disabled={!props.ratingData}>
+                    {props.ratingData ? 'דרג' : 'דורג'}
+                </Button>
+            </ButtonGroup>
+            {props.ratingData && <RateUserDialog profile={profile} ratingId={props.ratingData.rating_id}
+                                                 ratingDialogOpen={ratingDialogOpen}
+                                                 setRatingDialogOpen={setRatingDialogOpen} userId={props.userId}/>}
+        </React.Fragment>
+    }
+
+    return profile &&
+        <ListItem
+            secondaryAction={
+                props.type === rideRequestStatusTypes.pending ?
+                    props.rideDetails._status === rideStatusTypes.waiting ?
+                        <ApproveRejectButtons/> :
+                        <React.Fragment/>
+                    :
+                    props.type === rideRequestStatusTypes.accepted ?
+                        props.rideDetails._status === rideStatusTypes.completed ?
+                            <RateButtons/> :
+                            <DetailsButtons/>
+                        :
+                        <React.Fragment/>
+            }>
+            <ListItemAvatar><AvatarInitials userId={profile.id}/></ListItemAvatar>
+            <ListItemText
+                primary={profile.first_name + ' ' + profile.last_name}
+                secondary={userRating ?
+                    <Typography component="div">
+                        <Box display='flex' alignItems='center'>
+                            <Rating value={userRating.rating} size="small" readOnly/>
+                            <Typography component="span">
+                                ({userRating.num_of_raters})
+                            </Typography>
+                        </Box>
+                    </Typography>
+                    : <React.Fragment/>}/>
         </ListItem>;
 }
 
@@ -84,6 +129,7 @@ export function MyRideViewDialog(props) {
 
     const [rideRequests, setRideRequests] = useState([])
     const [rideActionButtonLabel, setRideActionButtonLabel] = useState('טוען')
+    const [missingRatings, setMissingRatings] = useState(null)
 
     const refreshRequestsList = () => {
         manageRequestsGet(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
@@ -103,13 +149,15 @@ export function MyRideViewDialog(props) {
     }
 
     useEffect(() => {
+        myRatingsByRide(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
+            .then((ret) => setMissingRatings(ret.my_ratings))
         setRideActionButtonLabel(
             props.rideDetails._status === rideStatusTypes.waiting ? 'התחל נסיעה' :
                 props.rideDetails._status === rideStatusTypes.inProgress ? 'סיים נסיעה' : 'הנסיעה הסתיימה')
         refreshRequestsList()
     }, []);
 
-    return <Dialog open={props.open} onClose={props.onClose}
+    return missingRatings && <Dialog open={props.open} onClose={props.onClose}
                    fullWidth={true}
                    maxWidth={"xs"}>
         <DialogTitle>
@@ -130,13 +178,16 @@ export function MyRideViewDialog(props) {
                 <Grid item xs={12}>
                     <Typography variant="h5">טרמפיסטים בנסיעה</Typography>
                     <List>
-                        {rideRequests && rideRequests.filter((request) => request.status === 'accepted').length > 0 ?
+                        {rideRequests && rideRequests.filter((request) => request.status === rideRequestStatusTypes.accepted).length > 0 ?
                             rideRequests
-                                .filter((request) => request.status === 'accepted')
+                                .filter((request) => request.status === rideRequestStatusTypes.accepted)
                                 .sort((a, b) => dateSort(a, b))
                                 .map(request => (
                                     <RideViewRequestListItem key={request.id} request={request}
-                                                             rideDetails={props.rideDetails} type='accepted'/>
+                                                             rideDetails={props.rideDetails}
+                                                             type={rideRequestStatusTypes.accepted}
+                                                             userId={props.userId}
+                                                             ratingData={missingRatings.find(item => item.user_id === request.passenger_id)}/>
                                 )) : <ListItem><ListItemText primary="לא נמצאו רשומות"/></ListItem>
                         }
                     </List>
@@ -152,7 +203,9 @@ export function MyRideViewDialog(props) {
                                     .map(request => (
                                         <RideViewRequestListItem key={request.id} request={request}
                                                                  rideDetails={props.rideDetails} type='pending'
-                                                                 refreshRequestsList={refreshRequestsList}/>
+                                                                 refreshRequestsList={refreshRequestsList}
+                                                                 userId={props.userId}
+                                                                 ratingData={missingRatings.find(item => item.user_id === request.passenger_id)}/>
                                     )) : <ListItem><ListItemText primary="לא נמצאו רשומות"/></ListItem>
                             }
                         </List>
@@ -178,7 +231,7 @@ export function MyRideViewDialog(props) {
     </Dialog>
 }
 
-export default function RideItem({ride, userFirstName}) {
+export default function RideItem({ride, userFirstName, userId}) {
 
     const [departureCity, setDepartureCity] = useState('')
     const [destinationCity, setDestinationCity] = useState('')
@@ -227,6 +280,7 @@ export default function RideItem({ride, userFirstName}) {
                     onClose={handleClose}
                     userFirstName={userFirstName}
                     rideDetails={rideDetails}
+                    userId={userId}
                 />}
         </React.Fragment>
     )

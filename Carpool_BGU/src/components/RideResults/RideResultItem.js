@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {DialogContentText, IconButton, ListItem, ListItemAvatar, ListItemText, Rating} from "@mui/material";
 import dayjs from "dayjs";
 import Typography from "@mui/material/Typography";
-import {getProfile, getRating, joinRide} from "../../common/fetchers";
+import {getProfile, getComments, joinRide} from "../../common/fetchers";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import {AvatarInitials, setCityName} from "../../common/Functions";
 import InfoIcon from "@mui/icons-material/Info";
 import RideViewMap from "../RideViewMap";
+import Box from "@mui/material/Box";
 
 function JoinRideResponseDialog(props) {
     return <Dialog
@@ -116,9 +117,9 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
         setCityName(item._departure_location, setDepartureCity)
         setCityName(item._destination, setDestinationCity)
         setRideDetails(item)
-        getRating(item._driver_id, localStorage.getItem('access_token'))
+        getComments(item._driver_id, localStorage.getItem('access_token'))
             .then((ret) => {
-                setUserRating(ret.rating)
+                setUserRating(ret.comments)
             })
     }, []);
 
@@ -147,9 +148,16 @@ export default function RideResultItem({item, handleCloseDialog, context}) {
                                         מ{departureCity} ל{destinationCity}
                                     </Typography>
                                 </Grid>
-                                <Grid item>
-                                    <Rating value={userRating} size="small" readOnly/>
-                                </Grid>
+                                {userRating ? <Grid item>
+                                    <Typography component="div">
+                                        <Box display='flex' alignItems='center'>
+                                            <Rating value={userRating.rating} size="small" readOnly/>
+                                            <Typography component="span">
+                                                ({userRating.num_of_raters})
+                                            </Typography>
+                                        </Box>
+                                    </Typography>
+                                </Grid> : <React.Fragment/>}
                             </Grid>
                         </Typography>
                     }

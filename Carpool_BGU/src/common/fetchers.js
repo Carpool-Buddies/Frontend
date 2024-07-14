@@ -392,9 +392,9 @@ export const fetchJoinRequests = async (userId, token) => {
 
 // ---------- rating ----------
 
-export const getRating = async (userId, token) => {
+export const getComments = async (userId, token) => {
     try {
-        const response = await fetch(`${BASE_API_URL}/api/Rating/rating/get-rating`, {
+        const response = await fetch(`${BASE_API_URL}/api/Rating/rating/get-comments`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -402,6 +402,44 @@ export const getRating = async (userId, token) => {
             },
             body: JSON.stringify({
                 user_id: userId
+            })
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
+export const myRatingsByRide = async (userId, rideId, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/Rating/rating/${userId}/my-ratings-by-ride`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+                ride_id: rideId
+            })
+        });
+        return await response.json();
+    } catch (error) {
+        return error
+    }
+}
+
+export const rateRide = async (userId, ratingId, rating, comments, token) => {
+    try {
+        const response = await fetch(`${BASE_API_URL}/api/Rating/rating/${userId}/rate-ride`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+                rating_id: ratingId,
+                rating: rating,
+                comments: comments
             })
         });
         return await response.json();

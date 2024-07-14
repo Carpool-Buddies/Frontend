@@ -112,6 +112,8 @@ export default function Home() {
         const ret = await logout(localStorage.getItem('access_token'));
         if (ret.success === true) {
             setIsLoggedIn(false)
+            setProfile(null)
+            setRideMarkers([])
             localStorage.removeItem('access_token')
             toast.success('התנתקת בהצלחה');
         } else {

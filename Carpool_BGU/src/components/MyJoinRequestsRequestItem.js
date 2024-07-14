@@ -16,7 +16,7 @@ import {
 import dayjs from "dayjs";
 import * as React from "react";
 import {useEffect, useState} from "react";
-import {getProfile} from "../common/fetchers";
+import {getProfile, myRatingsByRide} from "../common/fetchers";
 import RideViewMap from "./RideViewMap";
 import {AvatarInitials, formatPhoneNumber, setCityName} from "../common/Functions";
 import CallIcon from "@mui/icons-material/Call";
@@ -25,9 +25,19 @@ import RateUserDialog from "./rateUserDialog";
 
 function MyRideViewDialog(props) {
     const [driverProfile, getDriverProfile] = useState(null)
+    const [missingRatings, setMissingRatings] = useState(null)
     const [ratingDialogOpen, setRatingDialogOpen] = useState(false)
 
+    const notYetRated = () => {
+        return props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
+            props.joinRequestDetails._status === rideStatusTypes.completed &&
+            missingRatings &&
+            missingRatings.find(item => item.user_id === props.joinRequestDetails._driver_id)
+    }
+
     useEffect(() => {
+        myRatingsByRide(props.userId, props.joinRequestDetails.ride_id, localStorage.getItem('access_token'))
+            .then((ret) => setMissingRatings(ret.my_ratings))
         getProfile(props.joinRequestDetails._driver_id, localStorage.getItem('access_token'))
             .then((ret) => getDriverProfile(ret.profile))
     }, []);
@@ -61,15 +71,35 @@ function MyRideViewDialog(props) {
                         </ListItemButton>
                     </List>
                 </Grid>
-                <Grid item xs={12} textAlign='center'>
-                    <Button onClick={() => setRatingDialogOpen(true)} variant='contained'
-                            disabled={props.joinRequestDetails._status === rideStatusTypes.waiting}>
-                        דרג את {driverProfile ? driverProfile.first_name : "..."}
-                    </Button>
-                </Grid>
+                {props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
+                    <Grid item xs={12} textAlign='center'>
+                        <Button onClick={() => setRatingDialogOpen(true)} variant='contained'
+                                disabled={!notYetRated()}>
+                            {notYetRated() ?
+                                <Typography>
+                                    דרג את {driverProfile ? driverProfile.first_name : "..."}
+                                </Typography> :
+                                <Typography>
+                                    דירגת את {driverProfile ? driverProfile.first_name : "..."}
+                                </Typography>}
+                        </Button>
+                    </Grid>}
+                {props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
+                    props.joinRequestDetails._status !== rideStatusTypes.completed &&
+                    <Grid item xs={12} textAlign='center'>
+                        <Typography variant="caption">
+                            דירוג יתאפשר לאחר שהנסיעה תסומן כהושלמה
+                        </Typography>
+                    </Grid>}
             </Grid>
-            {driverProfile && <RateUserDialog profile={driverProfile} ratingDialogOpen={ratingDialogOpen}
-                                              setRatingDialogOpen={setRatingDialogOpen}/>}
+            {props.joinRequestDetails.ride_status === rideRequestStatusTypes.accepted &&
+                props.joinRequestDetails._status === rideStatusTypes.completed &&
+                missingRatings && missingRatings.find(item => item.user_id === props.joinRequestDetails._driver_id) &&
+                driverProfile && <RateUserDialog profile={driverProfile}
+                                                 ratingId={missingRatings.find(item => item.user_id === props.joinRequestDetails._driver_id).rating_id || -1}
+                                                 ratingDialogOpen={ratingDialogOpen}
+                                                 setRatingDialogOpen={setRatingDialogOpen}
+                                                 userId={props.userId}/>}
         </DialogContent>
         <DialogActions>
             <Button onClick={props.onClose}>חזרה לתוצאות</Button>
@@ -77,13 +107,14 @@ function MyRideViewDialog(props) {
     </Dialog>
 }
 
-export default function JoinRequestItem({joinRequest, userFirstName}) {
+export default function JoinRequestItem({joinRequest, userFirstName, userId}) {
 
     const [departureCity, setDepartureCity] = useState('')
     const [destinationCity, setDestinationCity] = useState('')
 
     const [moreDialogOpen, setMoreDialogOpen] = useState(false)
     const [joinRequestDetails, setJoinRequestDetails] = useState(null)
+    const [clicked, setClicked] = useState(false)
 
     useEffect(() => {
         setCityName(joinRequest._departure_location, setDepartureCity)
@@ -92,6 +123,7 @@ export default function JoinRequestItem({joinRequest, userFirstName}) {
     }, []);
 
     const handleClickOpen = () => {
+        setClicked(true)
         setMoreDialogOpen(true);
     };
 
@@ -120,12 +152,13 @@ export default function JoinRequestItem({joinRequest, userFirstName}) {
                     }
                 />
             </ListItem>
-            {joinRequestDetails &&
+            {joinRequestDetails && clicked &&
                 <MyRideViewDialog
                     open={moreDialogOpen}
                     onClose={handleClose}
                     userFirstName={userFirstName}
                     joinRequestDetails={joinRequestDetails}
+                    userId={userId}
                 />}
         </React.Fragment>
     )

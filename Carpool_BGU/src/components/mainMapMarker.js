@@ -2,13 +2,14 @@ import {AvatarInitials, setCityName} from "../common/Functions";
 import {AdvancedMarker, InfoWindow, useAdvancedMarkerRef} from "@vis.gl/react-google-maps";
 import * as React from "react";
 import {useCallback, useEffect, useState} from "react";
-import {getProfile, getRating} from "../common/fetchers";
+import {getComments, getProfile} from "../common/fetchers";
 import {IconButton, ListItem, ListItemText, Rating} from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import dayjs from "dayjs";
 import {RideInfoDialog} from "./RideResults/RideResultItem";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 export default function MainMapMarker({ride}) {
     const [profile, setProfile] = useState(null)
@@ -29,10 +30,8 @@ export default function MainMapMarker({ride}) {
             .catch(() => {
                 setProfile({first_name: "CPB", last_name: ""})
             })
-        getRating(ride.rideDetails._driver_id, localStorage.getItem('access_token'))
-            .then((ret) => {
-                setUserRating(ret.rating)
-            })
+        getComments(ride.rideDetails._driver_id, localStorage.getItem('access_token'))
+            .then((ret) => setUserRating(ret.comments))
     }, [])
 
     const handleMarkerClick = useCallback(() => {
@@ -93,7 +92,16 @@ export default function MainMapMarker({ride}) {
                                             </Typography>
                                         </Grid>
                                         <Grid item>
-                                            <Rating value={userRating} size="small" readOnly/>
+                                            {userRating ? <Grid item>
+                                                <Typography component="div">
+                                                    <Box display='flex' alignItems='center'>
+                                                        <Rating value={userRating.rating} size="small" readOnly/>
+                                                        <Typography component="span">
+                                                            ({userRating.num_of_raters})
+                                                        </Typography>
+                                                    </Box>
+                                                </Typography>
+                                            </Grid> : <React.Fragment/>}
                                         </Grid>
                                     </Grid>
                                 </Typography>

@@ -110,5 +110,5 @@ export function setCityName(coords, setFunction) {
 }
 
 export function startRideIsDue(departureDatetime) {
-    return dayjs(departureDatetime).isBefore(dayjs().add(30, 'day')) //TODO: day is for debugging, change to minutes
+    return dayjs(departureDatetime).isBefore(dayjs().add(30, 'minute'))
 }

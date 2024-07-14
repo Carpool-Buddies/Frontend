@@ -35,6 +35,7 @@ import ProfileViewDialog from "./ProfileViewDialog";
 import {rideRequestResponseTypes, rideRequestStatusTypes, rideStatusTypes} from "../../common/backendTerms";
 import RateUserDialog from "../rateUserDialog";
 import Box from "@mui/material/Box";
+import {toast} from "react-toastify";
 
 function RideViewRequestListItem(props) {
     const [profile, setProfile] = useState(null)
@@ -128,8 +129,8 @@ function RideViewRequestListItem(props) {
 export function MyRideViewDialog(props) {
 
     const [rideRequests, setRideRequests] = useState([])
-    const [rideActionButtonLabel, setRideActionButtonLabel] = useState('טוען')
     const [missingRatings, setMissingRatings] = useState(null)
+    const [rideStatus, setRideStatus] = useState(null)
 
     const refreshRequestsList = () => {
         manageRequestsGet(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
@@ -139,25 +140,72 @@ export function MyRideViewDialog(props) {
     }
 
     async function handleStartRideClick() {
-        const ret = await startRide(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
-        console.log(ret)
+        await startRide(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
+            .then((ret) => {
+                if (ret.success) {
+                    toast.success(
+                        <Typography responsive variant="body1">
+                            {'הנסיעה התחילה בהצלחה!'}
+                        </Typography>
+                    );
+                    setRideStatus(rideStatusTypes.inProgress)
+                } else {
+                    toast.error(
+                        <Typography responsive variant="body1">
+                            {ret.msg || 'ארעה שגיאה בעדכון הנסיעה'}
+                        </Typography>
+                    );
+                }
+            })
+            .catch((err) => {
+                toast.error(
+                    <Typography responsive variant="body1">
+                        {err || 'ארעה שגיאה בעדכון הנסיעה'}
+                    </Typography>
+                );
+            })
     }
 
     async function handleEndRideClick() {
-        const ret = await endRide(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
-        console.log(ret)
+        await endRide(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
+            .then((ret) => {
+                if (ret.success) {
+                    toast.success(
+                        <Typography responsive variant="body1">
+                            {'הנסיעה הושלמה בהצלחה!'}
+                        </Typography>
+                    );
+                    setRideStatus(rideStatusTypes.completed)
+                } else {
+                    toast.error(
+                        <Typography responsive variant="body1">
+                            {ret.msg || 'ארעה שגיאה בעדכון הנסיעה'}
+                        </Typography>
+                    );
+                }
+            })
+            .catch((err) => {
+                toast.error(
+                    <Typography responsive variant="body1">
+                        {err || 'ארעה שגיאה בעדכון הנסיעה'}
+                    </Typography>
+                );
+            })
     }
 
     useEffect(() => {
         myRatingsByRide(props.rideDetails._driver_id, props.rideDetails.ride_id, localStorage.getItem('access_token'))
             .then((ret) => setMissingRatings(ret.my_ratings))
-        setRideActionButtonLabel(
-            props.rideDetails._status === rideStatusTypes.waiting ? 'התחל נסיעה' :
-                props.rideDetails._status === rideStatusTypes.inProgress ? 'סיים נסיעה' : 'הנסיעה הסתיימה')
+        setRideStatus(props.rideDetails._status)
         refreshRequestsList()
     }, []);
 
-    return missingRatings && <Dialog open={props.open} onClose={props.onClose}
+    function getRideStatusText() {
+        return rideStatus === rideStatusTypes.waiting ? 'התחל נסיעה' :
+            rideStatus === rideStatusTypes.inProgress ? 'סיים נסיעה' : 'הנסיעה הסתיימה';
+    }
+
+    return rideStatus && missingRatings && <Dialog open={props.open} onClose={props.onClose}
                    fullWidth={true}
                    maxWidth={"xs"}>
         <DialogTitle>
@@ -192,7 +240,7 @@ export function MyRideViewDialog(props) {
                         }
                     </List>
                 </Grid>
-                {props.rideDetails._status === rideStatusTypes.waiting ?
+                {rideStatus === rideStatusTypes.waiting ?
                     <Grid item xs={12}>
                         <Typography variant="h5">בקשות הצטרפות</Typography>
                         <List>
@@ -215,12 +263,12 @@ export function MyRideViewDialog(props) {
         <DialogActions>
             <Grid container>
                 <Grid item xs={6} sx={{display: 'flex', justifyContent: 'flex-start'}}>
-                    <Button onClick={props.rideDetails._status === rideStatusTypes.waiting ?
+                    <Button onClick={rideStatus === rideStatusTypes.waiting ?
                         handleStartRideClick : handleEndRideClick}
-                            disabled={props.rideDetails._status === rideStatusTypes.waiting ?
+                            disabled={rideStatus === rideStatusTypes.waiting ?
                                 !startRideIsDue(props.rideDetails._departure_datetime) :
-                                props.rideDetails._status !== rideStatusTypes.inProgress}>
-                        {rideActionButtonLabel}
+                                rideStatus !== rideStatusTypes.inProgress}>
+                        {getRideStatusText()}
                     </Button>
                 </Grid>
                 <Grid item xs={6} sx={{display: 'flex', justifyContent: 'flex-end'}}>

@@ -10,7 +10,6 @@ import {toast} from "react-toastify";
 import {AvatarInitials} from "../common/Functions";
 import dayjs from "dayjs";
 import MainMapMarker from "../components/mainMapMarker";
-import SwipeableTemporaryDrawer from "../components/swipableDrawer";
 import UpcomingRideAlert from "../components/upcomingRideAlert";
 
 export default function Home() {
@@ -127,7 +126,6 @@ export default function Home() {
 
     const loggedIn = (<Box display='flex' height="100vh">
         <SideMenu navigate={navigate} handleLogout={handleLogout} profile={profile}/>
-        <SwipeableTemporaryDrawer/>
         {viewport.latitude && viewport.longitude && (
             <APIProvider apiKey='AIzaSyCFaNEpBsTboNXUeUheimTz8AbP5BLPZ2g'>
                 <Map

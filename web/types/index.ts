@@ -1,5 +1,7 @@
 export type VerificationStatus = "unverified" | "email_verified" | "org_verified";
 export type OAuthProvider = "email" | "google" | "microsoft";
+/** Interactive login providers (subset of OAuthProvider). */
+export type AuthProvider = "google" | "microsoft";
 
 export interface Organization {
   id: number;
@@ -10,18 +12,18 @@ export interface Organization {
 }
 
 export interface User {
-  id: number;
+  id: string; // uuid
   email: string;
-  first_name: string;
-  last_name: string;
-  phone?: string;
-  profile_photo_url?: string;
-  oauth_provider: OAuthProvider;
-  organization_id?: number;
-  organization?: Organization;
-  verification_status: VerificationStatus;
-  rating_avg: number;
-  rating_count: number;
+  full_name: string;
+  avatar_url?: string | null;
+  org?: string | null; // university code, e.g. "BGU"
+  org_name_he?: string | null; // Hebrew display name resolved by the backend
+  onboarded: boolean;
+  created_at: string;
+  // Reserved for later sprints (verification, ratings):
+  verification_status?: VerificationStatus;
+  rating_avg?: number;
+  rating_count?: number;
 }
 
 export type RideStatus = "waiting" | "in_progress" | "completed" | "cancelled";

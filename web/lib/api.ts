@@ -1,35 +1,39 @@
 import axios from "axios";
+import type { AuthProvider, User } from "@/types";
 
-export const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1",
+export const API_BASE =
+  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
+
+// withCredentials sends the httpOnly auth cookies the backend sets; no tokens
+// are stored client-side.
+const http = axios.create({
+  baseURL: API_BASE,
+  withCredentials: true,
   headers: { "Content-Type": "application/json" },
 });
 
-// Attach JWT from Zustand persisted store on every request
-api.interceptors.request.use((config) => {
-  if (typeof window !== "undefined") {
-    try {
-      const raw = localStorage.getItem("auth-storage");
-      if (raw) {
-        const { state } = JSON.parse(raw);
-        if (state?.accessToken) {
-          config.headers.Authorization = `Bearer ${state.accessToken}`;
-        }
-      }
-    } catch {
-      // Storage unavailable — proceed without auth header
-    }
-  }
-  return config;
-});
+export const api = {
+  get: <T>(path: string) => http.get<T>(path).then((r) => r.data),
+  post: <T>(path: string, body?: unknown) =>
+    http.post<T>(path, body).then((r) => r.data),
+};
 
-// Redirect to login on 401
-api.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    if (err.response?.status === 401 && typeof window !== "undefined") {
-      window.location.href = "/login";
+export const auth = {
+  /** Full-page redirect target that starts the OAuth flow on the backend. */
+  loginUrl: (provider: AuthProvider) => `${API_BASE}/auth/${provider}/login`,
+
+  /** Current user, or null when not authenticated (401). */
+  async me(): Promise<User | null> {
+    try {
+      return await api.get<User>("/auth/me");
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response?.status === 401) return null;
+      throw err;
     }
-    return Promise.reject(err);
-  }
-);
+  },
+
+  completeOnboarding: (data: { full_name: string; org?: string | null }) =>
+    api.post<User>("/auth/onboarding", data),
+
+  logout: () => api.post<{ status: string }>("/auth/logout"),
+};

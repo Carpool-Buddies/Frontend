@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Car, MapPin, Shield, Users, Star, ArrowLeft } from "lucide-react";
+import { Car, MapPin, Shield, Users, ArrowLeft } from "lucide-react";
 
 const FEATURES = [
   {
@@ -47,10 +48,12 @@ export default function HomePage() {
             <span className="text-lg font-bold text-foreground">CarpoolBuddies</span>
           </div>
           <nav className="flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              כניסה
-            </Button>
-            <Button size="sm">הרשמה חינמית</Button>
+            <Link href="/login">
+              <Button variant="ghost" size="sm">כניסה</Button>
+            </Link>
+            <Link href="/login">
+              <Button size="sm">הרשמה חינמית</Button>
+            </Link>
           </nav>
         </div>
       </header>
@@ -73,13 +76,17 @@ export default function HomePage() {
         </p>
 
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button size="lg" className="w-full gap-2 sm:w-auto">
-            התחל עכשיו — בחינם
-            <ArrowLeft className="h-4 w-4" />
-          </Button>
-          <Button size="lg" variant="outline" className="w-full sm:w-auto">
-            איך זה עובד
-          </Button>
+          <Link href="/login">
+            <Button size="lg" className="w-full gap-2 sm:w-auto">
+              התחל עכשיו — בחינם
+              <ArrowLeft className="h-4 w-4" />
+            </Button>
+          </Link>
+          <a href="#features">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              איך זה עובד
+            </Button>
+          </a>
         </div>
 
         {/* Social proof */}
@@ -111,7 +118,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Features ── */}
-      <section className="container mx-auto px-6 py-20">
+      <section id="features" className="container mx-auto px-6 py-20">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-black text-foreground">
             למה <span className="text-gradient">CarpoolBuddies</span>?
@@ -181,9 +188,11 @@ export default function HomePage() {
         <p className="mb-8 text-muted-foreground">
           הצטרף עם האימייל האוניברסיטאי שלך — תוך 30 שניות
         </p>
-        <Button size="lg" className="px-10 text-base">
-          הרשמה עם Google / Microsoft
-        </Button>
+        <Link href="/login">
+          <Button size="lg" className="px-10 text-base">
+            הרשמה עם Google / Microsoft
+          </Button>
+        </Link>
       </section>
 
       {/* ── Footer ── */}

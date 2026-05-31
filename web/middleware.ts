@@ -7,6 +7,7 @@ import type { NextRequest } from "next/server";
  * request, and the client-side useAuth hook handles expiry/onboarding.
  */
 const PROTECTED_PREFIXES = ["/dashboard", "/rides", "/profile"];
+// Note: /rides is fully protected — all ride pages require login.
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -24,5 +25,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/rides/:path*", "/profile/:path*"],
+  matcher: ["/dashboard/:path*", "/rides/:path*", "/rides/new", "/rides/my", "/profile/:path*"],
 };

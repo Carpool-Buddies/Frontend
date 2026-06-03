@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/lib/auth-store";
 import { useLogout } from "@/hooks/use-auth";
+import { NotificationBell } from "@/components/notification-bell";
 
 export function SiteHeader() {
   const { user, isAuthenticated } = useAuthStore();
@@ -20,21 +21,24 @@ export function SiteHeader() {
 
         {isAuthenticated && user ? (
           <div className="flex items-center gap-3">
-            <span className="hidden text-sm text-slate-300 sm:inline">
-              {user.full_name}
-            </span>
-            {user.avatar_url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={user.avatar_url}
-                alt={user.full_name}
-                className="h-9 w-9 rounded-full border border-slate-700 object-cover"
-              />
-            ) : (
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-500 font-bold text-slate-900">
-                {user.full_name.charAt(0)}
-              </div>
-            )}
+            <NotificationBell />
+            <Link href="/profile" className="flex items-center gap-2">
+              <span className="hidden text-sm text-slate-300 sm:inline">
+                {user.full_name}
+              </span>
+              {user.avatar_url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={user.avatar_url}
+                  alt={user.full_name}
+                  className="h-9 w-9 rounded-full border border-slate-700 object-cover"
+                />
+              ) : (
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-500 font-bold text-slate-900">
+                  {user.full_name.charAt(0)}
+                </div>
+              )}
+            </Link>
             <Button
               onClick={logout}
               variant="outline"

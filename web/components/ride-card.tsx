@@ -14,12 +14,14 @@ function fmt(iso: string) {
 interface Props {
   ride: Ride;
   isDriver?: boolean;
+  joined?: boolean;
   myRequestStatus?: RideRequest["status"] | null;
   onRequestSent?: () => void;
   onRequestUpdate?: () => void;
+  onLifecycle?: () => void;
 }
 
-export function RideCard({ ride, isDriver, myRequestStatus, onRequestSent, onRequestUpdate }: Props) {
+export function RideCard({ ride, isDriver, joined, myRequestStatus, onRequestSent, onRequestUpdate, onLifecycle }: Props) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [showMsg, setShowMsg] = useState(false);
@@ -43,6 +45,24 @@ export function RideCard({ ride, isDriver, myRequestStatus, onRequestSent, onReq
     } finally {
       setLoading(false);
     }
+  }
+
+  async function handleComplete() {
+    setLoading(true);
+    try { await ridesApi.complete(ride.id); onLifecycle?.(); }
+    finally { setLoading(false); }
+  }
+
+  async function handleCancel() {
+    setLoading(true);
+    try { await ridesApi.cancel(ride.id); onLifecycle?.(); }
+    finally { setLoading(false); }
+  }
+
+  async function handleLeave() {
+    setLoading(true);
+    try { await ridesApi.leave(ride.id); onLifecycle?.(); }
+    finally { setLoading(false); }
   }
 
   const seatsLeft = ride.seats_left;
@@ -154,6 +174,36 @@ export function RideCard({ ride, isDriver, myRequestStatus, onRequestSent, onReq
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Driver lifecycle actions */}
+        {isDriver && ride.status === "active" && (
+          <div className="border-t border-slate-700 pt-3 flex gap-2">
+            <Button onClick={handleComplete} disabled={loading} size="sm"
+              className="bg-blue-500 hover:bg-blue-400 text-slate-900 font-bold rounded-lg h-8 text-xs">
+              ✓ סמן כהושלמה
+            </Button>
+            <Button onClick={handleCancel} disabled={loading} size="sm" variant="outline"
+              className="border-slate-600 text-red-400 hover:bg-slate-700 rounded-lg h-8 text-xs">
+              בטל נסיעה
+            </Button>
+          </div>
+        )}
+        {isDriver && ride.status === "completed" && (
+          <div className="border-t border-slate-700 pt-3 text-sm text-blue-400 font-bold">✓ הנסיעה הושלמה</div>
+        )}
+        {isDriver && ride.status === "cancelled" && (
+          <div className="border-t border-slate-700 pt-3 text-sm text-red-400">הנסיעה בוטלה</div>
+        )}
+
+        {/* Passenger: leave an accepted ride */}
+        {joined && ride.status === "active" && (
+          <div className="border-t border-slate-700 pt-3">
+            <Button onClick={handleLeave} disabled={loading} size="sm" variant="outline"
+              className="border-slate-600 text-red-400 hover:bg-slate-700 rounded-lg h-8 text-xs">
+              עזוב נסיעה
+            </Button>
           </div>
         )}
       </CardContent>

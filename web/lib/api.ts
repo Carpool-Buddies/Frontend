@@ -38,5 +38,10 @@ export const auth = {
   completeOnboarding: (data: { full_name: string; org?: string | null }) =>
     api.post<User>("/auth/onboarding", data),
 
+  updateProfile: (data: { full_name?: string; avatar_url?: string | null }) =>
+    api.patch<User>("/auth/profile", data),
+
+  getUser: (id: string) => api.get<User>(`/auth/users/${id}`),
+
   logout: () => api.post<{ status: string }>("/auth/logout"),
 };

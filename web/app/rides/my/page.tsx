@@ -50,7 +50,7 @@ export default function MyRidesPage() {
           ) : (
             <div className="space-y-4">
               {driving.map((ride) => (
-                <RideCard key={ride.id} ride={ride} isDriver onRequestUpdate={refresh} />
+                <RideCard key={ride.id} ride={ride} isDriver onRequestUpdate={refresh} onLifecycle={refresh} />
               ))}
             </div>
           )}
@@ -64,7 +64,7 @@ export default function MyRidesPage() {
           ) : (
             <div className="space-y-4">
               {joined.map((ride) => (
-                <RideCard key={ride.id} ride={ride} myRequestStatus="accepted" />
+                <RideCard key={ride.id} ride={ride} joined myRequestStatus="accepted" onLifecycle={refresh} />
               ))}
             </div>
           )}

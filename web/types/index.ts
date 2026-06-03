@@ -19,11 +19,11 @@ export interface User {
   org?: string | null; // university code, e.g. "BGU"
   org_name_he?: string | null; // Hebrew display name resolved by the backend
   onboarded: boolean;
+  rating_avg: number;
+  rating_count: number;
   created_at: string;
-  // Reserved for later sprints (verification, ratings):
+  // Reserved for later sprints (verification):
   verification_status?: VerificationStatus;
-  rating_avg?: number;
-  rating_count?: number;
 }
 
 export type RideStatus = "waiting" | "in_progress" | "completed" | "cancelled";

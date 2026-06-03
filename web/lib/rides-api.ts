@@ -28,9 +28,18 @@ export const ridesApi = {
 
   cancel: (id: string) => api.del<void>(`/rides/${id}`),
 
+  edit: (id: string, data: Partial<RideCreateData>) => api.patch<Ride>(`/rides/${id}`, data),
+
+  complete: (id: string) => api.post<{ status: string }>(`/rides/${id}/complete`),
+
+  leave: (id: string) => api.post<{ status: string }>(`/rides/${id}/leave`),
+
   requestJoin: (rideId: string, data: { requested_seats?: number; message?: string }) =>
     api.post<RideRequest>(`/rides/${rideId}/requests`, data),
 
   updateRequest: (rideId: string, requestId: string, status: "accepted" | "rejected") =>
     api.patch<RideRequest>(`/rides/${rideId}/requests/${requestId}`, { status }),
+
+  rate: (rideId: string, data: { ratee_id: string; score: number; comment?: string }) =>
+    api.post(`/rides/${rideId}/ratings`, data),
 };

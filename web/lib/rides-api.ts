@@ -3,7 +3,11 @@ import type { Ride, MyRides, RideRequest } from "@/types/ride";
 
 export interface RideCreateData {
   origin_address: string;
+  origin_lat?: number | null;
+  origin_lng?: number | null;
   destination_address: string;
+  dest_lat?: number | null;
+  dest_lng?: number | null;
   departure_time: string; // ISO string
   available_seats: number;
   price_per_seat?: number | null;
@@ -12,11 +16,21 @@ export interface RideCreateData {
 }
 
 export const ridesApi = {
-  search: (params: { destination?: string; date?: string; org_only?: boolean }) => {
+  search: (params: {
+    destination?: string;
+    date?: string;
+    org_only?: boolean;
+    origin_lat?: number | null;
+    origin_lng?: number | null;
+    radius_km?: number;
+  }) => {
     const q = new URLSearchParams();
     if (params.destination) q.set("destination", params.destination);
     if (params.date) q.set("date", params.date);
     if (params.org_only) q.set("org_only", "true");
+    if (params.origin_lat != null) q.set("origin_lat", String(params.origin_lat));
+    if (params.origin_lng != null) q.set("origin_lng", String(params.origin_lng));
+    if (params.radius_km != null) q.set("radius_km", String(params.radius_km));
     return api.get<Ride[]>(`/rides?${q}`);
   },
 

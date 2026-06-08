@@ -15,7 +15,11 @@ export interface Ride {
   driver_id: string;
   driver?: User;
   origin_address: string;
+  origin_lat?: number | null;
+  origin_lng?: number | null;
   destination_address: string;
+  dest_lat?: number | null;
+  dest_lng?: number | null;
   departure_time: string;
   available_seats: number;
   confirmed_passengers: number;

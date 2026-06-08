@@ -19,14 +19,52 @@ export default function RidesPage() {
   const [orgOnly, setOrgOnly] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
 
+  // Proximity search state
+  const [nearMe, setNearMe] = useState(false);
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [locationError, setLocationError] = useState("");
+  const [radiusKm, setRadiusKm] = useState(5);
+
+  function requestLocation() {
+    setLocationError("");
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        setNearMe(true);
+      },
+      () => {
+        setLocationError("לא ניתן לאתר מיקום. אנא אפשר גישה למיקום בדפדפן.");
+        setNearMe(false);
+      }
+    );
+  }
+
+  function toggleNearMe() {
+    if (nearMe) {
+      setNearMe(false);
+    } else if (userLocation) {
+      setNearMe(true);
+    } else {
+      requestLocation();
+    }
+  }
+
   useEffect(() => {
     if (isLoading) return;
     setFetching(true);
-    ridesApi.search({ destination: destination || undefined, date: date || undefined, org_only: orgOnly })
+    ridesApi
+      .search({
+        destination: destination || undefined,
+        date: date || undefined,
+        org_only: orgOnly,
+        origin_lat: nearMe && userLocation ? userLocation.lat : undefined,
+        origin_lng: nearMe && userLocation ? userLocation.lng : undefined,
+        radius_km: nearMe ? radiusKm : undefined,
+      })
       .then(setRides)
       .catch(() => setRides([]))
       .finally(() => setFetching(false));
-  }, [isLoading, destination, date, orgOnly, refreshKey]);
+  }, [isLoading, destination, date, orgOnly, nearMe, userLocation, radiusKm, refreshKey]);
 
   if (isLoading) return <div className="min-h-screen bg-[#0F172A]" />;
 
@@ -44,18 +82,63 @@ export default function RidesPage() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-6">
-          <Input value={destination} onChange={(e) => setDestination(e.target.value)}
-            placeholder="יעד (חיפוש חופשי)" className="bg-slate-800 border-slate-700 text-white rounded-xl" />
-          <Input type="date" value={date} onChange={(e) => setDate(e.target.value)}
-            className="bg-slate-800 border-slate-700 text-white rounded-xl sm:w-44" />
+        <div className="flex flex-col sm:flex-row gap-3 mb-3">
+          <Input
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+            placeholder="יעד (חיפוש חופשי)"
+            className="bg-slate-800 border-slate-700 text-white rounded-xl"
+          />
+          <Input
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="bg-slate-800 border-slate-700 text-white rounded-xl sm:w-44"
+          />
+        </div>
+
+        {/* Filter chips row */}
+        <div className="flex flex-wrap gap-2 mb-5">
           {user?.org && (
-            <button onClick={() => setOrgOnly(!orgOnly)}
-              className={`px-4 py-2 rounded-xl text-sm font-bold transition-colors whitespace-nowrap ${orgOnly ? "bg-teal-500 text-slate-900" : "bg-slate-800 text-slate-300 border border-slate-700"}`}>
+            <button
+              onClick={() => setOrgOnly(!orgOnly)}
+              className={`px-3 py-1.5 rounded-xl text-sm font-bold transition-colors ${
+                orgOnly
+                  ? "bg-teal-500 text-slate-900"
+                  : "bg-slate-800 text-slate-300 border border-slate-700"
+              }`}
+            >
               🎓 האוניברסיטה שלי
             </button>
           )}
+
+          <button
+            onClick={toggleNearMe}
+            className={`px-3 py-1.5 rounded-xl text-sm font-bold transition-colors ${
+              nearMe
+                ? "bg-blue-500 text-white"
+                : "bg-slate-800 text-slate-300 border border-slate-700"
+            }`}
+          >
+            📍 {nearMe ? "קרוב אליי" : "חפש קרוב אליי"}
+          </button>
+
+          {nearMe && (
+            <select
+              value={radiusKm}
+              onChange={(e) => setRadiusKm(Number(e.target.value))}
+              className="bg-slate-800 border border-slate-700 text-slate-300 rounded-xl px-2 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              {[2, 5, 10, 20].map((r) => (
+                <option key={r} value={r}>{r} ק&quot;מ</option>
+              ))}
+            </select>
+          )}
         </div>
+
+        {locationError && (
+          <p className="text-sm text-red-400 mb-4">{locationError}</p>
+        )}
 
         {fetching ? (
           <div className="text-center text-slate-400 py-16">טוען נסיעות...</div>
@@ -67,7 +150,11 @@ export default function RidesPage() {
         ) : (
           <div className="space-y-4">
             {rides.map((ride) => (
-              <RideCard key={ride.id} ride={ride} onRequestSent={() => setRefreshKey(k => k + 1)} />
+              <RideCard
+                key={ride.id}
+                ride={ride}
+                onRequestSent={() => setRefreshKey((k) => k + 1)}
+              />
             ))}
           </div>
         )}
